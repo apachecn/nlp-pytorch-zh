@@ -1,5 +1,7 @@
 # Natural Language Processing with PyTorch 中文版
 
+![](cover.jpg)
+
 > 译者：[Yif Du](https://yifdu.github.io/)
 > 
 > 协议：[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
