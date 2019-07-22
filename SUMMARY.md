@@ -1,6 +1,6 @@
 # Summary
 
-* [入门介绍](README.md)
+* [入门须知](README.md)
 * [Chapter 1\. Introduction](docs/1.md)
 * [Chapter 2\. A Quick Tour of Traditional NLP](docs/2.md)
 * [Chapter 3\. Foundational Components of Neural Networks](docs/3.md)
