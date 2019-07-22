@@ -1,4 +1,4 @@
-+   [Preface](docs/1.md)
++   [Chapter 1\. Introduction](docs/1.md)
 +   [Chapter 2\. A Quick Tour of Traditional NLP](docs/2.md)
 +   [Chapter 3\. Foundational Components of Neural Networks](docs/3.md)
 +   [Chapter 4\. Feed-Forward Networks for Natural Language Processing](docs/4.md)

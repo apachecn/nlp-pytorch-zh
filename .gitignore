@@ -64,6 +64,8 @@ instance/
 .scrapy
 
 # Sphinx documentation
+_book/
+
 docs/_build/
 
 # PyBuilder
@@ -102,3 +104,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+node_modules
