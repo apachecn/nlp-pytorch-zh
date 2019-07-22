@@ -65,7 +65,6 @@ instance/
 
 # Sphinx documentation
 _book/
-
 docs/_build/
 
 # PyBuilder
