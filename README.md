@@ -1,4 +1,4 @@
-# Natural Language Processing with PyTorch 中文版
+# PyTorch 自然语言处理（Natural Language Processing with PyTorch 中文版）
 
 ![](cover.jpg)
 
@@ -20,8 +20,31 @@
 * [Chapter 8.用于自然语言处理的高级 Sequence](docs/8.md)
 * [Chapter 9.经典, 前沿和后续步骤](docs/9.md)
 
----
+代码地址: <https://github.com/joosthub/PyTorchNLPBook>
 
 * [在线阅读](https://nlp-pt.apachecn.org)
 * [ApacheCN 机器学习交流群 629470233](http://shang.qq.com/wpa/qunwpa?idkey=30e5f1123a79867570f665aa3a483ca404b1c3f77737bc01ec520ed5f078ddef)
 * [ApacheCN 学习资源](http://www.apachecn.org/)
+
+## 精品推荐
+
+> 深度学习必学
+
+1. [反向传递](/docs/dl/反向传递.md): <https://www.cnblogs.com/charlotte77/p/5629865.html>
+2. [CNN原理](/docs/dl/CNN原理.md): <http://www.cnblogs.com/charlotte77/p/7759802.html>
+3. [RNN原理](/docs/dl/RNN原理.md): <https://blog.csdn.net/qq_39422642/article/details/78676567>
+4. [LSTM原理](/docs/dl/LSTM原理.md): <https://blog.csdn.net/weixin_42111770/article/details/80900575>
+
+> 自然语言处理
+
+* Python 自然语言处理 第二版: <https://usyiyi.github.io/nlp-py-2e-zh>
+* 推荐一个[liuhuanyong大佬](https://github.com/liuhuanyong)整理的nlp全面知识体系: <https://liuhuanyong.github.io>
+* 开源 - 词向量库集合: 
+  * <https://github.com/Embedding/Chinese-Word-Vectors>
+  * <https://github.com/brightmart/nlp_chinese_corpus>
+  * <https://github.com/codemayq/chinese_chatbot_corpus>
+  * <https://github.com/candlewill/Dialog_Corpus>
+
+---
+
+内容由 [ApacheCN](https://github.com/apachecn) 团队提供支持
