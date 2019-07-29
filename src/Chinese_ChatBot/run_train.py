@@ -2,6 +2,7 @@
 # coding: utf-8
 import os
 import re
+import fire
 import random
 import unicodedata
 import itertools
@@ -344,12 +345,60 @@ def trainIters(model_name, cp_start_iteration, voc, pairs, encoder, decoder, enc
             }, os.path.join(directory, '{}_{}.tar'.format(iteration, 'checkpoint')))
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
+
+#     global teacher_forcing_ratio, hidden_size
+#     # Configure models
+#     model_name = 'cb_model'
+#     attn_model = 'dot'
+#     #attn_model = 'general'
+#     #attn_model = 'concat'
+#     hidden_size = 500
+#     encoder_n_layers = 2
+#     decoder_n_layers = 2
+#     dropout = 0.1
+#     cp_start_iteration = 0
+#     learning_rate = 0.0001
+#     decoder_learning_ratio = 5.0
+#     teacher_forcing_ratio = 1.0
+#     clip = 50.0
+#     print_every = 1
+#     batch_size = 64
+#     save_every = 1000
+#     n_iteration = 7000
+
+#     loadFilename = "data/save/cb_model/%s/2-2_500/6000_checkpoint.tar" % corpus_name
+#     if os.path.exists(loadFilename):
+#         voc = Voc(corpus_name)
+#     cp_start_iteration, voc, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding = load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, encoder_n_layers, decoder_n_layers, dropout, learning_rate, decoder_learning_ratio)
+    
+#     # Use appropriate device
+#     encoder = encoder.to(device)
+#     decoder = decoder.to(device)
+#     for state in encoder_optimizer.state.values():
+#         for k, v in state.items():
+#             if isinstance(v, torch.Tensor):
+#                 state[k] = v.cuda()
+
+#     for state in decoder_optimizer.state.values():
+#         for k, v in state.items():
+#             if isinstance(v, torch.Tensor):
+#                 state[k] = v.cuda()
+
+#     # Ensure dropout layers are in train mode
+#     encoder.train()
+#     decoder.train()
+
+#     print("Starting Training!")
+#     trainIters(model_name, cp_start_iteration, voc, pairs, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding, encoder_n_layers, decoder_n_layers, save_dir, n_iteration, batch_size, print_every, save_every, clip, corpus_name)
+
+
+def train(p1=0, p2=0):
     global device, corpus_name
     USE_CUDA = torch.cuda.is_available()
     device = torch.device("cuda" if USE_CUDA else "cpu")
 
-    corpus_name = "cornell_movie-dialogs_corpus"
+    corpus_name = "Chinese_ChatBot"
     corpus = os.path.join("data", corpus_name)
     # printLines(os.path.join(corpus, "movie_lines.txt"))
 
@@ -377,47 +426,7 @@ if __name__ == "__main__":
     # print("mask:", mask)
     # print("max_target_len:", max_target_len)
 
-    global teacher_forcing_ratio, hidden_size
-    # Configure models
-    model_name = 'cb_model'
-    attn_model = 'dot'
-    #attn_model = 'general'
-    #attn_model = 'concat'
-    hidden_size = 500
-    encoder_n_layers = 2
-    decoder_n_layers = 2
-    dropout = 0.1
-    cp_start_iteration = 0
-    learning_rate = 0.0001
-    decoder_learning_ratio = 5.0
-    teacher_forcing_ratio = 1.0
-    clip = 50.0
-    print_every = 1
-    batch_size = 64
-    save_every = 1000
-    n_iteration = 7000
 
-    loadFilename = "data/save/cb_model/%s/2-2_500/6000_checkpoint.tar" % corpus_name
-    if os.path.exists(loadFilename):
-        voc = Voc(corpus_name)
-    cp_start_iteration, voc, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding = load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, encoder_n_layers, decoder_n_layers, dropout, learning_rate, decoder_learning_ratio)
-    
-    # Use appropriate device
-    encoder = encoder.to(device)
-    decoder = decoder.to(device)
-    for state in encoder_optimizer.state.values():
-        for k, v in state.items():
-            if isinstance(v, torch.Tensor):
-                state[k] = v.cuda()
 
-    for state in decoder_optimizer.state.values():
-        for k, v in state.items():
-            if isinstance(v, torch.Tensor):
-                state[k] = v.cuda()
-
-    # Ensure dropout layers are in train mode
-    encoder.train()
-    decoder.train()
-
-    print("Starting Training!")
-    trainIters(model_name, cp_start_iteration, voc, pairs, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding, encoder_n_layers, decoder_n_layers, save_dir, n_iteration, batch_size, print_every, save_every, clip, corpus_name)
+if __name__ == "__main__":
+    fire.Fire()
