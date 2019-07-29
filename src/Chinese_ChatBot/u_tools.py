@@ -22,8 +22,11 @@ def unicodeToAscii(s):
 def normalizeString(s):
     s = unicodeToAscii(s.lower().strip())
     s = re.sub(r"([.!?])", r" \1", s)
-    s = re.sub(r"[^a-zA-Z.!?]+", r" ", s)
+    # s = re.sub(r"[^a-zA-Z.!?]+", r" ", s)
+    s = re.sub(r"[^a-zA-Z.!?\u4E00-\u9FA5]+", r" ", s)
     s = re.sub(r"\s+", r" ", s).strip()
+    # '咋死 ? ? ?红烧还是爆炒dddd' > '咋 死   ?   ?   ? 红 烧 还 是 爆 炒 d d d d'
+    s = " ".join(list(s))
     return s
 
 

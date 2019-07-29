@@ -52,7 +52,8 @@ def evaluateInput(encoder, decoder, searcher, voc):
             output_words = evaluate(encoder, decoder, searcher, voc, input_sentence)
             # Format and print response sentence
             output_words[:] = [x for x in output_words if not (x == 'EOS' or x == 'PAD')]
-            print('Bot:', ' '.join(output_words))
+            # print('Bot:', ' '.join(output_words))
+            print('Bot:', ''.join(output_words))
 
         except KeyError:
             print("Error: Encountered unknown word.")
@@ -62,7 +63,7 @@ if __name__ == "__main__":
     global device, corpus_name
     USE_CUDA = torch.cuda.is_available()
     device = torch.device("cuda" if USE_CUDA else "cpu")
-    corpus_name = "cornell_movie-dialogs_corpus"
+    corpus_name = "Chinese_ChatBot"
 
 
     # Configure models
@@ -76,8 +77,9 @@ if __name__ == "__main__":
     cp_start_iteration = 0
     learning_rate = 0.0001
     decoder_learning_ratio = 5.0
+    n_iteration = 5000
 
-    loadFilename = "data/save_copy/cb_model/%s/2-2_500/6000_checkpoint.tar" % corpus_name
+    loadFilename = "data/save/cb_model/%s/2-2_500/%s_checkpoint.tar" % (corpus_name, n_iteration)
     if os.path.exists(loadFilename):
         voc = Voc(corpus_name)
     cp_start_iteration, voc, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding = load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, encoder_n_layers, decoder_n_layers, dropout, learning_rate, decoder_learning_ratio)
