@@ -67,14 +67,13 @@ def outputVar(l, voc):
 
 
 # 初始化Voc对象 和 格式化pairs对话存放到list中
-def readVocs(datafile, corpus_name):
+def readVocs(datafile):
     print("Reading lines...")
     # Read the file and split into lines
     lines = open(datafile, encoding='utf-8').read().strip().split('\n')
     # Split every line into pairs and normalize
     pairs = [[normalizeString(s) for s in l.split(' | ')] for l in lines]
-    voc = Voc(corpus_name)
-    return voc, pairs
+    return pairs
 
 
 # 如果对 'p' 中的两个句子都低于 MAX_LENGTH 阈值，则返回True
@@ -88,9 +87,9 @@ def filterPairs(pairs):
     return [pair for pair in pairs if filterPair(pair)]
 
 # 使用上面定义的函数，返回一个填充的voc对象和对列表
-def loadPrepareData(corpus, corpus_name, datafile, save_dir):
+def loadPrepareData(corpus, corpus_name, datafile, voc, save_dir):
     print("Start preparing training data ...")
-    voc, pairs = readVocs(datafile, corpus_name)
+    pairs = readVocs(datafile)
     print("Read {!s} sentence pairs".format(len(pairs)))
     pairs = filterPairs(pairs)
     print("Trimmed to {!s} sentence pairs".format(len(pairs)))
@@ -275,29 +274,9 @@ def TrainModel():
 
     corpus_name = "Chinese_ChatBot"
     corpus = os.path.join("data", corpus_name)
-    datafile = os.path.join(corpus, "formatted_data.csv")
-
-    # Load/Assemble voc and pairs
+    datafile = os.path.join(corpus, "format_data.csv")
     save_dir = os.path.join("data", "save")
-    voc, pairs = loadPrepareData(corpus, corpus_name, datafile, save_dir)
-    # Print some pairs to validate
-    print("\npairs:")
-    for pair in pairs[:10]:
-        print(pair)
-
-    # Trim voc and pairs
-    pairs = trimRareWords(voc, pairs, MIN_COUNT)
-
-    # Example for validation
-    small_batch_size = 5
-    batches = batch2TrainData(voc, [random.choice(pairs) for _ in range(small_batch_size)])
-    input_variable, lengths, target_variable, mask, max_target_len = batches
-    print("input_variable:", input_variable)
-    print("lengths:", lengths)
-    print("target_variable:", target_variable)
-    print("mask:", mask)
-    print("max_target_len:", max_target_len)
-
+    
     global teacher_forcing_ratio, hidden_size
     # Configure models
     model_name = 'cb_model'
@@ -316,12 +295,35 @@ def TrainModel():
     print_every = 1
     batch_size = 64
     save_every = 1000
-    n_iteration = 5000
+    n_iteration = 8000
 
-    loadFilename = "data/save/cb_model/%s/2-2_500/%s_checkpoint.tar" % (corpus_name, n_iteration)
+    voc = Voc(corpus_name)
+    loadFilename = "data/save/cb_model/%s/2-2_500/5000_checkpoint.tar" % (corpus_name)
     if os.path.exists(loadFilename):
-        voc = Voc(corpus_name)
-    cp_start_iteration, voc, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding = load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, encoder_n_layers, decoder_n_layers, dropout, learning_rate, decoder_learning_ratio)
+        checkpoint = torch.load(loadFilename)
+        voc.__dict__ = checkpoint['voc_dict']
+
+    # Load/Assemble voc and pairs
+    voc, pairs = loadPrepareData(corpus, corpus_name, datafile, voc, save_dir)
+    # Print some pairs to validate
+    print("\npairs:")
+    for pair in pairs[:10]:
+        print(pair)
+
+    # Trim voc and pairs
+    pairs = trimRareWords(voc, pairs, MIN_COUNT)
+
+    # # Example for validation
+    # small_batch_size = 5
+    # batches = batch2TrainData(voc, [random.choice(pairs) for _ in range(small_batch_size)])
+    # input_variable, lengths, target_variable, mask, max_target_len = batches
+    # print("input_variable:", input_variable)
+    # print("lengths:", lengths)
+    # print("target_variable:", target_variable)
+    # print("mask:", mask)
+    # print("max_target_len:", max_target_len)
+
+    cp_start_iteration, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding = load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, encoder_n_layers, decoder_n_layers, dropout, learning_rate, decoder_learning_ratio)
     
     # Use appropriate device
     encoder = encoder.to(device)

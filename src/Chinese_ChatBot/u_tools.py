@@ -21,9 +21,9 @@ def unicodeToAscii(s):
 # Lowercase, trim, and remove non-letter characters
 def normalizeString(s):
     s = unicodeToAscii(s.lower().strip())
-    s = re.sub(r"([.!?])", r" \1", s)
+    s = re.sub(r"([.!? ])", r" \1", s)
     # s = re.sub(r"[^a-zA-Z.!?]+", r" ", s)
-    s = re.sub(r"[^a-zA-Z.!?\u4E00-\u9FA5]+", r" ", s)
+    s = re.sub(r"[^a-zA-Z.!? \u4E00-\u9FA5]+", r" ", s)
     s = re.sub(r"\s+", r" ", s).strip()
     # '咋死 ? ? ?红烧还是爆炒dddd' > '咋 死   ?   ?   ? 红 烧 还 是 爆 炒 d d d d'
     s = " ".join(list(s))
@@ -43,7 +43,7 @@ def load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, e
         encoder_optimizer_sd = checkpoint['state_dict_en_opt']
         decoder_optimizer_sd = checkpoint['state_dict_de_opt']
         # loss = checkpoint['loss']
-        voc.__dict__ = checkpoint['voc_dict']
+        # voc.__dict__ = checkpoint['voc_dict']
         embedding_sd = checkpoint['embedding']
 
     print('Building encoder and decoder ...')
@@ -65,4 +65,4 @@ def load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, e
         decoder_optimizer.load_state_dict(decoder_optimizer_sd)
 
     print('Models built and ready to go!')
-    return cp_start_iteration, voc, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding
+    return cp_start_iteration, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding

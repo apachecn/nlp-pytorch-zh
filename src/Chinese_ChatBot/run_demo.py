@@ -13,7 +13,7 @@ from u_class import Voc, GreedySearchDecoder
 PAD_token = 0  # Used for padding short sentences
 SOS_token = 1  # Start-of-sentence token
 EOS_token = 2  # End-of-sentence token
-MAX_LENGTH = 10  # Maximum sentence length to consider
+MAX_LENGTH = 50  # Maximum sentence length to consider
 
 
 def indexesFromSentence(voc, sentence):
@@ -77,12 +77,15 @@ if __name__ == "__main__":
     cp_start_iteration = 0
     learning_rate = 0.0001
     decoder_learning_ratio = 5.0
-    n_iteration = 5000
+    n_iteration = 8000
 
+    voc = Voc(corpus_name)
     loadFilename = "data/save/cb_model/%s/2-2_500/%s_checkpoint.tar" % (corpus_name, n_iteration)
     if os.path.exists(loadFilename):
-        voc = Voc(corpus_name)
-    cp_start_iteration, voc, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding = load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, encoder_n_layers, decoder_n_layers, dropout, learning_rate, decoder_learning_ratio)
+        checkpoint = torch.load(loadFilename)
+        voc.__dict__ = checkpoint['voc_dict']
+
+    cp_start_iteration, encoder, decoder, encoder_optimizer, decoder_optimizer, embedding = load_model(loadFilename, voc, cp_start_iteration, attn_model, hidden_size, encoder_n_layers, decoder_n_layers, dropout, learning_rate, decoder_learning_ratio)
 
     # Use appropriate device
     encoder = encoder.to(device)
@@ -96,5 +99,3 @@ if __name__ == "__main__":
 
     # Begin chatting (uncomment and run the following line to begin)
     evaluateInput(encoder, decoder, searcher, voc)
-
-
