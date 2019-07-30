@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 .vscode
 sftp.json
+data
 
 # C extensions
 *.so
