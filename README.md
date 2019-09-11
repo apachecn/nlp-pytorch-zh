@@ -29,6 +29,10 @@
 
 ## 精品推荐
 
+> Pytorch 中文文档&中文教程
+
+* Pytorch 中文教程: <https://pytorch.apachecn.org>
+
 > 深度学习必学
 
 1. [反向传递](/docs/dl/反向传递.md): <https://www.cnblogs.com/charlotte77/p/5629865.html>
@@ -45,7 +49,10 @@
   * <https://github.com/brightmart/nlp_chinese_corpus>
   * <https://github.com/codemayq/chinese_chatbot_corpus>
   * <https://github.com/candlewill/Dialog_Corpus>
+* 新词发现代码 python 实现: <https://github.com/zhanzecheng/Chinese_segment_augment>
+* 电影知识图谱 python 实现: <https://github.com/SimmerChan/KG-demo-for-movie>
+* 知识图谱的《红楼梦》人物关系可视化及问答系统 python 实现: <https://github.com/chizhu/KGQA_HLM>
 
----
+## 关于转载
 
-内容由 [ApacheCN](https://github.com/apachecn) 团队提供支持
+* 禁止商业化，符合协议规范，备注地址来源，不需要发邮件给我们申请【如果觉得有帮助，欢迎各位踊跃收藏和转载】
