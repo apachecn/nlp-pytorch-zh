@@ -41,10 +41,10 @@ if __name__ == "__main__":
       '\\n<hr/>'+
       '\\n<div align="center">'+
       '\\n    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">我们一直在努力</font></a></p>'+
-      '\\n    <p><a href="https://github.com/apachecn/NLP-with-PyTorch/" target="_blank">apachecn/NLP-with-PyTorch</a></p>'+
-      '\\n    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&repo=NLP-with-PyTorch&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>'+
-      '\\n    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&repo=NLP-with-PyTorch&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>'+
-      '\\n    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&repo=NLP-with-PyTorch&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>'+
+      '\\n    <p><a href="https://github.com/apachecn/nlp-pytorch-zh/" target="_blank">apachecn/nlp-pytorch-zh</a></p>'+
+      '\\n    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&repo=nlp-pytorch-zh&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>'+
+      '\\n    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&repo=nlp-pytorch-zh&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>'+
+      '\\n    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&repo=nlp-pytorch-zh&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>'+
       '\\n    <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=bcee938030cc9e1552deb3bd9617bbbf62d3ec1647e4b60d9cd6b6e8f78ddc03"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>'+
       '\\n</div>'+
       '\\n <div style="text-align:center;margin:0 0 10.5px;">'+
@@ -82,7 +82,7 @@ if __name__ == "__main__":
       '\\n        const gitalk = new Gitalk({'+
       '\\n        clientID: \\'1eba1fde838d39ce2ba9\\','+
       '\\n        clientSecret: \\'0bdf321e160ca29b2d54e8722700dd5accb084e0\\','+
-      '\\n        repo: \\'NLP-with-PyTorch\\','+
+      '\\n        repo: \\'nlp-pytorch-zh\\','+
       '\\n        owner: \\'apachecn\\','+
       '\\n        admin: [\\'jiangzhonglian\\', \\'wizardforcel\\'],'+
       '\\n        id: md5(location.pathname),'+

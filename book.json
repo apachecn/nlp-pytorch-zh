@@ -30,13 +30,13 @@
     ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/apachecn/NLP-with-PyTorch"
+            "url": "https://github.com/apachecn/nlp-pytorch-zh"
         },
         "github-buttons": {
             "buttons": [
               {
                 "user": "apachecn",
-                "repo": "NLP-with-PyTorch", 
+                "repo": "nlp-pytorch-zh", 
                 "type": "star",
                 "count": true,
                 "size": "small"
@@ -44,14 +44,14 @@
             ]
         },
         "insert-logo": {
-            "url": "https://github.com/apachecn/NLP-with-PyTorch/raw/master/cover.jpg",
+            "url": "https://nlp-pt.apachecn.org/cover.jpg",
             "style": "background: none; max-height: 150px; min-height: 150px"
         },
         "hide-element": {
             "elements": [".gitbook-link"]
         },
         "edit-link": {
-            "base": "https://github.com/apachecn/NLP-with-PyTorch/blob/master",
+            "base": "https://github.com/apachecn/nlp-pytorch-zh/blob/master",
             "label": "编辑本页"
         },
         "sharing": {
