@@ -5,6 +5,8 @@ logerror() { echo "[ERROR] $@" 1>&2; }
 loginfo "==========================================================="
 loginfo "开始", ${version}, "版本编译"
 
+cp README.md docs/README.md
+
 echo "python3 src/script.py book"
 python3 src/script.py "book"
 
@@ -18,6 +20,11 @@ echo "python3 src/script.py gitalk"
 python3 src/script.py "gitalk"
 
 gitbook build ./ _book
+
+# mkdir books
+# gitbook epub . books/nlp-pytorch-zh.epub
+# gitbook mobi . books/nlp-pytorch-zh.mobi
+# mv books _book
 
 # rm -rf /opt/apache-tomcat-9.0.17/webapps/test_book
 # cp -r _book /opt/apache-tomcat-9.0.17/webapps/test_book
