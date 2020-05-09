@@ -1,0 +1,1179 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 4.自然语言处理 Feed-Forward Networks · NLP with PyTorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5.html" />
+    
+    
+    <link rel="prev" href="3.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    入门须知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    Chapter 1.基础介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    Chapter 2.传统NLP快速回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    Chapter 3.神经网络基础组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    Chapter 4.自然语言处理 Feed-Forward Networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    Chapter 5.Embedding Words and Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    Chapter 6.自然语言处理 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    Chapter 7.自然语言处理的中间 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    Chapter 8.用于自然语言处理的高级 Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    Chapter 9.经典, 前沿和后续步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 4.自然语言处理 Feed-Forward Networks</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-4&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;-feed-forward-networks">Chapter 4.&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406; Feed-Forward Networks</h1>
+<blockquote>
+<p>&#x672C;&#x6587;&#x6807;&#x9898;:<a href="https://yifdu.github.io/2018/12/20/Natural-Language-Processing-with-PyTorch%EF%BC%88%E5%9B%9B%EF%BC%89/" target="_blank">Natural-Language-Processing-with-PyTorch&#xFF08;&#x56DB;&#xFF09;</a></p>
+<p>&#x6587;&#x7AE0;&#x4F5C;&#x8005;:<a href="https://yifdu.github.io/" title="&#x8BBF;&#x95EE; Yif Du &#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" target="_blank">Yif Du</a></p>
+<p>&#x53D1;&#x5E03;&#x65F6;&#x95F4;:2018&#x5E74;12&#x6708;20&#x65E5; - 09:12</p>
+<p>&#x6700;&#x540E;&#x66F4;&#x65B0;:2018&#x5E74;12&#x6708;28&#x65E5; - 11:12</p>
+<p>&#x539F;&#x59CB;&#x94FE;&#x63A5;:<a href="https://yifdu.github.io/2018/12/20/Natural-Language-Processing-with-PyTorch%EF%BC%88%E5%9B%9B%EF%BC%89/" target="_blank">http://yifdu.github.io/2018/12/20/Natural-Language-Processing-with-PyTorch&#xFF08;&#x56DB;&#xFF09;/</a></p>
+<p>&#x8BB8;&#x53EF;&#x534F;&#x8BAE;:  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x7981;&#x6B62;&#x6F14;&#x7ECE; 4.0 &#x56FD;&#x9645;</a>  &#x8F6C;&#x8F7D;&#x8BF7;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x94FE;&#x63A5;&#x53CA;&#x4F5C;&#x8005;&#x3002;</p>
+</blockquote>
+<p>&#x5728;&#x7B2C;3&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;&#x611F;&#x77E5;&#x5668;&#x6765;&#x4ECB;&#x7ECD;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x611F;&#x77E5;&#x5668;&#x662F;&#x73B0;&#x5B58;&#x6700;&#x7B80;&#x5355;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;&#x611F;&#x77E5;&#x5668;&#x7684;&#x4E00;&#x4E2A;&#x5386;&#x53F2;&#x6027;&#x7684;&#x7F3A;&#x70B9;&#x662F;&#x5B83;&#x4E0D;&#x80FD;&#x5B66;&#x4E60;&#x6570;&#x636E;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x4E00;&#x4E9B;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x6A21;&#x5F0F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x770B;&#x56FE;4-1&#x4E2D;&#x7ED8;&#x5236;&#x7684;&#x6570;&#x636E;&#x70B9;&#x3002;&#x8FD9;&#x76F8;&#x5F53;&#x4E8E;&#x975E;&#x6B64;&#x5373;&#x5F7C;(XOR)&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x51B3;&#x7B56;&#x8FB9;&#x754C;&#x4E0D;&#x80FD;&#x662F;&#x4E00;&#x6761;&#x76F4;&#x7EBF;(&#x4E5F;&#x79F0;&#x4E3A;&#x7EBF;&#x6027;&#x53EF;&#x5206;)&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x611F;&#x77E5;&#x5668;&#x5931;&#x8D25;&#x4E86;&#x3002; <img src="img/8dc539599dfa8638d1c07a77f68a8ed6.jpg" alt="classifier" title="&#x56FE;4-1\. XOR&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x7684;&#x4E24;&#x4E2A;&#x7C7B;&#x7ED8;&#x5236;&#x4E3A;&#x5706;&#x5F62;&#x548C;&#x661F;&#x5F62;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x884C;&#x53EF;&#x4EE5;&#x5206;&#x9694;&#x8FD9;&#x4E24;&#x4E2A;&#x7C7B;&#x3002;"></p>
+<p>&#x5728;&#x8FD9;&#x4E00;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x63A2;&#x7D22;&#x4F20;&#x7EDF;&#x4E0A;&#x79F0;&#x4E3A;&#x524D;&#x9988;&#x7F51;&#x7EDC;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#xFF0C;&#x4EE5;&#x53CA;&#x4E24;&#x79CD;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;:&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x548C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x5728;&#x7ED3;&#x6784;&#x4E0A;&#x6269;&#x5C55;&#x4E86;&#x6211;&#x4EEC;&#x5728;&#x7B2C;3&#x7AE0;&#x4E2D;&#x7814;&#x7A76;&#x7684;&#x7B80;&#x5355;&#x611F;&#x77E5;&#x5668;&#xFF0C;&#x5C06;&#x591A;&#x4E2A;&#x611F;&#x77E5;&#x5668;&#x5206;&#x7EC4;&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x5C42;&#xFF0C;&#x5E76;&#x5C06;&#x591A;&#x4E2A;&#x5C42;&#x53E0;&#x52A0;&#x5728;&#x4E00;&#x8D77;&#x3002;&#x6211;&#x4EEC;&#x7A0D;&#x540E;&#x5C06;&#x4ECB;&#x7ECD;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#xFF0C;&#x5E76;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x5C55;&#x793A;&#x5B83;&#x4EEC;&#x5728;&#x591A;&#x5C42;&#x5206;&#x7C7B;&#x4E2D;&#x7684;&#x5E94;&#x7528;&#x3002;</p>
+<p>&#x672C;&#x7AE0;&#x7814;&#x7A76;&#x7684;&#x7B2C;&#x4E8C;&#x79CD;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x5728;&#x5904;&#x7406;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x65F6;&#x6DF1;&#x53D7;&#x7A97;&#x53E3;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x542F;&#x53D1;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x7A97;&#x53E3;&#x7279;&#x6027;&#xFF0C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x80FD;&#x591F;&#x5728;&#x8F93;&#x5165;&#x4E2D;&#x5B66;&#x4E60;&#x5C40;&#x90E8;&#x5316;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E0D;&#x4EC5;&#x4F7F;&#x5176;&#x6210;&#x4E3A;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x7684;&#x4E3B;&#x8F74;&#xFF0C;&#x800C;&#x4E14;&#x662F;&#x68C0;&#x6D4B;&#x5355;&#x8BCD;&#x548C;&#x53E5;&#x5B50;&#x7B49;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x5B50;&#x7ED3;&#x6784;&#x7684;&#x7406;&#x60F3;&#x5019;&#x9009;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x201C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x201D;&#x4E2D;&#x6982;&#x8FF0;&#x4E86;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x5E76;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x4F7F;&#x7528;CNN&#x5BF9;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x6F14;&#x793A;&#x4E86;&#x5B83;&#x4EEC;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x548C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x88AB;&#x5206;&#x7EC4;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x5E76;&#x4E14;&#x4E0E;&#x53E6;&#x4E00;&#x7C7B;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;&#x2014;&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(RNNs)&#x5F62;&#x6210;&#x5BF9;&#x6BD4;&#xFF0C;&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(RNNs)&#x5141;&#x8BB8;&#x53CD;&#x9988;(&#x6216;&#x5FAA;&#x73AF;)&#xFF0C;&#x8FD9;&#x6837;&#x6BCF;&#x6B21;&#x8BA1;&#x7B97;&#x90FD;&#x53EF;&#x4EE5;&#x4ECE;&#x4E4B;&#x524D;&#x7684;&#x8BA1;&#x7B97;&#x4E2D;&#x83B7;&#x5F97;&#x4FE1;&#x606F;&#x3002;&#x5728;&#x7B2C;6&#x7AE0;&#x548C;&#x7B2C;7&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;RNNs&#x4EE5;&#x53CA;&#x4E3A;&#x4EC0;&#x4E48;&#x5141;&#x8BB8;&#x7F51;&#x7EDC;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x5FAA;&#x73AF;&#x662F;&#x6709;&#x76CA;&#x7684;&#x3002;</p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x8FD9;&#x4E9B;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x578B;&#x65F6;&#xFF0C;&#x786E;&#x4FDD;&#x60A8;&#x7406;&#x89E3;&#x4E8B;&#x7269;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x8BA1;&#x7B97;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x65F6;&#x6CE8;&#x610F;&#x5B83;&#x4EEC;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x5F62;&#x72B6;&#x3002;&#x6BCF;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5C42;&#x5BF9;&#x5B83;&#x6240;&#x8BA1;&#x7B97;&#x7684;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x5F62;&#x72B6;&#x90FD;&#x6709;&#x7279;&#x5B9A;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x7406;&#x89E3;&#x8FD9;&#x79CD;&#x5F71;&#x54CD;&#x53EF;&#x4EE5;&#x6781;&#x5927;&#x5730;&#x6709;&#x52A9;&#x4E8E;&#x5BF9;&#x8FD9;&#x4E9B;&#x6A21;&#x578B;&#x7684;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x3002;</p>
+<h2 id="the-multilayer-perceptron">The Multilayer Perceptron</h2>
+<p>&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;(MLP)&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6700;&#x57FA;&#x672C;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6784;&#x5EFA;&#x6A21;&#x5757;&#x4E4B;&#x4E00;&#x3002;&#x6700;&#x7B80;&#x5355;&#x7684;MLP&#x662F;&#x5BF9;&#x7B2C;3&#x7AE0;&#x611F;&#x77E5;&#x5668;&#x7684;&#x6269;&#x5C55;&#x3002;&#x611F;&#x77E5;&#x5668;&#x5C06;&#x6570;&#x636E;&#x5411;&#x91CF;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x503C;&#x3002;&#x5728;MLP&#x4E2D;&#xFF0C;&#x8BB8;&#x591A;&#x611F;&#x77E5;&#x5668;&#x88AB;&#x5206;&#x7EC4;&#xFF0C;&#x4EE5;&#x4FBF;&#x5355;&#x4E2A;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5355;&#x4E2A;&#x8F93;&#x51FA;&#x503C;&#x3002;&#x5728;PyTorch&#x4E2D;&#xFF0C;&#x6B63;&#x5982;&#x60A8;&#x7A0D;&#x540E;&#x5C06;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x8FD9;&#x53EA;&#x9700;&#x8BBE;&#x7F6E;&#x7EBF;&#x6027;&#x5C42;&#x4E2D;&#x7684;&#x8F93;&#x51FA;&#x7279;&#x6027;&#x7684;&#x6570;&#x91CF;&#x5373;&#x53EF;&#x5B8C;&#x6210;&#x3002;MLP&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x65B9;&#x9762;&#x662F;&#xFF0C;&#x5B83;&#x5C06;&#x591A;&#x4E2A;&#x5C42;&#x4E0E;&#x6BCF;&#x4E2A;&#x5C42;&#x4E4B;&#x95F4;&#x7684;&#x975E;&#x7EBF;&#x6027;&#x7ED3;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x3002;</p>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;MLP&#xFF0C;&#x5982;&#x56FE;4-2&#x6240;&#x793A;&#xFF0C;&#x7531;&#x4E09;&#x4E2A;&#x8868;&#x793A;&#x9636;&#x6BB5;&#x548C;&#x4E24;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x7EC4;&#x6210;&#x3002;&#x7B2C;&#x4E00;&#x9636;&#x6BB5;&#x662F;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x3002;&#x8FD9;&#x662F;&#x7ED9;&#x5B9A;&#x7ED9;&#x6A21;&#x578B;&#x7684;&#x5411;&#x91CF;&#x3002;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x5BF9;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#xFF0C;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x662F;Yelp&#x8BC4;&#x8BBA;&#x7684;&#x4E00;&#x4E2A;&#x6536;&#x7F29;&#x7684;one-hot&#x8868;&#x793A;&#x3002;&#x7ED9;&#x5B9A;&#x8F93;&#x5165;&#x5411;&#x91CF;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x2014;&#x2014;&#x8868;&#x793A;&#x7684;&#x7B2C;&#x4E8C;&#x9636;&#x6BB5;&#x3002;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x4E4B;&#x6240;&#x4EE5;&#x8FD9;&#x6837;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x4F4D;&#x4E8E;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x4E4B;&#x95F4;&#x7684;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x6211;&#x4EEC;&#x6240;&#x8BF4;&#x7684;&#x201C;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x201D;&#x662F;&#x4EC0;&#x4E48;&#x610F;&#x601D;?&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x4E2D;&#x7684;&#x503C;&#x662F;&#x7EC4;&#x6210;&#x8BE5;&#x5C42;&#x7684;&#x4E0D;&#x540C;&#x611F;&#x77E5;&#x5668;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x9690;&#x85CF;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x3002;&#x5728;&#x50CF;Yelp&#x8BC4;&#x8BBA;&#x5206;&#x7C7B;&#x8FD9;&#x6837;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x662F;1&#x3002;&#x5728;&#x591A;&#x7C7B;&#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;&#x60A8;&#x5C06;&#x5728;&#x672C;&#x7AE0;&#x540E;&#x9762;&#x7684;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E00;&#x8282;&#x4E2D;&#x770B;&#x5230;&#xFF0C;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x662F;&#x7C7B;&#x6570;&#x91CF;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x867D;&#x7136;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x53EF;&#x80FD;&#x6709;&#x591A;&#x4E2A;&#x4E2D;&#x95F4;&#x9636;&#x6BB5;&#xFF0C;&#x6BCF;&#x4E2A;&#x9636;&#x6BB5;&#x4EA7;&#x751F;&#x81EA;&#x5DF1;&#x7684;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x3002;&#x6700;&#x7EC8;&#x7684;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x603B;&#x662F;&#x901A;&#x8FC7;&#x7EBF;&#x6027;&#x5C42;&#x548C;&#x975E;&#x7EBF;&#x6027;&#x7684;&#x7EC4;&#x5408;&#x6620;&#x5C04;&#x5230;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x3002;</p>
+<p><img src="img/fbf11b4ef1911b77ba3253eec8dddeef.jpg" alt="MLP" title="&#x56FE;4-2\. &#x4E00;&#x79CD;&#x5177;&#x6709;&#x4E24;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x548C;&#x4E09;&#x4E2A;&#x8868;&#x793A;&#x9636;&#x6BB5;&#xFF08;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x3001;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x548C;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#xFF09;&#x7684;MLP&#x7684;&#x53EF;&#x89C6;&#x5316;&#x8868;&#x793A;&#x3002;"></p>
+<p>mlp&#x7684;&#x529B;&#x91CF;&#x6765;&#x81EA;&#x4E8E;&#x6DFB;&#x52A0;&#x7B2C;&#x4E8C;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x548C;&#x5141;&#x8BB8;&#x6A21;&#x578B;&#x5B66;&#x4E60;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5206;&#x5272;&#x7684;&#x7684;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#x2014;&#x2014;&#x8BE5;&#x5C5E;&#x6027;&#x7684;&#x80FD;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x76F4;&#x7EBF;(&#x6216;&#x66F4;&#x4E00;&#x822C;&#x7684;,&#x4E00;&#x4E2A;&#x8D85;&#x5E73;&#x9762;)&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x533A;&#x5206;&#x6570;&#x636E;&#x70B9;&#x843D;&#x5728;&#x7EBF;(&#x6216;&#x8D85;&#x5E73;&#x9762;)&#x7684;&#x54EA;&#x4E00;&#x8FB9;&#x7684;&#x3002;&#x5B66;&#x4E60;&#x5177;&#x6709;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#xFF0C;&#x5982;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#x662F;&#x7EBF;&#x6027;&#x53EF;&#x5206;&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x4F7F;&#x7528;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x6700;&#x6DF1;&#x523B;&#x540E;&#x679C;&#x4E4B;&#x4E00;&#xFF0C;&#x4E5F;&#x662F;&#x5176;&#x5EFA;&#x6A21;&#x80FD;&#x529B;&#x7684;&#x7CBE;&#x9AD3;&#x3002;&#x5728;&#x4E0B;&#x4E00;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x66F4;&#x6DF1;&#x5165;&#x5730;&#x7814;&#x7A76;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4EC0;&#x4E48;&#x3002;</p>
+<h3 id="a-simple-example-xor">A Simple Example: XOR</h3>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#x524D;&#x9762;&#x63CF;&#x8FF0;&#x7684;XOR&#x793A;&#x4F8B;&#xFF0C;&#x770B;&#x770B;&#x611F;&#x77E5;&#x5668;&#x4E0E;MLP&#x4E4B;&#x95F4;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4E00;&#x4E2A;&#x4E8C;&#x5143;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#x4E2D;&#x8BAD;&#x7EC3;&#x611F;&#x77E5;&#x5668;&#x548C;MLP:&#x661F;&#x548C;&#x5706;&#x3002;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x5750;&#x6807;&#x3002;&#x5728;&#x4E0D;&#x6DF1;&#x5165;&#x7814;&#x7A76;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x5982;&#x56FE;4-3&#x6240;&#x793A;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x56FE;&#x4E2D;&#xFF0C;&#x9519;&#x8BEF;&#x5206;&#x7C7B;&#x7684;&#x6570;&#x636E;&#x70B9;&#x7528;&#x9ED1;&#x8272;&#x586B;&#x5145;&#xFF0C;&#x800C;&#x6B63;&#x786E;&#x5206;&#x7C7B;&#x7684;&#x6570;&#x636E;&#x70B9;&#x6CA1;&#x6709;&#x586B;&#x5145;&#x3002;&#x5728;&#x5DE6;&#x8FB9;&#x7684;&#x9762;&#x677F;&#x4E2D;&#xFF0C;&#x4ECE;&#x586B;&#x5145;&#x7684;&#x5F62;&#x72B6;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x611F;&#x77E5;&#x5668;&#x5728;&#x5B66;&#x4E60;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5C06;&#x661F;&#x661F;&#x548C;&#x5706;&#x5206;&#x5F00;&#x7684;&#x51B3;&#x7B56;&#x8FB9;&#x754C;&#x65B9;&#x9762;&#x6709;&#x56F0;&#x96BE;&#x3002;&#x7136;&#x800C;&#xFF0C;MLP(&#x53F3;&#x9762;&#x677F;)&#x5B66;&#x4E60;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x7CBE;&#x786E;&#x5730;&#x5BF9;&#x6052;&#x661F;&#x548C;&#x5706;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x51B3;&#x7B56;&#x8FB9;&#x754C;&#x3002;</p>
+<p><img src="img/63f1236fcd5854c18f80493f93cbfe3c.jpg" alt="MLP_1" title="&#x56FE;4-3\. &#x4ECE;&#x611F;&#x77E5;&#x5668;&#xFF08;&#x5DE6;&#xFF09;&#x548C;MLP&#xFF08;&#x53F3;&#xFF09;&#x5B66;&#x4E60;&#x7684;XOR&#x95EE;&#x9898;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x663E;&#x793A;&#x3002;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x7684;&#x771F;&#x6B63;&#x7C7B;&#x662F;&#x8BE5;&#x70B9;&#x7684;&#x5F62;&#x72B6;:&#x661F;&#x5F62;&#x6216;&#x5706;&#x5F62;&#x3002;&#x9519;&#x8BEF;&#x7684;&#x5206;&#x7C7B;&#x7528;&#x5757;&#x586B;&#x5145;&#xFF0C;&#x6B63;&#x786E;&#x7684;&#x5206;&#x7C7B;&#x6CA1;&#x6709;&#x586B;&#x5145;&#x3002;&#x8FD9;&#x4E9B;&#x7EBF;&#x662F;&#x6BCF;&#x4E2A;&#x6A21;&#x578B;&#x7684;&#x51B3;&#x7B56;&#x8FB9;&#x754C;&#x3002;&#x5728;&#x5DE6;&#x8FB9;&#x7684;&#x9762;&#x677F;&#x4E2D;&#xFF0C;&#x611F;&#x77E5;&#x5668;&#x5B66;&#x4E60;&#x4E00;&#x4E2A;&#x4E0D;&#x80FD;&#x6B63;&#x786E;&#x5730;&#x5C06;&#x5706;&#x4E0E;&#x661F;&#x5206;&#x5F00;&#x7684;&#x51B3;&#x7B56;&#x8FB9;&#x754C;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6CA1;&#x6709;&#x4E00;&#x6761;&#x7EBF;&#x53EF;&#x4EE5;&#x3002;&#x5728;&#x53F3;&#x8FB9;&#x7684;&#x9762;&#x677F;&#x4E2D;&#xFF0C;MLP&#x5B66;&#x4F1A;&#x4E86;&#x4ECE;&#x5706;&#x4E2D;&#x5206;&#x79BB;&#x661F;&#x3002;"></p>
+<p>&#x867D;&#x7136;&#x5728;&#x56FE;&#x4E2D;&#x663E;&#x793A;MLP&#x6709;&#x4E24;&#x4E2A;&#x51B3;&#x7B56;&#x8FB9;&#x754C;&#xFF0C;&#x8FD9;&#x662F;&#x5B83;&#x7684;&#x4F18;&#x70B9;&#xFF0C;&#x4F46;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x51B3;&#x7B56;&#x8FB9;&#x754C;!&#x51B3;&#x7B56;&#x8FB9;&#x754C;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x51FA;&#x73B0;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#x6CD5;&#x6539;&#x53D8;&#x4E86;&#x7A7A;&#x95F4;&#xFF0C;&#x4F7F;&#x4E00;&#x4E2A;&#x8D85;&#x5E73;&#x9762;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E0A;&#x3002;&#x5728;&#x56FE;4-4&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;MLP&#x8BA1;&#x7B97;&#x7684;&#x4E2D;&#x95F4;&#x503C;&#x3002;&#x8FD9;&#x4E9B;&#x70B9;&#x7684;&#x5F62;&#x72B6;&#x8868;&#x793A;&#x7C7B;(&#x661F;&#x5F62;&#x6216;&#x5706;&#x5F62;)&#x3002;&#x6211;&#x4EEC;&#x6240;&#x770B;&#x5230;&#x7684;&#x662F;&#xFF0C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;MLP)&#x5DF2;&#x7ECF;&#x5B66;&#x4F1A;&#x4E86;&#x201C;&#x626D;&#x66F2;&#x201D;&#x6570;&#x636E;&#x6240;&#x5904;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x6570;&#x636E;&#x901A;&#x8FC7;&#x6700;&#x540E;&#x4E00;&#x5C42;&#x65F6;&#xFF0C;&#x7528;&#x4E00;&#x7EBF;&#x6765;&#x5206;&#x5272;&#x5B83;&#x4EEC;&#x3002; <img src="../2018/12/20/Natural-Language-Processing-with-PyTorch&#xFF08;&#x56DB;&#xFF09;/MLP_2.png &#x201C;&#x56FE;4-4/. MLP&#x7684;&#x8F93;&#x5165;&#x548C;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#x662F;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x3002;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;:&#xFF08;1&#xFF09;&#x7F51;&#x7EDC;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#xFF08;2&#xFF09;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#xFF08;3&#xFF09;&#x7B2C;&#x4E00;&#x4E2A;&#x975E;&#x7EBF;&#x6027;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#xFF08;4&#xFF09;&#x7B2C;&#x4E8C;&#x4E2A;&#x7EBF;&#x6027;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x5982;&#x60A8;&#x6240;&#x89C1;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x5C06;&#x5706;&#x548C;&#x661F;&#x5206;&#x7EC4;&#xFF0C;&#x800C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7EBF;&#x6027;&#x6A21;&#x5757;&#x7684;&#x8F93;&#x51FA;&#x5C06;&#x6570;&#x636E;&#x70B9;&#x91CD;&#x65B0;&#x7EC4;&#x7EC7;&#x4E3A;&#x7EBF;&#x6027;&#x53EF;&#x5206;&#x7684;&#x3002;&#x201D;" alt="MLP_2"></p>
+<p>&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x56FE;4-5&#x6240;&#x793A;&#xFF0C;&#x611F;&#x77E5;&#x5668;&#x6CA1;&#x6709;&#x989D;&#x5916;&#x7684;&#x4E00;&#x5C42;&#x6765;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x5F62;&#x72B6;&#xFF0C;&#x76F4;&#x5230;&#x6570;&#x636E;&#x53D8;&#x6210;&#x7EBF;&#x6027;&#x53EF;&#x5206;&#x7684;&#x3002; <img src="img/a0cec65c8e77beeb01f46f5fef1a61ad.jpg" alt="MLP_3" title="&#x56FE;4-5\. &#x611F;&#x77E5;&#x5668;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x8868;&#x793A;&#x3002;&#x56E0;&#x4E3A;&#x5B83;&#x6CA1;&#x6709;&#x50CF;MLP&#x90A3;&#x6837;&#x7684;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#x6765;&#x5206;&#x7EC4;&#x548C;&#x91CD;&#x65B0;&#x7EC4;&#x7EC7;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4E0D;&#x80FD;&#x5C06;&#x5706;&#x548C;&#x661F;&#x5206;&#x5F00;&#x3002;"></p>
+<h3 id="implementing-mlps-in-pytorch">Implementing MLPs in PyTorch</h3>
+<p>&#x5728;&#x4E0A;&#x4E00;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6982;&#x8FF0;&#x4E86;MLP&#x7684;&#x6838;&#x5FC3;&#x601D;&#x60F3;&#x3002;&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;PyTorch&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x3002;&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;MLP&#x9664;&#x4E86;&#x7B2C;3&#x7AE0;&#x4E2D;&#x7B80;&#x5355;&#x7684;&#x611F;&#x77E5;&#x5668;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x8BA1;&#x7B97;&#x5C42;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x5728;&#x4F8B;4-1&#x4E2D;&#x7ED9;&#x51FA;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7528;PyTorch&#x7684;&#x4E24;&#x4E2A;&#x7EBF;&#x6027;&#x6A21;&#x5757;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#x8FD9;&#x4E2A;&#x60F3;&#x6CD5;&#x3002;&#x7EBF;&#x6027;&#x5BF9;&#x8C61;&#x88AB;&#x547D;&#x540D;&#x4E3A;fc1&#x548C;fc2&#xFF0C;&#x5B83;&#x4EEC;&#x9075;&#x5FAA;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7EA6;&#x5B9A;&#xFF0C;&#x5373;&#x5C06;&#x7EBF;&#x6027;&#x6A21;&#x5757;&#x79F0;&#x4E3A;&#x201C;&#x5B8C;&#x5168;&#x8FDE;&#x63A5;&#x5C42;&#x201D;&#xFF0C;&#x7B80;&#x79F0;&#x4E3A;&#x201C;fc&#x5C42;&#x201D;&#x3002;&#x9664;&#x4E86;&#x8FD9;&#x4E24;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x4FEE;&#x6B63;&#x7684;&#x7EBF;&#x6027;&#x5355;&#x5143;(ReLU)&#x975E;&#x7EBF;&#x6027;(&#x5728;&#x7B2C;3&#x7AE0;&#x201C;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#x201D;&#x4E00;&#x8282;&#x4E2D;&#x4ECB;&#x7ECD;)&#xFF0C;&#x5B83;&#x5728;&#x88AB;&#x8F93;&#x5165;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x4E4B;&#x524D;&#x5E94;&#x7528;&#x4E8E;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x7531;&#x4E8E;&#x5C42;&#x7684;&#x987A;&#x5E8F;&#x6027;&#xFF0C;&#x60A8;&#x5FC5;&#x987B;&#x786E;&#x4FDD;&#x5C42;&#x4E2D;&#x7684;&#x8F93;&#x51FA;&#x6570;&#x91CF;&#x7B49;&#x4E8E;&#x4E0B;&#x4E00;&#x5C42;&#x7684;&#x8F93;&#x5165;&#x6570;&#x91CF;&#x3002;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x4E4B;&#x95F4;&#x7684;&#x975E;&#x7EBF;&#x6027;&#x662F;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x5B83;&#xFF0C;&#x4E24;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x5728;&#x6570;&#x5B66;&#x4E0A;&#x7B49;&#x4EF7;&#x4E8E;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;4&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x80FD;&#x5EFA;&#x6A21;&#x590D;&#x6742;&#x7684;&#x6A21;&#x5F0F;&#x3002;MLP&#x7684;&#x5B9E;&#x73B0;&#x53EA;&#x5B9E;&#x73B0;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x7684;&#x524D;&#x5411;&#x4F20;&#x9012;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;PyTorch&#x6839;&#x636E;&#x6A21;&#x578B;&#x7684;&#x5B9A;&#x4E49;&#x548C;&#x5411;&#x524D;&#x4F20;&#x9012;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x81EA;&#x52A8;&#x8BA1;&#x7B97;&#x51FA;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x5411;&#x540E;&#x4F20;&#x9012;&#x548C;&#x68AF;&#x5EA6;&#x66F4;&#x65B0;&#x3002;</p>
+<p>Example 4-1. Multilayer Perceptron</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MultilayerPerceptron</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_dim, hidden_dim, output_dim)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            input_dim (int): the size of the input vectors
+            hidden_dim (int): the output size of the first Linear layer
+            output_dim (int): the output size of the second Linear layer
+        &quot;&quot;&quot;</span>
+        super(MultilayerPerceptron, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x_in, apply_softmax=False)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;The forward pass of the MLP
+
+        Args:
+            x_in (torch.Tensor): an input data tensor.
+                x_in.shape should be (batch, input_dim)
+            apply_softmax (bool): a flag for the softmax activation
+                should be false if used with the Cross Entropy losses
+        Returns:
+            the resulting tensor. tensor.shape should be (batch, output_dim)
+        &quot;&quot;&quot;</span>
+        intermediate = F.relu(self.fc1(x_in))
+        output = self.fc2(intermediate)
+
+        <span class="hljs-keyword">if</span> apply_softmax:
+            output = F.softmax(output, dim=<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> output
+</code></pre>
+<p>&#x5728;&#x4F8B;4-2&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;MLP&#x3002;&#x7531;&#x4E8E;MLP&#x5B9E;&#x73B0;&#x7684;&#x901A;&#x7528;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E3A;&#x4EFB;&#x4F55;&#x5927;&#x5C0F;&#x7684;&#x8F93;&#x5165;&#x5EFA;&#x6A21;&#x3002;&#x4E3A;&#x4E86;&#x6F14;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5927;&#x5C0F;&#x4E3A;3&#x7684;&#x8F93;&#x5165;&#x7EF4;&#x5EA6;&#x3001;&#x5927;&#x5C0F;&#x4E3A;4&#x7684;&#x8F93;&#x51FA;&#x7EF4;&#x5EA6;&#x548C;&#x5927;&#x5C0F;&#x4E3A;100&#x7684;&#x9690;&#x85CF;&#x7EF4;&#x5EA6;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5728;print&#x8BED;&#x53E5;&#x7684;&#x8F93;&#x51FA;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x5C42;&#x4E2D;&#x7684;&#x5355;&#x5143;&#x6570;&#x5F88;&#x597D;&#x5730;&#x6392;&#x5217;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E3A;&#x7EF4;&#x5EA6;3&#x7684;&#x8F93;&#x5165;&#x751F;&#x6210;&#x7EF4;&#x5EA6;4&#x7684;&#x8F93;&#x51FA;&#x3002;</p>
+<p>Example 4-2. An example instantiation of an MLP</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]
+batch_size = <span class="hljs-number">2</span> <span class="hljs-comment"># number of samples input at once</span>
+input_dim = <span class="hljs-number">3</span>
+hidden_dim = <span class="hljs-number">100</span>
+output_dim = <span class="hljs-number">4</span>
+
+<span class="hljs-comment"># Initialize model</span>
+mlp = MultilayerPerceptron(input_dim, hidden_dim, output_dim)
+print(mlp)
+Output[<span class="hljs-number">0</span>]
+MultilayerPerceptron(
+  (fc1): Linear(in_features=<span class="hljs-number">3</span>, out_features=<span class="hljs-number">100</span>, bias=<span class="hljs-keyword">True</span>)
+  (fc2): Linear(in_features=<span class="hljs-number">100</span>, out_features=<span class="hljs-number">4</span>, bias=<span class="hljs-keyword">True</span>)
+  (relu): ReLU()
+)
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F20;&#x9012;&#x4E00;&#x4E9B;&#x968F;&#x673A;&#x8F93;&#x5165;&#x6765;&#x5FEB;&#x901F;&#x6D4B;&#x8BD5;&#x6A21;&#x578B;&#x7684;&#x201C;&#x8FDE;&#x63A5;&#x201D;&#xFF0C;&#x5982;&#x793A;&#x4F8B;4-3&#x6240;&#x793A;&#x3002;&#x56E0;&#x4E3A;&#x6A21;&#x578B;&#x8FD8;&#x6CA1;&#x6709;&#x7ECF;&#x8FC7;&#x8BAD;&#x7EC3;&#xFF0C;&#x6240;&#x4EE5;&#x8F93;&#x51FA;&#x662F;&#x968F;&#x673A;&#x7684;&#x3002;&#x5728;&#x82B1;&#x8D39;&#x65F6;&#x95F4;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x4E4B;&#x524D;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x7528;&#x7684;&#x5B8C;&#x6574;&#x6027;&#x68C0;&#x67E5;&#x3002;&#x8BF7;&#x6CE8;&#x610F;PyTorch&#x7684;&#x4EA4;&#x4E92;&#x6027;&#x662F;&#x5982;&#x4F55;&#x8BA9;&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B9E;&#x65F6;&#x5B8C;&#x6210;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x8FD9;&#x4E0E;&#x4F7F;&#x7528;NumPy&#x6216;panda&#x6CA1;&#x6709;&#x592A;&#x5927;&#x533A;&#x522B;:</p>
+<p>Example 4-3. Testing the MLP with random inputs</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">describe</span><span class="hljs-params">(x)</span>:</span>
+    print(<span class="hljs-string">&quot;Type: {}&quot;</span>.format(x.type()))
+    print(<span class="hljs-string">&quot;Shape/size: {}&quot;</span>.format(x.shape))
+    print(<span class="hljs-string">&quot;Values: \n{}&quot;</span>.format(x))
+
+x_input = torch.rand(batch_size, input_dim)
+describe(x_input)
+Output[<span class="hljs-number">0</span>]
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.8329</span>,  <span class="hljs-number">0.4277</span>,  <span class="hljs-number">0.4363</span>],
+        [ <span class="hljs-number">0.9686</span>,  <span class="hljs-number">0.6316</span>,  <span class="hljs-number">0.8494</span>]])
+Input[<span class="hljs-number">1</span>]
+y_output = mlp(x_input, apply_softmax=<span class="hljs-keyword">False</span>)
+describe(y_output)
+Output[<span class="hljs-number">1</span>]
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>])
+Values:
+tensor([[<span class="hljs-number">-0.2456</span>,  <span class="hljs-number">0.0723</span>,  <span class="hljs-number">0.1589</span>, <span class="hljs-number">-0.3294</span>],
+        [<span class="hljs-number">-0.3497</span>,  <span class="hljs-number">0.0828</span>,  <span class="hljs-number">0.3391</span>, <span class="hljs-number">-0.4271</span>]])
+</code></pre>
+<p>&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x8BFB;&#x53D6;PyTorch&#x6A21;&#x578B;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;&#x5728;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;MLP&#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x4E24;&#x884C;&#x56DB;&#x5217;&#x7684;&#x5F20;&#x91CF;&#x3002;&#x8FD9;&#x4E2A;&#x5F20;&#x91CF;&#x4E2D;&#x7684;&#x884C;&#x4E0E;&#x6279;&#x5904;&#x7406;&#x7EF4;&#x6570;&#x5BF9;&#x5E94;&#xFF0C;&#x6279;&#x5904;&#x7406;&#x7EF4;&#x6570;&#x662F;&#x5C0F;&#x6279;&#x5904;&#x7406;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x70B9;&#x7684;&#x6570;&#x91CF;&#x3002;&#x5217;&#x662F;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x7684;&#x6700;&#x7EC8;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F8B;&#x5982;&#x5728;&#x5206;&#x7C7B;&#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x662F;&#x4E00;&#x4E2A;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x3002;&#x540D;&#x79F0;&#x4E3A;&#x201C;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x201D;&#x8868;&#x793A;&#x5B83;&#x5BF9;&#x5E94;&#x4E8E;&#x4E00;&#x4E2A;&#x6982;&#x7387;&#x5206;&#x5E03;&#x3002;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#x53D6;&#x51B3;&#x4E8E;&#x6211;&#x4EEC;&#x5F53;&#x524D;&#x662F;&#x5728;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x8FD8;&#x662F;&#x5728;&#x6267;&#x884C;&#x63A8;&#x7406;&#x3002;&#x5728;&#x8BAD;&#x7EC3;&#x671F;&#x95F4;&#xFF0C;&#x8F93;&#x51FA;&#x6309;&#x539F;&#x6837;&#x4F7F;&#x7528;&#xFF0C;&#x5E26;&#x6709;&#x4E00;&#x4E2A;&#x635F;&#x5931;&#x51FD;&#x6570;&#x548C;&#x76EE;&#x6807;&#x7C7B;&#x6807;&#x7B7E;&#x7684;&#x8868;&#x793A;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x5BF9;&#x6B64;&#x8FDB;&#x884C;&#x6DF1;&#x5165;&#x4ECB;&#x7ECD;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x60F3;&#x5C06;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x8F6C;&#x6362;&#x4E3A;&#x6982;&#x7387;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x6B65;&#x9AA4;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x60A8;&#x9700;&#x8981;softmax&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x7528;&#x4E8E;&#x5C06;&#x4E00;&#x4E2A;&#x503C;&#x5411;&#x91CF;&#x8F6C;&#x6362;&#x4E3A;&#x6982;&#x7387;&#x3002;softmax&#x6709;&#x8BB8;&#x591A;&#x6839;&#x3002;&#x5728;&#x7269;&#x7406;&#x5B66;&#x4E2D;&#xFF0C;&#x5B83;&#x88AB;&#x79F0;&#x4E3A;&#x73BB;&#x5C14;&#x5179;&#x66FC;&#x6216;&#x5409;&#x5E03;&#x65AF;&#x5206;&#x5E03;;&#x5728;&#x7EDF;&#x8BA1;&#x5B66;&#x4E2D;&#xFF0C;&#x5B83;&#x662F;&#x591A;&#x9879;&#x5F0F;&#x903B;&#x8F91;&#x56DE;&#x5F52;;&#x5728;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;(NLP)&#x793E;&#x533A;&#xFF0C;&#x5B83;&#x662F;&#x6700;&#x5927;&#x71B5;(MaxEnt)&#x5206;&#x7C7B;&#x5668;&#x3002;&#x4E0D;&#x7BA1;&#x53EB;&#x4EC0;&#x4E48;&#x540D;&#x5B57;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x80CC;&#x540E;&#x7684;&#x76F4;&#x89C9;&#x662F;&#xFF0C;&#x5927;&#x7684;&#x6B63;&#x503C;&#x4F1A;&#x5BFC;&#x81F4;&#x66F4;&#x9AD8;&#x7684;&#x6982;&#x7387;&#xFF0C;&#x5C0F;&#x7684;&#x8D1F;&#x503C;&#x4F1A;&#x5BFC;&#x81F4;&#x66F4;&#x5C0F;&#x7684;&#x6982;&#x7387;&#x3002;&#x5728;&#x793A;&#x4F8B;4-3&#x4E2D;&#xFF0C;apply_softmax&#x53C2;&#x6570;&#x5E94;&#x7528;&#x4E86;&#x8FD9;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x6B65;&#x9AA4;&#x3002;&#x5728;&#x4F8B;4-4&#x4E2D;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x76F8;&#x540C;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6B21;&#x5C06;apply_softmax&#x6807;&#x5FD7;&#x8BBE;&#x7F6E;&#x4E3A;True:</p>
+<p>Example 4-4. MLP with apply_softmax=True</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]
+y_output = mlp(x_input, apply_softmax=<span class="hljs-keyword">True</span>)
+describe(y_output)
+Output[<span class="hljs-number">0</span>]
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">4</span>])
+Values:
+tensor([[ <span class="hljs-number">0.2087</span>,  <span class="hljs-number">0.2868</span>,  <span class="hljs-number">0.3127</span>,  <span class="hljs-number">0.1919</span>],
+        [ <span class="hljs-number">0.1832</span>,  <span class="hljs-number">0.2824</span>,  <span class="hljs-number">0.3649</span>,  <span class="hljs-number">0.1696</span>]])
+</code></pre>
+<p>&#x7EFC;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;mlp&#x662F;&#x5C06;&#x5F20;&#x91CF;&#x6620;&#x5C04;&#x5230;&#x5176;&#x4ED6;&#x5F20;&#x91CF;&#x7684;&#x7EBF;&#x6027;&#x5C42;&#x3002;&#x5728;&#x6BCF;&#x4E00;&#x5BF9;&#x7EBF;&#x6027;&#x5C42;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;&#x975E;&#x7EBF;&#x6027;&#x6765;&#x6253;&#x7834;&#x7EBF;&#x6027;&#x5173;&#x7CFB;&#xFF0C;&#x5E76;&#x5141;&#x8BB8;&#x6A21;&#x578B;&#x626D;&#x66F2;&#x5411;&#x91CF;&#x7A7A;&#x95F4;&#x3002;&#x5728;&#x5206;&#x7C7B;&#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;&#x8FD9;&#x79CD;&#x626D;&#x66F2;&#x5E94;&#x8BE5;&#x5BFC;&#x81F4;&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x7EBF;&#x6027;&#x53EF;&#x5206;&#x6027;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;softmax&#x51FD;&#x6570;&#x5C06;MLP&#x8F93;&#x51FA;&#x89E3;&#x91CA;&#x4E3A;&#x6982;&#x7387;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5E94;&#x8BE5;&#x5C06;softmax&#x4E0E;&#x7279;&#x5B9A;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x9AD8;&#x7EA7;&#x6570;&#x5B66;/&#x8BA1;&#x7B97;&#x6377;&#x5F84;&#x3002;</p>
+<h1 id="example-surname-classification-with-a-multilayer-perceptron">Example: Surname Classification with a Multilayer Perceptron</h1>
+<p>&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;MLP&#x5E94;&#x7528;&#x4E8E;&#x5C06;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x5230;&#x5176;&#x539F;&#x7C4D;&#x56FD;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x4ECE;&#x516C;&#x5F00;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x6570;&#x636E;&#x63A8;&#x65AD;&#x4EBA;&#x53E3;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;(&#x5982;&#x56FD;&#x7C4D;)&#x5177;&#x6709;&#x4ECE;&#x4EA7;&#x54C1;&#x63A8;&#x8350;&#x5230;&#x786E;&#x4FDD;&#x4E0D;&#x540C;&#x4EBA;&#x53E3;&#x7EDF;&#x8BA1;&#x7528;&#x6237;&#x83B7;&#x5F97;&#x516C;&#x5E73;&#x7ED3;&#x679C;&#x7684;&#x5E94;&#x7528;&#x3002;&#x4EBA;&#x53E3;&#x7EDF;&#x8BA1;&#x548C;&#x5176;&#x4ED6;&#x81EA;&#x6211;&#x8BC6;&#x522B;&#x4FE1;&#x606F;&#x7EDF;&#x79F0;&#x4E3A;&#x201C;&#x53D7;&#x4FDD;&#x62A4;&#x5C5E;&#x6027;&#x201D;&#x3002;&#x201C;&#x5728;&#x5EFA;&#x6A21;&#x548C;&#x4EA7;&#x54C1;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5C0F;&#x5FC3;&#x3002;&#x201D;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x5BF9;&#x6BCF;&#x4E2A;&#x59D3;&#x6C0F;&#x7684;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#xFF0C;&#x5E76;&#x50CF;&#x5BF9;&#x5F85;&#x201C;&#x793A;&#x4F8B;:&#x5C06;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x4E00;&#x6837;&#x5BF9;&#x5F85;&#x5B83;&#x4EEC;&#x3002;&#x9664;&#x4E86;&#x6570;&#x636E;&#x4E0A;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x5B57;&#x7B26;&#x5C42;&#x6A21;&#x578B;&#x5728;&#x7ED3;&#x6784;&#x548C;&#x5B9E;&#x73B0;&#x4E0A;&#x4E0E;&#x57FA;&#x4E8E;&#x5355;&#x8BCD;&#x7684;&#x6A21;&#x578B;&#x57FA;&#x672C;&#x76F8;&#x4F3C;.</p>
+<p>&#x60A8;&#x5E94;&#x8BE5;&#x4ECE;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x5438;&#x53D6;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x6559;&#x8BAD;&#x662F;&#xFF0C;MLP&#x7684;&#x5B9E;&#x73B0;&#x548C;&#x8BAD;&#x7EC3;&#x662F;&#x4ECE;&#x6211;&#x4EEC;&#x5728;&#x7B2C;3&#x7AE0;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x611F;&#x77E5;&#x5668;&#x7684;&#x5B9E;&#x73B0;&#x548C;&#x57F9;&#x8BAD;&#x76F4;&#x63A5;&#x53D1;&#x5C55;&#x800C;&#x6765;&#x7684;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x4E66;&#x7684;&#x7B2C;3&#x7AE0;&#x4E2D;&#x63D0;&#x5230;&#x4E86;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x4EE5;&#x4FBF;&#x66F4;&#x5168;&#x9762;&#x5730;&#x4E86;&#x89E3;&#x8FD9;&#x4E9B;&#x7EC4;&#x4EF6;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x5305;&#x62EC;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x201C;&#x4F8B;&#x5B50;:&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x770B;&#x5230;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x4F60;&#x8DDF;&#x968F;&#x8865;&#x5145;&#x6750;&#x6599;&#x3002;</p>
+<p>&#x672C;&#x8282;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5C06;&#x4ECE;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#x53CA;&#x5176;&#x9884;&#x5904;&#x7406;&#x6B65;&#x9AA4;&#x7684;&#x63CF;&#x8FF0;&#x5F00;&#x59CB;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8BCD;&#x6C47;&#x8868;&#x3001;&#x5411;&#x91CF;&#x5316;&#x5668;&#x548C;DataLoader&#x7C7B;&#x9010;&#x6B65;&#x5B8C;&#x6210;&#x4ECE;&#x59D3;&#x6C0F;&#x5B57;&#x7B26;&#x4E32;&#x5230;&#x5411;&#x91CF;&#x5316;&#x5C0F;&#x6279;&#x5904;&#x7406;&#x7684;&#x7BA1;&#x9053;&#x3002;&#x5982;&#x679C;&#x60A8;&#x901A;&#x8BFB;&#x4E86;&#x7B2C;3&#x7AE0;&#xFF0C;&#x60A8;&#x5E94;&#x8BE5;&#x5C06;&#x8FD9;&#x4E9B;&#x8F85;&#x52A9;&#x7C7B;&#x89C6;&#x4E3A;&#x8001;&#x670B;&#x53CB;&#xFF0C;&#x53EA;&#x662F;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x5C0F;&#x5C0F;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x901A;&#x8FC7;&#x63CF;&#x8FF0;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x5668;&#x6A21;&#x578B;&#x53CA;&#x5176;&#x8BBE;&#x8BA1;&#x80CC;&#x540E;&#x7684;&#x601D;&#x60F3;&#x8FC7;&#x7A0B;&#x6765;&#x7EE7;&#x7EED;&#x672C;&#x8282;&#x3002;MLP&#x7C7B;&#x4F3C;&#x4E8E;&#x6211;&#x4EEC;&#x5728;&#x7B2C;3&#x7AE0;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x611F;&#x77E5;&#x5668;&#x4F8B;&#x5B50;&#xFF0C;&#x4F46;&#x662F;&#x9664;&#x4E86;&#x6A21;&#x578B;&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x591A;&#x7C7B;&#x8F93;&#x51FA;&#x53CA;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x3002;&#x5728;&#x63CF;&#x8FF0;&#x4E86;&#x6A21;&#x578B;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B8C;&#x6210;&#x4E86;&#x8BAD;&#x7EC3;&#x4F8B;&#x7A0B;&#x3002;&#x8BAD;&#x7EC3;&#x7A0B;&#x5E8F;&#x4E0E;&#x60A8;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x5BF9;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#xFF0C;&#x56E0;&#x6B64;&#x4E3A;&#x4E86;&#x7B80;&#x6D01;&#x8D77;&#x89C1;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x4E0D;&#x50CF;&#x5728;&#x8BE5;&#x90E8;&#x5206;&#x4E2D;&#x90A3;&#x6837;&#x6DF1;&#x5165;&#x3002;&#x6211;&#x4EEC;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x60A8;&#x56DE;&#x987E;&#x8FD9;&#x4E00;&#x8282;&#x4EE5;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;&#x6F84;&#x6E05;&#x3002;</p>
+<h3 id="the-surname-dataset">The Surname Dataset</h3>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;&#x4E00;&#x4E2A;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x5B83;&#x6536;&#x96C6;&#x4E86;&#x6765;&#x81EA;18&#x4E2A;&#x4E0D;&#x540C;&#x56FD;&#x5BB6;&#x7684;10,000&#x4E2A;&#x59D3;&#x6C0F;&#xFF0C;&#x8FD9;&#x4E9B;&#x59D3;&#x6C0F;&#x662F;&#x4F5C;&#x8005;&#x4ECE;&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x4E0D;&#x540C;&#x7684;&#x59D3;&#x540D;&#x6765;&#x6E90;&#x6536;&#x96C6;&#x7684;&#x3002;&#x8BE5;&#x6570;&#x636E;&#x96C6;&#x5C06;&#x5728;&#x672C;&#x4E66;&#x7684;&#x51E0;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#x91CD;&#x7528;&#xFF0C;&#x5E76;&#x5177;&#x6709;&#x4E00;&#x4E9B;&#x4F7F;&#x5176;&#x6709;&#x8DA3;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x6027;&#x8D28;&#x662F;&#x5B83;&#x662F;&#x76F8;&#x5F53;&#x4E0D;&#x5E73;&#x8861;&#x7684;&#x3002;&#x6392;&#x540D;&#x524D;&#x4E09;&#x7684;&#x8BFE;&#x7A0B;&#x5360;&#x6570;&#x636E;&#x7684;60%&#x4EE5;&#x4E0A;:27%&#x662F;&#x82F1;&#x8BED;&#xFF0C;21%&#x662F;&#x4FC4;&#x8BED;&#xFF0C;14%&#x662F;&#x963F;&#x62C9;&#x4F2F;&#x8BED;&#x3002;&#x5269;&#x4E0B;&#x7684;15&#x4E2A;&#x6C11;&#x65CF;&#x7684;&#x9891;&#x7387;&#x4E5F;&#x5728;&#x4E0B;&#x964D;&#x2014;&#x2014;&#x8FD9;&#x4E5F;&#x662F;&#x8BED;&#x8A00;&#x7279;&#x6709;&#x7684;&#x7279;&#x6027;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x7279;&#x70B9;&#x662F;&#xFF0C;&#x5728;&#x56FD;&#x7C4D;&#x548C;&#x59D3;&#x6C0F;&#x6B63;&#x5B57;&#x6CD5;(&#x62FC;&#x5199;)&#x4E4B;&#x95F4;&#x6709;&#x4E00;&#x79CD;&#x6709;&#x6548;&#x548C;&#x76F4;&#x89C2;&#x7684;&#x5173;&#x7CFB;&#x3002;&#x6709;&#x4E9B;&#x62FC;&#x5199;&#x53D8;&#x4F53;&#x4E0E;&#x539F;&#x7C4D;&#x56FD;&#x8054;&#x7CFB;&#x975E;&#x5E38;&#x7D27;&#x5BC6;(&#x6BD4;&#x5982;&#x201C;O &#x2018;Neill&#x201D;&#x3001;&#x201C;Antonopoulos&#x201D;&#x3001;&#x201C;Nagasawa&#x201D;&#x6216;&#x201C;Zhu&#x201D;)&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x6700;&#x7EC8;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x4E00;&#x4E2A;&#x6BD4;&#x672C;&#x4E66;&#x8865;&#x5145;&#x6750;&#x6599;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x7248;&#x672C;&#x5904;&#x7406;&#x66F4;&#x5C11;&#x7684;&#x7248;&#x672C;&#x5F00;&#x59CB;&#xFF0C;&#x5E76;&#x6267;&#x884C;&#x4E86;&#x51E0;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x76EE;&#x7684;&#x662F;&#x51CF;&#x5C11;&#x8FD9;&#x79CD;&#x4E0D;&#x5E73;&#x8861;&#x2014;&#x2014;&#x539F;&#x59CB;&#x6570;&#x636E;&#x96C6;&#x4E2D;70%&#x4EE5;&#x4E0A;&#x662F;&#x4FC4;&#x6587;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x7531;&#x4E8E;&#x62BD;&#x6837;&#x504F;&#x5DEE;&#x6216;&#x4FC4;&#x6587;&#x59D3;&#x6C0F;&#x7684;&#x589E;&#x591A;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x9009;&#x62E9;&#x6807;&#x8BB0;&#x4E3A;&#x4FC4;&#x8BED;&#x7684;&#x59D3;&#x6C0F;&#x7684;&#x968F;&#x673A;&#x5B50;&#x96C6;&#x5BF9;&#x8FD9;&#x4E2A;&#x8FC7;&#x5EA6;&#x4EE3;&#x8868;&#x7684;&#x7C7B;&#x8FDB;&#x884C;&#x5B50;&#x6837;&#x672C;&#x3002;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x56FD;&#x7C4D;&#x5BF9;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;&#x5E76;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x90E8;&#x5206;:70%&#x5230;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x96C6;&#xFF0C;15%&#x5230;&#x9A8C;&#x8BC1;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x6700;&#x540E;15%&#x5230;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x4EE5;&#x4FBF;&#x8DE8;&#x8FD9;&#x4E9B;&#x90E8;&#x5206;&#x7684;&#x7C7B;&#x6807;&#x7B7E;&#x5206;&#x5E03;&#x5177;&#x6709;&#x53EF;&#x6BD4;&#x6027;&#x3002;</p>
+<p>SurnameDataset&#x7684;&#x5B9E;&#x73B0;&#x4E0E;&#x201C;Example: classification of Sentiment of Restaurant Reviews&#x201D;&#x4E2D;&#x7684;ReviewDataset&#x51E0;&#x4E4E;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x662F;&#x5728;<strong>getitem</strong>&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x4E0A;&#x7565;&#x6709;&#x4E0D;&#x540C;&#x3002;&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x672C;&#x4E66;&#x4E2D;&#x5448;&#x73B0;&#x7684;&#x6570;&#x636E;&#x96C6;&#x7C7B;&#x7EE7;&#x627F;&#x81EA;PyTorch&#x7684;&#x6570;&#x636E;&#x96C6;&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x51FD;&#x6570;:<strong>getitem<strong>&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5728;&#x7ED9;&#x5B9A;&#x7D22;&#x5F15;&#x65F6;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x70B9;;&#x4EE5;&#x53CA;</strong>len<strong>&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x96C6;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x201C;&#x793A;&#x4F8B;:&#x9910;&#x5385;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x4E0E;&#x672C;&#x793A;&#x4F8B;&#x7684;&#x533A;&#x522B;&#x5728;</strong>getitem</strong>&#x4E2D;&#xFF0C;&#x5982;&#x793A;&#x4F8B;4-5&#x6240;&#x793A;&#x3002;&#x5B83;&#x4E0D;&#x50CF;&#x201C;&#x793A;&#x4F8B;:&#x5C06;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x5206;&#x7C7B;&#x201D;&#x90A3;&#x6837;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x5316;&#x7684;&#x8BC4;&#x8BBA;&#xFF0C;&#x800C;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x5316;&#x7684;&#x59D3;&#x6C0F;&#x548C;&#x4E0E;&#x5176;&#x56FD;&#x7C4D;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x7D22;&#x5F15;:</p>
+<p>Example 4-5. Implementing SurnameDataset.<strong>getitem</strong>()</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameDataset</span><span class="hljs-params">(Dataset)</span>:</span>
+    <span class="hljs-comment"># Implementation is nearly identical to Section 3.5</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span><span class="hljs-params">(self, index)</span>:</span>
+        row = self._target_df.iloc[index]
+        surname_vector = \
+            self._vectorizer.vectorize(row.surname)
+        nationality_index = \
+            self._vectorizer.nationality_vocab.lookup_token(row.nationality)
+
+        <span class="hljs-keyword">return</span> {<span class="hljs-string">&apos;x_surname&apos;</span>: surname_vector,
+                <span class="hljs-string">&apos;y_nationality&apos;</span>: nationality_index}
+</code></pre>
+<h3 id="vocabulary-vectorizer-and-dataloader">Vocabulary, Vectorizer, and DataLoader</h3>
+<p>&#x4E3A;&#x4E86;&#x4F7F;&#x7528;&#x5B57;&#x7B26;&#x5BF9;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8BCD;&#x6C47;&#x8868;&#x3001;&#x5411;&#x91CF;&#x5316;&#x5668;&#x548C;DataLoader&#x5C06;&#x59D3;&#x6C0F;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x5411;&#x91CF;&#x5316;&#x7684;minibatches&#x3002;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0E;&#x201C;Example: Classifying Sentiment of Restaurant Reviews&#x201D;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x76F8;&#x540C;&#xFF0C;&#x5B83;&#x4EEC;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#x4E86;&#x4E00;&#x79CD;&#x591A;&#x6001;&#x6027;&#xFF0C;&#x8FD9;&#x79CD;&#x591A;&#x6001;&#x6027;&#x5C06;&#x59D3;&#x6C0F;&#x7684;&#x5B57;&#x7B26;&#x6807;&#x8BB0;&#x4E0E;Yelp&#x8BC4;&#x8BBA;&#x7684;&#x5355;&#x8BCD;&#x6807;&#x8BB0;&#x76F8;&#x540C;&#x5BF9;&#x5F85;&#x3002;&#x6570;&#x636E;&#x4E0D;&#x662F;&#x901A;&#x8FC7;&#x5C06;&#x5B57;&#x4EE4;&#x724C;&#x6620;&#x5C04;&#x5230;&#x6574;&#x6570;&#x6765;&#x5411;&#x91CF;&#x5316;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;&#x5C06;&#x5B57;&#x7B26;&#x6620;&#x5C04;&#x5230;&#x6574;&#x6570;&#x6765;&#x5411;&#x91CF;&#x5316;&#x7684;&#x3002;</p>
+<p>THE VOCABULARY CLASS &#x672C;&#x4F8B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x8BCD;&#x6C47;&#x7C7B;&#x4E0E;&#x201C;example: Classifying Sentiment of Restaurant Reviews&#x201D;&#x4E2D;&#x7684;&#x8BCD;&#x6C47;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF0C;&#x8BE5;&#x8BCD;&#x6C47;&#x7C7B;&#x5C06;Yelp&#x8BC4;&#x8BBA;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x6620;&#x5C04;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x6574;&#x6570;&#x3002;&#x7B80;&#x8981;&#x6982;&#x8FF0;&#x4E00;&#x4E0B;&#xFF0C;&#x8BCD;&#x6C47;&#x8868;&#x662F;&#x4E24;&#x4E2A;Python&#x5B57;&#x5178;&#x7684;&#x534F;&#x8C03;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x5178;&#x5728;&#x4EE4;&#x724C;(&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x662F;&#x5B57;&#x7B26;)&#x548C;&#x6574;&#x6570;&#x4E4B;&#x95F4;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x53CC;&#x5C04;;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x5C06;&#x5B57;&#x7B26;&#x6620;&#x5C04;&#x5230;&#x6574;&#x6570;&#x7D22;&#x5F15;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x5178;&#x5C06;&#x6574;&#x6570;&#x7D22;&#x5F15;&#x6620;&#x5C04;&#x5230;&#x5B57;&#x7B26;&#x3002;add_token&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5411;&#x8BCD;&#x6C47;&#x8868;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x4EE4;&#x724C;&#xFF0C;lookup_token&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x68C0;&#x7D22;&#x7D22;&#x5F15;&#xFF0C;lookup_index&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x68C0;&#x7D22;&#x7ED9;&#x5B9A;&#x7D22;&#x5F15;&#x7684;&#x4EE4;&#x724C;(&#x5728;&#x63A8;&#x65AD;&#x9636;&#x6BB5;&#x5F88;&#x6709;&#x7528;)&#x3002;&#x4E0E;Yelp&#x8BC4;&#x8BBA;&#x7684;&#x8BCD;&#x6C47;&#x8868;&#x4E0D;&#x540C;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;one-hot&#x8BCD;&#x6C47;&#x8868;&#xFF0C;&#x4E0D;&#x8BA1;&#x7B97;&#x5B57;&#x7B26;&#x51FA;&#x73B0;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x53EA;&#x5BF9;&#x9891;&#x7E41;&#x51FA;&#x73B0;&#x7684;&#x6761;&#x76EE;&#x8FDB;&#x884C;&#x9650;&#x5236;&#x3002;&#x8FD9;&#x4E3B;&#x8981;&#x662F;&#x56E0;&#x4E3A;&#x6570;&#x636E;&#x96C6;&#x5F88;&#x5C0F;&#xFF0C;&#x800C;&#x4E14;&#x5927;&#x591A;&#x6570;&#x5B57;&#x7B26;&#x8DB3;&#x591F;&#x9891;&#x7E41;&#x3002;</p>
+<p>THE SURNAMEVECTORIZER &#x867D;&#x7136;&#x8BCD;&#x6C47;&#x8868;&#x5C06;&#x5355;&#x4E2A;&#x4EE4;&#x724C;(&#x5B57;&#x7B26;)&#x8F6C;&#x6362;&#x4E3A;&#x6574;&#x6570;&#xFF0C;&#x4F46;SurnameVectorizer&#x8D1F;&#x8D23;&#x5E94;&#x7528;&#x8BCD;&#x6C47;&#x8868;&#x5E76;&#x5C06;&#x59D3;&#x6C0F;&#x8F6C;&#x6362;&#x4E3A;&#x5411;&#x91CF;&#x3002;&#x5B9E;&#x4F8B;&#x5316;&#x548C;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x4E8E;&#x201C;&#x793A;&#x4F8B;:&#x5BF9;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;ReviewVectorizer&#xFF0C;&#x4F46;&#x6709;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x533A;&#x522B;:&#x5B57;&#x7B26;&#x4E32;&#x6CA1;&#x6709;&#x5728;&#x7A7A;&#x683C;&#x4E0A;&#x5206;&#x5272;&#x3002;&#x59D3;&#x6C0F;&#x662F;&#x5B57;&#x7B26;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x8BCD;&#x6C47;&#x8868;&#x4E2D;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6807;&#x8BB0;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x201C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x201D;&#x51FA;&#x73B0;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5FFD;&#x7565;&#x5E8F;&#x5217;&#x4FE1;&#x606F;&#xFF0C;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5B57;&#x7B26;&#x4E32;&#x8F93;&#x5165;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x6765;&#x521B;&#x5EFA;&#x8F93;&#x5165;&#x7684;&#x6536;&#x7F29;one-hot&#x5411;&#x91CF;&#x8868;&#x793A;&#x3002;&#x6211;&#x4EEC;&#x4E3A;&#x4EE5;&#x524D;&#x672A;&#x9047;&#x5230;&#x7684;&#x5B57;&#x7B26;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x4EE4;&#x724C;&#xFF0C;&#x5373;UNK&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x4EC5;&#x4ECE;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x5B9E;&#x4F8B;&#x5316;&#x8BCD;&#x6C47;&#x8868;&#xFF0C;&#x800C;&#x4E14;&#x9A8C;&#x8BC1;&#x6216;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x4E2D;&#x53EF;&#x80FD;&#x6709;&#x60DF;&#x4E00;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5B57;&#x7B26;&#x8BCD;&#x6C47;&#x8868;&#x4E2D;&#x4ECD;&#x7136;&#x4F7F;&#x7528;UNK&#x7B26;&#x53F7;&#x3002;</p>
+<p>&#x60A8;&#x5E94;&#x8BE5;&#x6CE8;&#x610F;&#xFF0C;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;&#x6536;&#x7F29;&#x7684;one-hot&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#xFF0C;&#x60A8;&#x5C06;&#x4E86;&#x89E3;&#x5176;&#x4ED6;&#x5411;&#x91CF;&#x5316;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;one-hot&#x7F16;&#x7801;&#x7684;&#x66FF;&#x4EE3;&#x65B9;&#x6CD5;&#xFF0C;&#x6709;&#x65F6;&#x751A;&#x81F3;&#x66F4;&#x597D;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x4F7F;&#x7528;CNN&#x5BF9;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#xFF0C;&#x60A8;&#x5C06;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x70ED;&#x95E8;&#x77E9;&#x9635;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x90FD;&#x662F;&#x77E9;&#x9635;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x5177;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x70ED;&#x95E8;&#x5411;&#x91CF;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5728;&#x7B2C;5&#x7AE0;&#x4E2D;&#xFF0C;&#x60A8;&#x5C06;&#x5B66;&#x4E60;&#x5D4C;&#x5165;&#x5C42;&#xFF0C;&#x8FD4;&#x56DE;&#x6574;&#x6570;&#x5411;&#x91CF;&#x7684;&#x5411;&#x91CF;&#x5316;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x521B;&#x5EFA;&#x5BC6;&#x96C6;&#x5411;&#x91CF;&#x77E9;&#x9635;&#x3002;&#x4F46;&#x662F;&#x73B0;&#x5728;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#x793A;&#x4F8B;4-6&#x4E2D;SurnameVectorizer&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>Example 4-6. Implementing SurnameVectorizer</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameVectorizer</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; The Vectorizer which coordinates the Vocabularies and puts them to use&quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, surname_vocab, nationality_vocab)</span>:</span>
+        self.surname_vocab = surname_vocab
+        self.nationality_vocab = nationality_vocab
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">vectorize</span><span class="hljs-params">(self, surname)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Vectorize the provided surname
+
+        Args:
+            surname (str): the surname
+        Returns:
+            one_hot (np.ndarray): a collapsed one-hot encoding
+        &quot;&quot;&quot;</span>
+        vocab = self.surname_vocab
+        one_hot = np.zeros(len(vocab), dtype=np.float32)
+        <span class="hljs-keyword">for</span> token <span class="hljs-keyword">in</span> surname:
+            one_hot[vocab.lookup_token(token)] = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> one_hot
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">from_dataframe</span><span class="hljs-params">(cls, surname_df)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Instantiate the vectorizer from the dataset dataframe
+
+        Args:
+            surname_df (pandas.DataFrame): the surnames dataset
+        Returns:
+            an instance of the SurnameVectorizer
+        &quot;&quot;&quot;</span>
+        surname_vocab = Vocabulary(unk_token=<span class="hljs-string">&quot;@&quot;</span>)
+        nationality_vocab = Vocabulary(add_unk=<span class="hljs-keyword">False</span>)
+
+        <span class="hljs-keyword">for</span> index, row <span class="hljs-keyword">in</span> surname_df.iterrows():
+            <span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> row.surname:
+                surname_vocab.add_token(letter)
+            nationality_vocab.add_token(row.nationality)
+
+        <span class="hljs-keyword">return</span> cls(surname_vocab, nationality_vocab)
+</code></pre>
+<h3 id="the-surname-classifier-model">The Surname Classifier Model</h3>
+<p>SurnameClassifier&#x662F;&#x672C;&#x7AE0;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x7684;MLP&#x7684;&#x5B9E;&#x73B0;(&#x793A;&#x4F8B;4-7)&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#x5C06;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x6620;&#x5C04;&#x5230;&#x4E2D;&#x95F4;&#x5411;&#x91CF;&#xFF0C;&#x5E76;&#x5BF9;&#x8BE5;&#x5411;&#x91CF;&#x5E94;&#x7528;&#x975E;&#x7EBF;&#x6027;&#x3002;&#x7B2C;&#x4E8C;&#x7EBF;&#x6027;&#x5C42;&#x5C06;&#x4E2D;&#x95F4;&#x5411;&#x91CF;&#x6620;&#x5C04;&#x5230;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x3002;</p>
+<p>&#x5728;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x4E2D;&#xFF0C;&#x53EF;&#x9009;&#x5730;&#x5E94;&#x7528;softmax&#x64CD;&#x4F5C;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x8F93;&#x51FA;&#x548C;&#x4E3A;1;&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x201C;&#x6982;&#x7387;&#x201D;&#x3002;&#x5B83;&#x662F;&#x53EF;&#x9009;&#x7684;&#x539F;&#x56E0;&#x4E0E;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x6570;&#x5B66;&#x516C;&#x5F0F;&#x6709;&#x5173;&#x2014;&#x2014;&#x4EA4;&#x53C9;&#x71B5;&#x635F;&#x5931;&#x3002;&#x6211;&#x4EEC;&#x7814;&#x7A76;&#x4E86;&#x201C;&#x635F;&#x5931;&#x51FD;&#x6570;&#x201D;&#x4E2D;&#x7684;&#x4EA4;&#x53C9;&#x71B5;&#x635F;&#x5931;&#x3002;&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x4EA4;&#x53C9;&#x71B5;&#x635F;&#x5931;&#x5BF9;&#x4E8E;&#x591A;&#x7C7B;&#x5206;&#x7C7B;&#x662F;&#x6700;&#x7406;&#x60F3;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x8F6F;&#x6700;&#x5927;&#x503C;&#x7684;&#x8BA1;&#x7B97;&#x4E0D;&#x4EC5;&#x6D6A;&#x8D39;&#x800C;&#x4E14;&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#x5E76;&#x4E0D;&#x7A33;&#x5B9A;&#x3002;</p>
+<p>Example 4-7. The SurnameClassifier as an MLP</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameClassifier</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; A 2-layer Multilayer Perceptron for classifying surnames &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_dim, hidden_dim, output_dim)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            input_dim (int): the size of the input vectors
+            hidden_dim (int): the output size of the first Linear layer
+            output_dim (int): the output size of the second Linear layer
+        &quot;&quot;&quot;</span>
+        super(SurnameClassifier, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x_in, apply_softmax=False)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;The forward pass of the classifier
+
+        Args:
+            x_in (torch.Tensor): an input data tensor.
+                x_in.shape should be (batch, input_dim)
+            apply_softmax (bool): a flag for the softmax activation
+                should be false if used with the Cross Entropy losses
+        Returns:
+            the resulting tensor. tensor.shape should be (batch, output_dim)
+        &quot;&quot;&quot;</span>
+        intermediate_vector = F.relu(self.fc1(x_in))
+        prediction_vector = self.fc2(intermediate_vector)
+
+        <span class="hljs-keyword">if</span> apply_softmax:
+            prediction_vector = F.softmax(prediction_vector, dim=<span class="hljs-number">1</span>)
+
+        <span class="hljs-keyword">return</span> prediction_vector
+</code></pre>
+<h3 id="the-training-routine">The Training Routine</h3>
+<p>&#x867D;&#x7136;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x578B;&#x3001;&#x6570;&#x636E;&#x96C6;&#x548C;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x8BAD;&#x7EC3;&#x4F8B;&#x7A0B;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x4F8B;4-8&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5C55;&#x793A;&#x4E86;args&#x4EE5;&#x53CA;&#x672C;&#x4F8B;&#x4E2D;&#x7684;&#x8BAD;&#x7EC3;&#x4F8B;&#x7A0B;&#x4E0E;&#x201C;&#x793A;&#x4F8B;:&#x9910;&#x5385;&#x8BC4;&#x8BBA;&#x60C5;&#x7EEA;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x4E4B;&#x95F4;&#x7684;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x3002;</p>
+<p>Example 4-8. The args for classifying surnames with an MLP</p>
+<pre><code class="lang-py">args = Namespace(
+    <span class="hljs-comment"># Data and path information</span>
+    surname_csv=<span class="hljs-string">&quot;data/surnames/surnames_with_splits.csv&quot;</span>,
+    vectorizer_file=<span class="hljs-string">&quot;vectorizer.json&quot;</span>,
+    model_state_file=<span class="hljs-string">&quot;model.pth&quot;</span>,
+    save_dir=<span class="hljs-string">&quot;model_storage/ch4/surname_mlp&quot;</span>,
+    <span class="hljs-comment"># Model hyper parameters</span>
+    hidden_dim=<span class="hljs-number">300</span>
+    <span class="hljs-comment"># Training  hyper parameters</span>
+    seed=<span class="hljs-number">1337</span>,
+    num_epochs=<span class="hljs-number">100</span>,
+    early_stopping_criteria=<span class="hljs-number">5</span>,
+    learning_rate=<span class="hljs-number">0.001</span>,
+    batch_size=<span class="hljs-number">64</span>,
+    <span class="hljs-comment"># Runtime options omitted for space</span>
+)
+</code></pre>
+<p>&#x8BAD;&#x7EC3;&#x4E2D;&#x6700;&#x663E;&#x8457;&#x7684;&#x5DEE;&#x5F02;&#x4E0E;&#x6A21;&#x578B;&#x4E2D;&#x8F93;&#x51FA;&#x7684;&#x79CD;&#x7C7B;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x6709;&#x5173;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x591A;&#x7C7B;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x6982;&#x7387;&#x3002;&#x6B63;&#x5982;&#x5728;&#x6A21;&#x578B;&#x63CF;&#x8FF0;&#x4E2D;&#x6240;&#x63CF;&#x8FF0;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x8F93;&#x51FA;&#x7684;&#x635F;&#x5931;&#x7C7B;&#x578B;&#x4EC5;&#x9650;&#x4E8E;CrossEntropyLoss&#x548C;NLLLoss&#x3002;&#x7531;&#x4E8E;&#x5B83;&#x7684;&#x7B80;&#x5316;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;CrossEntropyLoss&#x3002;</p>
+<p>&#x5728;&#x4F8B;4-9&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C55;&#x793A;&#x4E86;&#x6570;&#x636E;&#x96C6;&#x3001;&#x6A21;&#x578B;&#x3001;&#x635F;&#x5931;&#x51FD;&#x6570;&#x548C;&#x4F18;&#x5316;&#x5668;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x3002;&#x8FD9;&#x4E9B;&#x5B9E;&#x4F8B;&#x5E94;&#x8BE5;&#x770B;&#x8D77;&#x6765;&#x4E0E;&#x201C;&#x793A;&#x4F8B;:&#x5C06;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x60C5;&#x7EEA;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x5B9E;&#x4F8B;&#x51E0;&#x4E4E;&#x76F8;&#x540C;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5728;&#x672C;&#x4E66;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#xFF0C;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x5C06;&#x5BF9;&#x6BCF;&#x4E2A;&#x793A;&#x4F8B;&#x8FDB;&#x884C;&#x91CD;&#x590D;&#x3002;</p>
+<p>Example 4-9. Instantiating the dataset, model, loss, and optimizer</p>
+<pre><code class="lang-py">dataset = SurnameDataset.load_dataset_and_make_vectorizer(args.surname_csv)
+vectorizer = dataset.get_vectorizer()
+
+classifier = SurnameClassifier(input_dim=len(vectorizer.surname_vocab),
+                               hidden_dim=args.hidden_dim,
+                               output_dim=len(vectorizer.nationality_vocab))
+
+classifier = classifier.to(args.device)    
+
+loss_func = nn.CrossEntropyLoss(dataset.class_weights)
+optimizer = optim.Adam(classifier.parameters(), lr=args.learning_rate)
+</code></pre>
+<p>THE TRAINING LOOP &#x4E0E;&#x201C;Example: Classifying Sentiment of Restaurant Reviews&#x201D;&#x4E2D;&#x7684;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#x76F8;&#x6BD4;&#xFF0C;&#x672C;&#x4F8B;&#x7684;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#x9664;&#x4E86;&#x53D8;&#x91CF;&#x540D;&#x4EE5;&#x5916;&#x51E0;&#x4E4E;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x793A;&#x4F8B;4-10&#x663E;&#x793A;&#x4E86;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;key&#x4ECE;batch_dict&#x4E2D;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x3002;&#x9664;&#x4E86;&#x5916;&#x89C2;&#x4E0A;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;&#x8BAD;&#x7EC3;&#x5FAA;&#x73AF;&#x7684;&#x529F;&#x80FD;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x3002;&#x5229;&#x7528;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#xFF0C;&#x8BA1;&#x7B97;&#x6A21;&#x578B;&#x8F93;&#x51FA;&#x3001;&#x635F;&#x5931;&#x548C;&#x68AF;&#x5EA6;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4F7F;&#x7528;&#x68AF;&#x5EA6;&#x6765;&#x66F4;&#x65B0;&#x6A21;&#x578B;&#x3002;</p>
+<p>Example 4-10. A snippet of the training loop</p>
+<pre><code class="lang-py"><span class="hljs-comment"># the training routine is these 5 steps:</span>
+
+<span class="hljs-comment"># --------------------------------------</span>
+<span class="hljs-comment"># step 1\. zero the gradients</span>
+optimizer.zero_grad()
+
+<span class="hljs-comment"># step 2\. compute the output</span>
+y_pred = classifier(batch_dict[<span class="hljs-string">&apos;x_surname&apos;</span>])
+
+<span class="hljs-comment"># step 3\. compute the loss</span>
+loss = loss_func(y_pred, batch_dict[<span class="hljs-string">&apos;y_nationality&apos;</span>])
+loss_batch = loss.to(<span class="hljs-string">&quot;cpu&quot;</span>).item()
+running_loss += (loss_batch - running_loss) / (batch_index + <span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># step 4\. use loss to produce gradients</span>
+loss.backward()
+
+<span class="hljs-comment"># step 5\. use optimizer to take gradient step</span>
+optimizer.step()
+</code></pre>
+<h3 id="model-evaluation-and-prediction">Model Evaluation and Prediction</h3>
+<p>&#x8981;&#x7406;&#x89E3;&#x6A21;&#x578B;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x60A8;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x5B9A;&#x91CF;&#x548C;&#x5B9A;&#x6027;&#x65B9;&#x6CD5;&#x5206;&#x6790;&#x6A21;&#x578B;&#x3002;&#x5B9A;&#x91CF;&#x6D4B;&#x91CF;&#x51FA;&#x7684;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x7684;&#x8BEF;&#x5DEE;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;&#x5206;&#x7C7B;&#x5668;&#x80FD;&#x5426;&#x63A8;&#x5E7F;&#x5230;&#x4E0D;&#x53EF;&#x89C1;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x5B9A;&#x6027;&#x5730;&#x8BF4;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67E5;&#x770B;&#x5206;&#x7C7B;&#x5668;&#x7684;top-k&#x9884;&#x6D4B;&#x6765;&#x4E3A;&#x4E00;&#x4E2A;&#x65B0;&#x793A;&#x4F8B;&#x5F00;&#x53D1;&#x6A21;&#x578B;&#x6240;&#x4E86;&#x89E3;&#x7684;&#x5185;&#x5BB9;&#x7684;&#x76F4;&#x89C9;&#x3002; EVALUATING ON THE TEST DATASET &#x8BC4;&#x4EF7;SurnameClassifier&#x6D4B;&#x8BD5;&#x6570;&#x636E;,&#x6211;&#x4EEC;&#x6267;&#x884C;&#x76F8;&#x540C;&#x7684;&#x5E38;&#x89C4;&#x7684;routine&#x6587;&#x672C;&#x5206;&#x7C7B;&#x7684;&#x4F8B;&#x5B50;&#x201C;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7684;&#x4F8B;&#x5B50;:&#x5206;&#x7C7B;&#x60C5;&#x7EEA;&#x201D;:&#x6211;&#x4EEC;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x8BBE;&#x7F6E;&#x4E3A;&#x904D;&#x5386;&#x6D4B;&#x8BD5;&#x6570;&#x636E;,&#x8C03;&#x7528;classifier.eval()&#x65B9;&#x6CD5;,&#x5E76;&#x904D;&#x5386;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x4EE5;&#x540C;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x4E0E;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x8C03;&#x7528;classifier.eval()&#x53EF;&#x4EE5;&#x9632;&#x6B62;PyTorch&#x5728;&#x4F7F;&#x7528;&#x6D4B;&#x8BD5;/&#x8BC4;&#x4F30;&#x6570;&#x636E;&#x65F6;&#x66F4;&#x65B0;&#x6A21;&#x578B;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x8BE5;&#x6A21;&#x578B;&#x5BF9;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x7684;&#x51C6;&#x786E;&#x6027;&#x8FBE;&#x5230;50%&#x5DE6;&#x53F3;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5728;&#x9644;&#x5E26;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x4E2D;&#x8FD0;&#x884C;&#x8BAD;&#x7EC3;&#x4F8B;&#x7A0B;&#xFF0C;&#x60A8;&#x4F1A;&#x6CE8;&#x610F;&#x5230;&#x5728;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E0A;&#x7684;&#x6027;&#x80FD;&#x66F4;&#x9AD8;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6A21;&#x578B;&#x603B;&#x662F;&#x66F4;&#x9002;&#x5408;&#x5B83;&#x6240;&#x8BAD;&#x7EC3;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x7684;&#x6027;&#x80FD;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;&#x65B0;&#x6570;&#x636E;&#x7684;&#x6027;&#x80FD;&#x3002;&#x5982;&#x679C;&#x60A8;&#x9075;&#x5FAA;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x5C1D;&#x8BD5;&#x9690;&#x85CF;&#x7EF4;&#x5EA6;&#x7684;&#x4E0D;&#x540C;&#x5927;&#x5C0F;&#x3002;&#x60A8;&#x5E94;&#x8BE5;&#x6CE8;&#x610F;&#x5230;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x9AD8;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x8FD9;&#x79CD;&#x589E;&#x957F;&#x4E0D;&#x4F1A;&#x5F88;&#x5927;(&#x5C24;&#x5176;&#x662F;&#x4E0E;&#x201C;&#x7528;CNN&#x5BF9;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x4F8B;&#x5B50;&#x201D;&#x4E2D;&#x7684;&#x6A21;&#x578B;&#x76F8;&#x6BD4;)&#x3002;&#x5176;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x662F;&#x6536;&#x7F29;&#x7684;onehot&#x5411;&#x91CF;&#x5316;&#x65B9;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x5F31;&#x8868;&#x793A;&#x3002;&#x867D;&#x7136;&#x5B83;&#x786E;&#x5B9E;&#x7B80;&#x6D01;&#x5730;&#x5C06;&#x6BCF;&#x4E2A;&#x59D3;&#x6C0F;&#x8868;&#x793A;&#x4E3A;&#x5355;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x4F46;&#x5B83;&#x4E22;&#x5F03;&#x4E86;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x987A;&#x5E8F;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x8BC6;&#x522B;&#x8D77;&#x6E90;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<p>CLASSIFYING A NEW SURNAME</p>
+<p>&#x793A;&#x4F8B;4-11&#x663E;&#x793A;&#x4E86;&#x5206;&#x7C7B;&#x65B0;&#x59D3;&#x6C0F;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x59D3;&#x6C0F;&#x4F5C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x5C06;&#x9996;&#x5148;&#x5E94;&#x7528;&#x5411;&#x91CF;&#x5316;&#x8FC7;&#x7A0B;&#xFF0C;&#x7136;&#x540E;&#x83B7;&#x5F97;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x5305;&#x542B;&#x4E86;apply_softmax&#x6807;&#x5FD7;&#xFF0C;&#x6240;&#x4EE5;&#x7ED3;&#x679C;&#x5305;&#x542B;&#x6982;&#x7387;&#x3002;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#xFF0C;&#x5728;&#x591A;&#x9879;&#x5F0F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x662F;&#x7C7B;&#x6982;&#x7387;&#x7684;&#x5217;&#x8868;&#x3002;&#x6211;&#x4EEC;&#x4F7F;&#x7528;PyTorch&#x5F20;&#x91CF;&#x6700;&#x5927;&#x51FD;&#x6570;&#x6765;&#x5F97;&#x5230;&#x7531;&#x6700;&#x9AD8;&#x9884;&#x6D4B;&#x6982;&#x7387;&#x8868;&#x793A;&#x7684;&#x6700;&#x4F18;&#x7C7B;&#x3002;</p>
+<p>Example 4-11. A function for performing nationality prediction</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict_nationality</span><span class="hljs-params">(name, classifier, vectorizer)</span>:</span>
+    vectorized_name = vectorizer.vectorize(name)
+    vectorized_name = torch.tensor(vectorized_name).view(<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>)
+    result = classifier(vectorized_name, apply_softmax=<span class="hljs-keyword">True</span>)
+
+    probability_values, indices = result.max(dim=<span class="hljs-number">1</span>)
+    index = indices.item()
+
+    predicted_nationality = vectorizer.nationality_vocab.lookup_index(index)
+    probability_value = probability_values.item()
+
+    <span class="hljs-keyword">return</span> {<span class="hljs-string">&apos;nationality&apos;</span>: predicted_nationality,
+            <span class="hljs-string">&apos;probability&apos;</span>: probability_value}
+</code></pre>
+<p>RETRIEVING THE TOP-K PREDICTIONS FOR A NEW SURNAME &#x4E0D;&#x4EC5;&#x8981;&#x770B;&#x6700;&#x597D;&#x7684;&#x9884;&#x6D4B;&#xFF0C;&#x8FD8;&#x8981;&#x770B;&#x66F4;&#x591A;&#x7684;&#x9884;&#x6D4B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;NLP&#x4E2D;&#x7684;&#x6807;&#x51C6;&#x5B9E;&#x8DF5;&#x662F;&#x91C7;&#x7528;k-best&#x9884;&#x6D4B;&#x5E76;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x6A21;&#x578B;&#x5BF9;&#x5B83;&#x4EEC;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x3002;PyTorch&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;torch.topk&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x65B9;&#x4FBF;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x5F97;&#x8FD9;&#x4E9B;&#x9884;&#x6D4B;&#xFF0C;&#x5982;&#x793A;&#x4F8B;4-12&#x6240;&#x793A;&#x3002;</p>
+<p>Example 4-12. Predicting the top-k nationalities</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict_topk_nationality</span><span class="hljs-params">(name, classifier, vectorizer, k=<span class="hljs-number">5</span>)</span>:</span>
+    vectorized_name = vectorizer.vectorize(name)
+    vectorized_name = torch.tensor(vectorized_name).view(<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>)
+    prediction_vector = classifier(vectorized_name, apply_softmax=<span class="hljs-keyword">True</span>)
+    probability_values, indices = torch.topk(prediction_vector, k=k)
+
+    <span class="hljs-comment"># returned size is 1,k</span>
+    probability_values = probability_values.detach().numpy()[<span class="hljs-number">0</span>]
+    indices = indices.detach().numpy()[<span class="hljs-number">0</span>]
+
+    results = []
+    <span class="hljs-keyword">for</span> prob_value, index <span class="hljs-keyword">in</span> zip(probability_values, indices):
+        nationality = vectorizer.nationality_vocab.lookup_index(index)
+        results.append({<span class="hljs-string">&apos;nationality&apos;</span>: nationality,
+                        <span class="hljs-string">&apos;probability&apos;</span>: prob_value})
+
+    <span class="hljs-keyword">return</span> results
+</code></pre>
+<h3 id="regularizing-mlps-weight-regularization-and-structural-regularization-or-dropout">&quot;)Regularizing MLPs: Weight Regularization and Structural Regularization (or Dropout)</h3>
+<p>&#x5728;&#x7B2C;&#x4E09;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x89E3;&#x91CA;&#x4E86;&#x6B63;&#x5219;&#x5316;&#x662F;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x8FC7;&#x62DF;&#x5408;&#x95EE;&#x9898;&#x7684;&#xFF0C;&#x5E76;&#x7814;&#x7A76;&#x4E86;&#x4E24;&#x79CD;&#x91CD;&#x8981;&#x7684;&#x6743;&#x91CD;&#x6B63;&#x5219;&#x5316;&#x7C7B;&#x578B;&#x2014;&#x2014;l1&#x548C;L2&#x3002;&#x8FD9;&#x4E9B;&#x6743;&#x503C;&#x6B63;&#x5219;&#x5316;&#x65B9;&#x6CD5;&#x4E5F;&#x9002;&#x7528;&#x4E8E;MLPs&#x548C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x672C;&#x7AE0;&#x540E;&#x9762;&#x4ECB;&#x7ECD;&#x3002;&#x9664;&#x6743;&#x503C;&#x6B63;&#x5219;&#x5316;&#x5916;&#xFF0C;&#x5BF9;&#x4E8E;&#x6DF1;&#x5EA6;&#x6A21;&#x578B;(&#x5373;&#x4F8B;&#x5982;&#x672C;&#x7AE0;&#x8BA8;&#x8BBA;&#x7684;&#x524D;&#x9988;&#x7F51;&#x7EDC;&#xFF0C;&#x4E00;&#x79CD;&#x79F0;&#x4E3A;dropout&#x7684;&#x7ED3;&#x6784;&#x6B63;&#x5219;&#x5316;&#x65B9;&#x6CD5;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<p>DROPOUT</p>
+<p>&#x7B80;&#x5355;&#x5730;&#x8BF4;&#xFF0C;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;dropout&#x6709;&#x4E00;&#x5B9A;&#x6982;&#x7387;&#x4F7F;&#x5C5E;&#x4E8E;&#x4E24;&#x4E2A;&#x76F8;&#x90BB;&#x5C42;&#x7684;&#x5355;&#x5143;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;&#x51CF;&#x5F31;&#x3002;&#x8FD9;&#x6709;&#x4EC0;&#x4E48;&#x7528;&#x5462;?&#x6211;&#x4EEC;&#x4ECE;&#x65AF;&#x8482;&#x82AC;&#x2022;&#x6885;&#x91CC;&#x8482;(Stephen Merity)&#x7684;&#x4E00;&#x6BB5;&#x76F4;&#x89C2;(&#x4E14;&#x5E7D;&#x9ED8;)&#x7684;&#x89E3;&#x91CA;&#x5F00;&#x59CB;: &#x201C;Dropout&#xFF0C;&#x7B80;&#x5355;&#x5730;&#x8BF4;&#xFF0C;&#x662F;&#x6307;&#x5982;&#x679C;&#x4F60;&#x80FD;&#x5728;&#x559D;&#x9189;&#x7684;&#x65F6;&#x5019;&#x53CD;&#x590D;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x505A;&#x4E00;&#x4EF6;&#x4E8B;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x5728;&#x6E05;&#x9192;&#x7684;&#x65F6;&#x5019;&#x505A;&#x5F97;&#x66F4;&#x597D;&#x3002;&#x8FD9;&#x4E00;&#x89C1;&#x89E3;&#x4EA7;&#x751F;&#x4E86;&#x8BB8;&#x591A;&#x6700;&#x5148;&#x8FDB;&#x7684;&#x7ED3;&#x679C;&#x548C;&#x4E00;&#x4E2A;&#x65B0;&#x5174;&#x7684;&#x9886;&#x57DF;&#x3002;&#x201D; &#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x2014;&#x2014;&#x5C24;&#x5176;&#x662F;&#x5177;&#x6709;&#x5927;&#x91CF;&#x5206;&#x5C42;&#x7684;&#x6DF1;&#x5C42;&#x7F51;&#x7EDC;&#x2014;&#x2014;&#x53EF;&#x4EE5;&#x5728;&#x5355;&#x5143;&#x4E4B;&#x95F4;&#x521B;&#x5EFA;&#x6709;&#x8DA3;&#x7684;&#x76F8;&#x4E92;&#x9002;&#x5E94;&#x3002;&#x201C;Coadaptation&#x201D;&#x662F;&#x795E;&#x7ECF;&#x79D1;&#x5B66;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x672F;&#x8BED;&#xFF0C;&#x4F46;&#x5728;&#x8FD9;&#x91CC;&#x5B83;&#x53EA;&#x662F;&#x6307;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x5373;&#x4E24;&#x4E2A;&#x5355;&#x5143;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x53D8;&#x5F97;&#x8FC7;&#x4E8E;&#x7D27;&#x5BC6;&#xFF0C;&#x800C;&#x727A;&#x7272;&#x4E86;&#x5176;&#x4ED6;&#x5355;&#x5143;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x4F1A;&#x5BFC;&#x81F4;&#x6A21;&#x578B;&#x4E0E;&#x6570;&#x636E;&#x8FC7;&#x62DF;&#x5408;&#x3002;&#x901A;&#x8FC7;&#x6982;&#x7387;&#x5730;&#x4E22;&#x5F03;&#x5355;&#x5143;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x603B;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#xFF0C;&#x4ECE;&#x800C;&#x4EA7;&#x751F;&#x5065;&#x58EE;&#x7684;&#x6A21;&#x578B;&#x3002;dropout&#x4E0D;&#x4F1A;&#x5411;&#x6A21;&#x578B;&#x4E2D;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x8D85;&#x53C2;&#x6570;&#x2014;&#x2014;&#x201C;drop probability&#x201D;&#x3002;drop probability&#xFF0C;&#x6B63;&#x5982;&#x4F60;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x731C;&#x5230;&#x7684;&#xFF0C;&#x662F;&#x5355;&#x4F4D;&#x4E4B;&#x95F4;&#x7684;&#x8FDE;&#x63A5;drop&#x7684;&#x6982;&#x7387;&#x3002;&#x901A;&#x5E38;&#x5C06;&#x4E0B;&#x964D;&#x6982;&#x7387;&#x8BBE;&#x7F6E;&#x4E3A;0.5&#x3002;&#x4F8B;4-13&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x5E26;dropout&#x7684;MLP&#x7684;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x3002; Example 4-13. MLP with dropout</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MultilayerPerceptron</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_dim, hidden_dim, output_dim)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            input_dim (int): the size of the input vectors
+            hidden_dim (int): the output size of the first Linear layer
+            output_dim (int): the output size of the second Linear layer
+        &quot;&quot;&quot;</span>
+        super(MultilayerPerceptron, self).__init__()
+        self.fc1 = nn.Linear(input_dim, hidden_dim)
+        self.fc2 = nn.Linear(hidden_dim, output_dim)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x_in, apply_softmax=False)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;The forward pass of the MLP
+
+        Args:
+            x_in (torch.Tensor): an input data tensor.
+                x_in.shape should be (batch, input_dim)
+            apply_softmax (bool): a flag for the softmax activation
+                should be false if used with the Cross Entropy losses
+        Returns:
+            the resulting tensor. tensor.shape should be (batch, output_dim)
+        &quot;&quot;&quot;</span>
+        intermediate = F.relu(self.fc1(x_in))
+        output = self.fc2(F.dropout(intermediate, p=<span class="hljs-number">0.5</span>))
+
+        <span class="hljs-keyword">if</span> apply_softmax:
+            output = F.softmax(output, dim=<span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> output
+</code></pre>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;dropout&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x8BAD;&#x7EC3;&#x671F;&#x95F4;&#xFF0C;&#x4E0D;&#x9002;&#x7528;&#x4E8E;&#x8BC4;&#x4F30;&#x671F;&#x95F4;&#x3002;&#x4F5C;&#x4E3A;&#x7EC3;&#x4E60;&#xFF0C;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x8BD5;&#x9A8C;&#x5E26;&#x6709;dropout&#x7684;SurnameClassifier&#x6A21;&#x578B;&#xFF0C;&#x770B;&#x770B;&#x5B83;&#x5982;&#x4F55;&#x66F4;&#x6539;&#x7ED3;&#x679C;&#x3002;</p>
+<h2 id="convolutional-neural-networks">Convolutional Neural Networks</h2>
+<p>&#x5728;&#x672C;&#x7AE0;&#x7684;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6DF1;&#x5165;&#x7814;&#x7A76;&#x4E86;MLPs&#x3001;&#x7531;&#x4E00;&#x7CFB;&#x5217;&#x7EBF;&#x6027;&#x5C42;&#x548C;&#x975E;&#x7EBF;&#x6027;&#x51FD;&#x6570;&#x6784;&#x5EFA;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;mlp&#x4E0D;&#x662F;&#x5229;&#x7528;&#x987A;&#x5E8F;&#x6A21;&#x5F0F;&#x7684;&#x6700;&#x4F73;&#x5DE5;&#x5177;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#xFF0C;&#x59D3;&#x6C0F;&#x53EF;&#x4EE5;&#x6709;(&#x4E0D;&#x540C;&#x957F;&#x5EA6;&#x7684;)&#x6BB5;&#xFF0C;&#x8FD9;&#x4E9B;&#x6BB5;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x51FA;&#x76F8;&#x5F53;&#x591A;&#x5173;&#x4E8E;&#x5176;&#x8D77;&#x6E90;&#x56FD;&#x5BB6;&#x7684;&#x4FE1;&#x606F;(&#x5982;&#x201C;O&#x2019;Neill&#x201D;&#x4E2D;&#x7684;&#x201C;O&#x201D;&#x3001;&#x201C;Antonopoulos&#x201D;&#x4E2D;&#x7684;&#x201C;opoulos&#x201D;&#x3001;&#x201C;Nagasawa&#x201D;&#x4E2D;&#x7684;&#x201C;sawa&#x201D;&#x6216;&#x201C;Zhu&#x201D;&#x4E2D;&#x7684;&#x201C;Zh&#x201D;)&#x3002;&#x8FD9;&#x4E9B;&#x6BB5;&#x7684;&#x957F;&#x5EA6;&#x53EF;&#x4EE5;&#x662F;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x6311;&#x6218;&#x662F;&#x5728;&#x4E0D;&#x663E;&#x5F0F;&#x7F16;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6355;&#x83B7;&#x5B83;&#x4EEC;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(CNN)&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x9002;&#x5408;&#x68C0;&#x6D4B;&#x7A7A;&#x95F4;&#x5B50;&#x7ED3;&#x6784;(&#x5E76;&#x56E0;&#x6B64;&#x521B;&#x5EFA;&#x6709;&#x610F;&#x4E49;&#x7684;&#x7A7A;&#x95F4;&#x5B50;&#x7ED3;&#x6784;)&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;CNNs&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x5C11;&#x91CF;&#x7684;&#x6743;&#x91CD;&#x6765;&#x626B;&#x63CF;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x626B;&#x63CF;&#xFF0C;&#x5B83;&#x4EEC;&#x4EA7;&#x751F;&#x8868;&#x793A;&#x5B50;&#x7ED3;&#x6784;&#x68C0;&#x6D4B;(&#x6216;&#x4E0D;&#x68C0;&#x6D4B;)&#x7684;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x3002;</p>
+<h2 id="&#x5728;&#x672C;&#x8282;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x63CF;&#x8FF0;cnn&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x8BBE;&#x8BA1;cnn&#x65F6;&#x5E94;&#x8BE5;&#x8003;&#x8651;&#x7684;&#x95EE;&#x9898;&#x3002;&#x6211;&#x4EEC;&#x6DF1;&#x5165;&#x7814;&#x7A76;cnn&#x8D85;&#x53C2;&#x6570;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x63D0;&#x4F9B;&#x76F4;&#x89C2;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x8FD9;&#x4E9B;&#x8D85;&#x53C2;&#x6570;&#x5BF9;&#x8F93;&#x51FA;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x9010;&#x6B65;&#x8BF4;&#x660E;cnns&#x7684;&#x673A;&#x5236;&#x3002;&#x5728;&#x793A;&#x4F8B;&#x4F7F;&#x7528;cnn&#x5BF9;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6DF1;&#x5165;&#x7814;&#x7A76;&#x4E00;&#x4E2A;&#x66F4;&#x5E7F;&#x6CDB;&#x7684;&#x793A;&#x4F8B;&#x3002;">&#x5728;&#x672C;&#x8282;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x63CF;&#x8FF0;CNN&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x8BBE;&#x8BA1;CNN&#x65F6;&#x5E94;&#x8BE5;&#x8003;&#x8651;&#x7684;&#x95EE;&#x9898;&#x3002;&#x6211;&#x4EEC;&#x6DF1;&#x5165;&#x7814;&#x7A76;CNN&#x8D85;&#x53C2;&#x6570;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x63D0;&#x4F9B;&#x76F4;&#x89C2;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x8FD9;&#x4E9B;&#x8D85;&#x53C2;&#x6570;&#x5BF9;&#x8F93;&#x51FA;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x9010;&#x6B65;&#x8BF4;&#x660E;CNNs&#x7684;&#x673A;&#x5236;&#x3002;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x4F7F;&#x7528;CNN&#x5BF9;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6DF1;&#x5165;&#x7814;&#x7A76;&#x4E00;&#x4E2A;&#x66F4;&#x5E7F;&#x6CDB;&#x7684;&#x793A;&#x4F8B;&#x3002;</h2>
+<p>HISTORICAL CONTEXT</p>
+<h2 id="cnns&#x7684;&#x540D;&#x79F0;&#x548C;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x6E90;&#x4E8E;&#x7ECF;&#x5178;&#x7684;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x5377;&#x79EF;&#x3002;&#x5377;&#x79EF;&#x5DF2;&#x7ECF;&#x5E94;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x5DE5;&#x7A0B;&#x5B66;&#x79D1;&#xFF0C;&#x5305;&#x62EC;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x548C;&#x8BA1;&#x7B97;&#x673A;&#x56FE;&#x5F62;&#x5B66;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5377;&#x79EF;&#x4F7F;&#x7528;&#x7A0B;&#x5E8F;&#x5458;&#x6307;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x88AB;&#x6307;&#x5B9A;&#x6765;&#x5339;&#x914D;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#x8BBE;&#x8BA1;&#xFF0C;&#x5982;&#x7A81;&#x51FA;&#x8FB9;&#x7F18;&#x6216;&#x6291;&#x5236;&#x9AD8;&#x9891;&#x58F0;&#x97F3;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x8BB8;&#x591A;photoshop&#x6EE4;&#x955C;&#x90FD;&#x662F;&#x5E94;&#x7528;&#x4E8E;&#x56FE;&#x50CF;&#x7684;&#x56FA;&#x5B9A;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x6570;&#x636E;&#x4E2D;&#x5B66;&#x4E60;&#x5377;&#x79EF;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x5BF9;&#x4E8E;&#x89E3;&#x51B3;&#x5F53;&#x524D;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x6700;&#x4F18;&#x7684;&#x3002;">CNNs&#x7684;&#x540D;&#x79F0;&#x548C;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x6E90;&#x4E8E;&#x7ECF;&#x5178;&#x7684;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x5377;&#x79EF;&#x3002;&#x5377;&#x79EF;&#x5DF2;&#x7ECF;&#x5E94;&#x7528;&#x4E8E;&#x5404;&#x79CD;&#x5DE5;&#x7A0B;&#x5B66;&#x79D1;&#xFF0C;&#x5305;&#x62EC;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x548C;&#x8BA1;&#x7B97;&#x673A;&#x56FE;&#x5F62;&#x5B66;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5377;&#x79EF;&#x4F7F;&#x7528;&#x7A0B;&#x5E8F;&#x5458;&#x6307;&#x5B9A;&#x7684;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x88AB;&#x6307;&#x5B9A;&#x6765;&#x5339;&#x914D;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#x8BBE;&#x8BA1;&#xFF0C;&#x5982;&#x7A81;&#x51FA;&#x8FB9;&#x7F18;&#x6216;&#x6291;&#x5236;&#x9AD8;&#x9891;&#x58F0;&#x97F3;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x8BB8;&#x591A;Photoshop&#x6EE4;&#x955C;&#x90FD;&#x662F;&#x5E94;&#x7528;&#x4E8E;&#x56FE;&#x50CF;&#x7684;&#x56FA;&#x5B9A;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5728;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x6570;&#x636E;&#x4E2D;&#x5B66;&#x4E60;&#x5377;&#x79EF;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x5BF9;&#x4E8E;&#x89E3;&#x51B3;&#x5F53;&#x524D;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x6700;&#x4F18;&#x7684;&#x3002;</h2>
+<h3 id="cnn-hyperparameters">CNN Hyperparameters</h3>
+<p>&#x4E3A;&#x4E86;&#x7406;&#x89E3;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x8BA1;&#x51B3;&#x7B56;&#x5BF9;CNN&#x610F;&#x5473;&#x7740;&#x4EC0;&#x4E48;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x56FE;4-6&#x4E2D;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x3002;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x5355;&#x4E2A;&#x201C;&#x6838;&#x201D;&#x5E94;&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x77E9;&#x9635;&#x3002;&#x5377;&#x79EF;&#x8FD0;&#x7B97;(&#x7EBF;&#x6027;&#x7B97;&#x5B50;)&#x7684;&#x7CBE;&#x786E;&#x6570;&#x5B66;&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x4E8E;&#x7406;&#x89E3;&#x8FD9;&#x4E00;&#x8282;&#x5E76;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x4F46;&#x662F;&#x4ECE;&#x8FD9;&#x4E2A;&#x56FE;&#x4E2D;&#x53EF;&#x4EE5;&#x76F4;&#x89C2;&#x5730;&#x770B;&#x51FA;&#xFF0C;&#x6838;&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x65B9;&#x9635;&#xFF0C;&#x5B83;&#x88AB;&#x7CFB;&#x7EDF;&#x5730;&#x5E94;&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x77E9;&#x9635;&#x7684;&#x4E0D;&#x540C;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x7ECF;&#x5178;&#x5377;&#x79EF;&#x662F;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x6838;&#x7684;&#x5177;&#x4F53;&#x503C;&#x6765;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x4F46;&#x662F;CNN&#x662F;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x63A7;&#x5236;CNN&#x884C;&#x4E3A;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x6765;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6765;&#x4E3A;&#x7ED9;&#x5B9A;&#x6570;&#x636E;&#x96C6;&#x627E;&#x5230;&#x6700;&#x4F73;&#x53C2;&#x6570;&#x3002;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x5377;&#x79EF;&#x7684;&#x5F62;&#x72B6;(&#x79F0;&#x4E3A;kernel_size)&#x548C;&#x5377;&#x79EF;&#x5C06;&#x5728;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5F20;&#x91CF;(&#x79F0;&#x4E3A;stride)&#x4E2D;&#x76F8;&#x4E58;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x88AB;0&#x586B;&#x5145;&#x4E86;&#x591A;&#x5C11;(&#x79F0;&#x4E3A;padding)&#xFF0C;&#x4EE5;&#x53CA;&#x5F53;&#x5E94;&#x7528;&#x5230;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5F20;&#x91CF;(&#x79F0;&#x4E3A;dilation)&#x65F6;&#xFF0C;&#x4E58;&#x6CD5;&#x5E94;&#x8BE5;&#x76F8;&#x9694;&#x591A;&#x8FDC;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x5C0F;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x66F4;&#x8BE6;&#x7EC6;&#x5730;&#x4ECB;&#x7ECD;&#x8FD9;&#x4E9B;&#x8D85;&#x53C2;&#x6570;&#x3002;</p>
+<p>DIMENSION OF THE CONVOLUTION OPERATION &#x9996;&#x5148;&#x8981;&#x7406;&#x89E3;&#x7684;&#x6982;&#x5FF5;&#x662F;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x7684;&#x7EF4;&#x6570;&#x3002;&#x5728;&#x56FE;4-6&#x548C;&#x672C;&#x8282;&#x7684;&#x5176;&#x4ED6;&#x56FE;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E8C;&#x7EF4;&#x5377;&#x79EF;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#xFF0C;&#x4F46;&#x662F;&#x6839;&#x636E;&#x6570;&#x636E;&#x7684;&#x6027;&#x8D28;&#xFF0C;&#x8FD8;&#x6709;&#x66F4;&#x9002;&#x5408;&#x7684;&#x5176;&#x4ED6;&#x7EF4;&#x5EA6;&#x7684;&#x5377;&#x79EF;&#x3002;&#x5728;PyTorch&#x4E2D;&#xFF0C;&#x5377;&#x79EF;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x7EF4;&#x3001;&#x4E8C;&#x7EF4;&#x6216;&#x4E09;&#x7EF4;&#x7684;&#xFF0C;&#x5206;&#x522B;&#x7531;Conv1d&#x3001;Conv2d&#x548C;Conv3d&#x6A21;&#x5757;&#x5B9E;&#x73B0;&#x3002;&#x4E00;&#x7EF4;&#x5377;&#x79EF;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x5E8F;&#x5217;&#x7EF4;&#x5EA6;&#x4E0A;&#x5B66;&#x4E60;&#x6A21;&#x5F0F;&#x3002;NLP&#x4E2D;&#x7684;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x5927;&#x591A;&#x662F;&#x4E00;&#x7EF4;&#x7684;&#x5377;&#x79EF;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x4E8C;&#x7EF4;&#x5377;&#x79EF;&#x8BD5;&#x56FE;&#x6355;&#x6349;&#x6570;&#x636E;&#x4E2D;&#x6CBF;&#x4E24;&#x4E2A;&#x65B9;&#x5411;&#x7684;&#x65F6;&#x7A7A;&#x6A21;&#x5F0F;;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x56FE;&#x50CF;&#x4E2D;&#x6CBF;&#x9AD8;&#x5EA6;&#x548C;&#x5BBD;&#x5EA6;&#x7EF4;&#x5EA6;&#x2014;&#x2014;&#x4E3A;&#x4EC0;&#x4E48;&#x4E8C;&#x7EF4;&#x5377;&#x79EF;&#x5728;&#x56FE;&#x50CF;&#x5904;&#x7406;&#x4E2D;&#x5F88;&#x6D41;&#x884C;&#x3002;&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;&#x5728;&#x4E09;&#x7EF4;&#x5377;&#x79EF;&#x4E2D;&#xFF0C;&#x6A21;&#x5F0F;&#x662F;&#x6CBF;&#x7740;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x4E09;&#x7EF4;&#x6355;&#x83B7;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x89C6;&#x9891;&#x6570;&#x636E;&#x4E2D;&#xFF0C;&#x4FE1;&#x606F;&#x662F;&#x4E09;&#x7EF4;&#x7684;&#xFF0C;&#x4E8C;&#x7EF4;&#x8868;&#x793A;&#x56FE;&#x50CF;&#x7684;&#x5E27;&#xFF0C;&#x65F6;&#x95F4;&#x7EF4;&#x8868;&#x793A;&#x5E27;&#x7684;&#x5E8F;&#x5217;&#x3002;&#x5C31;&#x672C;&#x4E66;&#x800C;&#x8A00;&#xFF0C;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x4F7F;&#x7528;Conv1d&#x3002;</p>
+<p>CHANNELS &#x975E;&#x6B63;&#x5F0F;&#x5730;&#xFF0C;&#x901A;&#x9053;(channel)&#x662F;&#x6307;&#x6CBF;&#x8F93;&#x5165;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x70B9;&#x7684;&#x7279;&#x5F81;&#x7EF4;&#x5EA6;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x56FE;&#x50CF;&#x4E2D;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;RGB&#x7EC4;&#x4EF6;&#x7684;&#x56FE;&#x50CF;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x50CF;&#x7D20;&#x6709;&#x4E09;&#x4E2A;&#x901A;&#x9053;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x5377;&#x79EF;&#x65F6;&#xFF0C;&#x6587;&#x672C;&#x6570;&#x636E;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x7C7B;&#x4F3C;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x4ECE;&#x6982;&#x5FF5;&#x4E0A;&#x8BB2;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x672C;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x201C;&#x50CF;&#x7D20;&#x201D;&#x662F;&#x5355;&#x8BCD;&#xFF0C;&#x90A3;&#x4E48;&#x901A;&#x9053;&#x7684;&#x6570;&#x91CF;&#x5C31;&#x662F;&#x8BCD;&#x6C47;&#x8868;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x66F4;&#x7EC6;&#x7C92;&#x5EA6;&#x5730;&#x8003;&#x8651;&#x5B57;&#x7B26;&#x7684;&#x5377;&#x79EF;&#xFF0C;&#x901A;&#x9053;&#x7684;&#x6570;&#x91CF;&#x5C31;&#x662F;&#x5B57;&#x7B26;&#x96C6;&#x7684;&#x5927;&#x5C0F;(&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x521A;&#x597D;&#x662F;&#x8BCD;&#x6C47;&#x8868;)&#x3002;&#x5728;PyTorch&#x5377;&#x79EF;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;&#x8F93;&#x5165;&#x901A;&#x9053;&#x7684;&#x6570;&#x91CF;&#x662F;in_channels&#x53C2;&#x6570;&#x3002;&#x5377;&#x79EF;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5728;&#x8F93;&#x51FA;(out_channels)&#x4E2D;&#x4EA7;&#x751F;&#x591A;&#x4E2A;&#x901A;&#x9053;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x7B26;&#x5C06;&#x8F93;&#x5165;&#x7279;&#x5F81;&#x7EF4;&#x201C;&#x6620;&#x5C04;&#x201D;&#x5230;&#x8F93;&#x51FA;&#x7279;&#x5F81;&#x7EF4;&#x3002;&#x56FE;4-7&#x548C;&#x56FE;4-8&#x8BF4;&#x660E;&#x4E86;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</p>
+<p>&#x5F88;&#x96BE;&#x7ACB;&#x5373;&#x77E5;&#x9053;&#x6709;&#x591A;&#x5C11;&#x8F93;&#x51FA;&#x901A;&#x9053;&#x9002;&#x5408;&#x5F53;&#x524D;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x8FD9;&#x4E2A;&#x56F0;&#x96BE;&#xFF0C;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x8FB9;&#x754C;&#x662F;1,1,024&#x2014;&#x2014;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x7684;&#x5377;&#x79EF;&#x5C42;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x4E00;&#x4E2A;&#x53EA;&#x6709;1,024&#x4E2A;&#x901A;&#x9053;&#x7684;&#x5377;&#x79EF;&#x5C42;&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6709;&#x4E86;&#x8FB9;&#x754C;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x8F93;&#x5165;&#x901A;&#x9053;&#x3002;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x662F;&#xFF0C;&#x4ECE;&#x4E00;&#x4E2A;&#x5377;&#x79EF;&#x5C42;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5377;&#x79EF;&#x5C42;&#xFF0C;&#x901A;&#x9053;&#x6570;&#x91CF;&#x7684;&#x7F29;&#x51CF;&#x4E0D;&#x8D85;&#x8FC7;2&#x500D;&#x3002;&#x8FD9;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x786C;&#x6027;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x5E94;&#x8BE5;&#x8BA9;&#x60A8;&#x4E86;&#x89E3;&#x9002;&#x5F53;&#x6570;&#x91CF;&#x7684;out_channels&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x5B50;&#x7684;&#x3002;</p>
+<p>KERNEL SIZE</p>
+<p>&#x6838;&#x77E9;&#x9635;&#x7684;&#x5BBD;&#x5EA6;&#x79F0;&#x4E3A;&#x6838;&#x5927;&#x5C0F;(PyTorch&#x4E2D;&#x7684;kernel_size)&#x3002;&#x5728;&#x56FE;4-6&#x4E2D;&#xFF0C;&#x6838;&#x5927;&#x5C0F;&#x4E3A;2&#xFF0C;&#x800C;&#x5728;&#x56FE;4-9&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x663E;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x5927;&#x5C0F;&#x4E3A;3&#x7684;&#x5185;&#x6838;&#x3002;&#x60A8;&#x5E94;&#x8BE5;&#x5F62;&#x6210;&#x7684;&#x76F4;&#x89C9;&#x662F;&#xFF0C;&#x5377;&#x79EF;&#x5C06;&#x8F93;&#x5165;&#x4E2D;&#x7684;&#x7A7A;&#x95F4;(&#x6216;&#x65F6;&#x95F4;)&#x672C;&#x5730;&#x4FE1;&#x606F;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x6BCF;&#x4E2A;&#x5377;&#x79EF;&#x7684;&#x672C;&#x5730;&#x4FE1;&#x606F;&#x91CF;&#x7531;&#x5185;&#x6838;&#x5927;&#x5C0F;&#x63A7;&#x5236;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x901A;&#x8FC7;&#x589E;&#x52A0;&#x6838;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x4E5F;&#x4F1A;&#x51CF;&#x5C11;&#x8F93;&#x51FA;&#x7684;&#x5927;&#x5C0F;(Dumoulin&#x548C;Visin, 2016)&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5F53;&#x6838;&#x5927;&#x5C0F;&#x4E3A;3&#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x77E9;&#x9635;&#x662F;&#x56FE;4-9&#x4E2D;&#x7684;2x2&#xFF0C;&#x800C;&#x5F53;&#x6838;&#x5927;&#x5C0F;&#x4E3A;2&#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x77E9;&#x9635;&#x662F;&#x56FE;4-6&#x4E2D;&#x7684;3x3&#x3002;</p>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5C06;NLP&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x6838;&#x5927;&#x5C0F;&#x7684;&#x884C;&#x4E3A;&#x770B;&#x4F5C;&#x7C7B;&#x4F3C;&#x4E8E;&#x901A;&#x8FC7;&#x67E5;&#x770B;&#x5355;&#x8BCD;&#x7EC4;&#x6355;&#x83B7;&#x8BED;&#x8A00;&#x6A21;&#x5F0F;&#x7684;n-gram&#x7684;&#x884C;&#x4E3A;&#x3002;&#x4F7F;&#x7528;&#x8F83;&#x5C0F;&#x7684;&#x6838;&#x5927;&#x5C0F;&#xFF0C;&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x8F83;&#x5C0F;&#x7684;&#x9891;&#x7E41;&#x6A21;&#x5F0F;&#xFF0C;&#x800C;&#x8F83;&#x5927;&#x7684;&#x6838;&#x5927;&#x5C0F;&#x4F1A;&#x5BFC;&#x81F4;&#x8F83;&#x5927;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x66F4;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x53D1;&#x751F;&#x7684;&#x9891;&#x7387;&#x66F4;&#x4F4E;&#x3002;&#x8F83;&#x5C0F;&#x7684;&#x6838;&#x5927;&#x5C0F;&#x4F1A;&#x5BFC;&#x81F4;&#x8F93;&#x51FA;&#x4E2D;&#x7684;&#x7EC6;&#x7C92;&#x5EA6;&#x7279;&#x6027;&#xFF0C;&#x800C;&#x8F83;&#x5927;&#x7684;&#x6838;&#x5927;&#x5C0F;&#x4F1A;&#x5BFC;&#x81F4;&#x7C97;&#x7C92;&#x5EA6;&#x7279;&#x6027;&#x3002;</p>
+<p>STRIDE Stride&#x63A7;&#x5236;&#x5377;&#x79EF;&#x4E4B;&#x95F4;&#x7684;&#x6B65;&#x957F;&#x3002;&#x5982;&#x679C;&#x6B65;&#x957F;&#x4E0E;&#x6838;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x5185;&#x6838;&#x8BA1;&#x7B97;&#x4E0D;&#x4F1A;&#x91CD;&#x53E0;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x8DE8;&#x5EA6;&#x4E3A;1&#xFF0C;&#x5219;&#x5185;&#x6838;&#x91CD;&#x53E0;&#x6700;&#x5927;&#x3002;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x589E;&#x52A0;&#x6B65;&#x5E45;&#x7684;&#x65B9;&#x5F0F;&#x88AB;&#x6709;&#x610F;&#x7684;&#x538B;&#x7F29;&#x6765;&#x603B;&#x7ED3;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x56FE;4-10&#x6240;&#x793A;&#x3002; PADDING &#x5373;&#x4F7F;stride&#x548C;kernel_size&#x5141;&#x8BB8;&#x63A7;&#x5236;&#x6BCF;&#x4E2A;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x7279;&#x5F81;&#x503C;&#x6709;&#x591A;&#x5927;&#x8303;&#x56F4;&#xFF0C;&#x5B83;&#x4EEC;&#x4E5F;&#x6709;&#x4E00;&#x4E2A;&#x6709;&#x5BB3;&#x7684;&#x3001;&#x6709;&#x65F6;&#x662F;&#x65E0;&#x610F;&#x7684;&#x526F;&#x4F5C;&#x7528;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x7F29;&#x5C0F;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x7684;&#x603B;&#x5927;&#x5C0F;(&#x5377;&#x79EF;&#x7684;&#x8F93;&#x51FA;)&#x3002;&#x4E3A;&#x4E86;&#x62B5;&#x6D88;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x88AB;&#x4EBA;&#x4E3A;&#x5730;&#x589E;&#x52A0;&#x4E86;&#x957F;&#x5EA6;(&#x5982;&#x679C;&#x662F;&#x4E00;&#x7EF4;&#x3001;&#x4E8C;&#x7EF4;&#x6216;&#x4E09;&#x7EF4;)&#x3001;&#x9AD8;&#x5EA6;(&#x5982;&#x679C;&#x662F;&#x4E8C;&#x7EF4;&#x6216;&#x4E09;&#x7EF4;)&#x548C;&#x6DF1;&#x5EA6;(&#x5982;&#x679C;&#x662F;&#x4E09;&#x7EF4;)&#xFF0C;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x6BCF;&#x4E2A;&#x7EF4;&#x5EA6;&#x4E0A;&#x9644;&#x52A0;&#x548C;&#x524D;&#x7F6E;0&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;CNN&#x5C06;&#x6267;&#x884C;&#x66F4;&#x591A;&#x7684;&#x5377;&#x79EF;&#xFF0C;&#x4F46;&#x662F;&#x8F93;&#x51FA;&#x5F62;&#x72B6;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x6240;&#x9700;&#x7684;&#x6838;&#x5927;&#x5C0F;&#x3001;&#x6B65;&#x5E45;&#x6216;&#x6269;&#x5C55;&#x3002;&#x56FE;4-11&#x5C55;&#x793A;&#x4E86;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x586B;&#x5145;&#x3002; DILATION &#x81A8;&#x80C0;&#x63A7;&#x5236;&#x5377;&#x79EF;&#x6838;&#x5982;&#x4F55;&#x5E94;&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x77E9;&#x9635;&#x3002;&#x5728;&#x56FE;4-12&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x663E;&#x793A;&#xFF0C;&#x5C06;&#x81A8;&#x80C0;&#x4ECE;1(&#x9ED8;&#x8BA4;&#x503C;)&#x589E;&#x52A0;&#x5230;2&#x610F;&#x5473;&#x7740;&#x5F53;&#x5E94;&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x77E9;&#x9635;&#x65F6;&#xFF0C;&#x6838;&#x7684;&#x5143;&#x7D20;&#x5F7C;&#x6B64;&#x4E4B;&#x95F4;&#x662F;&#x4E24;&#x4E2A;&#x7A7A;&#x683C;&#x3002;&#x53E6;&#x4E00;&#x79CD;&#x8003;&#x8651;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x6838;&#x4E2D;&#x8DE8;&#x8DC3;&#x2014;&#x2014;&#x5728;&#x6838;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x6216;&#x6838;&#x7684;&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x4E00;&#x4E2A;step size&#xFF0C;&#x5373;&#x5B58;&#x5728;&#x201C;holes&#x201D;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x5728;&#x4E0D;&#x589E;&#x52A0;&#x53C2;&#x6570;&#x6570;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x603B;&#x7ED3;&#x8F93;&#x5165;&#x7A7A;&#x95F4;&#x7684;&#x66F4;&#x5927;&#x533A;&#x57DF;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;&#x5F53;&#x5377;&#x79EF;&#x5C42;&#x88AB;&#x53E0;&#x52A0;&#x65F6;&#xFF0C;&#x6269;&#x5F20;&#x5377;&#x79EF;&#x88AB;&#x8BC1;&#x660E;&#x662F;&#x975E;&#x5E38;&#x6709;&#x7528;&#x7684;&#x3002;&#x8FDE;&#x7EED;&#x6269;&#x5F20;&#x7684;&#x5377;&#x79EF;&#x6307;&#x6570;&#x7EA7;&#x5730;&#x589E;&#x5927;&#x4E86;&#x201C;&#x63A5;&#x53D7;&#x57DF;&#x201D;&#x7684;&#x5927;&#x5C0F;;&#x5373;&#x7F51;&#x7EDC;&#x5728;&#x505A;&#x51FA;&#x9884;&#x6D4B;&#x4E4B;&#x524D;&#x6240;&#x770B;&#x5230;&#x7684;&#x8F93;&#x5165;&#x7A7A;&#x95F4;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<h3 id="implementing-cnns-in-pytorch">Implementing CNNs in PyTorch</h3>
+<p>&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x901A;&#x8FC7;&#x7AEF;&#x5230;&#x7AEF;&#x793A;&#x4F8B;&#x6765;&#x5229;&#x7528;&#x4E0A;&#x4E00;&#x8282;&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x8BBE;&#x8BA1;&#x7684;&#x76EE;&#x6807;&#x662F;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x7EC4;&#x6001;&#x3002;&#x6211;&#x4EEC;&#x518D;&#x6B21;&#x8003;&#x8651;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x5F15;&#x5165;&#x7684;&#x73B0;&#x5728;&#x5F88;&#x719F;&#x6089;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;CNNs&#x800C;&#x4E0D;&#x662F;MLP&#x3002;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x9700;&#x8981;&#x5E94;&#x7528;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5C42;&#xFF0C;&#x5B83;&#x5C06;&#x5B66;&#x4F1A;&#x4ECE;&#x4E00;&#x7CFB;&#x5217;&#x5377;&#x79EF;&#x5C42;&#x521B;&#x5EFA;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x521B;&#x5EFA;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x76EE;&#x6807;&#x662F;&#x786E;&#x5B9A;&#x5377;&#x79EF;&#x5C42;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x4ECE;&#x800C;&#x5F97;&#x5230;&#x6240;&#x9700;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;&#x6240;&#x6709;CNN&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90FD;&#x662F;&#x8FD9;&#x6837;&#x7684;:&#x9996;&#x5148;&#x6709;&#x4E00;&#x7EC4;&#x5377;&#x79EF;&#x5C42;&#xFF0C;&#x5B83;&#x4EEC;&#x63D0;&#x53D6;&#x4E00;&#x4E2A;feature map&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x4E0A;&#x6E38;&#x5904;&#x7406;&#x7684;&#x8F93;&#x5165;&#x3002;&#x5728;&#x5206;&#x7C7B;&#x4E2D;&#xFF0C;&#x4E0A;&#x6E38;&#x5904;&#x7406;&#x51E0;&#x4E4E;&#x603B;&#x662F;&#x5E94;&#x7528;&#x7EBF;&#x6027;(&#x6216;fc)&#x5C42;&#x3002;</p>
+<p>&#x672C;&#x8282;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x904D;&#x5386;&#x8BBE;&#x8BA1;&#x51B3;&#x7B56;&#xFF0C;&#x4EE5;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x4EBA;&#x5DE5;&#x6570;&#x636E;&#x5F20;&#x91CF;&#xFF0C;&#x4EE5;&#x53CD;&#x6620;&#x5B9E;&#x9645;&#x6570;&#x636E;&#x7684;&#x5F62;&#x72B6;&#x3002;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x4E09;&#x7EF4;&#x7684;&#x2014;&#x2014;&#x8FD9;&#x662F;&#x5411;&#x91CF;&#x5316;&#x6587;&#x672C;&#x6570;&#x636E;&#x7684;&#x6700;&#x5C0F;&#x6279;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x4F7F;&#x7528;onehot&#x5411;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;onehot&#x5411;&#x91CF;&#x5E8F;&#x5217;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#xFF0C;&#x800C;onehot&#x77E9;&#x9635;&#x7684;&#x5C0F;&#x6279;&#x91CF;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E09;&#x7EF4;&#x5F20;&#x91CF;&#x3002;&#x4F7F;&#x7528;&#x5377;&#x79EF;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x6BCF;&#x4E2A;onehot(&#x901A;&#x5E38;&#x662F;&#x8BCD;&#x6C47;&#x8868;&#x7684;&#x5927;&#x5C0F;)&#x7684;&#x5927;&#x5C0F;&#x662F;&#x201D;input channels&#x201D;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x5B57;&#x7B26;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x662F;&#x201C;width&#x201D;&#x3002;</p>
+<p>&#x5728;&#x4F8B;4-14&#x4E2D;&#xFF0C;&#x6784;&#x9020;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x5C06;PyTorch&#x7684;Conv1d&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5E94;&#x7528;&#x5230;&#x4E09;&#x7EF4;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x3002;&#x901A;&#x8FC7;&#x68C0;&#x67E5;&#x8F93;&#x51FA;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x5F20;&#x91CF;&#x51CF;&#x5C11;&#x4E86;&#x591A;&#x5C11;&#x3002;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x53C2;&#x8003;&#x56FE;4-9&#x6765;&#x76F4;&#x89C2;&#x5730;&#x89E3;&#x91CA;&#x4E3A;&#x4EC0;&#x4E48;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x5728;&#x6536;&#x7F29;&#x3002;</p>
+<p>Example 4-14. Artificial data and using a Conv1d class</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]
+batch_size = <span class="hljs-number">2</span>
+one_hot_size = <span class="hljs-number">10</span>
+sequence_width = <span class="hljs-number">7</span>
+data = torch.randn(batch_size, one_hot_size, sequence_width)
+conv1 = Conv1d(in_channels=one_hot_size, out_channels=<span class="hljs-number">16</span>,
+               kernel_size=<span class="hljs-number">3</span>)
+intermediate1 = conv1(data)
+print(data.size())
+print(intermediate1.size())
+Output[<span class="hljs-number">0</span>]
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">10</span>, <span class="hljs-number">7</span>])
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">16</span>, <span class="hljs-number">5</span>])
+</code></pre>
+<p>&#x8FDB;&#x4E00;&#x6B65;&#x51CF;&#x5C0F;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x7684;&#x4E3B;&#x8981;&#x65B9;&#x6CD5;&#x6709;&#x4E09;&#x79CD;&#x3002;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x521B;&#x5EFA;&#x989D;&#x5916;&#x7684;&#x5377;&#x79EF;&#x5E76;&#x6309;&#x987A;&#x5E8F;&#x5E94;&#x7528;&#x5B83;&#x4EEC;&#x3002;&#x6700;&#x7EC8;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;sequence_width (dim=2)&#x7EF4;&#x5EA6;&#x7684;&#x5927;&#x5C0F;&#x5C06;&#x4E3A;1&#x3002;&#x6211;&#x4EEC;&#x5728;&#x4F8B;4-15&#x4E2D;&#x5C55;&#x793A;&#x4E86;&#x5E94;&#x7528;&#x4E24;&#x4E2A;&#x989D;&#x5916;&#x5377;&#x79EF;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x5BF9;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x7684;&#x7EA6;&#x7B80;&#x5E94;&#x7528;&#x5377;&#x79EF;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x8FED;&#x4EE3;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x731C;&#x6D4B;&#x5DE5;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x793A;&#x4F8B;&#x662F;&#x8FD9;&#x6837;&#x6784;&#x9020;&#x7684;:&#x7ECF;&#x8FC7;&#x4E09;&#x6B21;&#x5377;&#x79EF;&#x4E4B;&#x540E;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x8F93;&#x51FA;&#x5728;&#x6700;&#x7EC8;&#x7EF4;&#x5EA6;&#x4E0A;&#x7684;&#x5927;&#x5C0F;&#x4E3A;1&#x3002;</p>
+<p>Example 4-15. The iterative application of convolutions to data</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]
+conv2 = nn.Conv1d(in_channels=<span class="hljs-number">16</span>, out_channels=<span class="hljs-number">32</span>, kernel_size=<span class="hljs-number">3</span>)
+conv3 = nn.Conv1d(in_channels=<span class="hljs-number">32</span>, out_channels=<span class="hljs-number">64</span>, kernel_size=<span class="hljs-number">3</span>)
+
+intermediate2 = conv2(intermediate1)
+intermediate3 = conv3(intermediate2)
+
+print(intermediate2.size())
+print(intermediate3.size())
+Output[<span class="hljs-number">0</span>]
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">32</span>, <span class="hljs-number">3</span>])
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">64</span>, <span class="hljs-number">1</span>])
+Input[<span class="hljs-number">1</span>]
+y_output = intermediate3.squeeze()
+print(y_output.size())
+Output[<span class="hljs-number">1</span>]
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">64</span>])
+</code></pre>
+<p>&#x5728;&#x6BCF;&#x6B21;&#x5377;&#x79EF;&#x4E2D;&#xFF0C;&#x901A;&#x9053;&#x7EF4;&#x6570;&#x7684;&#x5927;&#x5C0F;&#x90FD;&#x4F1A;&#x589E;&#x52A0;&#xFF0C;&#x56E0;&#x4E3A;&#x901A;&#x9053;&#x7EF4;&#x6570;&#x662F;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;&#x5F20;&#x91CF;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x7684;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x662F;&#x53BB;&#x6389;&#x8BA8;&#x538C;&#x7684;&#x5C3A;&#x5BF8;=1&#x7EF4;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;squeeze()&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x5C06;&#x5220;&#x9664;size=1&#x7684;&#x6240;&#x6709;&#x7EF4;&#x5EA6;&#x5E76;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x4ED6;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7EC4;&#x4EF6;(&#x5982;&#x7EBF;&#x6027;&#x5C42;)&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x6765;&#x8BA1;&#x7B97;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#x8FD8;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5C06;&#x5F20;&#x91CF;&#x7B80;&#x5316;&#x4E3A;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x5411;&#x91CF;:&#x5C06;&#x5269;&#x4F59;&#x7684;&#x503C;&#x538B;&#x5E73;&#x4E3A;&#x7279;&#x5F81;&#x5411;&#x91CF;&#xFF0C;&#x5E76;&#x5728;&#x989D;&#x5916;&#x7EF4;&#x5EA6;&#x4E0A;&#x6C42;&#x5E73;&#x5747;&#x503C;&#x3002;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x5982;&#x793A;&#x4F8B;4-16&#x6240;&#x793A;&#x3002;&#x4F7F;&#x7528;&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x9700;&#x4F7F;&#x7528;PyTorch&#x7684;view()&#x65B9;&#x6CD5;&#x5C06;&#x6240;&#x6709;&#x5411;&#x91CF;&#x5E73;&#x5C55;&#x6210;&#x5355;&#x4E2A;&#x5411;&#x91CF;&#x3002;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x6765;&#x603B;&#x7ED3;&#x5411;&#x91CF;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x7B97;&#x672F;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x4F46;&#x6CBF;feature map&#x7EF4;&#x6570;&#x6C42;&#x548C;&#x548C;&#x4F7F;&#x7528;&#x6700;&#x5927;&#x503C;&#x4E5F;&#x662F;&#x5E38;&#x89C1;&#x7684;&#x3002;&#x6BCF;&#x79CD;&#x65B9;&#x6CD5;&#x90FD;&#x6709;&#x5176;&#x4F18;&#x70B9;&#x548C;&#x7F3A;&#x70B9;&#x3002;&#x6241;&#x5E73;&#x5316;&#x4FDD;&#x7559;&#x4E86;&#x6240;&#x6709;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x4F1A;&#x5BFC;&#x81F4;&#x6BD4;&#x9884;&#x671F;(&#x6216;&#x8BA1;&#x7B97;&#x4E0A;&#x53EF;&#x884C;)&#x66F4;&#x5927;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;&#x5E73;&#x5747;&#x53D8;&#x5F97;&#x4E0E;&#x989D;&#x5916;&#x7EF4;&#x5EA6;&#x7684;&#x5927;&#x5C0F;&#x65E0;&#x5173;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x4F1A;&#x4E22;&#x5931;&#x4FE1;&#x606F;&#x3002;</p>
+<p>Example 4-16. Two additional methods for reducing to feature vectors</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]
+<span class="hljs-comment"># Method 2 of reducing to feature vectors</span>
+print(intermediate1.view(batch_size, <span class="hljs-number">-1</span>).size())
+
+<span class="hljs-comment"># Method 3 of reducing to feature vectors</span>
+print(torch.mean(intermediate1, dim=<span class="hljs-number">2</span>).size())
+<span class="hljs-comment"># print(torch.max(intermediate1, dim=2).size())</span>
+<span class="hljs-comment"># print(torch.sum(intermediate1, dim=2).size())</span>
+Output[<span class="hljs-number">0</span>]
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">80</span>])
+torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">16</span>])
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x4E00;&#x7CFB;&#x5217;&#x5377;&#x79EF;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x57FA;&#x4E8E;&#x7ECF;&#x9A8C;&#x7684;:&#x4ECE;&#x6570;&#x636E;&#x7684;&#x9884;&#x671F;&#x5927;&#x5C0F;&#x5F00;&#x59CB;&#xFF0C;&#x5904;&#x7406;&#x4E00;&#x7CFB;&#x5217;&#x5377;&#x79EF;&#xFF0C;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x9002;&#x5408;&#x60A8;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;&#x867D;&#x7136;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x6548;&#x679C;&#x5F88;&#x597D;&#xFF0C;&#x4F46;&#x5728;&#x7ED9;&#x5B9A;&#x5377;&#x79EF;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x548C;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD8;&#x6709;&#x53E6;&#x4E00;&#x79CD;&#x8BA1;&#x7B97;&#x5F20;&#x91CF;&#x8F93;&#x51FA;&#x5927;&#x5C0F;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x4ECE;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x672C;&#x8EAB;&#x63A8;&#x5BFC;&#x51FA;&#x7684;&#x6570;&#x5B66;&#x516C;&#x5F0F;&#x3002;</p>
+<h2 id="example-classifying-surnames-by-using-a-cnn">Example: Classifying Surnames by Using a CNN</h2>
+<p>&#x4E3A;&#x4E86;&#x8BC1;&#x660E;CNN&#x7684;&#x6709;&#x6548;&#x6027;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;CNN&#x6A21;&#x578B;&#x6765;&#x5206;&#x7C7B;&#x59D3;&#x6C0F;&#x3002;&#x8FD9;&#x9879;&#x4EFB;&#x52A1;&#x7684;&#x8BB8;&#x591A;&#x7EC6;&#x8282;&#x4E0E;&#x524D;&#x9762;&#x7684;MLP&#x793A;&#x4F8B;&#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x771F;&#x6B63;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x662F;&#x6A21;&#x578B;&#x7684;&#x6784;&#x9020;&#x548C;&#x5411;&#x91CF;&#x5316;&#x8FC7;&#x7A0B;&#x3002;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x6536;&#x7F29;&#x7684;onehot&#xFF0C;&#x5C06;&#x662F;&#x4E00;&#x4E2A;onehot&#x7684;&#x77E9;&#x9635;&#x3002;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x5C06;&#x4F7F;CNN&#x80FD;&#x591F;&#x66F4;&#x597D;&#x5730;&#x201C;view&#x201D;&#x5B57;&#x7B26;&#x7684;&#x6392;&#x5217;&#xFF0C;&#x5E76;&#x5BF9;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6536;&#x7F29;&#x7684;onehot&#x7F16;&#x7801;&#x4E2D;&#x4E22;&#x5931;&#x7684;&#x5E8F;&#x5217;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x3002;</p>
+<h3 id="the-surnamedataset">The SurnameDataset</h3>
+<p>&#x867D;&#x7136;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#x4E4B;&#x524D;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x8FDB;&#x884C;&#x4E86;&#x63CF;&#x8FF0;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x53C2;&#x8003;&#x201C;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#x201D;&#x6765;&#x4E86;&#x89E3;&#x5B83;&#x7684;&#x63CF;&#x8FF0;&#x3002;&#x5C3D;&#x7BA1;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x6765;&#x81EA;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x76F8;&#x540C;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x4F46;&#x5728;&#x5B9E;&#x73B0;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x4E4B;&#x5904;:&#x6570;&#x636E;&#x96C6;&#x7531;onehot&#x5411;&#x91CF;&#x77E9;&#x9635;&#x7EC4;&#x6210;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6536;&#x7F29;&#x7684;onehot&#x5411;&#x91CF;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x7C7B;&#xFF0C;&#x5B83;&#x8DDF;&#x8E2A;&#x6700;&#x957F;&#x7684;&#x59D3;&#x6C0F;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x77E9;&#x9635;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x884C;&#x6570;&#x63D0;&#x4F9B;&#x7ED9;&#x77E2;&#x91CF;&#x5316;&#x5668;&#x3002;&#x5217;&#x7684;&#x6570;&#x91CF;&#x662F;onehot&#x5411;&#x91CF;&#x7684;&#x5927;&#x5C0F;(&#x8BCD;&#x6C47;&#x8868;&#x7684;&#x5927;&#x5C0F;)&#x3002;&#x793A;&#x4F8B;4-17&#x663E;&#x793A;&#x4E86;&#x5BF9;SurnameDataset.<strong>getitem</strong>&#x7684;&#x66F4;&#x6539;;&#x6211;&#x4EEC;&#x663E;&#x793A;&#x5BF9;SurnameVectorizer&#x7684;&#x66F4;&#x6539;&#x3002;&#x5728;&#x4E0B;&#x4E00;&#x5C0F;&#x8282;&#x5411;&#x91CF;&#x5316;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6700;&#x957F;&#x7684;&#x59D3;&#x6C0F;&#x6765;&#x63A7;&#x5236;onehot&#x77E9;&#x9635;&#x7684;&#x5927;&#x5C0F;&#x6709;&#x4E24;&#x4E2A;&#x539F;&#x56E0;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x5C06;&#x6BCF;&#x4E00;&#x5C0F;&#x6279;&#x59D3;&#x6C0F;&#x77E9;&#x9635;&#x7EC4;&#x5408;&#x6210;&#x4E00;&#x4E2A;&#x4E09;&#x7EF4;&#x5F20;&#x91CF;&#xFF0C;&#x8981;&#x6C42;&#x5B83;&#x4EEC;&#x7684;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#x3002;&#x5176;&#x6B21;&#xFF0C;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6700;&#x957F;&#x7684;&#x59D3;&#x6C0F;&#x610F;&#x5473;&#x7740;&#x53EF;&#x4EE5;&#x4EE5;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x6BCF;&#x4E2A;&#x5C0F;&#x6279;&#x5904;&#x7406;&#x3002;</p>
+<p>Example 4-17. SurnameDataset modified for passing the maximum surname length</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameDataset</span><span class="hljs-params">(Dataset)</span>:</span>
+    <span class="hljs-comment"># ... existing implementation from Section 4.2</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span><span class="hljs-params">(self, index)</span>:</span>
+        row = self._target_df.iloc[index]
+
+        surname_matrix = \
+            self._vectorizer.vectorize(row.surname, self._max_seq_length)
+
+        nationality_index = \
+             self._vectorizer.nationality_vocab.lookup_token(row.nationality)
+
+        <span class="hljs-keyword">return</span> {<span class="hljs-string">&apos;x_surname&apos;</span>: surname_matrix,
+                <span class="hljs-string">&apos;y_nationality&apos;</span>: nationality_index}
+</code></pre>
+<h3 id="vocabulary-vectorizer-and-dataloader">Vocabulary, Vectorizer, and DataLoader</h3>
+<p>&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x5C3D;&#x7BA1;&#x8BCD;&#x6C47;&#x8868;&#x548C;DataLoader&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x4E0E;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x76F8;&#x540C;&#xFF0C;&#x4F46;Vectorizer&#x7684;vectorize()&#x65B9;&#x6CD5;&#x5DF2;&#x7ECF;&#x66F4;&#x6539;&#xFF0C;&#x4EE5;&#x9002;&#x5E94;CNN&#x6A21;&#x578B;&#x7684;&#x9700;&#x8981;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x5728;&#x793A;&#x4F8B;4-18&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x6240;&#x793A;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x5C06;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x8BE5;&#x6574;&#x6570;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7531;onehot&#x5411;&#x91CF;&#x7EC4;&#x6210;&#x7684;&#x77E9;&#x9635;&#x3002;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;&#x77E9;&#x9635;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x5217;&#x90FD;&#x662F;&#x4E0D;&#x540C;&#x7684;onehot&#x5411;&#x91CF;&#x3002;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;&#x7684;Conv1d&#x5C42;&#x8981;&#x6C42;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x5728;&#x7B2C;0&#x7EF4;&#x4E0A;&#x5177;&#x6709;&#x6279;&#x5904;&#x7406;&#xFF0C;&#x5728;&#x7B2C;1&#x7EF4;&#x4E0A;&#x5177;&#x6709;&#x901A;&#x9053;&#xFF0C;&#x5728;&#x7B2C;2&#x7EF4;&#x4E0A;&#x5177;&#x6709;&#x7279;&#x6027;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x66F4;&#x6539;&#x4E3A;&#x4F7F;&#x7528;onehot&#x77E9;&#x9635;&#x4E4B;&#x5916;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x4FEE;&#x6539;&#x4E86;&#x77E2;&#x91CF;&#x5316;&#x5668;&#xFF0C;&#x4EE5;&#x4FBF;&#x8BA1;&#x7B97;&#x59D3;&#x6C0F;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x5E76;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x4E3A;max_surname_length</p>
+<p>Example 4-18. Implementing the Surname Vectorizer for CNNs</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameVectorizer</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; The Vectorizer which coordinates the Vocabularies and puts them to use&quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">vectorize</span><span class="hljs-params">(self, surname)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            surname (str): the surname
+        Returns:
+            one_hot_matrix (np.ndarray): a matrix of one-hot vectors
+        &quot;&quot;&quot;</span>
+
+        one_hot_matrix_size = (len(self.character_vocab), self.max_surname_length)
+        one_hot_matrix = np.zeros(one_hot_matrix_size, dtype=np.float32)
+
+        <span class="hljs-keyword">for</span> position_index, character <span class="hljs-keyword">in</span> enumerate(surname):
+            character_index = self.character_vocab.lookup_token(character)
+            one_hot_matrix[character_index][position_index] = <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">return</span> one_hot_matrix
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">from_dataframe</span><span class="hljs-params">(cls, surname_df)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Instantiate the vectorizer from the dataset dataframe
+
+        Args:
+            surname_df (pandas.DataFrame): the surnames dataset
+        Returns:
+            an instance of the SurnameVectorizer
+        &quot;&quot;&quot;</span>
+        character_vocab = Vocabulary(unk_token=<span class="hljs-string">&quot;@&quot;</span>)
+        nationality_vocab = Vocabulary(add_unk=<span class="hljs-keyword">False</span>)
+        max_surname_length = <span class="hljs-number">0</span>
+
+        <span class="hljs-keyword">for</span> index, row <span class="hljs-keyword">in</span> surname_df.iterrows():
+            max_surname_length = max(max_surname_length, len(row.surname))
+            <span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> row.surname:
+                character_vocab.add_token(letter)
+            nationality_vocab.add_token(row.nationality)
+
+        <span class="hljs-keyword">return</span> cls(character_vocab, nationality_vocab, max_surname_length)
+</code></pre>
+<h3 id="reimplementing-the-surnameclassifier-with-convolutional-networks">Reimplementing the SurnameClassifier with Convolutional Networks</h3>
+<p>&#x6211;&#x4EEC;&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x578B;&#x662F;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x5728;&#x201C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x201D;&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;&#x65B9;&#x6CD5;&#x6784;&#x5EFA;&#x7684;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8BE5;&#x90E8;&#x5206;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x5377;&#x79EF;&#x5C42;&#x7684;&#x201C;&#x4EBA;&#x5DE5;&#x201D;&#x6570;&#x636E;&#x4E0E;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x4F7F;&#x7528;&#x672C;&#x4F8B;&#x4E2D;&#x7684;&#x77E2;&#x91CF;&#x5316;&#x5668;&#x7684;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x7684;&#x5927;&#x5C0F;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x3002;&#x6B63;&#x5982;&#x60A8;&#x5728;&#x793A;&#x4F8B;4-19&#x4E2D;&#x6240;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x5B83;&#x4E0E;&#x6211;&#x4EEC;&#x5728;&#x201C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x201D;&#x4E2D;&#x5F15;&#x5165;&#x7684;Conv1d&#x5E8F;&#x5217;&#x65E2;&#x6709;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x4E5F;&#x6709;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x7684;&#x65B0;&#x6DFB;&#x52A0;&#x5185;&#x5BB9;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x8BE5;&#x6A21;&#x578B;&#x7C7B;&#x4F3C;&#x4E8E;&#x201C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x201D;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x4E00;&#x7CFB;&#x5217;&#x4E00;&#x7EF4;&#x5377;&#x79EF;&#x6765;&#x589E;&#x91CF;&#x5730;&#x8BA1;&#x7B97;&#x66F4;&#x591A;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x4ECE;&#x800C;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5355;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;</p>
+<p>&#x7136;&#x800C;&#xFF0C;&#x672C;&#x4F8B;&#x4E2D;&#x7684;&#x65B0;&#x5185;&#x5BB9;&#x662F;&#x4F7F;&#x7528;sequence&#x548C;ELU PyTorch&#x6A21;&#x5757;&#x3002;&#x5E8F;&#x5217;&#x6A21;&#x5757;&#x662F;&#x5C01;&#x88C5;&#x7EBF;&#x6027;&#x64CD;&#x4F5C;&#x5E8F;&#x5217;&#x7684;&#x65B9;&#x4FBF;&#x5305;&#x88C5;&#x5668;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x5C01;&#x88C5;Conv1d&#x5E8F;&#x5217;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;ELU&#x662F;&#x7C7B;&#x4F3C;&#x4E8E;&#x7B2C;3&#x7AE0;&#x4E2D;&#x4ECB;&#x7ECD;&#x7684;ReLU&#x7684;&#x975E;&#x7EBF;&#x6027;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4E0D;&#x662F;&#x5C06;&#x503C;&#x88C1;&#x526A;&#x5230;0&#x4EE5;&#x4E0B;&#xFF0C;&#x800C;&#x662F;&#x5BF9;&#x5B83;&#x4EEC;&#x6C42;&#x5E42;&#x3002;ELU&#x5DF2;&#x7ECF;&#x88AB;&#x8BC1;&#x660E;&#x662F;&#x5377;&#x79EF;&#x5C42;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5F88;&#x6709;&#x524D;&#x9014;&#x7684;&#x975E;&#x7EBF;&#x6027;(Clevert et al.&#xFF0C; 2015)&#x3002;</p>
+<p>&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6BCF;&#x4E2A;&#x5377;&#x79EF;&#x7684;&#x901A;&#x9053;&#x6570;&#x4E0E;num_channels&#x8D85;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x6570;&#x91CF;&#x7684;&#x901A;&#x9053;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x9700;&#x8981;&#x4F18;&#x5316;&#x66F4;&#x591A;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x53D1;&#x73B0;256&#x8DB3;&#x591F;&#x5927;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x6A21;&#x578B;&#x8FBE;&#x5230;&#x5408;&#x7406;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<p>Example 4-19. The CNN-based SurnameClassifier</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+<span class="hljs-keyword">import</span> torch.nn.functional <span class="hljs-keyword">as</span> F
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameClassifier</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, initial_num_channels, num_classes, num_channels)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            initial_num_channels (int): size of the incoming feature vector
+            num_classes (int): size of the output prediction vector
+            num_channels (int): constant channel size to use throughout network
+        &quot;&quot;&quot;</span>
+        super(SurnameClassifier, self).__init__()
+
+        self.convnet = nn.Sequential(
+            nn.Conv1d(in_channels=initial_num_channels,
+                      out_channels=num_channels, kernel_size=<span class="hljs-number">3</span>),
+            nn.ELU(),
+            nn.Conv1d(in_channels=num_channels, out_channels=num_channels,
+                      kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">2</span>),
+            nn.ELU(),
+            nn.Conv1d(in_channels=num_channels, out_channels=num_channels,
+                      kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">2</span>),
+            nn.ELU(),
+            nn.Conv1d(in_channels=num_channels, out_channels=num_channels,
+                      kernel_size=<span class="hljs-number">3</span>),
+            nn.ELU()
+        )
+        self.fc = nn.Linear(num_channels, num_classes)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x_surname, apply_softmax=False)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;The forward pass of the classifier
+
+        Args:
+            x_surname (torch.Tensor): an input data tensor.
+                x_surname.shape should be (batch, initial_num_channels,
+                                           max_surname_length)
+            apply_softmax (bool): a flag for the softmax activation
+                should be false if used with the Cross Entropy losses
+        Returns:
+            the resulting tensor. tensor.shape should be (batch, num_classes)
+        &quot;&quot;&quot;</span>
+        features = self.convnet(x_surname).squeeze(dim=<span class="hljs-number">2</span>)
+        prediction_vector = self.fc(features)
+
+        <span class="hljs-keyword">if</span> apply_softmax:
+            prediction_vector = F.softmax(prediction_vector, dim=<span class="hljs-number">1</span>)
+
+        <span class="hljs-keyword">return</span> prediction_vector
+</code></pre>
+<h3 id="the-training-routine">The Training Routine</h3>
+<p>&#x8BAD;&#x7EC3;&#x7A0B;&#x5E8F;&#x5305;&#x62EC;&#x4EE5;&#x4E0B;&#x4F3C;&#x66FE;&#x76F8;&#x8BC6;&#x7684;&#x7684;&#x64CD;&#x4F5C;&#x5E8F;&#x5217;:&#x5B9E;&#x4F8B;&#x5316;&#x6570;&#x636E;&#x96C6;,&#x5B9E;&#x4F8B;&#x5316;&#x6A21;&#x578B;,&#x5B9E;&#x4F8B;&#x5316;&#x635F;&#x5931;&#x51FD;&#x6570;,&#x5B9E;&#x4F8B;&#x5316;&#x4F18;&#x5316;&#x5668;,&#x904D;&#x5386;&#x6570;&#x636E;&#x96C6;&#x7684;&#x8BAD;&#x7EC3;&#x5206;&#x533A;&#x548C;&#x66F4;&#x65B0;&#x6A21;&#x578B;&#x53C2;&#x6570;,&#x904D;&#x5386;&#x6570;&#x636E;&#x96C6;&#x7684;&#x9A8C;&#x8BC1;&#x5206;&#x533A;&#x548C;&#x6D4B;&#x91CF;&#x6027;&#x80FD;,&#x7136;&#x540E;&#x91CD;&#x590D;&#x6570;&#x636E;&#x96C6;&#x8FED;&#x4EE3;&#x4E00;&#x5B9A;&#x6B21;&#x6570;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x8FD9;&#x662F;&#x672C;&#x4E66;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x8BAD;&#x7EC3;&#x4F8B;&#x7A0B;&#x5B9E;&#x73B0;&#xFF0C;&#x5E94;&#x8BE5;&#x5C06;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x5E8F;&#x5217;&#x5185;&#x90E8;&#x5316;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4E0D;&#x518D;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#x5177;&#x4F53;&#x7684;&#x8BAD;&#x7EC3;&#x4F8B;&#x7A0B;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4E0E;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x4F8B;&#x7A0B;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x793A;&#x4F8B;4-20&#x4E2D;&#x770B;&#x5230;&#x3002;</p>
+<p>Example 4-20. Input arguments to the CNN surname classifier</p>
+<pre><code class="lang-py">args = Namespace(
+    <span class="hljs-comment"># Data and Path information</span>
+    surname_csv=<span class="hljs-string">&quot;data/surnames/surnames_with_splits.csv&quot;</span>,
+    vectorizer_file=<span class="hljs-string">&quot;vectorizer.json&quot;</span>,
+    model_state_file=<span class="hljs-string">&quot;model.pth&quot;</span>,
+    save_dir=<span class="hljs-string">&quot;model_storage/ch4/cnn&quot;</span>,
+    <span class="hljs-comment"># Model hyper parameters</span>
+    hidden_dim=<span class="hljs-number">100</span>,
+    num_channels=<span class="hljs-number">256</span>,
+    <span class="hljs-comment"># Training hyper parameters</span>
+    seed=<span class="hljs-number">1337</span>,
+    learning_rate=<span class="hljs-number">0.001</span>,
+    batch_size=<span class="hljs-number">128</span>,
+    num_epochs=<span class="hljs-number">100</span>,
+    early_stopping_criteria=<span class="hljs-number">5</span>,
+    dropout_p=<span class="hljs-number">0.1</span>,
+    <span class="hljs-comment"># Runtime omitted for space ...</span>
+)
+</code></pre>
+<h3 id="model-evaluation-and-prediction">Model Evaluation and Prediction</h3>
+<p>&#x8981;&#x7406;&#x89E3;&#x6A21;&#x578B;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x6027;&#x80FD;&#x8FDB;&#x884C;&#x5B9A;&#x91CF;&#x548C;&#x5B9A;&#x6027;&#x7684;&#x5EA6;&#x91CF;&#x3002;&#x4E0B;&#x9762;&#x5C06;&#x63CF;&#x8FF0;&#x8FD9;&#x4E24;&#x4E2A;&#x5EA6;&#x91CF;&#x7684;&#x57FA;&#x672C;&#x7EC4;&#x4EF6;&#x3002;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x6269;&#x5C55;&#x5B83;&#x4EEC;&#xFF0C;&#x4EE5;&#x63A2;&#x7D22;&#x8BE5;&#x6A21;&#x578B;&#x53CA;&#x5176;&#x6240;&#x5B66;&#x4E60;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>Evaluating on the Test Dataset &#x6B63;&#x5982;&#x201C;&#x793A;&#x4F8B;:&#x5E26;&#x6709;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x201D;&#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x4E0E;&#x672C;&#x793A;&#x4F8B;&#x4E4B;&#x95F4;&#x7684;&#x8BAD;&#x7EC3;&#x4F8B;&#x7A0B;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#x4E00;&#x6837;&#xFF0C;&#x6267;&#x884C;&#x8BC4;&#x4F30;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#x3002;&#x603B;&#x4E4B;&#xFF0C;&#x8C03;&#x7528;&#x5206;&#x7C7B;&#x5668;&#x7684;eval()&#x65B9;&#x6CD5;&#x6765;&#x9632;&#x6B62;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#xFF0C;&#x5E76;&#x8FED;&#x4EE3;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;&#x3002;&#x4E0E;MLP&#x7EA6;50%&#x7684;&#x6027;&#x80FD;&#x76F8;&#x6BD4;&#xFF0C;&#x8BE5;&#x6A21;&#x578B;&#x7684;&#x6D4B;&#x8BD5;&#x96C6;&#x6027;&#x80FD;&#x51C6;&#x786E;&#x7387;&#x7EA6;&#x4E3A;56%&#x3002;&#x5C3D;&#x7BA1;&#x8FD9;&#x4E9B;&#x6027;&#x80FD;&#x6570;&#x5B57;&#x7EDD;&#x4E0D;&#x662F;&#x8FD9;&#x4E9B;&#x7279;&#x5B9A;&#x67B6;&#x6784;&#x7684;&#x4E0A;&#x9650;&#xFF0C;&#x4F46;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#x7684;CNN&#x6A21;&#x578B;&#x83B7;&#x5F97;&#x7684;&#x6539;&#x8FDB;&#x5E94;&#x8BE5;&#x8DB3;&#x4EE5;&#x8BA9;&#x60A8;&#x5728;&#x6587;&#x672C;&#x6570;&#x636E;&#x4E0A;&#x5C1D;&#x8BD5;CNNs&#x3002;</p>
+<p>Classifying or retrieving top predictions for a new surname</p>
+<p>&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;predict_nationality()&#x51FD;&#x6570;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x53D1;&#x751F;&#x4E86;&#x66F4;&#x6539;&#xFF0C;&#x5982;&#x793A;&#x4F8B;4-21&#x6240;&#x793A;:&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x89C6;&#x56FE;&#x65B9;&#x6CD5;&#x91CD;&#x5851;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5F20;&#x91CF;&#x4EE5;&#x6DFB;&#x52A0;&#x6279;&#x5904;&#x7406;&#x7EF4;&#x5EA6;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;PyTorch&#x7684;unsqueeze()&#x51FD;&#x6570;&#x5728;&#x6279;&#x5904;&#x7406;&#x5E94;&#x8BE5;&#x5728;&#x7684;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x5927;&#x5C0F;&#x4E3A;1&#x7684;&#x7EF4;&#x5EA6;&#x3002;&#x76F8;&#x540C;&#x7684;&#x66F4;&#x6539;&#x53CD;&#x6620;&#x5728;predict_topk_nationality()&#x51FD;&#x6570;&#x4E2D;&#x3002;</p>
+<p>Example 4-21. Using the trained model to make predictions</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predict_nationality</span><span class="hljs-params">(surname, classifier, vectorizer)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Predict the nationality from a new surname
+
+    Args:
+        surname (str): the surname to classifier
+        classifier (SurnameClassifer): an instance of the classifier
+        vectorizer (SurnameVectorizer): the corresponding vectorizer
+    Returns:
+        a dictionary with the most likely nationality and its probability
+    &quot;&quot;&quot;</span>
+    vectorized_surname = vectorizer.vectorize(surname)
+    vectorized_surname = torch.tensor(vectorized_surname).unsqueeze(<span class="hljs-number">0</span>)
+    result = classifier(vectorized_surname, apply_softmax=<span class="hljs-keyword">True</span>)
+
+    probability_values, indices = result.max(dim=<span class="hljs-number">1</span>)
+    index = indices.item()
+
+    predicted_nationality = vectorizer.nationality_vocab.lookup_index(index)
+    probability_value = probability_values.item()
+
+    <span class="hljs-keyword">return</span> {<span class="hljs-string">&apos;nationality&apos;</span>: predicted_nationality, <span class="hljs-string">&apos;probability&apos;</span>: probability_value}
+</code></pre>
+<h2 id="miscellaneous-topics-in-cnns">Miscellaneous Topics in CNNs</h2>
+<p>&#x4E3A;&#x4E86;&#x7ED3;&#x675F;&#x6211;&#x4EEC;&#x7684;&#x8BA8;&#x8BBA;&#xFF0C;&#x6211;&#x4EEC;&#x6982;&#x8FF0;&#x4E86;&#x51E0;&#x4E2A;&#x5176;&#x4ED6;&#x7684;&#x4E3B;&#x9898;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E3B;&#x9898;&#x662F;CNNs&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x4F46;&#x5728;&#x5B83;&#x4EEC;&#x7684;&#x5171;&#x540C;&#x4F7F;&#x7528;&#x4E2D;&#x8D77;&#x7740;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x3002;&#x7279;&#x522B;&#x662F;&#xFF0C;&#x60A8;&#x5C06;&#x770B;&#x5230;Pooling&#x64CD;&#x4F5C;&#x3001;batch Normalization&#x3001;network-in-network connection&#x548C;residual connections&#x7684;&#x63CF;&#x8FF0;&#x3002;</p>
+<h3 id="pooling-operation">Pooling Operation</h3>
+<p>Pooling&#x662F;&#x5C06;&#x9AD8;&#x7EF4;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x603B;&#x7ED3;&#x4E3A;&#x4F4E;&#x7EF4;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5377;&#x79EF;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x3002;feature map&#x4E2D;&#x7684;&#x503C;&#x603B;&#x7ED3;&#x4E86;&#x8F93;&#x5165;&#x7684;&#x4E00;&#x4E9B;&#x533A;&#x57DF;&#x3002;&#x7531;&#x4E8E;&#x5377;&#x79EF;&#x8BA1;&#x7B97;&#x7684;&#x91CD;&#x53E0;&#x6027;&#xFF0C;&#x8BB8;&#x591A;&#x8BA1;&#x7B97;&#x51FA;&#x7684;&#x7279;&#x5F81;&#x53EF;&#x80FD;&#x662F;&#x5197;&#x4F59;&#x7684;&#x3002;Pooling&#x662F;&#x4E00;&#x79CD;&#x5C06;&#x9AD8;&#x7EF4;(&#x53EF;&#x80FD;&#x662F;&#x5197;&#x4F59;&#x7684;)&#x7279;&#x5F81;&#x6620;&#x5C04;&#x603B;&#x7ED3;&#x4E3A;&#x4F4E;&#x7EF4;&#x7279;&#x5F81;&#x6620;&#x5C04;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x5F62;&#x5F0F;&#x4E0A;&#xFF0C;&#x6C60;&#x662F;&#x4E00;&#x79CD;&#x50CF;sum&#x3001;mean&#x6216;max&#x8FD9;&#x6837;&#x7684;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x7CFB;&#x7EDF;&#x5730;&#x5E94;&#x7528;&#x4E8E;feature map&#x4E2D;&#x7684;&#x5C40;&#x90E8;&#x533A;&#x57DF;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x6C60;&#x64CD;&#x4F5C;&#x5206;&#x522B;&#x79F0;&#x4E3A;sum pooling&#x3001;average pooling&#x548C;max pooling&#x3002;&#x6C60;&#x8FD8;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x8F83;&#x5927;&#x4F46;&#x8F83;&#x5F31;&#x7684;feature map&#x7684;&#x7EDF;&#x8BA1;&#x5F3A;&#x5EA6;&#x6539;&#x8FDB;&#x4E3A;&#x8F83;&#x5C0F;&#x4F46;&#x8F83;&#x5F3A;&#x7684;feature map&#x3002;&#x56FE;4-13&#x8BF4;&#x660E;&#x4E86;Pooling&#x3002;</p>
+<h3 id="batch-normalization-batchnorm">&quot;)Batch Normalization (BatchNorm)</h3>
+<p>&#x6279;&#x5904;&#x7406;&#x6807;&#x51C6;&#x5316;&#x662F;&#x8BBE;&#x8BA1;&#x7F51;&#x7EDC;&#x65F6;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5DE5;&#x5177;&#x3002;BatchNorm&#x5BF9;CNN&#x7684;&#x8F93;&#x51FA;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x6FC0;&#x6D3B;&#x91CF;&#x7F29;&#x653E;&#x4E3A;&#x96F6;&#x5747;&#x503C;&#x548C;&#x5355;&#x4F4D;&#x65B9;&#x5DEE;&#x3002;&#x5B83;&#x7528;&#x4E8E;Z-transform&#x7684;&#x5E73;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x503C;&#x6BCF;&#x6279;&#x66F4;&#x65B0;&#x4E00;&#x6B21;&#xFF0C;&#x8FD9;&#x6837;&#x4EFB;&#x4F55;&#x5355;&#x4E2A;&#x6279;&#x4E2D;&#x7684;&#x6CE2;&#x52A8;&#x90FD;&#x4E0D;&#x4F1A;&#x592A;&#x5927;&#x5730;&#x79FB;&#x52A8;&#x6216;&#x5F71;&#x54CD;&#x5B83;&#x3002;BatchNorm&#x5141;&#x8BB8;&#x6A21;&#x578B;&#x5BF9;&#x53C2;&#x6570;&#x7684;&#x521D;&#x59CB;&#x5316;&#x4E0D;&#x90A3;&#x4E48;&#x654F;&#x611F;&#xFF0C;&#x5E76;&#x4E14;&#x7B80;&#x5316;&#x4E86;&#x5B66;&#x4E60;&#x901F;&#x7387;&#x7684;&#x8C03;&#x6574;(Ioffe and Szegedy, 2015)&#x3002;&#x5728;PyTorch&#x4E2D;&#xFF0C;&#x6279;&#x5904;&#x7406;&#x89C4;&#x8303;&#x662F;&#x5728;nn&#x6A21;&#x5757;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x3002;&#x4F8B;4-22&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x7528;&#x5377;&#x79EF;&#x548C;&#x7EBF;&#x6027;&#x5C42;&#x5B9E;&#x4F8B;&#x5316;&#x548C;&#x4F7F;&#x7528;&#x6279;&#x5904;&#x7406;&#x89C4;&#x8303;&#x3002;</p>
+<p>Example 4-22. Using s Conv1D layer with batch normalization.</p>
+<pre><code class="lang-py"><span class="hljs-comment"># ...</span>
+        self.conv1 = nn.Conv1d(in_channels=<span class="hljs-number">1</span>, out_channels=<span class="hljs-number">10</span>,
+                               kernel_size=<span class="hljs-number">5</span>,
+                               stride=<span class="hljs-number">1</span>)
+        self.conv1_bn = nn.BatchNorm1d(num_features=<span class="hljs-number">10</span>)
+        <span class="hljs-comment"># ...</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span>
+       <span class="hljs-comment"># ...</span>
+       x = F.relu(self.conv1(x))
+       x = self.conv1_bn(x)
+       <span class="hljs-comment"># ...</span>
+</code></pre>
+<h3 id="network-in-network-connections-1x1-convolutions">&quot;)Network-in-Network Connections (1x1 Convolutions)</h3>
+<p>Network-in-Network (NiN)&#x8FDE;&#x63A5;&#x662F;&#x5177;&#x6709;kernel_size=1&#x7684;&#x5377;&#x79EF;&#x5185;&#x6838;&#xFF0C;&#x5177;&#x6709;&#x4E00;&#x4E9B;&#x6709;&#x8DA3;&#x7684;&#x7279;&#x6027;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;1x1&#x5377;&#x79EF;&#x5C31;&#x50CF;&#x901A;&#x9053;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x4E2A;&#x5B8C;&#x5168;&#x8FDE;&#x901A;&#x7684;&#x7EBF;&#x6027;&#x5C42;&#x3002;&#x8FD9;&#x5728;&#x4ECE;&#x591A;&#x901A;&#x9053;feature map&#x6620;&#x5C04;&#x5230;&#x66F4;&#x6D45;&#x7684;feature map&#x65F6;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x5728;&#x56FE;4-14&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x77E9;&#x9635;&#x7684;NiN&#x8FDE;&#x63A5;&#x3002;&#x5982;&#x60A8;&#x6240;&#x89C1;&#xFF0C;&#x5B83;&#x5C06;&#x4E24;&#x4E2A;&#x901A;&#x9053;&#x7B80;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x901A;&#x9053;&#x3002;&#x56E0;&#x6B64;&#xFF0C;NiN&#x6216;1x1&#x5377;&#x79EF;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5EC9;&#x4EF7;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x5408;&#x5E76;&#x53C2;&#x6570;&#x8F83;&#x5C11;&#x7684;&#x989D;&#x5916;&#x975E;&#x7EBF;&#x6027;(Lin et al.&#xFF0C; 2013)&#x3002;</p>
+<h3 id="residual-connectionsresidual-block">Residual Connections/Residual Block</h3>
+<p>CNNs&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x8D8B;&#x52BF;&#x4E4B;&#x4E00;&#x662F;Residual connection&#xFF0C;&#x5B83;&#x652F;&#x6301;&#x771F;&#x6B63;&#x6DF1;&#x5C42;&#x7684;&#x7F51;&#x7EDC;(&#x8D85;&#x8FC7;100&#x5C42;)&#x3002;&#x5B83;&#x4E5F;&#x79F0;&#x4E3A;skip connection&#x3002;&#x5982;&#x679C;&#x5C06;&#x5377;&#x79EF;&#x51FD;&#x6570;&#x8868;&#x793A;&#x4E3A;conv&#xFF0C;&#x5219;residual block&#x7684;&#x8F93;&#x51FA;&#x5982;&#x4E0B;:</p>
+<h2 id="summary">Summary</h2>
+<p>&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x60A8;&#x5B66;&#x4E60;&#x4E86;&#x4E24;&#x4E2A;&#x57FA;&#x672C;&#x7684;&#x524D;&#x9988;&#x67B6;&#x6784;:&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;(MLP;&#x4E5F;&#x79F0;&#x4E3A;&#x201C;full-connected&#x201D;&#x7F51;&#x7EDC;)&#x548C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(CNN)&#x3002;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;MLPs&#x5728;&#x8FD1;&#x4F3C;&#x4EFB;&#x4F55;&#x975E;&#x7EBF;&#x6027;&#x51FD;&#x6570;&#x65B9;&#x9762;&#x7684;&#x5A01;&#x529B;&#xFF0C;&#x5E76;&#x5C55;&#x793A;&#x4E86;MLPs&#x5728;NLP&#x4E2D;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x4EE5;&#x53CA;&#x4ECE;&#x59D3;&#x6C0F;&#x4E2D;&#x5BF9;&#x56FD;&#x7C4D;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x5E94;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x7814;&#x7A76;&#x4E86;mlp&#x7684;&#x4E00;&#x4E2A;&#x4E3B;&#x8981;&#x7F3A;&#x70B9;/&#x9650;&#x5236;&#x2014;&#x7F3A;&#x4E4F;&#x53C2;&#x6570;&#x5171;&#x4EAB;&#x2014;&#x5E76;&#x4ECB;&#x7ECD;&#x4E86;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x67B6;&#x6784;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;&#x6700;&#x521D;&#x4E3A;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x5F00;&#x53D1;&#x7684;CNNs&#xFF0C;&#x73B0;&#x5DF2;&#x6210;&#x4E3A;NLP&#x7684;&#x4E2D;&#x6D41;&#x7825;&#x67F1;;&#x4E3B;&#x8981;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x7684;&#x9AD8;&#x6548;&#x5B9E;&#x73B0;&#x548C;&#x4F4E;&#x5185;&#x5B58;&#x9700;&#x6C42;&#x3002;&#x6211;&#x4EEC;&#x7814;&#x7A76;&#x4E86;&#x5377;&#x79EF;&#x7684;&#x4E0D;&#x540C;&#x53D8;&#x4F53;&#x2014;&#x2014;&#x586B;&#x5145;&#x3001;&#x6269;&#x5C55;&#x548C;&#x6269;&#x5C55;&#x2014;&#x2014;&#x4EE5;&#x53CA;&#x5B83;&#x4EEC;&#x5982;&#x4F55;&#x8F6C;&#x6362;&#x8F93;&#x5165;&#x7A7A;&#x95F4;&#x3002;&#x672C;&#x7AE0;&#x8FD8;&#x4E13;&#x95E8;&#x8BA8;&#x8BBA;&#x4E86;&#x5377;&#x79EF;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x5927;&#x5C0F;&#x9009;&#x62E9;&#x7684;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#x3002;&#x6211;&#x4EEC;&#x5C55;&#x793A;&#x4E86;&#x5377;&#x79EF;&#x64CD;&#x4F5C;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x6269;&#x5C55;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x793A;&#x4F8B;&#x6765;&#x4F7F;&#x7528;convnets&#x6765;&#x5E2E;&#x52A9;&#x6355;&#x83B7;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x5B50;&#x7ED3;&#x6784;&#x4FE1;&#x606F;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x4E86;&#x4E0E;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x8BBE;&#x8BA1;&#x76F8;&#x5173;&#x7684;&#x4E00;&#x4E9B;&#x6742;&#x9879;&#x4F46;&#x91CD;&#x8981;&#x7684;&#x4E3B;&#x9898;:1)Pooling&#xFF0C;2)Batchnorm&#xFF0C;3)1x1&#x5377;&#x79EF;&#xFF0C;4)residual connection&#x3002;&#x5728;&#x73B0;&#x4EE3;CNN&#x7684;&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x7ECF;&#x5E38;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x50CF;Inception&#x67B6;&#x6784;(Szegedy et al.&#xFF0C; 2015)&#x90A3;&#x6837;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x8BB8;&#x591A;&#x8FD9;&#x6837;&#x7684;&#x6280;&#x5DE7;&#x3002;&#x5728;Inception&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x5C0F;&#x5FC3;&#x5730;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6280;&#x5DE7;&#x53EF;&#x4EE5;&#x8BA9;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x6DF1;&#x5165;&#x5230;&#x6570;&#x767E;&#x5C42;&#xFF0C;&#x4E0D;&#x4EC5;&#x7CBE;&#x786E;&#xFF0C;&#x800C;&#x4E14;&#x8BAD;&#x7EC3;&#x901F;&#x5EA6;&#x5FEB;&#x3002;&#x5728;&#x7B2C;5&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x63A2;&#x8BA8;&#x4E86;&#x5B66;&#x4E60;&#x548C;&#x4F7F;&#x7528;&#x8868;&#x793A;&#x8868;&#x793A;&#x79BB;&#x6563;&#x5355;&#x5143;&#x7684;&#x4E3B;&#x9898;&#xFF0C;&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x5D4C;&#x5165;&#x5F0F;&#x7684;&#x5355;&#x8BCD;&#x3001;&#x53E5;&#x5B50;&#x3001;&#x6587;&#x6863;&#x548C;&#x5176;&#x4ED6;&#x7279;&#x5F81;&#x7C7B;&#x578B;&#x3002;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/nlp-pytorch-zh/" target="_blank">apachecn/nlp-pytorch-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="../shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '1eba1fde838d39ce2ba9',
+        clientSecret: '0bdf321e160ca29b2d54e8722700dd5accb084e0',
+        repo: 'nlp-pytorch-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2019-07-29 11:38:33
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 3.神经网络基础组件">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5.html" class="navigation navigation-next " aria-label="Next page: Chapter 5.Embedding Words and Types">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 4.自然语言处理 Feed-Forward Networks","level":"1.5","depth":1,"next":{"title":"Chapter 5.Embedding Words and Types","level":"1.6","depth":1,"path":"docs/5.md","ref":"docs/5.md","articles":[]},"previous":{"title":"Chapter 3.神经网络基础组件","level":"1.4","depth":1,"path":"docs/3.md","ref":"docs/3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","mathjax","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/nlp-pytorch-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://nlp-pt.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/nlp-pytorch-zh/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"https://nlp-pt.apachecn.org/cover.jpg"},"expandable-chapters":{}},"theme":"default","author":"ApacheCN","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NLP with PyTorch 中文文档","language":"zh-hans","gitbook":"*","description":"NLP with PyTorch 中文文档"},"file":{"path":"docs/4.md","mtime":"2019-07-29T03:38:33.967Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-09T15:06:48.544Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

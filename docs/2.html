@@ -1,0 +1,684 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 2.传统NLP快速回顾 · NLP with PyTorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3.html" />
+    
+    
+    <link rel="prev" href="1.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    入门须知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    Chapter 1.基础介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    Chapter 2.传统NLP快速回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    Chapter 3.神经网络基础组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    Chapter 4.自然语言处理 Feed-Forward Networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    Chapter 5.Embedding Words and Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    Chapter 6.自然语言处理 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    Chapter 7.自然语言处理的中间 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    Chapter 8.用于自然语言处理的高级 Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    Chapter 9.经典, 前沿和后续步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 2.传统NLP快速回顾</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-2&#x4F20;&#x7EDF;nlp&#x5FEB;&#x901F;&#x56DE;&#x987E;">Chapter 2.&#x4F20;&#x7EDF;NLP&#x5FEB;&#x901F;&#x56DE;&#x987E;</h1>
+<blockquote>
+<p>&#x672C;&#x6587;&#x6807;&#x9898;:<a href="https://yifdu.github.io/2018/12/18/Natural-Language-Processing-with-PyTorch%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank">Natural-Language-Processing-with-PyTorch&#xFF08;&#x4E8C;&#xFF09;</a></p>
+<p>&#x6587;&#x7AE0;&#x4F5C;&#x8005;:<a href="https://yifdu.github.io/" title="&#x8BBF;&#x95EE; Yif Du &#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" target="_blank">Yif Du</a></p>
+<p>&#x53D1;&#x5E03;&#x65F6;&#x95F4;:2018&#x5E74;12&#x6708;18&#x65E5; - 13:12</p>
+<p>&#x6700;&#x540E;&#x66F4;&#x65B0;:2019&#x5E74;02&#x6708;16&#x65E5; - 23:02</p>
+<p>&#x539F;&#x59CB;&#x94FE;&#x63A5;:<a href="https://yifdu.github.io/2018/12/18/Natural-Language-Processing-with-PyTorch%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank">http://yifdu.github.io/2018/12/18/Natural-Language-Processing-with-PyTorch&#xFF08;&#x4E8C;&#xFF09;/</a></p>
+<p>&#x8BB8;&#x53EF;&#x534F;&#x8BAE;:  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x7981;&#x6B62;&#x6F14;&#x7ECE; 4.0 &#x56FD;&#x9645;</a>  &#x8F6C;&#x8F7D;&#x8BF7;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x94FE;&#x63A5;&#x53CA;&#x4F5C;&#x8005;&#x3002;</p>
+</blockquote>
+<p>&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;(NLP)&#x548C;&#x8BA1;&#x7B97;&#x8BED;&#x8A00;&#x5B66;(CL)&#x662F;&#x4EBA;&#x7C7B;&#x8BED;&#x8A00;&#x8BA1;&#x7B97;&#x7814;&#x7A76;&#x7684;&#x4E24;&#x4E2A;&#x9886;&#x57DF;&#x3002;NLP&#x65E8;&#x5728;&#x5F00;&#x53D1;&#x89E3;&#x51B3;&#x6D89;&#x53CA;&#x8BED;&#x8A00;&#x7684;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4FE1;&#x606F;&#x63D0;&#x53D6;&#x3001;&#x81EA;&#x52A8;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x3001;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x3001;&#x60C5;&#x7EEA;&#x5206;&#x6790;&#x3001;&#x95EE;&#x7B54;&#x548C;&#x603B;&#x7ED3;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;CL&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x6765;&#x7406;&#x89E3;&#x4EBA;&#x7C7B;&#x8BED;&#x8A00;&#x7684;&#x7279;&#x6027;&#x3002;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x7406;&#x89E3;&#x8BED;&#x8A00;?&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4EA7;&#x751F;&#x8BED;&#x8A00;?&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5B66;&#x4E60;&#x8BED;&#x8A00;?&#x8BED;&#x8A00;&#x4E4B;&#x95F4;&#x6709;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;?</p>
+<p>&#x5728;&#x6587;&#x732E;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x770B;&#x5230;&#x65B9;&#x6CD5;&#x548C;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x7684;&#x4EA4;&#x53C9;&#xFF0C;&#x4ECE;CL&#x5230;NLP&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;&#x6765;&#x81EA;&#x8BED;&#x8A00;&#x5B66;&#x4E60;&#x7684;&#x8BFE;&#x7A0B;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x544A;&#x77E5;NLP&#x4E2D;&#x7684;&#x5148;&#x9A8C;&#xFF0C;&#x7EDF;&#x8BA1;&#x548C;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x56DE;&#x7B54;CL&#x60F3;&#x8981;&#x56DE;&#x7B54;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x5DF2;&#x7ECF;&#x6269;&#x5C55;&#x5230;&#x5B83;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x5B66;&#x79D1;&#xFF0C;&#x5982;&#x97F3;&#x4F4D;&#x5B66;&#x3001;&#x5F62;&#x6001;&#x5B66;&#x3001;&#x53E5;&#x6CD5;&#x5B66;&#x3001;&#x8BED;&#x4E49;&#x5B66;&#x548C;&#x8BED;&#x7528;&#x5B66;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5173;&#x6CE8;NLP&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x6839;&#x636E;&#x9700;&#x8981;&#x4ECE;CL&#x4E2D;&#x501F;&#x9274;&#x601D;&#x60F3;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x5C06;&#x81EA;&#x5DF1;&#x5B8C;&#x5168;&#x5F52;&#x5C5E;&#x4E8E;NLP&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x65B9;&#x6CD5;&#x4E4B;&#x524D;&#xFF0C;&#x6709;&#x5FC5;&#x8981;&#x56DE;&#x987E;&#x4E00;&#x4E0B;&#x4E00;&#x4E9B;&#x4F20;&#x7EDF;&#x7684;NLP&#x6982;&#x5FF5;&#x548C;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x672C;&#x7AE0;&#x7684;&#x76EE;&#x6807;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x4E9B;NLP&#x7684;&#x80CC;&#x666F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#x8FD9;&#x4E00;&#x7AE0;&#xFF0C;&#x4F46;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7559;&#x4E0B;&#x6765;&#x6000;&#x65E7;&#xFF0C;&#x4E3A;&#x672A;&#x6765;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x7684;&#x8BCD;&#x6C47;&#x8868;&#x3002;</p>
+<h2 id="corpora-tokens-and-types">Corpora, Tokens, and Types</h2>
+<p>&#x6240;&#x6709;&#x7684;NLP&#x65B9;&#x6CD5;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x7ECF;&#x5178;&#x7684;&#x8FD8;&#x662F;&#x73B0;&#x4EE3;&#x7684;&#xFF0C;&#x90FD;&#x4EE5;&#x6587;&#x672C;&#x6570;&#x636E;&#x96C6;&#x5F00;&#x59CB;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x8BED;&#x6599;&#x5E93;(&#x590D;&#x6570;:corpora)&#x3002;&#x8BED;&#x6599;&#x5E93;&#x901A;&#x5E38;&#x6709;&#x539F;&#x59CB;&#x6587;&#x672C;(ASCII&#x6216;UTF-8&#x683C;&#x5F0F;)&#x548C;&#x4E0E;&#x6587;&#x672C;&#x76F8;&#x5173;&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x6570;&#x636E;&#x3002;&#x539F;&#x59CB;&#x6587;&#x672C;&#x662F;&#x5B57;&#x7B26;(&#x5B57;&#x8282;)&#x5E8F;&#x5217;&#xFF0C;&#x4F46;&#x662F;&#x5927;&#x591A;&#x6570;&#x65F6;&#x5019;&#x5C06;&#x5B57;&#x7B26;&#x5206;&#x7EC4;&#x6210;&#x8FDE;&#x7EED;&#x7684;&#x79F0;&#x4E3A;&#x4EE4;&#x724C;(Tokens)&#x7684;&#x8FDE;&#x7EED;&#x5355;&#x5143;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;&#x5728;&#x82F1;&#x8BED;&#x4E2D;&#xFF0C;&#x4EE4;&#x724C;(Tokens)&#x5BF9;&#x5E94;&#x7531;&#x7A7A;&#x683C;&#x5B57;&#x7B26;&#x6216;&#x6807;&#x70B9;&#x5206;&#x9694;&#x7684;&#x5355;&#x8BCD;&#x548C;&#x6570;&#x5B57;&#x5E8F;&#x5217;&#x3002;</p>
+<p>&#x5143;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x662F;&#x4E0E;&#x6587;&#x672C;&#x76F8;&#x5173;&#x8054;&#x7684;&#x4EFB;&#x4F55;&#x8F85;&#x52A9;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x6807;&#x7B7E;&#x548C;&#x65F6;&#x95F4;&#x6233;&#x3002; &#x5728;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x672F;&#x8BED;&#x4E2D;&#xFF0C;&#x6587;&#x672C;&#x53CA;&#x5176;&#x5143;&#x6570;&#x636E;&#x79F0;&#x4E3A;&#x5B9E;&#x4F8B;&#x6216;&#x6570;&#x636E;&#x70B9;&#x3002; &#x8BED;&#x6599;&#x5E93;&#xFF08;&#x56FE;2-1&#xFF09;&#x662F;&#x4E00;&#x7EC4;&#x5B9E;&#x4F8B;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x6570;&#x636E;&#x96C6;&#x3002; &#x9274;&#x4E8E;&#x672C;&#x4E66;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x5730;&#x4EA4;&#x6362;&#x672F;&#x8BED;&#x8BED;&#x6599;&#x5E93;&#x548C;&#x6570;&#x636E;&#x96C6;&#x3002;</p>
+<p><img src="img/c35eca55ae92dbc6325e2ba9ac2b7710.jpg" alt="metadata_1" title="&#x56FE;2-1\. &#x8BED;&#x6599;&#x5E93;:NLP&#x4EFB;&#x52A1;&#x7684;&#x8D77;&#x70B9;&#x3002;"></p>
+<p>&#x5C06;&#x6587;&#x672C;&#x5206;&#x89E3;&#x4E3A;&#x4EE4;&#x724C;(Tokens)&#x7684;&#x8FC7;&#x7A0B;&#x79F0;&#x4E3A;&#x4EE4;&#x724C;&#x5316;(tokenization)&#x3002;&#x4E16;&#x754C;&#x8BED;&#x7684;&#x53E5;&#x5B50;,&#x201D;Maria frapis la verda sor&#x109;istino,&#x201C;1&#x6709;&#x516D;&#x4E2A;&#x4EE4;&#x724C;&#x3002;&#x4EE4;&#x724C;&#x5316;&#x53EF;&#x80FD;&#x6BD4;&#x7B80;&#x5355;&#x5730;&#x57FA;&#x4E8E;&#x975E;&#x5B57;&#x6BCD;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x62C6;&#x5206;&#x6587;&#x672C;&#x66F4;&#x52A0;&#x590D;&#x6742;&#xFF0C;&#x5982;&#x56FE;2-2&#x6240;&#x793A;&#x3002;&#x5BF9;&#x4E8E;&#x50CF;&#x571F;&#x8033;&#x5176;&#x8BED;&#x8FD9;&#x6837;&#x7684;&#x7C98;&#x5408;&#x8BED;&#x8A00;&#x6765;&#x8BF4;&#xFF0C;&#x5206;&#x9694;&#x7A7A;&#x683C;&#x548C;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#x53EF;&#x80FD;&#x662F;&#x4E0D;&#x591F;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x66F4;&#x4E13;&#x4E1A;&#x7684;&#x6280;&#x672F;&#x3002;&#x6B63;&#x5982;&#x60A8;&#x5C06;&#x5728;&#x7B2C;4&#x7AE0;&#x548C;&#x7B2C;6&#x7AE0;&#x4E2D;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x901A;&#x8FC7;&#x5C06;&#x6587;&#x672C;&#x8868;&#x793A;&#x4E3A;&#x5B57;&#x8282;&#x6D41;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x80FD;&#x591F;&#x5728;&#x67D0;&#x4E9B;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x6A21;&#x578B;&#x4E2D;&#x5B8C;&#x5168;&#x89C4;&#x907F;&#x4EE4;&#x724C;&#x5316;&#x95EE;&#x9898;;&#x8FD9;&#x5BF9;&#x4E8E;&#x7C98;&#x5408;&#x8BED;&#x8A00;&#x6765;&#x8BF4;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002; <img src="img/2a941f4b722f7fb4031402398e5c0882.jpg" alt="Tokenization" title="&#x56FE;2-2\. &#x50CF;&#x571F;&#x8033;&#x5176;&#x8BED;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x8A00;&#x7684;&#x6807;&#x8BB0;&#x5316;&#x5F88;&#x5FEB;&#x5C31;&#x4F1A;&#x53D8;&#x5F97;&#x590D;&#x6742;&#x8D77;&#x6765;&#x3002;"> &#x6700;&#x540E;&#xFF0C;&#x770B;&#x770B;&#x4E0B;&#x9762;&#x8FD9;&#x6761;&#x63A8;&#x6587;: <img src="img/3529b4f55a52c83aaf242bd51bf5ca3a.jpg" alt="Tweet" title="&#x56FE;2-3"> &#x6807;&#x8BB0;&#x5316;tweets&#x6D89;&#x53CA;&#x5230;&#x4FDD;&#x5B58;&#x8BDD;&#x9898;&#x6807;&#x7B7E;&#x548C;@handle&#xFF0C;&#x5C06;smilies(&#x5982;:-)&#x548C;urls&#x5206;&#x5272;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x5143;&#x3002;#MakeAMovieCold&#x6807;&#x7B7E;&#x5E94;&#x8BE5;&#x662F;1&#x4E2A;&#x4EE4;&#x724C;&#x8FD8;&#x662F;4&#x4E2A;?&#x867D;&#x7136;&#x5927;&#x591A;&#x6570;&#x7814;&#x7A76;&#x8BBA;&#x6587;&#x5BF9;&#x8FD9;&#x4E00;&#x95EE;&#x9898;&#x5E76;&#x6CA1;&#x6709;&#x7ED9;&#x4E88;&#x592A;&#x591A;&#x7684;&#x5173;&#x6CE8;&#xFF0C;&#x800C;&#x4E14;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x8BB8;&#x591A;&#x4EE4;&#x724C;&#x5316;&#x51B3;&#x7B56;&#x5F80;&#x5F80;&#x662F;&#x4EFB;&#x610F;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x51B3;&#x7B56;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#x5BF9;&#x51C6;&#x786E;&#x6027;&#x7684;&#x5F71;&#x54CD;&#x8981;&#x6BD4;&#x516C;&#x8BA4;&#x7684;&#x8981;&#x5927;&#x5F97;&#x591A;&#x3002;&#x901A;&#x5E38;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x9884;&#x5904;&#x7406;&#x7684;&#x7E41;&#x7410;&#x5DE5;&#x4F5C;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5F00;&#x653E;&#x6E90;&#x7801;NLP&#x5305;&#x4E3A;&#x4EE4;&#x724C;&#x5316;&#x63D0;&#x4F9B;&#x4E86;&#x5408;&#x7406;&#x7684;&#x652F;&#x6301;&#x3002;&#x793A;&#x4F8B;2-1&#x5C55;&#x793A;&#x4E86;&#x6765;&#x81EA;NLTK&#x548C;SpaCy&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x8FD9;&#x662F;&#x4E24;&#x4E2A;&#x7528;&#x4E8E;&#x6587;&#x672C;&#x5904;&#x7406;&#x7684;&#x5E38;&#x7528;&#x5305;&#x3002;</p>
+<p>Example 2-1. Tokenizing text</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> spacy
+nlp = spacy.load(&#x2018;en&#x2019;)
+text = &#x201C;Mary, don&#x2019;t slap the green witch&#x201D;
+print([str(token) <span class="hljs-keyword">for</span> token <span class="hljs-keyword">in</span> nlp(text.lower())])
+Output[<span class="hljs-number">0</span>]:
+[<span class="hljs-string">&apos;mary&apos;</span>, <span class="hljs-string">&apos;,&apos;</span>, <span class="hljs-string">&apos;do&apos;</span>, <span class="hljs-string">&quot;n&apos;t&quot;</span>, <span class="hljs-string">&apos;slap&apos;</span>, <span class="hljs-string">&apos;the&apos;</span>, <span class="hljs-string">&apos;green&apos;</span>, <span class="hljs-string">&apos;witch&apos;</span>, <span class="hljs-string">&apos;.&apos;</span>]
+Input[<span class="hljs-number">1</span>]:
+<span class="hljs-keyword">from</span> nltk.tokenize <span class="hljs-keyword">import</span> TweetTokenizer
+tweet=<span class="hljs-string">u&quot;Snow White and the Seven Degrees
+    #MakeAMovieCold@midnight:-)&quot;</span>
+tokenizer = TweetTokenizer()
+print(tokenizer.tokenize(tweet.lower()))
+Output[<span class="hljs-number">1</span>]:
+[<span class="hljs-string">&apos;snow&apos;</span>, <span class="hljs-string">&apos;white&apos;</span>, <span class="hljs-string">&apos;and&apos;</span>, <span class="hljs-string">&apos;the&apos;</span>, <span class="hljs-string">&apos;seven&apos;</span>, <span class="hljs-string">&apos;degrees&apos;</span>, <span class="hljs-string">&apos;#makeamoviecold&apos;</span>, <span class="hljs-string">&apos;@midnight&apos;</span>, <span class="hljs-string">&apos;:-)&apos;</span>]
+</code></pre>
+<p>&#x7C7B;&#x578B;&#x662F;&#x8BED;&#x6599;&#x5E93;&#x4E2D;&#x552F;&#x4E00;&#x7684;&#x4EE4;&#x724C;&#x3002;&#x8BED;&#x6599;&#x5E93;&#x4E2D;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;&#x96C6;&#x5408;&#x5C31;&#x662F;&#x5B83;&#x7684;&#x8BCD;&#x6C47;&#x8868;&#x6216;&#x8BCD;&#x5178;&#x3002;&#x8BCD;&#x53EF;&#x4EE5;&#x533A;&#x5206;&#x4E3A;&#x5185;&#x5BB9;&#x8BCD;&#x548C;&#x505C;&#x6B62;&#x8BCD;&#x3002;&#x50CF;&#x51A0;&#x8BCD;&#x548C;&#x4ECB;&#x8BCD;&#x8FD9;&#x6837;&#x7684;&#x9650;&#x5B9A;&#x8BCD;&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x8FBE;&#x5230;&#x8BED;&#x6CD5;&#x76EE;&#x7684;&#xFF0C;&#x5C31;&#x50CF;&#x586B;&#x5145;&#x7269;&#x627F;&#x8F7D;&#x7740;&#x5185;&#x5BB9;&#x8BCD;&#x4E00;&#x6837;&#x3002;</p>
+<hr>
+<p>ASIDE &#x8FD9;&#x79CD;&#x7406;&#x89E3;&#x8BED;&#x8A00;&#x7684;&#x8BED;&#x8A00;&#x5B66;&#x5E76;&#x5C06;&#x5176;&#x5E94;&#x7528;&#x4E8E;&#x89E3;&#x51B3;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#x95EE;&#x9898;&#x7684;&#x8FC7;&#x7A0B;&#x79F0;&#x4E3A;&#x7279;&#x5F81;&#x5DE5;&#x7A0B;&#x3002;&#x4E3A;&#x4E86;&#x6A21;&#x578B;&#x5728;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x4E4B;&#x95F4;&#x7684;&#x65B9;&#x4FBF;&#x548C;&#x53EF;&#x79FB;&#x690D;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E00;&#x70B9;&#x4FDD;&#x6301;&#x5728;&#x6700;&#x4F4E;&#x9650;&#x5EA6;&#x3002;&#x4F46;&#x662F;&#x5728;&#x6784;&#x5EFA;&#x548C;&#x90E8;&#x7F72;&#x771F;&#x5B9E;&#x7684;&#x751F;&#x4EA7;&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x7279;&#x6027;&#x5DE5;&#x7A0B;&#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#xFF0C;&#x5C3D;&#x7BA1;&#x6700;&#x8FD1;&#x7684;&#x8BF4;&#x6CD5;&#x4E0E;&#x6B64;&#x76F8;&#x53CD;&#x3002;&#x5BF9;&#x4E8E;feature engineering&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x4EE5;&#x9605;&#x8BFB;Zheng(2016)&#x7684;&#x4E66;&#x3002;</p>
+<hr>
+<h2 id="unigrams-bigrams-trigrams--ngrams">Unigrams, Bigrams, Trigrams, &#x2026;, Ngrams</h2>
+<p>ngram&#x662F;&#x6587;&#x672C;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;(n)&#x7684;&#x8FDE;&#x7EED;&#x4EE4;&#x724C;&#x5E8F;&#x5217;&#x3002;bigram&#x6709;&#x4E24;&#x4E2A;&#x4EE4;&#x724C;&#xFF0C;unigram &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x4EE4;&#x724C;&#x3002;&#x4ECE;&#x6587;&#x672C;&#x751F;&#x6210;ngram&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x5982;&#x793A;&#x4F8B;2-2&#x6240;&#x793A;&#xFF0C;&#x4F46;&#x662F;SpaCy&#x548C;NLTK&#x7B49;&#x5305;&#x63D0;&#x4F9B;&#x4E86;&#x65B9;&#x4FBF;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>Example 2-2. Generating ngrams</p>
+<pre><code class="lang-py">Input[0]:
+def n_grams(text, n):
+    &apos;&apos;&apos;
+    takes tokens or text, returns a list of n grams
+    &apos;&apos;&apos;
+    return [text[i:i+n] for i in range(len(text)-n+1)]
+
+cleaned = [&apos;mary&apos;, &apos;,&apos;, &quot;n&apos;t&quot;, &apos;slap&apos;, green&apos;, &apos;witch&apos;, &apos;.&apos;]
+print(n_grams(cleaned, 3))
+Output[0]:
+[[&apos;mary&apos;, &apos;,&apos;, &quot;n&apos;t&quot;],
+ [&apos;,&apos;, &quot;n&apos;t&quot;, &apos;slap&apos;],
+ [&quot;n&apos;t&quot;, &apos;slap&apos;, &apos;green&apos;],
+ [&apos;slap&apos;, &apos;green&apos;, &apos;witch&apos;],
+ [&apos;green&apos;, &apos;witch&apos;, &apos;.&apos;]]
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x5B50;&#x8BCD;(subword)&#x4FE1;&#x606F;&#x672C;&#x8EAB;&#x643A;&#x5E26;&#x6709;&#x7528;&#x4FE1;&#x606F;&#x7684;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x751F;&#x6210;&#x5B57;&#x7B26;ngram&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x201C;methanol&#x201D;&#x4E2D;&#x7684;&#x540E;&#x7F00;&#x201C;-ol&#x201D;&#x8868;&#x793A;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x9187;;&#x5982;&#x679C;&#x60A8;&#x7684;&#x4EFB;&#x52A1;&#x6D89;&#x53CA;&#x5230;&#x5BF9;&#x6709;&#x673A;&#x5316;&#x5408;&#x7269;&#x540D;&#x79F0;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x4EE5;&#x770B;&#x5230;ngram&#x6355;&#x83B7;&#x7684;&#x5B50;&#x5355;&#x8BCD;(subword)&#x4FE1;&#x606F;&#x662F;&#x5982;&#x4F55;&#x6709;&#x7528;&#x7684;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x91CD;&#x7528;&#x76F8;&#x540C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x9664;&#x4E86;&#x5C06;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;ngram&#x89C6;&#x4E3A;&#x4EE4;&#x724C;&#x3002;(&#x8FD9;&#x91CC;&#x7684;subword&#x5E94;&#x8BE5;&#x662F;&#x503C;&#x7C7B;&#x4F3C;&#x524D;&#x7F00;&#x540E;&#x7F00;&#x8FD9;&#x79CD;&#x5B8C;&#x6574;&#x5355;&#x8BCD;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;)</p>
+<h2 id="lemmas-and-stems">Lemmas and Stems</h2>
+<p>Lemmas&#x662F;&#x5355;&#x8BCD;&#x7684;&#x8BCD;&#x6839;&#x5F62;&#x5F0F;&#x3002;&#x8003;&#x8651;&#x52A8;&#x8BCD;fly&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x5C48;&#x6298;&#x6210;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x5355;&#x8BCD;&#x2014;&#x2014;flow&#x3001;fly&#x3001;flies&#x3001;flying&#x3001;flow&#x7B49;&#x7B49;&#x2014;&#x2014;&#x800C;fly&#x662F;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x770B;&#x4F3C;&#x4E0D;&#x540C;&#x7684;&#x5355;&#x8BCD;&#x7684;Lemmas&#x3002;&#x6709;&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x5411;&#x91CF;&#x8868;&#x793A;&#x7684;&#x7EF4;&#x6570;&#x8F83;&#x4F4E;&#xFF0C;&#x5C06;&#x4EE4;&#x724C;&#x51CF;&#x5C11;&#x5230;&#x5B83;&#x4EEC;&#x7684;Lemmas&#x53EF;&#x80FD;&#x662F;&#x6709;&#x7528;&#x7684;&#x3002;&#x8FD9;&#x79CD;&#x7B80;&#x5316;&#x79F0;&#x4E3A;lemmatization&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x793A;&#x4F8B;2-3&#x4E2D;&#x770B;&#x5230;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<p>Example 2-3. Lemmatization</p>
+<pre><code class="lang-py">Input[0]
+import spacy
+nlp = spacy.load(&#x2018;en&#x2019;)
+doc = nlp(u&quot;he was running late&quot;)
+for token in doc:
+    print(&apos;{} --&gt; {}&apos;.format(token, token.lemma_))
+Output[0]
+he --&gt; he
+was --&gt; be
+running --&gt; run
+late --&gt; late
+</code></pre>
+<p>&#x4F8B;&#x5982;&#xFF0C;SpaCy&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x5178;WordNet&#x6765;&#x63D0;&#x53D6;Lemmas&#xFF0C;&#x4F46;&#x662F;lemmatization&#x53EF;&#x4EE5;&#x6784;&#x5EFA;&#x4E3A;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x95EE;&#x9898;&#xFF0C;&#x9700;&#x8981;&#x7406;&#x89E3;&#x8BED;&#x8A00;&#x7684;&#x5F62;&#x6001;&#x5B66;&#x3002;</p>
+<p>&#x8BCD;&#x5E72;&#x662F;&#x6700;&#x666E;&#x901A;&#x7684;lemmatization&#x3002;&#x5B83;&#x6D89;&#x53CA;&#x5230;&#x4F7F;&#x7528;&#x624B;&#x5DE5;&#x5236;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x6765;&#x53BB;&#x6389;&#x5355;&#x8BCD;&#x7684;&#x7ED3;&#x5C3E;&#xFF0C;&#x4ECE;&#x800C;&#x5C06;&#x5B83;&#x4EEC;&#x7B80;&#x5316;&#x4E3A;&#x4E00;&#x79CD;&#x53EB;&#x505A;&#x8BCD;&#x5E72;&#x7684;&#x5E38;&#x89C1;&#x5F62;&#x5F0F;&#x3002;&#x901A;&#x5E38;&#x5728;&#x5F00;&#x6E90;&#x5305;&#x4E2D;&#x5B9E;&#x73B0;&#x7684;&#x6D41;&#x884C;&#x7684;&#x8BCD;&#x5E72;&#x5206;&#x6790;&#x5668;&#x662F;Porter&#x7684;Stemmer&#x548C;Snowball Stemmer&#x3002;&#x6211;&#x4EEC;&#x7559;&#x7ED9;&#x60A8;&#x53BB;&#x5BFB;&#x627E;&#x5408;&#x9002;&#x7684;SpaCy/NLTK api&#x6765;&#x6267;&#x884C;&#x8BCD;&#x5E72;&#x63D0;&#x53D6;&#x3002;</p>
+<h2 id="categorizing-sentences-and-documents">Categorizing Sentences and Documents</h2>
+<p>&#x5BF9;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x5F52;&#x7C7B;&#x6216;&#x5206;&#x7C7B;&#x53EF;&#x80FD;&#x662F;NLP&#x6700;&#x65E9;&#x7684;&#x5E94;&#x7528;&#x4E4B;&#x4E00;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x7B2C;1&#x7AE0;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x8868;&#x793A;(Term-Frequency [TF]&#x548C;Term-Frequency- invere - document - frequency [TF- idf])&#x5BF9;&#x4E8E;&#x5BF9;&#x8F83;&#x957F;&#x7684;&#x6587;&#x672C;&#x5757;(&#x5982;&#x6587;&#x6863;&#x6216;&#x53E5;&#x5B50;)&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x548C;&#x5206;&#x7C7B;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;&#x4E3B;&#x9898;&#x6807;&#x7B7E;&#x7684;&#x5206;&#x914D;&#x3001;&#x8BC4;&#x8BBA;&#x60C5;&#x7EEA;&#x7684;&#x9884;&#x6D4B;&#x3001;&#x5783;&#x573E;&#x90AE;&#x4EF6;&#x7684;&#x8FC7;&#x6EE4;&#x3001;&#x8BED;&#x8A00;&#x8BC6;&#x522B;&#x548C;&#x90AE;&#x4EF6;&#x5206;&#x7C7B;&#x7B49;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x53D7;&#x76D1;&#x7763;&#x7684;&#x6587;&#x6863;&#x5206;&#x7C7B;&#x95EE;&#x9898;&#x3002;(&#x534A;&#x76D1;&#x7763;&#x7248;&#x672C;&#xFF0C;&#x5176;&#x4E2D;&#x53EA;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x6807;&#x8BB0;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x4F46;&#x8D85;&#x51FA;&#x4E86;&#x672C;&#x4E66;&#x7684;&#x8303;&#x56F4;&#x3002;)</p>
+<h2 id="categorizing-words-pos-tagging">Categorizing Words: POS Tagging</h2>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x6807;&#x8BB0;&#x7684;&#x6982;&#x5FF5;&#x4ECE;&#x6587;&#x6863;&#x6269;&#x5C55;&#x5230;&#x5355;&#x4E2A;&#x5355;&#x8BCD;&#x6216;&#x6807;&#x8BB0;&#x3002;&#x5206;&#x7C7B;&#x5355;&#x8BCD;&#x7684;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x793A;&#x4F8B;&#x662F;&#x8BCD;&#x6027;&#x6807;&#x6CE8;&#xFF0C;&#x5982;&#x793A;&#x4F8B;2-4&#x6240;&#x793A;&#x3002; Example 2-4. Parts of speech</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]
+<span class="hljs-keyword">import</span> spacy
+nlp = spacy.load(&#x2018;en&#x2019;)
+doc = nlp(<span class="hljs-string">u&quot;Mary slapped the green witch.&quot;</span>)
+<span class="hljs-keyword">for</span> token <span class="hljs-keyword">in</span> doc:
+    print(<span class="hljs-string">&apos;{} - {}&apos;</span>.format(token, token.pos_))
+Output[<span class="hljs-number">0</span>]
+Mary - PROPN
+slapped - VERB
+the - DET
+green - ADJ
+witch - NOUN
+. - PUNCT
+</code></pre>
+<h2 id="categorizing-spans-chunking-and-named-entity-recognition">Categorizing Spans: Chunking and Named Entity Recognition</h2>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6807;&#x8BB0;&#x6587;&#x672C;&#x7684;&#x8303;&#x56F4;;&#x5373;&#xFF0C;&#x4E00;&#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x591A;&#x4EE4;&#x724C;&#x8FB9;&#x754C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x201C;Mary slapped the green witch.&#x201D;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x8BC6;&#x522B;&#x5176;&#x4E2D;&#x7684;&#x540D;&#x8BCD;&#x77ED;&#x8BED;(NP)&#x548C;&#x52A8;&#x8BCD;&#x77ED;&#x8BED;(VP)&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;: <img src="img/77ada2c4a9a2bcb1ad37475522db4edc.jpg" alt="Sentence_1" title="&#x56FE;2-4"> &#x8FD9;&#x79F0;&#x4E3A;&#x5206;&#x5757;(Chunking)&#x6216;&#x6D45;&#x89E3;&#x6790;(Shallow parsing)&#x3002;&#x6D45;&#x89E3;&#x6790;&#x7684;&#x76EE;&#x7684;&#x662F;&#x63A8;&#x5BFC;&#x51FA;&#x7531;&#x540D;&#x8BCD;&#x3001;&#x52A8;&#x8BCD;&#x3001;&#x5F62;&#x5BB9;&#x8BCD;&#x7B49;&#x8BED;&#x6CD5;&#x539F;&#x5B50;&#x7EC4;&#x6210;&#x7684;&#x9AD8;&#x9636;&#x5355;&#x4F4D;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BAD;&#x7EC3;&#x6D45;&#x89E3;&#x6790;&#x6A21;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8BCD;&#x6027;&#x6807;&#x8BB0;&#x4E0A;&#x7F16;&#x5199;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6765;&#x8FD1;&#x4F3C;&#x6D45;&#x89E3;&#x6790;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;&#x5BF9;&#x4E8E;&#x82F1;&#x8BED;&#x548C;&#x6700;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x8BED;&#x8A00;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x6570;&#x636E;&#x548C;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x662F;&#x5B58;&#x5728;&#x7684;&#x3002;&#x793A;&#x4F8B;2-5&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;SpaCy&#x7684;&#x6D45;&#x89E3;&#x6790;&#x793A;&#x4F8B;&#x3002;</p>
+<p>Example 2-5. Noun chunks</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> spacy
+nlp = spacy.load(&#x2018;en&#x2019;)
+doc  = nlp(<span class="hljs-string">u&quot;Mary slapped the green witch.&quot;</span>)
+<span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> doc.noun_chunks:
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&apos;{} - {}&apos;</span>.format(chunk, chunk.label_)
+Output[<span class="hljs-number">0</span>]:
+Mary - NP
+the green witch - NP
+</code></pre>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x6709;&#x7528;&#x7684;span&#x7C7B;&#x578B;&#x662F;&#x547D;&#x540D;&#x5B9E;&#x4F53;&#x3002;&#x547D;&#x540D;&#x5B9E;&#x4F53;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5B83;&#x63D0;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x771F;&#x5B9E;&#x4E16;&#x754C;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5982;&#x4EBA;&#x5458;&#x3001;&#x4F4D;&#x7F6E;&#x3001;&#x7EC4;&#x7EC7;&#x3001;&#x836F;&#x54C1;&#x540D;&#x79F0;&#x7B49;&#x7B49;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;: <img src="img/f01ca7a7f18a64f876482e91e9fcb5e0.jpg" alt="Nameentity" title="&#x56FE;2-5"></p>
+<h2 id="structure-of-sentences">Structure of Sentences</h2>
+<p>&#x6D45;&#x5C42;&#x89E3;&#x6790;&#x8BC6;&#x522B;&#x77ED;&#x8BED;&#x5355;&#x4F4D;&#xFF0C;&#x800C;&#x8BC6;&#x522B;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#x7684;&#x4EFB;&#x52A1;&#x79F0;&#x4E3A;&#x89E3;&#x6790;(parsing)&#x3002;&#x60A8;&#x53EF;&#x80FD;&#x8FD8;&#x8BB0;&#x5F97;&#xFF0C;&#x5728;&#x521D;&#x7EA7;&#x82F1;&#x8BED;&#x8BFE;&#x4E0A;&#xFF0C;&#x7528;&#x56FE;&#x8868;&#x8868;&#x793A;&#x53E5;&#x5B50;&#xFF0C;&#x5982;&#x56FE;2-6&#x6240;&#x793A;&#x3002; <img src="img/2f1511a2b2c9bf499667cb6649dbda15.jpg" alt="Parase_1" title="&#x56FE;2-6\. &#x201C;Mary slapped the green witch&#x201D;&#x8FD9;&#x53E5;&#x8BDD;&#x7684;&#x6210;&#x5206;&#x89E3;&#x6790;&#x3002;"></p>
+<p>&#x89E3;&#x6790;&#x6811;(Parse tree)&#x8868;&#x793A;&#x53E5;&#x5B50;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8BED;&#x6CD5;&#x5355;&#x5143;&#x5728;&#x5C42;&#x6B21;&#x4E0A;&#x662F;&#x5982;&#x4F55;&#x76F8;&#x5173;&#x7684;&#x3002;&#x56FE;2-6&#x4E2D;&#x7684;&#x89E3;&#x6790;&#x6811;&#x663E;&#x793A;&#x4E86;&#x6240;&#x8C13;&#x7684;&#x6210;&#x5206;&#x89E3;&#x6790;&#x3002;&#x53E6;&#x4E00;&#x79CD;&#x53EF;&#x80FD;&#x66F4;&#x6709;&#x7528;&#x7684;&#x663E;&#x793A;&#x5173;&#x7CFB;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;&#x4F9D;&#x8D56;&#x9879;&#x89E3;&#x6790;(dependency parsing)&#xFF0C;&#x5982;&#x56FE;2-7&#x6240;&#x793A;&#x3002; <img src="img/b4d0b914345a17162773e581f0ee08f9.jpg" alt="Parase_2" title="&#x56FE;2-7\. &#x201C;Mary slapped the green witch.&#x201D;&#x8FD9;&#x53E5;&#x8BDD;&#x7684;&#x4F9D;&#x8D56;&#x6027;&#x89E3;&#x6790;"> &#x8981;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x4F20;&#x7EDF;&#x89E3;&#x6790;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;&#x672C;&#x7AE0;&#x672B;&#x5C3E;&#x7684;&#x53C2;&#x8003;&#x8D44;&#x6599;&#x90E8;&#x5206;&#x3002;</p>
+<h2 id="word-senses-and-semantics">Word Senses and Semantics</h2>
+<p>&#x5355;&#x8BCD;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x800C;&#x4E14;&#x901A;&#x5E38;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x3002;&#x4E00;&#x4E2A;&#x8BCD;&#x7684;&#x4E0D;&#x540C;&#x542B;&#x4E49;&#x79F0;&#x4E3A;&#x5B83;&#x7684;&#x610F;&#x4E49;(senses)&#x3002;WordNet&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x671F;&#x8FD0;&#x884C;&#x7684;&#x8BCD;&#x6C47;&#x8D44;&#x6E90;&#x9879;&#x76EE;&#xFF0C;&#x5B83;&#x6765;&#x81EA;&#x666E;&#x6797;&#x65AF;&#x987F;&#x5927;&#x5B66;&#xFF0C;&#x65E8;&#x5728;&#x5BF9;&#x6240;&#x6709;&#x82F1;&#x8BED;&#x5355;&#x8BCD;(&#x55EF;&#xFF0C;&#x5927;&#x90E8;&#x5206;)&#x7684;&#x542B;&#x4E49;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x8BCD;&#x6C47;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8003;&#x8651;&#x50CF;&#x201C;plane&#x201D;&#x8FD9;&#x6837;&#x7684;&#x5355;&#x8BCD;&#x3002;&#x56FE;2-8&#x663E;&#x793A;&#x4E86;&#x201C;plane&#x201D;&#x4E00;&#x8BCD;&#x7684;&#x4E0D;&#x540C;&#x7528;&#x6CD5;&#x3002; <img src="img/f756e802f10adc3bacf2e61e4b5f160e.jpg" alt="Plane" title="&#x56FE;2-8\. &#x5BF9;&#x201C;plane&#x201D;&#x8FD9;&#x4E2A;&#x8BCD;&#x7684;&#x610F;&#x4E49;(sense)"> &#x5728;WordNet&#x8FD9;&#x6837;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x6570;&#x5341;&#x5E74;&#x7684;&#x52AA;&#x529B;&#x662F;&#x503C;&#x5F97;&#x7684;&#xFF0C;&#x5373;&#x4F7F;&#x662F;&#x5728;&#x6709;&#x73B0;&#x4EE3;&#x65B9;&#x6CD5;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x3002;&#x672C;&#x4E66;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x7ED9;&#x51FA;&#x4E86;&#x5728;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x7684;&#x80CC;&#x666F;&#x4E0B;&#x4F7F;&#x7528;&#x73B0;&#x6709;&#x8BED;&#x8A00;&#x8D44;&#x6E90;&#x7684;&#x4F8B;&#x5B50;&#x3002;&#x8BCD;&#x7684;&#x610F;&#x4E49;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5F52;&#x7EB3;&#x51FA;&#x6765;&#x3002;&#x4ECE;&#x6587;&#x672C;&#x4E2D;&#x81EA;&#x52A8;&#x53D1;&#x73B0;&#x8BCD;&#x4E49;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x534A;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x5728;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x3002;&#x5C3D;&#x7BA1;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x4E66;&#x4E2D;&#x6CA1;&#x6709;&#x6D89;&#x53CA;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x9605;&#x8BFB;Jurasky and Martin(2014)&#xFF0C;&#x7B2C;17&#x7AE0;&#xFF0C;Manning and Schutze(1999)&#xFF0C;&#x7B2C;7&#x7AE0;&#x3002;</p>
+<h2 id="summary">Summary</h2>
+<p>&#x5728;&#x8FD9;&#x4E00;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x56DE;&#x987E;&#x4E86;NLP&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x672F;&#x8BED;&#x548C;&#x601D;&#x60F3;&#xFF0C;&#x8FD9;&#x4E9B;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x4F1A;&#x5F88;&#x6709;&#x7528;&#x3002;&#x672C;&#x7AE0;&#x53EA;&#x6D89;&#x53CA;&#x4E86;&#x4F20;&#x7EDF;NLP&#x6240;&#x80FD;&#x63D0;&#x4F9B;&#x7684;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x3002;&#x6211;&#x4EEC;&#x5FFD;&#x7565;&#x4E86;&#x4F20;&#x7EDF;NLP&#x7684;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x65B9;&#x9762;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x60F3;&#x5C06;&#x672C;&#x4E66;&#x7684;&#x5927;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x7528;&#x4E8E;NLP&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x662F;&#x8981;&#x77E5;&#x9053;&#xFF0C;&#x6709;&#x5927;&#x91CF;&#x7684;NLP&#x7814;&#x7A76;&#x5DE5;&#x4F5C;&#x4E0D;&#x4F7F;&#x7528;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x4F46;&#x4ECD;&#x5177;&#x6709;&#x5F88;&#x9AD8;&#x7684;&#x5F71;&#x54CD;&#x529B;(&#x5373;&#xFF0C;&#x5E7F;&#x6CDB;&#x7528;&#x4E8E;&#x5EFA;&#x7B51;&#x751F;&#x4EA7;&#x7CFB;&#x7EDF;)&#x3002;&#x5728;&#x8BB8;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x57FA;&#x4E8E;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;&#x7684;&#x8865;&#x5145;&#x800C;&#x4E0D;&#x662F;&#x66FF;&#x4EE3;&#x3002;&#x6709;&#x7ECF;&#x9A8C;&#x7684;&#x5B9E;&#x8DF5;&#x8005;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;&#x4E16;&#x754C;&#x7684;&#x4F18;&#x70B9;&#x6765;&#x6784;&#x5EFA;&#x6700;&#x5148;&#x8FDB;&#x7684;&#x7CFB;&#x7EDF;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x591A;&#x5730;&#x4E86;&#x89E3;NLP&#x7684;&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x4EE5;&#x4E0B;&#x53C2;&#x8003;&#x8D44;&#x6599;&#x90E8;&#x5206;&#x4E2D;&#x7684;&#x6807;&#x9898;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h2>
+<p>References</p>
+<ol>
+<li><p>Manning, Christopher D., and Hinrich Sch&#xFC;tze. (1999). Foundations of statistical natural language processing. MIT press.</p>
+</li>
+<li><p>Bird, Steven, Ewan Klein, and Edward Loper. (2009). Natural language processing with Python: analyzing text with the natural language toolkit. O&#x2019;Reilly Media.</p>
+</li>
+<li><p>Smith, Noah A. (2011). &#x201C;Linguistic structure prediction.&#x201D; Synthesis lectures on human language technologies.</p>
+</li>
+<li><p>Jurafsky, Dan, and James H. Martin. (2014). Speech and language processing. Vol. 3. London: Pearson.</p>
+</li>
+<li><p>Russell, Stuart J., and Peter Norvig. (2016). Artificial intelligence: a modern approach. Malaysia: Pearson Education Limited.</p>
+</li>
+<li><p>Zheng, Alice, and Casari, Amanda. (2018). Feature Engineering for Machine Learning: Principles and Techniques for Data Scientists. O&#x2019;Reilly Media, Inc.</p>
+</li>
+</ol>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/nlp-pytorch-zh/" target="_blank">apachecn/nlp-pytorch-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="../shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '1eba1fde838d39ce2ba9',
+        clientSecret: '0bdf321e160ca29b2d54e8722700dd5accb084e0',
+        repo: 'nlp-pytorch-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2019-07-29 11:38:33
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 1.基础介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3.html" class="navigation navigation-next " aria-label="Next page: Chapter 3.神经网络基础组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 2.传统NLP快速回顾","level":"1.3","depth":1,"next":{"title":"Chapter 3.神经网络基础组件","level":"1.4","depth":1,"path":"docs/3.md","ref":"docs/3.md","articles":[]},"previous":{"title":"Chapter 1.基础介绍","level":"1.2","depth":1,"path":"docs/1.md","ref":"docs/1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","mathjax","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/nlp-pytorch-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://nlp-pt.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/nlp-pytorch-zh/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"https://nlp-pt.apachecn.org/cover.jpg"},"expandable-chapters":{}},"theme":"default","author":"ApacheCN","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NLP with PyTorch 中文文档","language":"zh-hans","gitbook":"*","description":"NLP with PyTorch 中文文档"},"file":{"path":"docs/2.md","mtime":"2019-07-29T03:38:33.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-09T15:06:48.544Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

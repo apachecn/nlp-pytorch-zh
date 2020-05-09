@@ -1,0 +1,1135 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 1.基础介绍 · NLP with PyTorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    入门须知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    Chapter 1.基础介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    Chapter 2.传统NLP快速回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    Chapter 3.神经网络基础组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    Chapter 4.自然语言处理 Feed-Forward Networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    Chapter 5.Embedding Words and Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    Chapter 6.自然语言处理 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    Chapter 7.自然语言处理的中间 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    Chapter 8.用于自然语言处理的高级 Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    Chapter 9.经典, 前沿和后续步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 1.基础介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-1&#x57FA;&#x7840;&#x4ECB;&#x7ECD;">Chapter 1.&#x57FA;&#x7840;&#x4ECB;&#x7ECD;</h1>
+<blockquote>
+<p>&#x672C;&#x6587;&#x6807;&#x9898;:<a href="https://yifdu.github.io/2018/12/17/Natural-Language-Processing-with-PyTorch%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank">Natural-Language-Processing-with-PyTorch&#xFF08;&#x4E00;&#xFF09;</a></p>
+<p>&#x6587;&#x7AE0;&#x4F5C;&#x8005;:<a href="https://yifdu.github.io/" title="&#x8BBF;&#x95EE; Yif Du &#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" target="_blank">Yif Du</a></p>
+<p>&#x53D1;&#x5E03;&#x65F6;&#x95F4;:2018&#x5E74;12&#x6708;17&#x65E5; - 09:12</p>
+<p>&#x6700;&#x540E;&#x66F4;&#x65B0;:2019&#x5E74;02&#x6708;16&#x65E5; - 21:02</p>
+<p>&#x539F;&#x59CB;&#x94FE;&#x63A5;:<a href="https://yifdu.github.io/2018/12/17/Natural-Language-Processing-with-PyTorch%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank">http://yifdu.github.io/2018/12/17/Natural-Language-Processing-with-PyTorch&#xFF08;&#x4E00;&#xFF09;/</a></p>
+<p>&#x8BB8;&#x53EF;&#x534F;&#x8BAE;:  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x7981;&#x6B62;&#x6F14;&#x7ECE; 4.0 &#x56FD;&#x9645;</a>  &#x8F6C;&#x8F7D;&#x8BF7;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x94FE;&#x63A5;&#x53CA;&#x4F5C;&#x8005;&#x3002;</p>
+</blockquote>
+<p>&#x50CF;Echo (Alexa)&#x3001;Siri&#x548C;&#x8C37;&#x6B4C;Translate&#x8FD9;&#x6837;&#x7684;&#x5BB6;&#x55BB;&#x6237;&#x6653;&#x7684;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x5171;&#x540C;&#x70B9;&#x3002;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;(NLP)&#x5E94;&#x7528;&#x7684;&#x4EA7;&#x7269;&#xFF0C;NLP&#x662F;&#x672C;&#x4E66;&#x7684;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x4E3B;&#x9898;&#x4E4B;&#x4E00;&#x3002;NLP&#x662F;&#x4E00;&#x5957;&#x8FD0;&#x7528;&#x7EDF;&#x8BA1;&#x65B9;&#x6CD5;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x5426;&#x6709;&#x8BED;&#x8A00;&#x5B66;&#x7684;&#x6D1E;&#x89C1;&#xFF0C;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x7684;&#x4EFB;&#x52A1;&#x800C;&#x7406;&#x89E3;&#x6587;&#x672C;&#x3002;&#x8FD9;&#x79CD;&#x5BF9;&#x6587;&#x672C;&#x7684;&#x201C;&#x7406;&#x89E3;&#x201D;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x8FC7;&#x5C06;&#x6587;&#x672C;&#x8F6C;&#x6362;&#x4E3A;&#x53EF;&#x7528;&#x7684;&#x8BA1;&#x7B97;&#x8868;&#x793A;&#xFF0C;&#x8FD9;&#x4E9B;&#x8BA1;&#x7B97;&#x8868;&#x793A;&#x662F;&#x79BB;&#x6563;&#x6216;&#x8FDE;&#x7EED;&#x7684;&#x7EC4;&#x5408;&#x7ED3;&#x6784;&#xFF0C;&#x5982;&#x5411;&#x91CF;&#x6216;&#x5F20;&#x91CF;&#x3001;&#x56FE;&#x5F62;&#x548C;&#x6811;&#x3002;</p>
+<p>&#x4ECE;&#x6570;&#x636E;(&#x672C;&#x4F8B;&#x4E2D;&#x4E3A;&#x6587;&#x672C;)&#x4E2D;&#x5B66;&#x4E60;&#x9002;&#x5408;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x662F;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x4E3B;&#x9898;&#x3002;&#x5E94;&#x7528;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#x6709;&#x8D85;&#x8FC7;&#x4E09;&#x5341;&#x5E74;&#x7684;&#x5386;&#x53F2;,&#x4F46;&#x6700;&#x8FD1;(2008&#x5E74;&#x81F3;2010&#x5E74;&#x5F00;&#x59CB;) <script type="math/tex; ">^1</script> &#x4E00;&#x7EC4;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6280;&#x672F;,&#x88AB;&#x79F0;&#x4E3A;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;,&#x7EE7;&#x7EED;&#x53D1;&#x5C55;&#x548C;&#x8BC1;&#x660E;&#x975E;&#x5E38;&#x6709;&#x6548;&#x7684;&#x5404;&#x79CD;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;(AI)&#x5728;NLP&#x4E2D;&#x7684;&#x4EFB;&#x52A1;,&#x6F14;&#x8BB2;,&#x548C;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x3002;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x8BB2;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;;&#x56E0;&#x6B64;&#xFF0C;&#x672C;&#x4E66;&#x662F;&#x5173;&#x4E8E;NLP&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x7814;&#x7A76;&#x3002;</p>
+<p>&#x7B80;&#x5355;&#x5730;&#x8BF4;&#xFF0C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4F7F;&#x4EBA;&#x4EEC;&#x80FD;&#x591F;&#x4F7F;&#x7528;&#x4E00;&#x79CD;&#x79F0;&#x4E3A;&#x8BA1;&#x7B97;&#x56FE;&#x548C;&#x6570;&#x5B57;&#x4F18;&#x5316;&#x6280;&#x672F;&#x7684;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#x6709;&#x6548;&#x5730;&#x4ECE;&#x6570;&#x636E;&#x4E2D;&#x5B66;&#x4E60;&#x8868;&#x793A;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#x6210;&#x529F;&#x4E4B;&#x5904;&#xFF0C;&#x50CF;&#x8C37;&#x6B4C;&#x3001;Facebook&#x548C;Amazon&#x8FD9;&#x6837;&#x7684;&#x5927;&#x578B;&#x6280;&#x672F;&#x516C;&#x53F8;&#x5DF2;&#x7ECF;&#x53D1;&#x5E03;&#x4E86;&#x57FA;&#x4E8E;&#x5B83;&#x4EEC;&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x5F62;&#x6846;&#x67B6;&#x548C;&#x5E93;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4EE5;&#x6355;&#x6349;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x548C;&#x5DE5;&#x7A0B;&#x5E08;&#x7684;&#x601D;&#x7EF4;&#x3002;&#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8003;&#x8651;PyTorch&#xFF0C;&#x4E00;&#x4E2A;&#x8D8A;&#x6765;&#x8D8A;&#x6D41;&#x884C;&#x7684;&#x57FA;&#x4E8E;python&#x7684;&#x8BA1;&#x7B97;&#x56FE;&#x6846;&#x67B6;&#x5E93;&#x6765;&#x5B9E;&#x73B0;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x89E3;&#x91CA;&#x4EC0;&#x4E48;&#x662F;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x4F7F;&#x7528;PyTorch&#x4F5C;&#x4E3A;&#x6846;&#x67B6;&#x3002;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x9886;&#x57DF;&#x662F;&#x5E7F;&#x9614;&#x7684;&#x3002;&#x5728;&#x8FD9;&#x4E00;&#x7AE0;&#xFF0C;&#x5728;&#x672C;&#x4E66;&#x7684;&#x5927;&#x90E8;&#x5206;&#x65F6;&#x95F4;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#x6240;&#x8C13;&#x7684;&#x76D1;&#x7763;&#x5B66;&#x4E60;;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4F7F;&#x7528;&#x6807;&#x8BB0;&#x7684;&#x8BAD;&#x7EC3;&#x793A;&#x4F8B;&#x8FDB;&#x884C;&#x5B66;&#x4E60;&#x3002;&#x6211;&#x4EEC;&#x89E3;&#x91CA;&#x4E86;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#xFF0C;&#x8FD9;&#x5C06;&#x6210;&#x4E3A;&#x672C;&#x4E66;&#x7684;&#x57FA;&#x7840;&#x3002;&#x5982;&#x679C;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x60A8;&#x8FD8;&#x4E0D;&#x719F;&#x6089;&#x5176;&#x4E2D;&#x7684;&#x8BB8;&#x591A;&#x672F;&#x8BED;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x662F;&#x5BF9;&#x7684;&#x3002;&#x8FD9;&#x4E00;&#x7AE0;&#xFF0C;&#x4EE5;&#x53CA;&#x672A;&#x6765;&#x7684;&#x7AE0;&#x8282;&#xFF0C;&#x4E0D;&#x4EC5;&#x6F84;&#x6E05;&#x4E86;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x800C;&#x4E14;&#x6DF1;&#x5165;&#x7814;&#x7A76;&#x4E86;&#x5B83;&#x4EEC;&#x3002;&#x5982;&#x679C;&#x60A8;&#x5DF2;&#x7ECF;&#x719F;&#x6089;&#x8FD9;&#x91CC;&#x63D0;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x672F;&#x8BED;&#x548C;&#x6982;&#x5FF5;&#xFF0C;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x9F13;&#x52B1;&#x60A8;&#x9075;&#x5FAA;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x539F;&#x56E0;:&#x4E3A;&#x672C;&#x4E66;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x7684;&#x8BCD;&#x6C47;&#x8868;&#xFF0C;&#x4EE5;&#x53CA;&#x586B;&#x8865;&#x7406;&#x89E3;&#x672A;&#x6765;&#x7AE0;&#x8282;&#x6240;&#x9700;&#x7684;&#x4EFB;&#x4F55;&#x7A7A;&#x767D;&#x3002;</p>
+<p>&#x672C;&#x7AE0;&#x7684;&#x76EE;&#x6807;&#x662F;:</p>
+<ul>
+<li>&#x53D1;&#x5C55;&#x5BF9;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x7684;&#x6E05;&#x6670;&#x7406;&#x89E3;&#xFF0C;&#x7406;&#x89E3;&#x672F;&#x8BED;&#xFF0C;&#x5E76;&#x53D1;&#x5C55;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;&#x6846;&#x67B6;&#x6765;&#x5904;&#x7406;&#x672A;&#x6765;&#x7AE0;&#x8282;&#x7684;&#x5B66;&#x4E60;&#x4EFB;&#x52A1;</li>
+<li>&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x4E3A;&#x5B66;&#x4E60;&#x4EFB;&#x52A1;&#x7684;&#x8F93;&#x5165;&#x7F16;&#x7801;</li>
+<li>&#x7406;&#x89E3;&#x4EC0;&#x4E48;&#x662F;&#x8BA1;&#x7B97;&#x56FE;</li>
+<li>&#x638C;&#x63E1;PyTorch&#x7684;&#x57FA;&#x672C;&#x77E5;&#x8BC6;</li>
+</ul>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x5427;&#xFF01;</p>
+<h2 id="the-supervised-learning-paradigm">The Supervised Learning Paradigm</h2>
+<p>&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#x7684;&#x76D1;&#x7763;&#xFF0C;&#x6216;&#x8005;&#x7B80;&#x5355;&#x7684;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#xFF0C;&#x662F;&#x6307;&#x5C06;&#x76EE;&#x6807;(&#x88AB;&#x9884;&#x6D4B;&#x7684;&#x5185;&#x5BB9;)&#x7684;ground truth&#x7528;&#x4E8E;&#x89C2;&#x5BDF;(&#x8F93;&#x5165;)&#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x6587;&#x6863;&#x5206;&#x7C7B;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x662F;&#x4E00;&#x4E2A;&#x5206;&#x7C7B;&#x6807;&#x7B7E;&#xFF0C;&#x89C2;&#x5BDF;(&#x8F93;&#x5165;)&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x4E2D;&#xFF0C;&#x89C2;&#x5BDF;(&#x8F93;&#x5165;)&#x662F;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x53E5;&#x5B50;&#xFF0C;&#x76EE;&#x6807;&#x662F;&#x53E6;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x53E5;&#x5B50;&#x3002;&#x901A;&#x8FC7;&#x5BF9;&#x8F93;&#x5165;&#x6570;&#x636E;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x56FE;1-1&#x4E2D;&#x6F14;&#x793A;&#x4E86;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x3002; <img src="img/58c13549534aa235ea3328c43765c9f9.jpg" alt="nlpp_0101" title="&#x56FE;1-1 &#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#xFF0C;&#x4E00;&#x79CD;&#x4ECE;&#x6807;&#x8BB0;&#x8F93;&#x5165;&#x6570;&#x636E;&#x4E2D;&#x5B66;&#x4E60;&#x7684;&#x6982;&#x5FF5;&#x6846;&#x67B6;&#x3002;"></p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x5206;&#x89E3;&#x4E3A;&#x516D;&#x4E2A;&#x4E3B;&#x8981;&#x6982;&#x5FF5;&#xFF0C;&#x5982;&#x56FE;1-1&#x6240;&#x793A;: Observations&#xFF1A; &#x89C2;&#x5BDF;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x9884;&#x6D4B;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x6211;&#x4EEC;&#x7528;x&#x8868;&#x793A;&#x89C2;&#x5BDF;&#x503C;&#x3002;&#x6211;&#x4EEC;&#x6709;&#x65F6;&#x628A;&#x89C2;&#x5BDF;&#x503C;&#x79F0;&#x4E3A;&#x201C;&#x8F93;&#x5165;&#x201D;&#x3002; Targets: &#x76EE;&#x6807;&#x662F;&#x4E0E;&#x89C2;&#x5BDF;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x6807;&#x7B7E;&#x3002;&#x5B83;&#x901A;&#x5E38;&#x662F;&#x88AB;&#x9884;&#x8A00;&#x7684;&#x4E8B;&#x60C5;&#x3002;&#x6309;&#x7167;&#x673A;&#x5668;&#x5B66;&#x4E60;/&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;&#x7684;&#x6807;&#x51C6;&#x7B26;&#x53F7;&#xFF0C;&#x6211;&#x4EEC;&#x7528;y&#x8868;&#x793A;&#x8FD9;&#x4E9B;&#x3002;&#x6709;&#x65F6;&#xFF0C;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;ground truth &#x3002; Model: &#x6A21;&#x578B;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B66;&#x8868;&#x8FBE;&#x5F0F;&#x6216;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x503C;x&#xFF0C;&#x5E76;&#x9884;&#x6D4B;&#x5176;&#x76EE;&#x6807;&#x6807;&#x7B7E;&#x7684;&#x503C;&#x3002; Parameters: &#x6709;&#x65F6;&#x4E5F;&#x79F0;&#x4E3A;&#x6743;&#x91CD;&#xFF0C;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x5316;&#x6A21;&#x578B;&#x3002;&#x6807;&#x51C6;&#x4F7F;&#x7528;&#x7684;&#x7B26;&#x53F7;w(&#x6743;&#x91CD;)&#x6216; <script type="math/tex; ">\hat w</script>&#x3002; Predictions: &#x9884;&#x6D4B;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x4F30;&#x8BA1;&#xFF0C;&#x662F;&#x6A21;&#x578B;&#x5728;&#x7ED9;&#x5B9A;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x6240;&#x731C;&#x6D4B;&#x76EE;&#x6807;&#x7684;&#x503C;&#x3002;&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x4E2A;&#x201C;hat&#x201D;&#x8868;&#x793A;&#x8FD9;&#x4E9B;&#x3002;&#x6240;&#x4EE5;,&#x76EE;&#x6807;y&#x7684;&#x9884;&#x6D4B;&#x7528;<script type="math/tex; ">\hat y</script>&#x6765;&#x8868;&#x793A;&#x3002; Loss function: &#x635F;&#x5931;&#x51FD;&#x6570;&#x662F;&#x6BD4;&#x8F83;&#x9884;&#x6D4B;&#x4E0E;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E2D;&#x89C2;&#x6D4B;&#x76EE;&#x6807;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x7684;&#x51FD;&#x6570;&#x3002;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x53CA;&#x5176;&#x9884;&#x6D4B;&#xFF0C;&#x635F;&#x5931;&#x51FD;&#x6570;&#x5C06;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x79F0;&#x4E3A;&#x635F;&#x5931;&#x7684;&#x6807;&#x91CF;&#x5B9E;&#x503C;&#x3002;&#x635F;&#x5931;&#x503C;&#x8D8A;&#x4F4E;&#xFF0C;&#x6A21;&#x578B;&#x5BF9;&#x76EE;&#x6807;&#x7684;&#x9884;&#x6D4B;&#x6548;&#x679C;&#x8D8A;&#x597D;&#x3002;&#x6211;&#x4EEC;&#x7528;L&#x8868;&#x793A;&#x635F;&#x5931;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x867D;&#x7136;&#x5728;NLP /&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x5EFA;&#x6A21;&#x6216;&#x7F16;&#x5199;&#x672C;&#x4E66;&#x65F6;&#xFF0C;&#x8FD9;&#x5728;&#x6570;&#x5B66;&#x4E0A;&#x5E76;&#x4E0D;&#x662F;&#x6B63;&#x5F0F;&#x6709;&#x6548;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x5C06;&#x6B63;&#x5F0F;&#x91CD;&#x8FF0;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x4F8B;&#xFF0C;&#x4EE5;&#x4FBF;&#x4E3A;&#x8BE5;&#x9886;&#x57DF;&#x7684;&#x65B0;&#x8BFB;&#x8005;&#x63D0;&#x4F9B;&#x6807;&#x51C6;&#x672F;&#x8BED;&#xFF0C;&#x4EE5;&#x4FBF;&#x4ED6;&#x4EEC;&#x62E5;&#x6709;&#x719F;&#x6089;arXiv&#x7814;&#x7A76;&#x8BBA;&#x6587;&#x4E2D;&#x7684;&#x7B26;&#x53F7;&#x548C;&#x5199;&#x4F5C;&#x98CE;&#x683C;&#x3002;</p>
+<p>&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6; <script type="math/tex; ">D=\{X_i,y_i\}_{i=1}^n</script>&#xFF0C;&#x6709;n&#x4E2A;&#x4F8B;&#x5B50;&#x3002;&#x7ED9;&#x5B9A;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5B66;&#x4E60;&#x4E00;&#x4E2A;&#x7531;&#x6743;&#x503C;w&#x53C2;&#x6570;&#x5316;&#x7684;&#x51FD;&#x6570;(&#x6A21;&#x578B;)f&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;f&#x7684;&#x7ED3;&#x6784;&#x505A;&#x4E00;&#x4E2A;&#x5047;&#x8BBE;&#xFF0C;&#x7ED9;&#x5B9A;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#xFF0C;&#x6743;&#x503C;w&#x7684;&#x5B66;&#x4E60;&#x503C;&#x5C06;&#x5145;&#x5206;&#x8868;&#x5F81;&#x6A21;&#x578B;&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x7684;&#x8F93;&#x5165;X,&#x6A21;&#x578B;&#x9884;&#x6D4B; <script type="math/tex; ">\hat y</script> &#x4F5C;&#x4E3A;&#x76EE;&#x6807;: <script type="math/tex; ">\hat y =f(X;W)</script> &#x5728;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;&#x8BAD;&#x7EC3;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x89C2;&#x5BDF;&#x7684;&#x771F;&#x6B63;&#x76EE;&#x6807;y&#x3002;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x635F;&#x5931;&#x5C06;&#x4E3A; <script type="math/tex; ">L(y,\hat y)</script> &#x3002;&#x7136;&#x540E;&#xFF0C;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x5BFB;&#x627E;&#x6700;&#x4F18;&#x53C2;&#x6570;/&#x6743;&#x503C;w&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x6240;&#x6709;n&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x7D2F;&#x79EF;&#x635F;&#x5931;&#x6700;&#x5C0F;&#x5316;&#x3002;</p>
+<hr>
+<p>&#x5229;&#x7528;(&#x968F;&#x673A;)&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3; &#x76D1;&#x7763;&#x5B66;&#x4E60;&#x7684;&#x76EE;&#x6807;&#x662F;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x96C6;&#x9009;&#x62E9;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x4F7F;&#x635F;&#x5931;&#x51FD;&#x6570;&#x6700;&#x5C0F;&#x5316;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x8FD9;&#x7B49;&#x4EF7;&#x4E8E;&#x5728;&#x65B9;&#x7A0B;&#x4E2D;&#x6C42;&#x6839;&#x3002;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x6C42;&#x65B9;&#x7A0B;&#x6839;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x56DE;&#x5FC6;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;&#x4F20;&#x7EDF;&#x7684;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x6CD5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x6839;(&#x53C2;&#x6570;)&#x7684;&#x4E00;&#x4E9B;&#x521D;&#x503C;&#x8FDB;&#x884C;&#x731C;&#x6D4B;&#xFF0C;&#x5E76;&#x8FED;&#x4EE3;&#x66F4;&#x65B0;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#xFF0C;&#x76F4;&#x5230;&#x76EE;&#x6807;&#x51FD;&#x6570;(&#x635F;&#x5931;&#x51FD;&#x6570;)&#x7684;&#x8BA1;&#x7B97;&#x503C;&#x4F4E;&#x4E8E;&#x53EF;&#x63A5;&#x53D7;&#x9608;&#x503C;(&#x5373;&#x6536;&#x655B;&#x51C6;&#x5219;)&#x3002;&#x5BF9;&#x4E8E;&#x5927;&#x578B;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x7531;&#x4E8E;&#x5185;&#x5B58;&#x9650;&#x5236;&#xFF0C;&#x5728;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x5B9E;&#x73B0;&#x4F20;&#x7EDF;&#x7684;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x901A;&#x5E38;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x7531;&#x4E8E;&#x8BA1;&#x7B97;&#x5F00;&#x9500;&#xFF0C;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x6162;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x901A;&#x5E38;&#x91C7;&#x7528;&#x4E00;&#x79CD;&#x8FD1;&#x4F3C;&#x7684;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x79F0;&#x4E3A;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;(SGD)&#x3002;&#x5728;&#x968F;&#x673A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6570;&#x636E;&#x70B9;&#x6216;&#x6570;&#x636E;&#x70B9;&#x7684;&#x5B50;&#x96C6;&#x662F;&#x968F;&#x673A;&#x9009;&#x62E9;&#x7684;&#xFF0C;&#x5E76;&#x8BA1;&#x7B97;&#x8BE5;&#x5B50;&#x96C6;&#x7684;&#x68AF;&#x5EA6;&#x3002;&#x5F53;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x65F6;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x79F0;&#x4E3A;&#x7EAF;SGD&#xFF0C;&#x5F53;&#x4F7F;&#x7528;(&#x591A;&#x4E2A;)&#x6570;&#x636E;&#x70B9;&#x7684;&#x5B50;&#x96C6;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5176;&#x79F0;&#x4E3A;&#x5C0F;&#x578B;&#x6279;&#x5904;&#x7406;SGD&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x201C;&#x7EAF;&#x201D;&#x548C;&#x201C;&#x5C0F;&#x578B;&#x6279;&#x5904;&#x7406;&#x201D;&#x8FD9;&#x4E24;&#x4E2A;&#x8BCD;&#x5728;&#x6839;&#x636E;&#x4E0A;&#x4E0B;&#x6587;&#x53D8;&#x5F97;&#x6E05;&#x6670;&#x65F6;&#x5C31;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x3002;&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#x7EAF;SGD&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x7531;&#x4E8E;&#x6709;&#x566A;&#x58F0;&#x7684;&#x66F4;&#x65B0;&#x800C;&#x5BFC;&#x81F4;&#x975E;&#x5E38;&#x6162;&#x7684;&#x6536;&#x655B;&#x3002;&#x4E00;&#x822C;SGD&#x7B97;&#x6CD5;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53D8;&#x4F53;&#xFF0C;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x66F4;&#x5FEB;&#x7684;&#x6536;&#x655B;&#x3002;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x63A2;&#x8BA8;&#x8FD9;&#x4E9B;&#x53D8;&#x4F53;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x6E10;&#x53D8;&#x6765;&#x66F4;&#x65B0;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x79CD;&#x8FED;&#x4EE3;&#x66F4;&#x65B0;&#x53C2;&#x6570;&#x7684;&#x8FC7;&#x7A0B;&#x79F0;&#x4E3A;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x3002;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x7684;&#x6BCF;&#x4E2A;&#x6B65;&#x9AA4;(&#x53C8;&#x540D;epoch)&#x7531;&#x5411;&#x524D;&#x4F20;&#x9012;&#x548C;&#x5411;&#x540E;&#x4F20;&#x9012;&#x7EC4;&#x6210;&#x3002;&#x5411;&#x524D;&#x4F20;&#x9012;&#x7528;&#x53C2;&#x6570;&#x7684;&#x5F53;&#x524D;&#x503C;&#x8BA1;&#x7B97;&#x8F93;&#x5165;&#x5E76;&#x8BA1;&#x7B97;&#x635F;&#x5931;&#x51FD;&#x6570;&#x3002;&#x53CD;&#x5411;&#x4F20;&#x9012;&#x4F7F;&#x7528;&#x635F;&#x5931;&#x68AF;&#x5EA6;&#x66F4;&#x65B0;&#x53C2;&#x6570;&#x3002;</p>
+<hr>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x8FD9;&#x91CC;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x662F;&#x4E13;&#x95E8;&#x9488;&#x5BF9;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6216;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x3002;&#x56FE;1-1&#x4E2D;&#x7BAD;&#x5934;&#x7684;&#x65B9;&#x5411;&#x8868;&#x793A;&#x8BAD;&#x7EC3;&#x7CFB;&#x7EDF;&#x65F6;&#x6570;&#x636E;&#x7684;&#x201C;&#x6D41;&#x201D;&#x3002;&#x5173;&#x4E8E;&#x8BAD;&#x7EC3;&#x548C;&#x201C;&#x8BA1;&#x7B97;&#x56FE;&#x201D;&#x4E2D;&#x201C;&#x6D41;&#x201D;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x6709;&#x66F4;&#x591A;&#x8981;&#x8BF4;&#x7684;&#xFF0C;&#x4F46;&#x9996;&#x5148;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x5982;&#x4F55;&#x7528;&#x6570;&#x5B57;&#x8868;&#x793A;NLP&#x95EE;&#x9898;&#x4E2D;&#x7684;&#x8F93;&#x5165;&#x548C;&#x76EE;&#x6807;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x5E76;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x3002;</p>
+<h2 id="observation-and-target-encoding">Observation and Target Encoding</h2>
+<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7528;&#x6570;&#x5B57;&#x8868;&#x793A;&#x89C2;&#x6D4B;&#x503C;(&#x6587;&#x672C;)&#xFF0C;&#x4EE5;&#x4FBF;&#x4E0E;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;&#x56FE;1-2&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x63CF;&#x8FF0;&#x3002; <img src="img/a63991e391610b511b1fcd8202f6cb8c.jpg" alt="nlpp_0102" title="&#x56FE;1-2 &#x89C2;&#x5BDF;&#x548C;&#x76EE;&#x6807;&#x7F16;&#x7801;:&#x6CE8;&#x610F;&#x56FE;1-1&#x4E2D;&#x7684;&#x76EE;&#x6807;&#x548C;&#x89C2;&#x5BDF;&#x662F;&#x5982;&#x4F55;&#x7528;&#x5411;&#x91CF;&#x6216;&#x5F20;&#x91CF;&#x8868;&#x793A;&#x7684;&#x3002;&#x8FD9;&#x88AB;&#x7EDF;&#x79F0;&#x4E3A;&#x8F93;&#x5165;&#x201C;&#x7F16;&#x7801;&#x201D;&#x3002;"></p>
+<p>&#x8868;&#x793A;&#x6587;&#x672C;&#x7684;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x65B9;&#x6CD5;&#x662F;&#x7528;&#x6570;&#x5B57;&#x5411;&#x91CF;&#x8868;&#x793A;&#x3002;&#x6709;&#x65E0;&#x6570;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x8FD9;&#x79CD;&#x6620;&#x5C04;/&#x8868;&#x793A;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x672C;&#x4E66;&#x7684;&#x5927;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x90FD;&#x81F4;&#x529B;&#x4E8E;&#x4ECE;&#x6570;&#x636E;&#x4E2D;&#x5B66;&#x4E60;&#x6B64;&#x7C7B;&#x4EFB;&#x52A1;&#x8868;&#x793A;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x57FA;&#x4E8E;&#x542F;&#x53D1;&#x5F0F;&#x7684;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x57FA;&#x4E8E;&#x8BA1;&#x6570;&#x7684;&#x8868;&#x793A;&#x5F00;&#x59CB;&#x3002;&#x867D;&#x7136;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4EEC;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#xFF0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x66F4;&#x4E30;&#x5BCC;&#x7684;&#x8868;&#x793A;&#x5B66;&#x4E60;&#x7684;&#x8D77;&#x70B9;&#x3002;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x57FA;&#x4E8E;&#x8BA1;&#x6570;&#x7684;&#x8868;&#x793A;&#x90FD;&#x662F;&#x4ECE;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7EF4;&#x6570;&#x7684;&#x5411;&#x91CF;&#x5F00;&#x59CB;&#x7684;&#x3002;</p>
+<h3 id="one-hot-representation">One-Hot Representation</h3>
+<p>&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;one-hot&#x8868;&#x793A;&#x4ECE;&#x4E00;&#x4E2A;&#x96F6;&#x5411;&#x91CF;&#x5F00;&#x59CB;&#xFF0C;&#x5982;&#x679C;&#x5355;&#x8BCD;&#x51FA;&#x73B0;&#x5728;&#x53E5;&#x5B50;&#x6216;&#x6587;&#x6863;&#x4E2D;&#xFF0C;&#x5219;&#x5C06;&#x5411;&#x91CF;&#x4E2D;&#x7684;&#x76F8;&#x5E94;&#x6761;&#x76EE;&#x8BBE;&#x7F6E;&#x4E3A;1&#x3002;&#x8003;&#x8651;&#x4E0B;&#x9762;&#x4E24;&#x53E5;&#x8BDD;&#x3002;</p>
+<pre><code class="lang-py">Time flies like an arrow.
+Fruit flies like a banana.
+</code></pre>
+<p>&#x5BF9;&#x53E5;&#x5B50;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#xFF0C;&#x5FFD;&#x7565;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#xFF0C;&#x5E76;&#x5C06;&#x6240;&#x6709;&#x7684;&#x5355;&#x8BCD;&#x90FD;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x8868;&#x793A;&#xFF0C;&#x5C31;&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5927;&#x5C0F;&#x4E3A;8&#x7684;&#x8BCD;&#x6C47;&#x8868;:{time, fruit, flies, like, a, an, arrow, banana}&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x516B;&#x7EF4;&#x7684;one-hot&#x5411;&#x91CF;&#x6765;&#x8868;&#x793A;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x3002;&#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528; <script type="math/tex; ">1_w</script> &#x8868;&#x793A;&#x4EE4;&#x724C;/&#x5355;&#x8BCD;w&#x7684;one-hot&#x8868;&#x793A;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x77ED;&#x8BED;&#x3001;&#x53E5;&#x5B50;&#x6216;&#x6587;&#x6863;&#xFF0C;&#x538B;&#x7F29;&#x7684;one-hot&#x8868;&#x793A;&#x4EC5;&#x4EC5;&#x662F;&#x5176;&#x7EC4;&#x6210;&#x8BCD;&#x7684;&#x903B;&#x8F91;&#x6216;&#x7684;one-hot&#x8868;&#x793A;&#x3002;&#x4F7F;&#x7528;&#x56FE;1-3&#x6240;&#x793A;&#x7684;&#x7F16;&#x7801;&#xFF0C;&#x77ED;&#x8BED;&#x201C;like a banana&#x201D;&#x7684;one-hot&#x8868;&#x793A;&#x5C06;&#x662F;&#x4E00;&#x4E2A;3&#xD7;8&#x77E9;&#x9635;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x5217;&#x662F;8&#x7EF4;&#x7684;one-hot&#x5411;&#x91CF;&#x3002;&#x901A;&#x5E38;&#x8FD8;&#x4F1A;&#x770B;&#x5230;&#x201C;&#x6298;&#x53E0;&#x201D;&#x6216;&#x4E8C;&#x8FDB;&#x5236;&#x7F16;&#x7801;&#xFF0C;&#x5176;&#x4E2D;&#x6587;&#x672C;/&#x77ED;&#x8BED;&#x7531;&#x8BCD;&#x6C47;&#x8868;&#x957F;&#x5EA6;&#x7684;&#x5411;&#x91CF;&#x8868;&#x793A;&#xFF0C;&#x7528;0&#x548C;1&#x8868;&#x793A;&#x5355;&#x8BCD;&#x7684;&#x7F3A;&#x5931;&#x6216;&#x5B58;&#x5728;&#x3002;&#x201C;like a banana&#x201D;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x7F16;&#x7801;&#x662F;:[0,0,0,1,1,0,0,1]&#x3002;</p>
+<p><img src="img/bf2571d77271c27a0bb65f60aa4926c0.jpg" alt="nlpp_0103" title="&#x56FE;1-3 &#x201C;Time flies like an arrow&#x201D;&#x548C;&#x201C;Fruit flies like a banana.&#x201D;&#x8FD9;&#x4E24;&#x4E2A;&#x53E5;&#x5B50;&#x7684;one-hot&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002;"></p>
+<hr>
+<p>NOTE &#x5728;&#x8FD9;&#x4E00;&#x70B9;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x89C9;&#x5F97;&#x6211;&#x4EEC;&#x628A;&#x201C;flies&#x201D;&#x7684;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x610F;&#x601D;(&#x6216;&#x611F;&#x89C9;)&#x641E;&#x6DF7;&#x4E86;&#xFF0C;&#x606D;&#x559C;&#x4F60;&#xFF0C;&#x806A;&#x660E;&#x7684;&#x8BFB;&#x8005;!&#x8BED;&#x8A00;&#x5145;&#x6EE1;&#x4E86;&#x6B67;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6781;&#x5176;&#x7B80;&#x5316;&#x7684;&#x5047;&#x8BBE;&#x6765;&#x6784;&#x5EFA;&#x6709;&#x7528;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;&#x5B66;&#x4E60;&#x7279;&#x5B9A;&#x4E8E;&#x610F;&#x4E49;&#x7684;&#x8868;&#x793A;&#x662F;&#x53EF;&#x80FD;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x505A;&#x5F97;&#x6709;&#x4E9B;&#x8D85;&#x524D;&#x4E86;&#x3002;</p>
+<hr>
+<p>&#x5C3D;&#x7BA1;&#x5BF9;&#x4E8E;&#x672C;&#x4E66;&#x4E2D;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x6211;&#x4EEC;&#x5F88;&#x5C11;&#x4F7F;&#x7528;&#x9664;&#x4E86;one-hot&#x8868;&#x793A;&#x4E4B;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x8868;&#x793A;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;NLP&#x4E2D;&#x53D7;&#x6B22;&#x8FCE;&#x3001;&#x5386;&#x53F2;&#x539F;&#x56E0;&#x548C;&#x5B8C;&#x6210;&#x76EE;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x4ECB;&#x7ECD;&#x672F;&#x8BED;&#x9891;&#x7387;(TF)&#x548C;&#x672F;&#x8BED;&#x9891;&#x7387;&#x53CD;&#x8F6C;&#x6587;&#x6863;&#x9891;&#x7387;(TF-idf)&#x8868;&#x793A;&#x3002;&#x8FD9;&#x4E9B;&#x8868;&#x793A;&#x5728;&#x4FE1;&#x606F;&#x68C0;&#x7D22;(IR)&#x4E2D;&#x6709;&#x7740;&#x60A0;&#x4E45;&#x7684;&#x5386;&#x53F2;&#xFF0C;&#x751A;&#x81F3;&#x5728;&#x4ECA;&#x5929;&#x7684;&#x751F;&#x4EA7;NLP&#x7CFB;&#x7EDF;&#x4E2D;&#x4E5F;&#x5F97;&#x5230;&#x4E86;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x3002;(&#x7FFB;&#x8BD1;&#x6709;&#x4E0D;&#x8DB3;)</p>
+<h3 id="tf-representation">TF Representation</h3>
+<p>&#x77ED;&#x8BED;&#x3001;&#x53E5;&#x5B50;&#x6216;&#x6587;&#x6863;&#x7684;TF&#x8868;&#x793A;&#x4EC5;&#x4EC5;&#x662F;&#x6784;&#x6210;&#x8BCD;&#x7684;one-hot&#x7684;&#x603B;&#x548C;&#x3002;&#x4E3A;&#x4E86;&#x7EE7;&#x7EED;&#x6211;&#x4EEC;&#x611A;&#x8822;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x4F7F;&#x7528;&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;one-hot&#x7F16;&#x7801;&#xFF0C;&#x201C;Fruit flies like time flies a fruit&#x201D;&#x8FD9;&#x53E5;&#x8BDD;&#x5177;&#x6709;&#x4EE5;&#x4E0B;TF&#x8868;&#x793A;:[1,2,2,1,1,1,0,0]&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6BCF;&#x4E2A;&#x6761;&#x76EE;&#x662F;&#x53E5;&#x5B50;(&#x8BED;&#x6599;&#x5E93;)&#x4E2D;&#x51FA;&#x73B0;&#x76F8;&#x5E94;&#x5355;&#x8BCD;&#x7684;&#x6B21;&#x6570;&#x7684;&#x8BA1;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x7528;TF(w)&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;TF&#x3002;</p>
+<p>Example 1-1. Generating a &#x201C;collapsed&#x201D; one-hot or binary representation using scikit-learn</p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> sklearn.feature_extraction.text <span class="hljs-keyword">import</span> CountVectorizer
+<span class="hljs-keyword">import</span> seaborn <span class="hljs-keyword">as</span> sns
+
+corpus = [<span class="hljs-string">&apos;Time flies flies like an arrow.&apos;</span>,
+          <span class="hljs-string">&apos;Fruit flies like a banana.&apos;</span>]
+one_hot_vectorizer = CountVectorizer(binary=<span class="hljs-keyword">True</span>)
+one_hot = one_hot_vectorizer.fit_transform(corpus).toarray()
+sns.heatmap(one_hot, annot=<span class="hljs-keyword">True</span>,
+            cbar=<span class="hljs-keyword">False</span>, xticklabels=vocab,
+            yticklabels=[<span class="hljs-string">&apos;Sentence 1&apos;</span>, <span class="hljs-string">&apos;Sentence 2&apos;</span>])
+</code></pre>
+<p><img src="img/1571305217127.jpg" alt="1571305217127" title="&#x56FE;1-4 &#x7531;&#x793A;&#x4F8B;1-1&#x751F;&#x6210;&#x7684;&#x6298;&#x53E0;one-hot&#x8868;&#x793A;&#x3002;"></p>
+<p>&#x6298;&#x53E0;&#x7684;onehot&#x662F;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x4E2D;&#x6709;&#x591A;&#x4E2A;1&#x7684;onehot</p>
+<h3 id="tf-idf-representation">TF-IDF Representation</h3>
+<p>&#x8003;&#x8651;&#x4E00;&#x7EC4;&#x4E13;&#x5229;&#x6587;&#x4EF6;&#x3002;&#x60A8;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x5B83;&#x4EEC;&#x4E2D;&#x7684;&#x5927;&#x591A;&#x6570;&#x90FD;&#x6709;&#x8BF8;&#x5982;claim&#x3001;system&#x3001;method&#x3001;procedure&#x7B49;&#x5355;&#x8BCD;&#xFF0C;&#x5E76;&#x4E14;&#x7ECF;&#x5E38;&#x91CD;&#x590D;&#x591A;&#x6B21;&#x3002;TF&#x8868;&#x793A;&#x5BF9;&#x66F4;&#x9891;&#x7E41;&#x7684;&#x5355;&#x8BCD;&#x8FDB;&#x884C;&#x52A0;&#x6743;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x50CF;&#x201C;claim&#x201D;&#x8FD9;&#x6837;&#x7684;&#x5E38;&#x7528;&#x8BCD;&#x5E76;&#x4E0D;&#x80FD;&#x589E;&#x52A0;&#x6211;&#x4EEC;&#x5BF9;&#x5177;&#x4F53;&#x4E13;&#x5229;&#x7684;&#x7406;&#x89E3;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x201C;tetrafluoroethylene&#x201D;&#x8FD9;&#x6837;&#x7F55;&#x89C1;&#x7684;&#x8BCD;&#x51FA;&#x73B0;&#x7684;&#x9891;&#x7387;&#x8F83;&#x4F4E;&#xFF0C;&#x4F46;&#x5F88;&#x53EF;&#x80FD;&#x8868;&#x660E;&#x4E13;&#x5229;&#x6587;&#x4EF6;&#x7684;&#x6027;&#x8D28;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x8868;&#x8FF0;&#x4E2D;&#x8D4B;&#x4E88;&#x5B83;&#x66F4;&#x5927;&#x7684;&#x6743;&#x91CD;&#x3002;&#x53CD;&#x6587;&#x6863;&#x9891;&#x7387;(IDF)&#x662F;&#x4E00;&#x79CD;&#x542F;&#x53D1;&#x5F0F;&#x7B97;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x5730;&#x505A;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#x3002;</p>
+<p><strong>IDF&#x8868;&#x793A;&#x60E9;&#x7F5A;&#x5E38;&#x89C1;&#x7684;&#x7B26;&#x53F7;&#xFF0C;&#x5E76;&#x5956;&#x52B1;&#x5411;&#x91CF;&#x8868;&#x793A;&#x4E2D;&#x7684;&#x7F55;&#x89C1;&#x7B26;&#x53F7;&#x3002;</strong> &#x7B26;&#x53F7;w&#x7684;IDF(w)&#x5BF9;&#x8BED;&#x6599;&#x5E93;&#x7684;&#x5B9A;&#x4E49;&#x4E3A;</p>
+<p>&#x5176;&#x4E2D; <script type="math/tex; ">n_w</script> &#x662F;&#x5305;&#x542B;&#x5355;&#x8BCD;w&#x7684;&#x6587;&#x6863;&#x6570;&#x91CF;&#xFF0C;N&#x662F;&#x6587;&#x6863;&#x603B;&#x6570;&#x3002;TF-IDF&#x5206;&#x6570;&#x5C31;&#x662F;TF(w) * IDF(w)&#x7684;&#x4E58;&#x79EF;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x5728;&#x6240;&#x6709;&#x6587;&#x6863;(&#x4F8B;&#x5982;&#xFF0C; <script type="math/tex; ">n_w</script> = N)&#xFF0C; IDF(w)&#x4E3A;0,TF-IDF&#x5F97;&#x5206;&#x4E3A;0&#xFF0C;&#x5B8C;&#x5168;&#x60E9;&#x7F5A;&#x4E86;&#x8FD9;&#x4E00;&#x9879;&#x3002;&#x5176;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x672F;&#x8BED;&#x5F88;&#x5C11;&#x51FA;&#x73B0;(&#x53EF;&#x80FD;&#x53EA;&#x51FA;&#x73B0;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x4E2D;)&#xFF0C;&#x90A3;&#x4E48;IDF&#x5C31;&#x662F;log n&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>Example 1-2. Generating TF-IDF representation using scikit-learn</p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> sklearn.feature_extraction.text <span class="hljs-keyword">import</span> TfidfVectorizer
+<span class="hljs-keyword">import</span> seaborn <span class="hljs-keyword">as</span> sns
+
+tfidf_vectorizer = TfidfVectorizer()
+tfidf = tfidf_vectorizer.fit_transform(corpus).toarray()
+sns.heatmap(tfidf, annot=<span class="hljs-keyword">True</span>, cbar=<span class="hljs-keyword">False</span>, xticklabels=vocab,
+            yticklabels= [<span class="hljs-string">&apos;Sentence 1&apos;</span>, <span class="hljs-string">&apos;Sentence 2&apos;</span>])
+</code></pre>
+<p><img src="img/2fdbe9e5e1ab207ed4555c3ffd873753.jpg" alt="nlpp_01_tfidf" title="&#x56FE; 1-5"> &#x5728;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x5F88;&#x5C11;&#x770B;&#x5230;&#x4F7F;&#x7528;&#x50CF;TF-IDF&#x8FD9;&#x6837;&#x7684;&#x542F;&#x53D1;&#x5F0F;&#x8868;&#x793A;&#x5BF9;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#xFF0C;&#x56E0;&#x4E3A;&#x76EE;&#x6807;&#x662F;&#x5B66;&#x4E60;&#x4E00;&#x79CD;&#x8868;&#x793A;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x6574;&#x6570;&#x7D22;&#x5F15;&#x7684;one-hot&#x7F16;&#x7801;&#x548C;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x201C;embedding lookup&#x201D;&#x5C42;&#x5F00;&#x59CB;&#x6784;&#x5EFA;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x8F93;&#x5165;&#x3002;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7ED9;&#x51FA;&#x51E0;&#x4E2A;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<h3 id="target-encoding">Target Encoding</h3>
+<p>&#x6B63;&#x5982;&#x201C;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x201D;&#x6240;&#x6307;&#x51FA;&#x7684;&#xFF0C;&#x76EE;&#x6807;&#x53D8;&#x91CF;&#x7684;&#x786E;&#x5207;&#x6027;&#x8D28;&#x53D6;&#x51B3;&#x4E8E;&#x6240;&#x89E3;&#x51B3;&#x7684;NLP&#x4EFB;&#x52A1;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x3001;&#x6458;&#x8981;&#x548C;&#x56DE;&#x7B54;&#x95EE;&#x9898;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76EE;&#x6807;&#x4E5F;&#x662F;&#x6587;&#x672C;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x524D;&#x9762;&#x63CF;&#x8FF0;&#x7684;one-hot&#x7F16;&#x7801;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x3002;</p>
+<p>&#x8BB8;&#x591A;NLP&#x4EFB;&#x52A1;&#x5B9E;&#x9645;&#x4E0A;&#x4F7F;&#x7528;&#x5206;&#x7C7B;&#x6807;&#x7B7E;&#xFF0C;&#x5176;&#x4E2D;&#x6A21;&#x578B;&#x5FC5;&#x987B;&#x9884;&#x6D4B;&#x4E00;&#x7EC4;&#x56FA;&#x5B9A;&#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x3002;&#x5BF9;&#x6B64;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x7684;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x65B9;&#x6CD5;&#x662F;&#x5BF9;&#x6BCF;&#x4E2A;&#x6807;&#x7B7E;&#x4F7F;&#x7528;&#x60DF;&#x4E00;&#x7D22;&#x5F15;&#x3002;&#x5F53;&#x8F93;&#x51FA;&#x6807;&#x7B7E;&#x7684;&#x6570;&#x91CF;&#x592A;&#x5927;&#x65F6;&#xFF0C;&#x8FD9;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x8868;&#x793A;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#x8BED;&#x8A00;&#x5EFA;&#x6A21;&#x95EE;&#x9898;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x4EFB;&#x52A1;&#x662F;&#x9884;&#x6D4B;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#xFF0C;&#x7ED9;&#x5B9A;&#x8FC7;&#x53BB;&#x770B;&#x5230;&#x7684;&#x5355;&#x8BCD;&#x3002;&#x6807;&#x7B7E;&#x7A7A;&#x95F4;&#x662F;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x5168;&#x90E8;&#x8BCD;&#x6C47;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x589E;&#x957F;&#x5230;&#x51E0;&#x5341;&#x4E07;&#xFF0C;&#x5305;&#x62EC;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x3001;&#x540D;&#x79F0;&#x7B49;&#x7B49;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x7AE0;&#x8282;&#x4E2D;&#x91CD;&#x65B0;&#x8BA8;&#x8BBA;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4E00;&#x4E9B;NLP&#x95EE;&#x9898;&#x6D89;&#x53CA;&#x4ECE;&#x7ED9;&#x5B9A;&#x6587;&#x672C;&#x4E2D;&#x9884;&#x6D4B;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x7ED9;&#x5B9A;&#x4E00;&#x7BC7;&#x82F1;&#x8BED;&#x6587;&#x7AE0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x8BC4;&#x5206;&#x6216;&#x53EF;&#x8BFB;&#x6027;&#x8BC4;&#x5206;&#x3002;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x9910;&#x9986;&#x8BC4;&#x8BBA;&#x7247;&#x6BB5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9884;&#x6D4B;&#x76F4;&#x5230;&#x5C0F;&#x6570;&#x70B9;&#x540E;&#x7B2C;&#x4E00;&#x4F4D;&#x7684;&#x661F;&#x7EA7;&#x3002;&#x7ED9;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x63A8;&#x6587;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9884;&#x6D4B;&#x7528;&#x6237;&#x7684;&#x5E74;&#x9F84;&#x7FA4;&#x3002;&#x6709;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5BF9;&#x6570;&#x5B57;&#x76EE;&#x6807;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x5C06;&#x76EE;&#x6807;&#x7B80;&#x5355;&#x5730;&#x7ED1;&#x5B9A;&#x5230;&#x5206;&#x7C7B;&#x201C;&#x5BB9;&#x5668;&#x201D;&#x4E2D;(&#x4F8B;&#x5982;&#xFF0C;&#x201C;0-18&#x201D;&#x3001;&#x201C;19-25&#x201D;&#x3001;&#x201C;25-30&#x201D;&#x7B49;&#x7B49;)&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x6709;&#x5E8F;&#x5206;&#x7C7B;&#x95EE;&#x9898;&#x662F;&#x4E00;&#x79CD;&#x5408;&#x7406;&#x7684;&#x65B9;&#x6CD5;&#x3002; binning&#x53EF;&#x4EE5;&#x662F;&#x5747;&#x5300;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x975E;&#x5747;&#x5300;&#x7684;&#xFF0C;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x7684;&#x3002;&#x867D;&#x7136;&#x5173;&#x4E8E;&#x8FD9;&#x4E00;&#x70B9;&#x7684;&#x8BE6;&#x7EC6;&#x8BA8;&#x8BBA;&#x8D85;&#x51FA;&#x4E86;&#x672C;&#x4E66;&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x63D0;&#x8BF7;&#x60A8;&#x6CE8;&#x610F;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76EE;&#x6807;&#x7F16;&#x7801;&#x4F1A;&#x663E;&#x8457;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x53C2;&#x9605;Dougherty&#x7B49;&#x4EBA;(1995)&#x53CA;&#x5176;&#x5F15;&#x7528;&#x3002;</p>
+<h2 id="computational-graphs">Computational Graphs</h2>
+<p>&#x56FE;1-1&#x5C06;&#x76D1;&#x7763;&#x5B66;&#x4E60;(&#x8BAD;&#x7EC3;)&#x8303;&#x5F0F;&#x6982;&#x62EC;&#x4E3A;&#x6570;&#x636E;&#x6D41;&#x67B6;&#x6784;&#xFF0C;&#x6A21;&#x578B;(&#x6570;&#x5B66;&#x8868;&#x8FBE;&#x5F0F;)&#x5BF9;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x4EE5;&#x83B7;&#x5F97;&#x9884;&#x6D4B;&#xFF0C;&#x635F;&#x5931;&#x51FD;&#x6570;(&#x53E6;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;)&#x63D0;&#x4F9B;&#x53CD;&#x9988;&#x4FE1;&#x53F7;&#x6765;&#x8C03;&#x6574;&#x6A21;&#x578B;&#x7684;&#x53C2;&#x6570;&#x3002;&#x5229;&#x7528;&#x8BA1;&#x7B97;&#x56FE;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x5B9E;&#x73B0;&#x8BE5;&#x6570;&#x636E;&#x6D41;&#x3002;&#x4ECE;&#x6280;&#x672F;&#x4E0A;&#x8BB2;&#xFF0C;&#x8BA1;&#x7B97;&#x56FE;&#x662F;&#x5BF9;&#x6570;&#x5B66;&#x8868;&#x8FBE;&#x5F0F;&#x5EFA;&#x6A21;&#x7684;&#x62BD;&#x8C61;&#x3002;&#x5728;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#xFF0C;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#x5B9E;&#x73B0;(&#x5982;Theano&#x3001;TensorFlow&#x548C;PyTorch)&#x8FDB;&#x884C;&#x4E86;&#x989D;&#x5916;&#x7684;&#x8BB0;&#x5F55;(bookkeeping)&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x5728;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x4E2D;&#x8BAD;&#x7EC3;&#x671F;&#x95F4;&#x83B7;&#x53D6;&#x53C2;&#x6570;&#x68AF;&#x5EA6;&#x6240;&#x9700;&#x7684;&#x81EA;&#x52A8;&#x5FAE;&#x5206;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x201C;PyTorch&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x201D;&#x4E2D;&#x8FDB;&#x4E00;&#x6B65;&#x63A2;&#x8BA8;&#x8FD9;&#x4E00;&#x70B9;&#x3002;&#x63A8;&#x7406;(&#x6216;&#x9884;&#x6D4B;)&#x5C31;&#x662F;&#x7B80;&#x5355;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x6C42;&#x503C;(&#x8BA1;&#x7B97;&#x56FE;&#x4E0A;&#x7684;&#x6B63;&#x5411;&#x6D41;)&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x8BA1;&#x7B97;&#x56FE;&#x5982;&#x4F55;&#x5EFA;&#x6A21;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x8003;&#x8651;&#x8868;&#x8FBE;&#x5F0F;:y=wx+b</p>
+<p>&#x8FD9;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x4E24;&#x4E2A;&#x5B50;&#x8868;&#x8FBE;&#x5F0F;z = wx&#x548C;y = z + b&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E2A;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE;(DAG)&#x8868;&#x793A;&#x539F;&#x59CB;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#x662F;&#x4E58;&#x6CD5;&#x548C;&#x52A0;&#x6CD5;&#x7B49;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x3002;&#x64CD;&#x4F5C;&#x7684;&#x8F93;&#x5165;&#x662F;&#x8282;&#x70B9;&#x7684;&#x4F20;&#x5165;&#x8FB9;&#xFF0C;&#x64CD;&#x4F5C;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4F20;&#x51FA;&#x8FB9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E;&#x8868;&#x8FBE;&#x5F0F;y = wx + b&#xFF0C;&#x8BA1;&#x7B97;&#x56FE;&#x5982;&#x56FE;1-6&#x6240;&#x793A;&#x3002;&#x5728;&#x4E0B;&#x4E00;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x770B;&#x5230;PyTorch&#x5982;&#x4F55;&#x8BA9;&#x6211;&#x4EEC;&#x4EE5;&#x4E00;&#x79CD;&#x76F4;&#x89C2;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x8BA1;&#x7B97;&#x56FE;&#x5F62;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x5982;&#x4F55;&#x8BA9;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x8003;&#x8651;&#x4EFB;&#x4F55;&#x8BB0;&#x5F55;(bookkeeping)&#x3002;</p>
+<p><img src="img/03cf959585965d980473450016aad007.jpg" alt="nlpp_0105" title="&#x56FE;1-6 &#x7528;&#x8BA1;&#x7B97;&#x56FE;&#x8868;&#x793A;y = wx + b&#x3002;"></p>
+<h2 id="pytorch-basics">PyTorch Basics</h2>
+<p>&#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5E7F;&#x6CDB;&#x5730;&#x4F7F;&#x7528;PyTorch&#x6765;&#x5B9E;&#x73B0;&#x6211;&#x4EEC;&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x3002;PyTorch&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x3001;&#x793E;&#x533A;&#x9A71;&#x52A8;&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x3002;&#x4E0E;Theano&#x3001;Caffe&#x548C;TensorFlow&#x4E0D;&#x540C;&#xFF0C;PyTorch&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x79CD;&#x201C;tape-based automatic differentiation&#x201D;&#x65B9;&#x6CD5;&#xFF0C;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x52A8;&#x6001;&#x5B9A;&#x4E49;&#x548C;&#x6267;&#x884C;&#x8BA1;&#x7B97;&#x56FE;&#x5F62;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x8C03;&#x8BD5;&#x548C;&#x7528;&#x6700;&#x5C11;&#x7684;&#x52AA;&#x529B;&#x6784;&#x5EFA;&#x590D;&#x6742;&#x7684;&#x6A21;&#x578B;&#x975E;&#x5E38;&#x6709;&#x5E2E;&#x52A9;&#x3002;</p>
+<hr>
+<p>&#x52A8;&#x6001; VS &#x9759;&#x6001;&#x8BA1;&#x7B97;&#x56FE; &#x50CF;Theano&#x3001;Caffe&#x548C;TensorFlow&#x8FD9;&#x6837;&#x7684;&#x9759;&#x6001;&#x6846;&#x67B6;&#x9700;&#x8981;&#x9996;&#x5148;&#x58F0;&#x660E;&#x3001;&#x7F16;&#x8BD1;&#x548C;&#x6267;&#x884C;&#x8BA1;&#x7B97;&#x56FE;&#x3002;&#x867D;&#x7136;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x975E;&#x5E38;&#x9AD8;&#x6548;&#x7684;&#x5B9E;&#x73B0;(&#x5728;&#x751F;&#x4EA7;&#x548C;&#x79FB;&#x52A8;&#x8BBE;&#x7F6E;&#x4E2D;&#x975E;&#x5E38;&#x6709;&#x7528;)&#xFF0C;&#x4F46;&#x5728;&#x7814;&#x7A76;&#x548C;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x9EBB;&#x70E6;&#x3002;&#x50CF;Chainer&#x3001;DyNet&#x548C;PyTorch&#x8FD9;&#x6837;&#x7684;&#x73B0;&#x4EE3;&#x6846;&#x67B6;&#x5B9E;&#x73B0;&#x4E86;&#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x4ECE;&#x800C;&#x652F;&#x6301;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x547D;&#x4EE4;&#x5F0F;&#x5F00;&#x53D1;&#x98CE;&#x683C;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x4E4B;&#x524D;&#x7F16;&#x8BD1;&#x6A21;&#x578B;&#x3002;&#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x56FE;&#x5728;&#x5EFA;&#x6A21;NLP&#x4EFB;&#x52A1;&#x65F6;&#x7279;&#x522B;&#x6709;&#x7528;&#xFF0C;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x4E0D;&#x540C;&#x7684;&#x56FE;&#x7ED3;&#x6784;&#x3002;</p>
+<hr>
+<p>PyTorch&#x662F;&#x4E00;&#x4E2A;&#x4F18;&#x5316;&#x7684;&#x5F20;&#x91CF;&#x64CD;&#x4F5C;&#x5E93;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x7528;&#x4E8E;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x5305;&#x3002;&#x8FD9;&#x4E2A;&#x5E93;&#x7684;&#x6838;&#x5FC3;&#x662F;&#x5F20;&#x91CF;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x7684;&#x6570;&#x5B66;&#x5BF9;&#x8C61;&#x3002;0&#x9636;&#x5F20;&#x91CF;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6216;&#x8005;&#x6807;&#x91CF;&#x3002;&#x4E00;&#x9636;&#x5F20;&#x91CF;(&#x4E00;&#x9636;&#x5F20;&#x91CF;)&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x6570;&#x7EC4;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x3002;&#x7C7B;&#x4F3C;&#x5730;&#xFF0C;&#x4E8C;&#x9636;&#x5F20;&#x91CF;&#x662F;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x6570;&#x7EC4;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5F20;&#x91CF;&#x53EF;&#x4EE5;&#x63A8;&#x5E7F;&#x4E3A;&#x6807;&#x91CF;&#x7684;n&#x7EF4;&#x6570;&#x7EC4;&#xFF0C;&#x5982;&#x56FE;1-7&#x6240;&#x793A;</p>
+<p><strong>&#x56FE;1-7 &#x8FD8;&#x672A;&#x7ED9;&#x51FA;</strong></p>
+<p>&#x5728;&#x4EE5;&#x4E0B;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4F7F;&#x7528;PyTorch&#x5B66;&#x4E60;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;:</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x5F20;&#x91CF;</li>
+<li>&#x64CD;&#x4F5C;&#x4E0E;&#x5F20;&#x91CF;</li>
+<li>&#x7D22;&#x5F15;&#x3001;&#x5207;&#x7247;&#x548C;&#x4E0E;&#x5F20;&#x91CF;&#x8FDE;&#x63A5;</li>
+<li>&#x7528;&#x5F20;&#x91CF;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;</li>
+<li>&#x4F7F;&#x7528;&#x5E26;&#x6709;gpu&#x7684;CUDA&#x5F20;&#x91CF;</li>
+</ul>
+<p>&#x5728;&#x672C;&#x8282;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x9996;&#x5148;&#x4F7F;&#x7528;PyTorch&#x6765;&#x719F;&#x6089;&#x5404;&#x79CD;PyTorch&#x64CD;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x4E86;PyTorch&#x5E76;&#x51C6;&#x5907;&#x597D;&#x4E86;Python 3.5+&#x7B14;&#x8BB0;&#x672C;&#xFF0C;&#x5E76;&#x6309;&#x7167;&#x672C;&#x8282;&#x4E2D;&#x7684;&#x793A;&#x4F8B;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x5EFA;&#x8BAE;&#x60A8;&#x5B8C;&#x6210;&#x672C;&#x8282;&#x540E;&#x9762;&#x7684;&#x7EC3;&#x4E60;&#x3002;</p>
+<h3 id="installing-pytorch">Installing PyTorch</h3>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x901A;&#x8FC7;&#x5728;pytorch.org&#x4E0A;&#x9009;&#x62E9;&#x60A8;&#x7684;&#x7CFB;&#x7EDF;&#x9996;&#x9009;&#x9879;&#x5728;&#x60A8;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x5B89;&#x88C5;PyTorch&#x3002;&#x9009;&#x62E9;&#x60A8;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x5305;&#x7BA1;&#x7406;&#x5668;(&#x6211;&#x4EEC;&#x63A8;&#x8350;conda/pip)&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x60A8;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;Python&#x7248;&#x672C;(&#x6211;&#x4EEC;&#x63A8;&#x8350;3.5+)&#x3002;&#x8FD9;&#x5C06;&#x751F;&#x6210;&#x547D;&#x4EE4;&#xFF0C;&#x4EE5;&#x4FBF;&#x60A8;&#x6267;&#x884C;&#x5B89;&#x88C5;PyTorch&#x3002;&#x5728;&#x64B0;&#x5199;&#x672C;&#x6587;&#x65F6;&#xFF0C;conda&#x73AF;&#x5883;&#x7684;&#x5B89;&#x88C5;&#x547D;&#x4EE4;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-py">conda install pytorch torchvision -c pytorch
+</code></pre>
+<hr>
+<p>NOTE &#x5982;&#x679C;&#x60A8;&#x6709;&#x4E00;&#x4E2A;&#x652F;&#x6301;CUDA&#x7684;&#x56FE;&#x5F62;&#x5904;&#x7406;&#x5668;&#x5355;&#x5143;(GPU)&#xFF0C;&#x60A8;&#x8FD8;&#x5E94;&#x8BE5;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;CUDA&#x7248;&#x672C;&#x3002;&#x8981;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x7EC6;&#x8282;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;pytorch.org&#x4E0A;&#x7684;&#x5B89;&#x88C5;&#x8BF4;&#x660E;&#x3002;</p>
+<hr>
+<h3 id="creating-tensors">Creating Tensors</h3>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8F85;&#x52A9;&#x51FD;&#x6570;&#xFF0C;&#x63CF;&#x8FF0;(x)&#xFF0C;&#x5B83;&#x603B;&#x7ED3;&#x4E86;&#x5F20;&#x91CF;x&#x7684;&#x5404;&#x79CD;&#x6027;&#x8D28;&#xFF0C;&#x4F8B;&#x5982;&#x5F20;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x3001;&#x5F20;&#x91CF;&#x7684;&#x7EF4;&#x6570;&#x548C;&#x5F20;&#x91CF;&#x7684;&#x5185;&#x5BB9;:</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">describe</span><span class="hljs-params">(x)</span>:</span>
+  print(<span class="hljs-string">&quot;Type: {}&quot;</span>.format(x.type()))
+  print(<span class="hljs-string">&quot;Shape/size: {}&quot;</span>.format(x.shape))
+  print(<span class="hljs-string">&quot;Values: \n{}&quot;</span>.format(x))
+</code></pre>
+<p>PyTorch&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x4F7F;&#x7528;torch&#x5305;&#x4EE5;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x5F20;&#x91CF;&#x3002;&#x521B;&#x5EFA;&#x5F20;&#x91CF;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x5F20;&#x91CF;&#x7684;&#x7EF4;&#x6570;&#x6765;&#x521D;&#x59CB;&#x5316;&#x5B83;&#xFF0C;&#x5982;&#x4F8B;1-3&#x6240;&#x793A;&#x3002;</p>
+<p>Example 1-3. Creating a tensor in PyTorch with torch.Tensor</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+describe(torch.Tensor(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">3.2018e-05</span>,  <span class="hljs-number">4.5747e-41</span>,  <span class="hljs-number">2.5058e+25</span>],
+        [ <span class="hljs-number">3.0813e-41</span>,  <span class="hljs-number">4.4842e-44</span>,  <span class="hljs-number">0.0000e+00</span>]])
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F20;&#x91CF;&#x901A;&#x8FC7;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#x503C;&#x533A;&#x95F4;&#x4E0A;&#x7684;&#x5747;&#x5300;&#x5206;&#x5E03;(0,1)&#x6216;&#x6807;&#x51C6;&#x6B63;&#x6001;&#x5206;&#x5E03;(&#x4ECE;&#x5747;&#x5300;&#x5206;&#x5E03;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#x5F20;&#x91CF;,&#x8BF4;,&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;,&#x6B63;&#x5982;&#x60A8;&#x5C06;&#x770B;&#x5230;&#x7684;&#x5728;&#x7B2C;&#x4E09;&#x7AE0;&#x548C;&#x7B2C;&#x56DB;&#x7AE0;),&#x89C1;&#x793A;&#x4F8B;1-4&#x3002; Example 1-4. Creating a randomly initialized tensor</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]&#xFF1A;
+<span class="hljs-keyword">import</span> torch
+describe(torch.rand(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))   <span class="hljs-comment"># uniform random</span>
+describe(torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))  <span class="hljs-comment"># random normal</span>
+Output[<span class="hljs-number">0</span>]&#xFF1A;
+Type:  torch.FloatTensor
+Shape/size:  torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+ tensor([[ <span class="hljs-number">0.0242</span>,  <span class="hljs-number">0.6630</span>,  <span class="hljs-number">0.9787</span>],
+        [ <span class="hljs-number">0.1037</span>,  <span class="hljs-number">0.3920</span>,  <span class="hljs-number">0.6084</span>]])
+
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[<span class="hljs-number">-0.1330</span>, <span class="hljs-number">-2.9222</span>, <span class="hljs-number">-1.3649</span>],
+        [ <span class="hljs-number">2.3648</span>,  <span class="hljs-number">1.1561</span>,  <span class="hljs-number">1.5042</span>]])
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x5F20;&#x91CF;&#xFF0C;&#x6240;&#x6709;&#x5F20;&#x91CF;&#x90FD;&#x7528;&#x76F8;&#x540C;&#x7684;&#x6807;&#x91CF;&#x586B;&#x5145;&#x3002;&#x5BF9;&#x4E8E;&#x521B;&#x5EFA;0&#x6216;1&#x5F20;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;&#x4E8E;&#x586B;&#x5145;&#x7279;&#x5B9A;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;fill<em>()&#x65B9;&#x6CD5;&#x3002;&#x4EFB;&#x4F55;&#x5E26;&#x6709;&#x4E0B;&#x5212;&#x7EBF;( </em> )&#x7684;PyTorch&#x65B9;&#x6CD5;&#x90FD;&#x662F;&#x6307;&#x5C31;&#x5730;(in place)&#x64CD;&#x4F5C;;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5B83;&#x5728;&#x4E0D;&#x521B;&#x5EFA;&#x65B0;&#x5BF9;&#x8C61;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5C31;&#x5730;&#x4FEE;&#x6539;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x793A;&#x4F8B;1-5&#x6240;&#x793A;&#x3002;</p>
+<p>Example 1-5. Creating a filled tensor</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+describe(torch.zeros(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+x = torch.ones(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+describe(x)
+x.fill_(<span class="hljs-number">5</span>)
+describe(x)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>],
+        [ <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">0.</span>]])
+
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>],
+        [ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>]])
+
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">5.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">5.</span>],
+        [ <span class="hljs-number">5.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">5.</span>]])
+</code></pre>
+<p>&#x793A;&#x4F8B;1-6&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x4F7F;&#x7528;Python&#x5217;&#x8868;&#x4EE5;&#x58F0;&#x660E;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x5F20;&#x91CF;&#x3002; Example 1-6. Creating and initializing a tensor from lists</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+x = torch.Tensor([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],  
+                  [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])
+describe(x)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>, <span class="hljs-number">3.</span>],
+        [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>, <span class="hljs-number">6.</span>]])
+</code></pre>
+<p>&#x503C;&#x53EF;&#x4EE5;&#x6765;&#x81EA;&#x5217;&#x8868;(&#x5982;&#x524D;&#x9762;&#x7684;&#x793A;&#x4F8B;)&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6765;&#x81EA;NumPy&#x6570;&#x7EC4;&#x3002;&#x5F53;&#x7136;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;PyTorch&#x5F20;&#x91CF;&#x53D8;&#x6362;&#x5230;NumPy&#x6570;&#x7EC4;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F20;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x4E00;&#x4E2A;double&#x5F20;&#x91CF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9ED8;&#x8BA4;&#x7684;FloatTensor&#x3002;&#x8FD9;&#x5BF9;&#x5E94;&#x4E8E;NumPy&#x968F;&#x673A;&#x77E9;&#x9635;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;float64&#xFF0C;&#x5982;&#x793A;&#x4F8B;1-7&#x6240;&#x793A;&#x3002;</p>
+<p>Example 1-7. Creating and initializing a tensor from NumPy</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+npy = np.random.rand(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+describe(torch.from_numpy(npy))
+Output[<span class="hljs-number">0</span>]:
+Type: torch.DoubleTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.8360</span>,  <span class="hljs-number">0.8836</span>,  <span class="hljs-number">0.0545</span>],
+        [ <span class="hljs-number">0.6928</span>,  <span class="hljs-number">0.2333</span>,  <span class="hljs-number">0.7984</span>]], dtype=torch.float64)
+</code></pre>
+<p>&#x5728;&#x5904;&#x7406;&#x4F7F;&#x7528;Numpy&#x683C;&#x5F0F;&#x6570;&#x503C;&#x7684;&#x9057;&#x7559;&#x5E93;(legacy libraries)&#x65F6;&#xFF0C;&#x5728;NumPy&#x548C;PyTorch&#x5F20;&#x91CF;&#x4E4B;&#x95F4;&#x5207;&#x6362;&#x7684;&#x80FD;&#x529B;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<h3 id="tensor-types-and-size">Tensor Types and Size</h3>
+<p>&#x6BCF;&#x4E2A;&#x5F20;&#x91CF;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x5927;&#x5C0F;&#x3002;&#x4F7F;&#x7528;torch&#x65F6;&#x7684;&#x9ED8;&#x8BA4;&#x5F20;&#x91CF;&#x7C7B;&#x578B;&#x3002;&#x5F20;&#x91CF;&#x6784;&#x9020;&#x51FD;&#x6570;&#x662F;torch.FloatTensor&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x6307;&#x5B9A;&#x5F20;&#x91CF;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4EE5;&#x540E;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#x5C06;&#x5F20;&#x91CF;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;(float&#x3001;long&#x3001;double&#x7B49;)&#x3002;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x5316;&#x7C7B;&#x578B;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7279;&#x5B9A;&#x5F20;&#x91CF;&#x7C7B;&#x578B;(&#x5982;FloatTensor&#x548C;LongTensor)&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x4F7F;&#x7528;&#x7279;&#x6B8A;&#x7684;&#x65B9;&#x6CD5;torch&#x3002;&#x5F20;&#x91CF;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;dtype&#xFF0C;&#x5982;&#x4F8B;1-8&#x6240;&#x793A;&#x3002;</p>
+<p>Example 1-8. Tensor properties</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+x = torch.FloatTensor([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],  
+                       [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])
+describe(x)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],
+        [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>]])
+Input[<span class="hljs-number">1</span>]:
+x = x.long()
+describe(x)
+Output[<span class="hljs-number">1</span>]:
+Type: torch.LongTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>],
+        [ <span class="hljs-number">4</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">6</span>]])
+Input[<span class="hljs-number">2</span>]:
+x = torch.tensor([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+                  [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]], dtype=torch.int64)
+describe(x)
+Output[<span class="hljs-number">2</span>]:
+Type: torch.LongTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>],
+        [ <span class="hljs-number">4</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">6</span>]])
+Input[<span class="hljs-number">3</span>]:
+x = x.float()
+describe(x)
+Output[<span class="hljs-number">3</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>],
+        [ <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">6.</span>]])
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5229;&#x7528;&#x5F20;&#x91CF;&#x5BF9;&#x8C61;&#x7684;&#x5F62;&#x72B6;&#x7279;&#x6027;&#x548C;&#x5C3A;&#x5BF8;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x5176;&#x5C3A;&#x5BF8;&#x7684;&#x6D4B;&#x91CF;&#x503C;&#x3002;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x5EA6;&#x91CF;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;&#x5728;&#x8C03;&#x8BD5;PyTorch&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x68C0;&#x67E5;&#x5F20;&#x91CF;&#x7684;&#x5F62;&#x72B6;&#x6210;&#x4E3A;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x5DE5;&#x5177;&#x3002;</p>
+<h3 id="tensor-operations">Tensor Operations</h3>
+<p>&#x5728;&#x521B;&#x5EFA;&#x4E86;&#x5F20;&#x91CF;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x5904;&#x7406;&#x4F20;&#x7EDF;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7C7B;&#x578B;(&#x5982;&#x201C;+&#x201D;&#x3001;&#x201C;-&#x201D;&#x3001;&#x201C;* &#x201D;&#x548C;&#x201C;/&#x201D;)&#x90A3;&#x6837;&#x5BF9;&#x5B83;&#x4EEC;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x9664;&#x4E86;&#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;.add()&#x4E4B;&#x7C7B;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x793A;&#x4F8B;1-9&#x6240;&#x793A;&#xFF0C;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x5BF9;&#x5E94;&#x4E8E;&#x7B26;&#x53F7;&#x64CD;&#x4F5C;&#x7B26;&#x3002;</p>
+<p>Example 1-9. Tensor operations: addition</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+x = torch.randn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+describe(x)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.0461</span>,  <span class="hljs-number">0.4024</span>, <span class="hljs-number">-1.0115</span>],
+        [ <span class="hljs-number">0.2167</span>, <span class="hljs-number">-0.6123</span>,  <span class="hljs-number">0.5036</span>]])
+Input[<span class="hljs-number">1</span>]:
+describe(torch.add(x, x))
+Output[<span class="hljs-number">1</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.0923</span>,  <span class="hljs-number">0.8048</span>, <span class="hljs-number">-2.0231</span>],
+        [ <span class="hljs-number">0.4335</span>, <span class="hljs-number">-1.2245</span>,  <span class="hljs-number">1.0072</span>]])
+Input[<span class="hljs-number">2</span>]:
+describe(x + x)
+Output[<span class="hljs-number">2</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.0923</span>,  <span class="hljs-number">0.8048</span>, <span class="hljs-number">-2.0231</span>],
+        [ <span class="hljs-number">0.4335</span>, <span class="hljs-number">-1.2245</span>,  <span class="hljs-number">1.0072</span>]])
+</code></pre>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x8FD0;&#x7B97;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x5230;&#x5F20;&#x91CF;&#x7684;&#x7279;&#x5B9A;&#x7EF4;&#x6570;&#x4E0A;&#x3002;&#x6B63;&#x5982;&#x60A8;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x6CE8;&#x610F;&#x5230;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;2D&#x5F20;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x884C;&#x8868;&#x793A;&#x4E3A;&#x7EF4;&#x5EA6;0&#xFF0C;&#x5217;&#x8868;&#x793A;&#x4E3A;&#x7EF4;&#x5EA6;1&#xFF0C;&#x5982;&#x793A;&#x4F8B;1-10&#x6240;&#x793A;&#x3002; Example 1-10. Dimension-based tensor operations</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+x = torch.arange(<span class="hljs-number">6</span>)
+describe(x)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">6</span>])
+Values:
+tensor([ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>])
+Input[<span class="hljs-number">1</span>]:
+x = x.view(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+describe(x)
+Output[<span class="hljs-number">1</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]])
+Input[<span class="hljs-number">2</span>]:
+describe(torch.sum(x, dim=<span class="hljs-number">0</span>))
+Output[<span class="hljs-number">2</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">3</span>])
+Values:
+tensor([ <span class="hljs-number">3.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">7.</span>])
+Input[<span class="hljs-number">3</span>]:
+describe(torch.sum(x, dim=<span class="hljs-number">1</span>))
+Output[<span class="hljs-number">3</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>])
+Values:
+tensor([  <span class="hljs-number">3.</span>,  <span class="hljs-number">12.</span>])
+Input[<span class="hljs-number">4</span>]:
+describe(torch.transpose(x, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+Output[<span class="hljs-number">4</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">3.</span>],
+        [ <span class="hljs-number">1.</span>,  <span class="hljs-number">4.</span>],
+        [ <span class="hljs-number">2.</span>,  <span class="hljs-number">5.</span>]])
+</code></pre>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6267;&#x884C;&#x66F4;&#x590D;&#x6742;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC;&#x7D22;&#x5F15;&#x3001;&#x5207;&#x7247;&#x3001;&#x8FDE;&#x63A5;&#x548C;&#x7A81;&#x53D8;(indexing,slicing,joining and mutation)&#x7684;&#x7EC4;&#x5408;&#x3002;&#x4E0E;NumPy&#x548C;&#x5176;&#x4ED6;&#x6570;&#x5B57;&#x5E93;&#x4E00;&#x6837;&#xFF0C;PyTorch&#x4E5F;&#x6709;&#x5185;&#x7F6E;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x6B64;&#x7C7B;&#x5F20;&#x91CF;&#x64CD;&#x4F5C;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x3002;</p>
+<h3 id="indexing-slicing-and-joining">Indexing, slicing, and joining</h3>
+<p>&#x5982;&#x679C;&#x60A8;&#x662F;&#x4E00;&#x4E2A;NumPy&#x7528;&#x6237;&#xFF0C;&#x90A3;&#x4E48;&#x60A8;&#x53EF;&#x80FD;&#x975E;&#x5E38;&#x719F;&#x6089;&#x793A;&#x4F8B;1-11&#x4E2D;&#x6240;&#x793A;&#x7684;PyTorch&#x7684;&#x7D22;&#x5F15;&#x548C;&#x5207;&#x7247;&#x65B9;&#x6848;&#x3002;</p>
+<p>Example 1-11. Slicing and indexing a tensor</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+x = torch.arange(<span class="hljs-number">6</span>).view(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+describe(x)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]])
+Input[<span class="hljs-number">1</span>]:
+describe(x[:<span class="hljs-number">1</span>, :<span class="hljs-number">2</span>])
+Output[<span class="hljs-number">1</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>]])
+Input[<span class="hljs-number">2</span>]:
+describe(x[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])
+Output[<span class="hljs-number">2</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([])
+Values:
+<span class="hljs-number">1.0</span>
+</code></pre>
+<p>&#x793A;&#x4F8B;1-12&#x6F14;&#x793A;&#x4E86;PyTorch&#x8FD8;&#x5177;&#x6709;&#x7528;&#x4E8E;&#x590D;&#x6742;&#x7D22;&#x5F15;&#x548C;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x5BF9;&#x6709;&#x6548;&#x5730;&#x8BBF;&#x95EE;&#x5F20;&#x91CF;&#x7684;&#x975E;&#x8FDE;&#x7EED;&#x4F4D;&#x7F6E;&#x611F;&#x5174;&#x8DA3;&#x3002;</p>
+<p>Example 1-12. Complex indexing: noncontiguous indexing of a tensor</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+indices = torch.LongTensor([<span class="hljs-number">0</span>, <span class="hljs-number">2</span>])
+describe(torch.index_select(x, dim=<span class="hljs-number">1</span>, index=indices))
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">5.</span>]])
+Input[<span class="hljs-number">1</span>]:
+indices = torch.LongTensor([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>])
+describe(torch.index_select(x, dim=<span class="hljs-number">0</span>, index=indices))
+Output[<span class="hljs-number">1</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>]])
+Input[<span class="hljs-number">2</span>]:
+row_indices = torch.arange(<span class="hljs-number">2</span>).long()
+col_indices = torch.LongTensor([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>])
+describe(x[row_indices, col_indices])
+Output[<span class="hljs-number">2</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>])
+Values:
+tensor([ <span class="hljs-number">0.</span>,  <span class="hljs-number">4.</span>])
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x6307;&#x6807;(indices)&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5F20;&#x91CF;;&#x8FD9;&#x662F;&#x4F7F;&#x7528;PyTorch&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x7D22;&#x5F15;&#x7684;&#x8981;&#x6C42;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7684;&#x8FDE;&#x63A5;&#x51FD;&#x6570;&#x8FDE;&#x63A5;&#x5F20;&#x91CF;&#xFF0C;&#x5982;&#x793A;&#x4F8B;1-13&#x6240;&#x793A;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x5F20;&#x91CF;&#x548C;&#x7EF4;&#x5EA6;&#x3002;</p>
+<p>Example 1-13. Concatenating tensors</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+x = torch.arange(<span class="hljs-number">6</span>).view(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
+describe(x)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]])
+Input[<span class="hljs-number">1</span>]:
+describe(torch.cat([x, x], dim=<span class="hljs-number">0</span>))
+Output[<span class="hljs-number">1</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">4</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>],
+        [ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]])
+Input[<span class="hljs-number">2</span>]:
+describe(torch.cat([x, x], dim=<span class="hljs-number">1</span>))
+Output[<span class="hljs-number">2</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">6</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>,  <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>,  <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]])
+Input[<span class="hljs-number">3</span>]:
+describe(torch.stack([x, x]))
+Output[<span class="hljs-number">3</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+         [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]],
+
+        [[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+         [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]]])
+</code></pre>
+<p>PyTorch&#x8FD8;&#x5728;&#x5F20;&#x91CF;&#x4E0A;&#x5B9E;&#x73B0;&#x4E86;&#x9AD8;&#x6548;&#x7684;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x4E58;&#x6CD5;&#x3001;&#x9006;&#x548C;trace&#xFF0C;&#x5982;&#x793A;&#x4F8B;1-14&#x6240;&#x793A;&#x3002;</p>
+<p>Example 1-14. Linear algebra on tensors: multiplication</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+x1 = torch.arange(<span class="hljs-number">6</span>).view(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+describe(x1)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.</span>,  <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">3.</span>,  <span class="hljs-number">4.</span>,  <span class="hljs-number">5.</span>]])
+Input[<span class="hljs-number">1</span>]:
+x2 = torch.ones(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>)
+x2[:, <span class="hljs-number">1</span>] += <span class="hljs-number">1</span>
+describe(x2)
+Output[<span class="hljs-number">1</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">3</span>, <span class="hljs-number">2</span>])
+Values:
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>],
+        [ <span class="hljs-number">1.</span>,  <span class="hljs-number">2.</span>]])
+Input[<span class="hljs-number">2</span>]:
+describe(torch.mm(x1, x2))
+Output[<span class="hljs-number">2</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>])
+Values:
+tensor([[  <span class="hljs-number">3.</span>,   <span class="hljs-number">6.</span>],
+        [ <span class="hljs-number">12.</span>,  <span class="hljs-number">24.</span>]])
+</code></pre>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x7814;&#x7A76;&#x4E86;&#x521B;&#x5EFA;&#x548C;&#x64CD;&#x4F5C;&#x6052;&#x5B9A;PyTorch&#x5F20;&#x91CF;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5C31;&#x50CF;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;(&#x5982;Python)&#x53D8;&#x91CF;&#x5C01;&#x88C5;&#x4E00;&#x5757;&#x6570;&#x636E;,&#x5173;&#x4E8E;&#x6570;&#x636E;&#x7684;&#x989D;&#x5916;&#x4FE1;&#x606F;(&#x5982;&#x5185;&#x5B58;&#x5730;&#x5740;&#x5B58;&#x50A8;,&#x4F8B;&#x5982;),PyTorch&#x5F20;&#x91CF;&#x5904;&#x7406;&#x6784;&#x5EFA;&#x8BA1;&#x7B97;&#x56FE;&#x65F6;&#x6240;&#x9700;&#x7684;&#x8BB0;&#x8D26;(bookkeeping)&#x6240;&#x9700;&#x6784;&#x5EFA;&#x8BA1;&#x7B97;&#x56FE;&#x5BF9;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x53EA;&#x662F;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x901A;&#x8FC7;&#x542F;&#x7528;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x6807;&#x5FD7;&#x3002;</p>
+<h3 id="tensors-and-computational-graphs">Tensors and Computational Graphs</h3>
+<p>PyTorch&#x5F20;&#x91CF;&#x7C7B;&#x5C01;&#x88C5;&#x4E86;&#x6570;&#x636E;(&#x5F20;&#x91CF;&#x672C;&#x8EAB;)&#x548C;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x4EE3;&#x6570;&#x64CD;&#x4F5C;&#x3001;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;&#x548C;&#x6574;&#x5F62;&#x64CD;&#x4F5C;&#x3002;&#x7136;&#x800C;,1-15&#x6240;&#x793A;&#x7684;&#x4F8B;&#x5B50;,&#x5F53;requires_grad&#x5E03;&#x5C14;&#x6807;&#x5FD7;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;True&#x7684;&#x5F20;&#x91CF;,&#x8BB0;&#x8D26;&#x64CD;&#x4F5C;&#x542F;&#x7528;,&#x53EF;&#x4EE5;&#x8FFD;&#x8E2A;&#x7684;&#x68AF;&#x5EA6;&#x5F20;&#x91CF;&#x4EE5;&#x53CA;&#x68AF;&#x5EA6;&#x51FD;&#x6570;,&#x8FD9;&#x4E24;&#x4E2A;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x4FC3;&#x8FDB;&#x68AF;&#x5EA6;&#x5B66;&#x4E60;&#x8BA8;&#x8BBA;&#x201C;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x201D;&#x3002;</p>
+<p>Example 1-15. Creating tensors for gradient bookkeeping</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+x = torch.ones(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, requires_grad=<span class="hljs-keyword">True</span>)
+describe(x)
+print(x.grad <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>)
+Output[<span class="hljs-number">0</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>])
+Values:
+tensor([[ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>],
+        [ <span class="hljs-number">1.</span>,  <span class="hljs-number">1.</span>]])
+<span class="hljs-keyword">True</span>
+Input[<span class="hljs-number">1</span>]:
+y = (x + <span class="hljs-number">2</span>) * (x + <span class="hljs-number">5</span>) + <span class="hljs-number">3</span>
+describe(y)
+print(x.grad <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>)
+Output[<span class="hljs-number">1</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">2</span>, <span class="hljs-number">2</span>])
+Values:
+tensor([[ <span class="hljs-number">21.</span>,  <span class="hljs-number">21.</span>],
+        [ <span class="hljs-number">21.</span>,  <span class="hljs-number">21.</span>]])
+<span class="hljs-keyword">True</span>
+Input[<span class="hljs-number">2</span>]:
+z = y.mean()
+describe(z)
+z.backward()
+print(x.grad <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>)
+Output[<span class="hljs-number">2</span>]:
+Type: torch.FloatTensor
+Shape/size: torch.Size([])
+Values:
+<span class="hljs-number">21.0</span>
+<span class="hljs-keyword">False</span>
+</code></pre>
+<p>&#x5F53;&#x60A8;&#x4F7F;&#x7528;requires_grad=True&#x521B;&#x5EFA;&#x5F20;&#x91CF;&#x65F6;&#xFF0C;&#x60A8;&#x9700;&#x8981;PyTorch&#x6765;&#x7BA1;&#x7406;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x7684;bookkeeping&#x4FE1;&#x606F;&#x3002;&#x9996;&#x5148;&#xFF0C;PyTorch&#x5C06;&#x8DDF;&#x8E2A;&#x5411;&#x524D;&#x4F20;&#x9012;&#x7684;&#x503C;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5728;&#x8BA1;&#x7B97;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x6807;&#x91CF;&#x6765;&#x8BA1;&#x7B97;&#x5411;&#x540E;&#x4F20;&#x9012;&#x3002;&#x53CD;&#x5411;&#x4F20;&#x9012;&#x662F;&#x901A;&#x8FC7;&#x5BF9;&#x4E00;&#x4E2A;&#x5F20;&#x91CF;&#x4F7F;&#x7528;backward()&#x65B9;&#x6CD5;&#x6765;&#x521D;&#x59CB;&#x5316;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F20;&#x91CF;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x6C42;&#x503C;&#x5F97;&#x5230;&#x7684;&#x3002;&#x5411;&#x540E;&#x4F20;&#x9012;&#x4E3A;&#x53C2;&#x4E0E;&#x5411;&#x524D;&#x4F20;&#x9012;&#x7684;&#x5F20;&#x91CF;&#x5BF9;&#x8C61;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x503C;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x68AF;&#x5EA6;&#x662F;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x5B83;&#x8868;&#x793A;&#x51FD;&#x6570;&#x8F93;&#x51FA;&#x76F8;&#x5BF9;&#x4E8E;&#x51FD;&#x6570;&#x8F93;&#x5165;&#x7684;&#x659C;&#x7387;&#x3002;&#x5728;&#x8BA1;&#x7B97;&#x56FE;&#x5F62;&#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x5B58;&#x5728;&#x68AF;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x8BE5;&#x53C2;&#x6570;&#x5BF9;&#x8BEF;&#x5DEE;&#x4FE1;&#x53F7;&#x7684;&#x8D21;&#x732E;&#x3002;&#x5728;PyTorch&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;.grad&#x6210;&#x5458;&#x53D8;&#x91CF;&#x8BBF;&#x95EE;&#x8BA1;&#x7B97;&#x56FE;&#x4E2D;&#x8282;&#x70B9;&#x7684;&#x68AF;&#x5EA6;&#x3002;&#x4F18;&#x5316;&#x5668;&#x4F7F;&#x7528;.grad&#x53D8;&#x91CF;&#x66F4;&#x65B0;&#x53C2;&#x6570;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;CPU&#x5185;&#x5B58;&#x4E0A;&#x5206;&#x914D;&#x5F20;&#x91CF;&#x3002;&#x5728;&#x505A;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x8FD0;&#x7B97;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6709;&#x4E00;&#x4E2A;GPU&#xFF0C;&#x90A3;&#x4E48;&#x5229;&#x7528;&#x5B83;&#x53EF;&#x80FD;&#x662F;&#x6709;&#x610F;&#x4E49;&#x7684;&#x3002;&#x8981;&#x5229;&#x7528;GPU&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x5206;&#x914D;GPU&#x5185;&#x5B58;&#x4E0A;&#x7684;&#x5F20;&#x91CF;&#x3002;&#x5BF9;gpu&#x7684;&#x8BBF;&#x95EE;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;CUDA&#x7684;&#x4E13;&#x95E8;API&#x8FDB;&#x884C;&#x7684;&#x3002;CUDA API&#x662F;&#x7531;NVIDIA&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x4EC5;&#x9650;&#x4E8E;&#x5728;NVIDIA gpu&#x4E0A;&#x4F7F;&#x7528;&#x3002;PyTorch&#x63D0;&#x4F9B;&#x7684;CUDA&#x5F20;&#x91CF;&#x5BF9;&#x8C61;&#x5728;&#x4F7F;&#x7528;&#x4E2D;&#x4E0E;&#x5E38;&#x89C4;cpu&#x7ED1;&#x5B9A;&#x5F20;&#x91CF;&#x6CA1;&#x6709;&#x533A;&#x522B;&#xFF0C;&#x9664;&#x4E86;&#x5185;&#x90E8;&#x5206;&#x914D;&#x7684;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#x3002;</p>
+<h3 id="cuda-tensors">CUDA Tensors</h3>
+<p>PyTorch&#x4F7F;&#x521B;&#x5EFA;&#x8FD9;&#x4E9B;CUDA&#x5F20;&#x91CF;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x5BB9;&#x6613;(&#x793A;&#x4F8B;1-16)&#xFF0C;&#x5B83;&#x5C06;&#x5F20;&#x91CF;&#x4ECE;CPU&#x4F20;&#x8F93;&#x5230;GPU&#xFF0C;&#x540C;&#x65F6;&#x7EF4;&#x62A4;&#x5176;&#x5E95;&#x5C42;&#x7C7B;&#x578B;&#x3002;PyTorch&#x4E2D;&#x7684;&#x9996;&#x9009;&#x65B9;&#x6CD5;&#x662F;&#x4E0E;&#x8BBE;&#x5907;&#x65E0;&#x5173;&#xFF0C;&#x5E76;&#x7F16;&#x5199;&#x5728;GPU&#x6216;CPU&#x4E0A;&#x90FD;&#x80FD;&#x5DE5;&#x4F5C;&#x7684;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x4F7F;&#x7528;torch.cuda.is_available()&#x68C0;&#x67E5;GPU&#x662F;&#x5426;&#x53EF;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;torch.device&#x68C0;&#x7D22;&#x8BBE;&#x5907;&#x540D;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5C06;&#x5B9E;&#x4F8B;&#x5316;&#x6240;&#x6709;&#x672A;&#x6765;&#x7684;&#x5F20;&#x91CF;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;.to(device)&#x65B9;&#x6CD5;&#x5C06;&#x5176;&#x79FB;&#x52A8;&#x5230;&#x76EE;&#x6807;&#x8BBE;&#x5907;&#x3002;</p>
+<p>Example 1-16. Creating CUDA tensors</p>
+<pre><code class="lang-py">Input[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">print</span> (torch.cuda.is_available())
+Output[<span class="hljs-number">0</span>]:
+<span class="hljs-keyword">True</span>
+Input[<span class="hljs-number">1</span>]:
+<span class="hljs-comment"># preferred method: device agnostic tensor instantiation</span>
+device = torch.device(<span class="hljs-string">&quot;cuda&quot;</span> <span class="hljs-keyword">if</span> torch.cuda.is_available() <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;cpu&quot;</span>)
+<span class="hljs-keyword">print</span> (device)
+Output[<span class="hljs-number">1</span>]:
+cuda
+Input[<span class="hljs-number">2</span>]:
+x = torch.rand(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>).to(device)
+describe(x)
+Output[<span class="hljs-number">2</span>]:
+Type: torch.cuda.FloatTensor
+Shape/size: torch.Size([<span class="hljs-number">3</span>, <span class="hljs-number">3</span>])
+Values:
+tensor([[ <span class="hljs-number">0.9149</span>,  <span class="hljs-number">0.3993</span>,  <span class="hljs-number">0.1100</span>],
+        [ <span class="hljs-number">0.2541</span>,  <span class="hljs-number">0.4333</span>,  <span class="hljs-number">0.4451</span>],
+        [ <span class="hljs-number">0.4966</span>,  <span class="hljs-number">0.7865</span>,  <span class="hljs-number">0.6604</span>]], device=<span class="hljs-string">&apos;cuda:0&apos;</span>)
+</code></pre>
+<p>&#x8981;&#x5BF9;CUDA&#x548C;&#x975E;CUDA&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x5B83;&#x4EEC;&#x5728;&#x540C;&#x4E00;&#x8BBE;&#x5907;&#x4E0A;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E0D;&#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x8BA1;&#x7B97;&#x5C31;&#x4F1A;&#x4E2D;&#x65AD;&#xFF0C;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6240;&#x793A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x8BA1;&#x7B97;&#x4E0D;&#x5C5E;&#x4E8E;&#x8BA1;&#x7B97;&#x56FE;&#x7684;&#x76D1;&#x89C6;&#x6307;&#x6807;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x5F53;&#x64CD;&#x4F5C;&#x4E24;&#x4E2A;&#x5F20;&#x91CF;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x786E;&#x4FDD;&#x5B83;&#x4EEC;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8BBE;&#x5907;&#x4E0A;&#x3002;&#x4F8B;&#x5B50;1-17&#x6240;&#x793A;&#x3002;</p>
+<p>Example 1-17. Mixing CUDA tensors with CPU bound tensors</p>
+<pre><code class="lang-py">Input[0]
+y = torch.rand(3, 3)
+x + y
+Output[0]
+----------------------------------------------------------------------
+RuntimeError                         Traceback (most recent call last)
+      1 y = torch.rand(3, 3)
+----&gt; 2 x + y
+
+RuntimeError: Expected object of type torch.cuda.FloatTensor but found type torch.FloatTensor for argument #3 &apos;other&apos;
+Input[1]
+cpu_device = torch.device(&quot;cpu&quot;)
+y = y.to(cpu_device)
+x = x.to(cpu_device)
+x + y
+Output[1]
+tensor([[ 0.7159,  1.0685,  1.3509],
+        [ 0.3912,  0.2838,  1.3202],
+        [ 0.2967,  0.0420,  0.6559]])
+</code></pre>
+<p>&#x8BF7;&#x8BB0;&#x4F4F;&#xFF0C;&#x5C06;&#x6570;&#x636E;&#x4ECE;GPU&#x6765;&#x56DE;&#x79FB;&#x52A8;&#x662F;&#x975E;&#x5E38;&#x6602;&#x8D35;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5178;&#x578B;&#x7684;&#x8FC7;&#x7A0B;&#x5305;&#x62EC;&#x5728;GPU&#x4E0A;&#x6267;&#x884C;&#x8BB8;&#x591A;&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x4F20;&#x8F93;&#x56DE;CPU&#x3002;&#x8FD9;&#x5C06;&#x5141;&#x8BB8;&#x60A8;&#x5145;&#x5206;&#x5229;&#x7528;gpu&#x3002;&#x5982;&#x679C;&#x60A8;&#x6709;&#x51E0;&#x4E2A;CUDA-visible&#x8BBE;&#x5907;(&#x5373;&#xFF0C;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x662F;&#x5728;&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#x65F6;&#x4F7F;&#x7528;CUDA_VISIBLE_DEVICES&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;:</p>
+<pre><code class="lang-py">CUDA_VISIBLE_DEVICES=<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> python main.py
+</code></pre>
+<p>&#x5728;&#x672C;&#x4E66;&#x4E2D;&#x6211;&#x4EEC;&#x4E0D;&#x6D89;&#x53CA;&#x5E76;&#x884C;&#x6027;&#x548C;&#x591A;gpu&#x8BAD;&#x7EC3;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4EEC;&#x5728;&#x7F29;&#x653E;&#x5B9E;&#x9A8C;&#x4E2D;&#x662F;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#xFF0C;&#x6709;&#x65F6;&#x751A;&#x81F3;&#x5728;&#x8BAD;&#x7EC3;&#x5927;&#x578B;&#x6A21;&#x578B;&#x65F6;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x3002;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x53C2;&#x8003;PyTorch&#x6587;&#x6863;&#x548C;&#x8BA8;&#x8BBA;&#x8BBA;&#x575B;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x4E3B;&#x9898;&#x7684;&#x66F4;&#x591A;&#x5E2E;&#x52A9;&#x548C;&#x652F;&#x6301;&#x3002;</p>
+<h1 id="exercises">Exercises:</h1>
+<p>&#x638C;&#x63E1;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x7684;&#x6700;&#x597D;&#x65B9;&#x6CD5;&#x662F;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E9B;&#x70ED;&#x8EAB;&#x8FD0;&#x52A8;&#x3002;&#x8BB8;&#x591A;&#x95EE;&#x9898;&#x5C06;&#x6D89;&#x53CA;&#x5230;&#x67E5;&#x9605;&#x5B98;&#x65B9;&#x6587;&#x4EF6;[1]&#x548C;&#x5BFB;&#x627E;&#x6709;&#x7528;&#x7684;&#x529F;&#x80FD;&#x3002; .</p>
+<ol>
+<li><p>Create a 2D tensor and then add a dimension of size 1 inserted at dimension 0.</p>
+</li>
+<li><p>Remove the extra dimension you just added to the previous tensor.</p>
+</li>
+<li><p>Create a random tensor of shape 5x3 in the interval [3, 7)</p>
+</li>
+<li><p>Create a tensor with values from a normal distribution (mean=0, std=1).</p>
+</li>
+<li><p>Retrieve the indexes of all the nonzero elements in the tensor torch.Tensor([1, 1, 1, 0, 1]).</p>
+</li>
+<li><p>Create a random tensor of size (3,1) and then horizontally stack 4 copies together.</p>
+</li>
+<li><p>Return the batch matrix-matrix product of two 3-dimensional matrices (a=torch.rand(3,4,5), b=torch.rand(3,5,4)).</p>
+</li>
+<li><p>Return the batch matrix-matrix product of a 3D matrix and a 2D matrix (a=torch.rand(3,4,5), b=torch.rand(5,4)).</p>
+<h1 id="solutions">Solutions</h1>
+</li>
+<li><p>a = torch.rand(3, 3) a.unsqueeze(0)</p>
+</li>
+<li>a.squeeze(0)</li>
+<li>3 + torch.rand(5, 3) * (7 - 3)</li>
+<li>a = torch.rand(3, 3) a.normal_()</li>
+<li><p>a = torch.Tensor([1, 1, 1, 0, 1]) torch.nonzero(a)</p>
+</li>
+<li><p>a = torch.rand(3, 1) a.expand(3, 4)</p>
+</li>
+<li><p>a = torch.rand(3, 4, 5) b = torch.rand(3, 5, 4) torch.bmm(a, b)</p>
+</li>
+<li><p>a = torch.rand(3, 4, 5) b = torch.rand(5, 4) torch.bmm(a, b.unsqueeze(0).expand(a.size(0), * b.size()))</p>
+</li>
+</ol>
+<h1 id="summary">Summary</h1>
+<p>&#x5728;&#x8FD9;&#x4E00;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;&#x672C;&#x4E66;&#x7684;&#x76EE;&#x6807;&#x2014;&#x2014;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;(NLP)&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x2014;&#x2014;&#x5E76;&#x5BF9;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x8FDB;&#x884C;&#x4E86;&#x8BE6;&#x7EC6;&#x7684;&#x7406;&#x89E3;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x7684;&#x6700;&#x540E;&#xFF0C;&#x60A8;&#x73B0;&#x5728;&#x5E94;&#x8BE5;&#x719F;&#x6089;&#x6216;&#x81F3;&#x5C11;&#x4E86;&#x89E3;&#x5404;&#x79CD;&#x672F;&#x8BED;&#xFF0C;&#x4F8B;&#x5982;&#x89C2;&#x5BDF;&#x3001;&#x76EE;&#x6807;&#x3001;&#x6A21;&#x578B;&#x3001;&#x53C2;&#x6570;&#x3001;&#x9884;&#x6D4B;&#x3001;&#x635F;&#x5931;&#x51FD;&#x6570;&#x3001;&#x8868;&#x793A;&#x3001;&#x5B66;&#x4E60;/&#x57F9;&#x8BAD;&#x548C;&#x63A8;&#x7406;&#x3002;&#x60A8;&#x8FD8;&#x4E86;&#x89E3;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5355;&#x70ED;&#x7F16;&#x7801;&#x5BF9;&#x5B66;&#x4E60;&#x4EFB;&#x52A1;&#x7684;&#x8F93;&#x5165;(&#x89C2;&#x5BDF;&#x548C;&#x76EE;&#x6807;)&#x8FDB;&#x884C;&#x7F16;&#x7801;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x7814;&#x7A76;&#x4E86;&#x57FA;&#x4E8E;&#x8BA1;&#x6570;&#x7684;&#x8868;&#x793A;&#xFF0C;&#x5982;TF&#x548C;TF- idf&#x3002;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x4E86;&#x89E3;&#x4E86;&#x4EC0;&#x4E48;&#x662F;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x9759;&#x6001;&#x548C;&#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x56FE;&#xFF0C;&#x4EE5;&#x53CA;PyTorch&#x5F20;&#x91CF;&#x64CD;&#x7EB5;&#x64CD;&#x4F5C;&#x3002;&#x5728;&#x7B2C;&#x4E8C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5BF9;&#x4F20;&#x7EDF;&#x7684;NLP&#x8FDB;&#x884C;&#x4E86;&#x6982;&#x8FF0;&#x3002;&#x7B2C;&#x4E8C;&#x7AE0;&#xFF0C;&#x8FD9;&#x4E00;&#x7AE0;&#x5E94;&#x8BE5;&#x4E3A;&#x4F60;&#x5960;&#x5B9A;&#x5FC5;&#x8981;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5BF9;&#x8FD9;&#x672C;&#x4E66;&#x7684;&#x4E3B;&#x9898;&#x662F;&#x65B0;&#x7684;&#xFF0C;&#x5E76;&#x4E3A;&#x4F60;&#x7684;&#x4E66;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x505A;&#x51C6;&#x5907;&#x3002;</p>
+<p>&#x91CD;&#x70B9;&#x662F;TF-IDF</p>
+<p><script type="math/tex; ">词频(TF)=\frac{某个词在文章中出现的次数}{文章中的总词数}</script></p>
+<p><script type="math/tex; ">逆文档频率(IDF)=log(\frac{语料库的文档总数}{包含该词的文档数+1})</script></p>
+<p>TF&#x5E94;&#x8BE5;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x5C31;&#x662F;&#x8BA1;&#x7B97;&#x8BCD;&#x9891;,IDF&#x8861;&#x91CF;&#x8BCD;&#x7684;&#x5E38;&#x89C1;&#x7A0B;&#x5EA6;.&#x4E3A;&#x4E86;&#x8BA1;&#x7B97;IDF&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E8B;&#x5148;&#x51C6;&#x5907;&#x4E00;&#x4E2A;&#x8BED;&#x6599;&#x5E93;&#x7528;&#x6765;&#x6A21;&#x62DF;&#x8BED;&#x8A00;&#x7684;&#x4F7F;&#x7528;&#x73AF;&#x5883;,&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x8BCD;&#x8D8A;&#x662F;&#x5E38;&#x89C1;,&#x90A3;&#x4E48;&#x5F0F;&#x5B50;&#x4E2D;&#x5206;&#x6BCD;&#x8D8A;&#x5927;,&#x9006;&#x6587;&#x6863;&#x9891;&#x7387;&#x8D8A;&#x63A5;&#x8FD1;0.&#x8FD9;&#x91CC;&#x5206;&#x6BCD;+1&#x662F;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x5206;&#x6BCD;&#x4E3A;0&#x7684;&#x60C5;&#x51B5;&#x51FA;&#x73B0;</p>
+<p><script type="math/tex; ">TF-IDF=词频(TF)×逆文档频率(IDF)</script></p>
+<p>TF-IDF&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x5B9E;&#x73B0;&#x63D0;&#x53D6;&#x6587;&#x7AE0;&#x4E2D;&#x5173;&#x952E;&#x8BCD;&#x7684;&#x76EE;&#x7684;.</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/nlp-pytorch-zh/" target="_blank">apachecn/nlp-pytorch-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="../shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '1eba1fde838d39ce2ba9',
+        clientSecret: '0bdf321e160ca29b2d54e8722700dd5accb084e0',
+        repo: 'nlp-pytorch-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2020-05-09 23:04:07
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 入门须知">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.html" class="navigation navigation-next " aria-label="Next page: Chapter 2.传统NLP快速回顾">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 1.基础介绍","level":"1.2","depth":1,"next":{"title":"Chapter 2.传统NLP快速回顾","level":"1.3","depth":1,"path":"docs/2.md","ref":"docs/2.md","articles":[]},"previous":{"title":"入门须知","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","mathjax","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/nlp-pytorch-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://nlp-pt.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/nlp-pytorch-zh/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"https://nlp-pt.apachecn.org/cover.jpg"},"expandable-chapters":{}},"theme":"default","author":"ApacheCN","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NLP with PyTorch 中文文档","language":"zh-hans","gitbook":"*","description":"NLP with PyTorch 中文文档"},"file":{"path":"docs/1.md","mtime":"2020-05-09T15:04:07.364Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-09T15:06:48.544Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

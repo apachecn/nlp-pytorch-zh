@@ -1,0 +1,832 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 6.自然语言处理 Sequence Modeling · NLP with PyTorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="7.html" />
+    
+    
+    <link rel="prev" href="5.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    入门须知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    Chapter 1.基础介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    Chapter 2.传统NLP快速回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    Chapter 3.神经网络基础组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    Chapter 4.自然语言处理 Feed-Forward Networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    Chapter 5.Embedding Words and Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    Chapter 6.自然语言处理 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    Chapter 7.自然语言处理的中间 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    Chapter 8.用于自然语言处理的高级 Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    Chapter 9.经典, 前沿和后续步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 6.自然语言处理 Sequence Modeling</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-6&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;-sequence-modeling">Chapter 6.&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406; Sequence Modeling</h1>
+<blockquote>
+<p>&#x672C;&#x6587;&#x6807;&#x9898;:<a href="https://yifdu.github.io/2018/12/24/Natural-Language-Processing-with-PyTorch%EF%BC%88%E5%85%AD%EF%BC%89/" target="_blank">Natural-Language-Processing-with-PyTorch&#xFF08;&#x516D;&#xFF09;</a></p>
+<p>&#x6587;&#x7AE0;&#x4F5C;&#x8005;:<a href="https://yifdu.github.io/" title="&#x8BBF;&#x95EE; Yif Du &#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" target="_blank">Yif Du</a></p>
+<p>&#x53D1;&#x5E03;&#x65F6;&#x95F4;:2018&#x5E74;12&#x6708;24&#x65E5; - 12:12</p>
+<p>&#x6700;&#x540E;&#x66F4;&#x65B0;:2018&#x5E74;12&#x6708;28&#x65E5; - 11:12</p>
+<p>&#x539F;&#x59CB;&#x94FE;&#x63A5;:<a href="https://yifdu.github.io/2018/12/24/Natural-Language-Processing-with-PyTorch%EF%BC%88%E5%85%AD%EF%BC%89/" target="_blank">http://yifdu.github.io/2018/12/24/Natural-Language-Processing-with-PyTorch&#xFF08;&#x516D;&#xFF09;/</a></p>
+<p>&#x8BB8;&#x53EF;&#x534F;&#x8BAE;:  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x7981;&#x6B62;&#x6F14;&#x7ECE; 4.0 &#x56FD;&#x9645;</a>  &#x8F6C;&#x8F7D;&#x8BF7;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x94FE;&#x63A5;&#x53CA;&#x4F5C;&#x8005;&#x3002;</p>
+</blockquote>
+<p>&#x5E8F;&#x5217;&#x662F;&#x9879;&#x76EE;&#x7684;&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x3002;&#x4F20;&#x7EDF;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5047;&#x8BBE;&#x6570;&#x636E;&#x70B9;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x3001;&#x76F8;&#x540C;&#x5206;&#x5E03;&#x7684;(IID)&#xFF0C;&#x4F46;&#x5728;&#x8BB8;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x8BED;&#x8A00;&#x3001;&#x8BED;&#x97F3;&#x548C;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x6570;&#x636E;&#xFF0C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x9879;&#x53D6;&#x51B3;&#x4E8E;&#x5B83;&#x4E4B;&#x524D;&#x6216;&#x4E4B;&#x540E;&#x7684;&#x6570;&#x636E;&#x9879;&#x3002;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x4E5F;&#x79F0;&#x4E3A;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x3002;&#x5728;&#x4EBA;&#x7C7B;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x987A;&#x5E8F;&#x4FE1;&#x606F;&#x65E0;&#x5904;&#x4E0D;&#x5728;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8BED;&#x97F3;&#x53EF;&#x4EE5;&#x88AB;&#x770B;&#x4F5C;&#x662F;&#x97F3;&#x7D20;&#x7684;&#x57FA;&#x672C;&#x5355;&#x5143;&#x5E8F;&#x5217;&#x3002;&#x5728;&#x50CF;&#x82F1;&#x8BED;&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x53E5;&#x5B50;&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x4E0D;&#x662F;&#x968F;&#x610F;&#x7684;&#x3002;&#x4ED6;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x5B83;&#x4E4B;&#x524D;&#x6216;&#x4E4B;&#x540E;&#x7684;&#x8BCD;&#x6240;&#x675F;&#x7F1A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x82F1;&#x8BED;&#x4E2D;&#xFF0C;&#x4ECB;&#x8BCD;&#x201C;of&#x201D;&#x540E;&#x9762;&#x53EF;&#x80FD;&#x8DDF;&#x7740;&#x51A0;&#x8BCD;&#x201C;the&#x201D;;&#x4F8B;&#x5982;&#xFF0C;&#x201C;The lion is the king of the jungle.&#x201D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x8BB8;&#x591A;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x5305;&#x62EC;&#x82F1;&#x8BED;&#xFF0C;&#x52A8;&#x8BCD;&#x7684;&#x6570;&#x91CF;&#x5FC5;&#x987B;&#x4E0E;&#x53E5;&#x5B50;&#x4E3B;&#x8BED;&#x7684;&#x6570;&#x91CF;&#x4E00;&#x81F4;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;: The book is on the table The books are on the table. &#x6709;&#x65F6;&#x8FD9;&#x4E9B;&#x4F9D;&#x8D56;&#x9879;&#x6216;&#x7EA6;&#x675F;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x957F;&#x7684;&#x3002;&#x4F8B;&#x5982;: The book that I got yesterday is on the table. The books read by the second grade children are shelved in the lower rack. &#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x7406;&#x89E3;&#x5E8F;&#x5217;&#x5BF9;&#x4E8E;&#x7406;&#x89E3;&#x4EBA;&#x7C7B;&#x8BED;&#x8A00;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x3002;&#x5728;&#x524D;&#x51E0;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x5982;&#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;(MLPs)&#x548C;&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(CNNs)&#xFF0C;&#x4EE5;&#x53CA;&#x5411;&#x91CF;&#x8868;&#x793A;&#x7684;&#x80FD;&#x529B;&#x3002;&#x5C3D;&#x7BA1;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x6280;&#x672F;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x5927;&#x91CF;&#x7684;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;(NLP)&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x6B63;&#x5982;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x672C;&#x7AE0;&#x4EE5;&#x53CA;&#x7B2C;7&#x7AE0;&#x548C;&#x7B2C;8&#x7AE0;&#x4E2D;&#x5B66;&#x4E60;&#x7684;&#x90A3;&#x6837;&#xFF0C;&#x5B83;&#x4EEC;&#x5E76;&#x4E0D;&#x80FD;&#x5145;&#x5206;&#x5EFA;&#x6A21;&#x5E8F;&#x5217;&#x3002;</p>
+<p>&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6A21;&#x578B;&#x5E8F;&#x5217;&#x5728;NLP&#x4F7F;&#x7528;&#x9690;&#x9A6C;&#x5C14;&#x79D1;&#x592B;&#x6A21;&#x578B;&#xFF0C;&#x6761;&#x4EF6;&#x968F;&#x673A;&#x573A;&#xFF0C;&#x548C;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x6982;&#x7387;&#x56FE;&#x5F62;&#x6A21;&#x578B;&#xFF0C;&#x867D;&#x7136;&#x6CA1;&#x6709;&#x8BA8;&#x8BBA;&#x5728;&#x8FD9;&#x672C;&#x4E66;&#x4ECD;&#x7136;&#x662F;&#x76F8;&#x5173;&#x7684;&#x3002;&#x6211;&#x4EEC;&#x9080;&#x8BF7;&#x60A8;(Koller and Friedman, 2009)&#x3002;</p>
+<p>&#x5728;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x5EFA;&#x6A21;&#x5E8F;&#x5217;&#x6D89;&#x53CA;&#x5230;&#x7EF4;&#x62A4;&#x9690;&#x85CF;&#x7684;&#x201C;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x201D;&#x6216;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x3002;&#x5F53;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x6761;&#x76EE;&#x88AB;&#x5339;&#x914D;&#x65F6;&#x2014;&#x2014;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x53E5;&#x5B50;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x88AB;&#x6A21;&#x578B;&#x770B;&#x5230;&#x65F6;&#x2014;&#x2014;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5C31;&#x4F1A;&#x88AB;&#x66F4;&#x65B0;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9690;&#x85CF;&#x72B6;&#x6001;(&#x901A;&#x5E38;&#x662F;&#x4E00;&#x4E2A;&#x5411;&#x91CF;)&#x5C01;&#x88C5;&#x4E86;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x5E8F;&#x5217;&#x6240;&#x770B;&#x5230;&#x7684;&#x4E00;&#x5207;&#x3002;&#x8FD9;&#x4E2A;&#x9690;&#x85CF;&#x7684;&#x72B6;&#x6001;&#x5411;&#x91CF;&#xFF0C;&#x4E5F;&#x79F0;&#x4E3A;&#x5E8F;&#x5217;&#x8868;&#x793A;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x4EFB;&#x52A1;&#x4EE5;&#x65E0;&#x6570;&#x79CD;&#x65B9;&#x5F0F;&#x5728;&#x8BB8;&#x591A;&#x5E8F;&#x5217;&#x5EFA;&#x6A21;&#x4EFB;&#x52A1;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x4ECE;&#x5BF9;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x5230;&#x9884;&#x6D4B;&#x5E8F;&#x5217;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7814;&#x7A76;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x7684;&#x5206;&#x7C7B;&#xFF0C;&#x4F46;&#x662F;&#x7B2C;7&#x7AE0;&#x5C06;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5E8F;&#x5217;&#x6A21;&#x578B;&#x6765;&#x751F;&#x6210;&#x5E8F;&#x5217;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x4ECB;&#x7ECD;&#x6700;&#x57FA;&#x672C;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5E8F;&#x5217;&#x6A21;&#x578B;:&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x3002;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x7ED9;&#x51FA;&#x4E86;&#x5206;&#x7C7B;&#x8BBE;&#x7F6E;&#x4E2D;&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x5B9E;&#x4F8B;&#x3002;&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x60A8;&#x5C06;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x5B57;&#x7B26;&#x7684;RNN&#x6765;&#x5C06;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x5230;&#x5B83;&#x4EEC;&#x5404;&#x81EA;&#x7684;&#x56FD;&#x7C4D;&#x3002;&#x59D3;&#x6C0F;&#x793A;&#x4F8B;&#x8868;&#x660E;&#x5E8F;&#x5217;&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x6B63;&#x5B57;&#x6CD5;(&#x5B50;&#x8BCD;)&#x6A21;&#x5F0F;&#x3002;&#x8FD9;&#x4E2A;&#x793A;&#x4F8B;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;&#x4F7F;&#x8BFB;&#x8005;&#x80FD;&#x591F;&#x5C06;&#x6A21;&#x578B;&#x5E94;&#x7528;&#x4E8E;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#xFF0C;&#x5305;&#x62EC;&#x5EFA;&#x6A21;&#x6587;&#x672C;&#x5E8F;&#x5217;&#xFF0C;&#x5176;&#x4E2D;&#x6570;&#x636E;&#x9879;&#x662F;&#x5355;&#x8BCD;&#x800C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x3002;</p>
+<h2 id="introduction-to-recurrent-neural-networks">Introduction to Recurrent Neural Networks</h2>
+<p>&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(RNNs)&#x7684;&#x76EE;&#x7684;&#x662F;&#x5EFA;&#x7ACB;&#x5F20;&#x91CF;&#x5E8F;&#x5217;&#x7684;&#x6A21;&#x578B;&#x3002;rnn&#x548C;&#x524D;&#x9988;&#x7F51;&#x7EDC;&#x4E00;&#x6837;&#xFF0C;&#x662F;&#x4E00;&#x7C7B;&#x6A21;&#x578B;&#x3002;RNN&#x5BB6;&#x65CF;&#x4E2D;&#x6709;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x6210;&#x5458;&#xFF0C;&#x4F46;&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x8BA8;&#x8BBA;&#x6700;&#x57FA;&#x672C;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x6709;&#x65F6;&#x79F0;&#x4E3A;Elman RNN&#x3002;&#x9012;&#x5F52;&#x7F51;&#x7EDC;(&#x57FA;&#x672C;&#x7684;Elman&#x5F62;&#x5F0F;&#x548C;&#x7B2C;7&#x7AE0;&#x4E2D;&#x6982;&#x8FF0;&#x7684;&#x66F4;&#x590D;&#x6742;&#x7684;&#x5F62;&#x5F0F;)&#x7684;&#x76EE;&#x6807;&#x662F;&#x5B66;&#x4E60;&#x5E8F;&#x5217;&#x7684;&#x8868;&#x793A;&#x3002;&#x8FD9;&#x662F;&#x901A;&#x8FC7;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x7684;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5B83;&#x6355;&#x83B7;&#x4E86;&#x5E8F;&#x5217;&#x7684;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x3002;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x7531;&#x5F53;&#x524D;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x548C;&#x524D;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x3002;&#x8FD9;&#x4E9B;&#x5173;&#x7CFB;&#x5982;&#x56FE;6-1&#x6240;&#x793A;&#xFF0C;&#x56FE;6-1&#x663E;&#x793A;&#x4E86;&#x8BA1;&#x7B97;&#x4F9D;&#x8D56;&#x9879;&#x7684;&#x51FD;&#x6570;(&#x5DE6;)&#x89C6;&#x56FE;&#x548C;&#x201C;&#x5C55;&#x5F00;&#x201D;(&#x53F3;)&#x89C6;&#x56FE;&#x3002;</p>
+<p>![pic1](pic1.png &#x201C;&#x56FE;6 - 1&#x3002;&#xFF08;&#x5DE6;&#xFF09;Elman RNN&#x7684;&#x51FD;&#x6570;&#x89C6;&#x56FE;&#x5C06;&#x9012;&#x5F52;&#x5173;&#x7CFB;&#x663E;&#x793A;&#x4E3A;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x7684;&#x53CD;&#x9988;&#x5FAA;&#x73AF;&#x3002;&#xFF08;&#x53F3;&#xFF09;&#x201C;&#x5C55;&#x5F00;&#x201D;&#x89C6;&#x56FE;&#x53EF;&#x4EE5;&#x6E05;&#x695A;&#x5730;&#x663E;&#x793A;&#x8BA1;&#x7B97;&#x5173;&#x7CFB;&#xFF0C;&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x7684;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x4F9D;&#x8D56;&#x4E8E;&#x8BE5;&#x65F6;&#x95F4;&#x6B65;&#x7684;&#x8F93;&#x5165;&#x548C;&#x524D;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x7684;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x3002;</p>
+<p>&#x5728;&#x6BCF;&#x6B21;&#x6B65;&#x9AA4;&#x4E2D;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x6743;&#x91CD;&#x5C06;&#x8F93;&#x5165;&#x8F6C;&#x6362;&#x4E3A;&#x8F93;&#x51FA;&#x662F;&#x53C2;&#x6570;&#x5171;&#x4EAB;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;&#x5728;&#x7B2C;4&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;CNNs&#x5982;&#x4F55;&#x8DE8;&#x7A7A;&#x95F4;&#x5171;&#x4EAB;&#x53C2;&#x6570;&#x3002;CNNs&#x4F7F;&#x7528;&#x79F0;&#x4E3A;&#x5185;&#x6838;&#x7684;&#x53C2;&#x6570;&#x6765;&#x8BA1;&#x7B97;&#x6765;&#x81EA;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5B50;&#x533A;&#x57DF;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x5377;&#x79EF;&#x6838;&#x5728;&#x8F93;&#x5165;&#x7AEF;&#x5E73;&#x79FB;&#xFF0C;&#x4ECE;&#x6BCF;&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x4F4D;&#x7F6E;&#x8BA1;&#x7B97;&#x8F93;&#x51FA;&#xFF0C;&#x4EE5;&#x5B66;&#x4E60;&#x5E73;&#x79FB;&#x4E0D;&#x53D8;&#x6027;&#x3002;&#x4E0E;&#x6B64;&#x76F8;&#x53CD;&#xFF0C;rnn&#x901A;&#x8FC7;&#x4F9D;&#x8D56;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x7684;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x6765;&#x6355;&#x83B7;&#x5E8F;&#x5217;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x53C2;&#x6570;&#x6765;&#x8BA1;&#x7B97;&#x6BCF;&#x4E00;&#x6B65;&#x7684;&#x8F93;&#x51FA;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;rnn&#x7684;&#x76EE;&#x6807;&#x662F;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x7ED9;&#x5B9A;&#x7684;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x548C;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x7684;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#x6765;&#x5B66;&#x4E60;&#x5E8F;&#x5217;&#x4E0D;&#x53D8;&#x6027;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x60F3;&#x8C61;&#x4E00;&#x4E2A;RNN&#x8DE8;&#x65F6;&#x95F4;&#x5171;&#x4EAB;&#x53C2;&#x6570;&#xFF0C;&#x4E00;&#x4E2A;CNN&#x8DE8;&#x7A7A;&#x95F4;&#x5171;&#x4EAB;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x5355;&#x8BCD;&#x548C;&#x53E5;&#x5B50;&#x53EF;&#x4EE5;&#x662F;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x7684;&#xFF0C;&#x56E0;&#x6B64;rnn&#x6216;&#x4EFB;&#x4F55;&#x5E8F;&#x5217;&#x6A21;&#x578B;&#x90FD;&#x5E94;&#x8BE5;&#x80FD;&#x591F;&#x5904;&#x7406;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x7684;&#x5E8F;&#x5217;&#x3002;&#x4E00;&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x6280;&#x672F;&#x662F;&#x4EBA;&#x4E3A;&#x5730;&#x5C06;&#x5E8F;&#x5217;&#x9650;&#x5236;&#x5728;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x79CD;&#x6280;&#x672F;&#xFF0C;&#x79F0;&#x4E3A;&#x63A9;&#x853D;&#xFF0C;&#x901A;&#x8FC7;&#x5229;&#x7528;&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#x7684;&#x77E5;&#x8BC6;&#x6765;&#x5904;&#x7406;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x5E8F;&#x5217;&#x3002;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5C4F;&#x853D;&#x5141;&#x8BB8;&#x6570;&#x636E;&#x5728;&#x67D0;&#x4E9B;&#x8F93;&#x5165;&#x4E0D;&#x5E94;&#x8BA1;&#x5165;&#x68AF;&#x5EA6;&#x6216;&#x6700;&#x7EC8;&#x8F93;&#x51FA;&#x65F6;&#x53D1;&#x51FA;&#x4FE1;&#x53F7;&#x3002;PyTorch&#x63D0;&#x4F9B;&#x4E86;&#x5904;&#x7406;&#x79F0;&#x4E3A;packedsequence&#x7684;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x5E8F;&#x5217;&#x7684;&#x539F;&#x8BED;&#xFF0C;&#x8FD9;&#x4E9B;&#x5E8F;&#x5217;&#x4ECE;&#x8FD9;&#x4E9B;&#x4E0D;&#x592A;&#x5BC6;&#x96C6;&#x7684;&#x5E8F;&#x5217;&#x4E2D;&#x521B;&#x5EFA;&#x5BC6;&#x96C6;&#x7684;&#x5F20;&#x91CF;&#x3002;&#x201C;&#x4F8B;&#x5B50;:&#x4F7F;&#x7528;&#x5B57;&#x7B26;RNN&#x5BF9;&#x59D3;&#x6C0F;&#x56FD;&#x7C4D;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x56FE;&#x4E2D;&#xFF0C;&#x8F93;&#x51FA;&#x4E0E;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x76F8;&#x540C;&#x3002;&#x8FD9;&#x5E76;&#x4E0D;&#x603B;&#x662F;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5728;Elman RNN&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x9690;&#x85CF;&#x7684;&#x5411;&#x91CF;&#x662F;&#x88AB;&#x9884;&#x6D4B;&#x7684;&#x3002;&#x201D;)</p>
+<h3 id="implementing-an-elman-rnn">Implementing an Elman RNN</h3>
+<p>&#x4E3A;&#x4E86;&#x63A2;&#x7A76;RNN&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x9010;&#x6B65;&#x4E86;&#x89E3;Elman RNN&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5B9E;&#x73B0;&#x3002;PyTorch&#x63D0;&#x4F9B;&#x4E86;&#x8BB8;&#x591A;&#x6709;&#x7528;&#x7684;&#x7C7B;&#x548C;&#x5E2E;&#x52A9;&#x51FD;&#x6570;&#x6765;&#x6784;&#x5EFA;rnn&#x3002;PyTorch RNN&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;Elman RNN&#x3002;&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x4F7F;&#x7528;PyTorch&#x7684;RNN&#x7C7B;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;RNNCell&#xFF0C;&#x5B83;&#x662F;&#x5BF9;RNN&#x7684;&#x5355;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x5E76;&#x4EE5;&#x6B64;&#x6784;&#x5EFA;RNN&#x3002;&#x6211;&#x4EEC;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x76EE;&#x7684;&#x662F;&#x663E;&#x5F0F;&#x5730;&#x5411;&#x60A8;&#x5C55;&#x793A;RNN&#x8BA1;&#x7B97;&#x3002;&#x793A;&#x4F8B;6-1&#x4E2D;&#x663E;&#x793A;&#x7684;&#x7C7B;ElmanRNN&#x5229;&#x7528;&#x4E86;RNNCell&#x3002;RNNCell&#x521B;&#x5EFA;&#x4E86;&#x201C;&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5BFC;&#x8BBA;&#x201D;&#x4E2D;&#x63CF;&#x8FF0;&#x7684;&#x8F93;&#x5165;&#x9690;&#x85CF;&#x548C;&#x9690;&#x85CF;&#x6743;&#x91CD;&#x77E9;&#x9635;&#x3002;&#x5BF9;RNNCell&#x7684;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x90FD;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x77E9;&#x9635;&#x548C;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x77E9;&#x9635;&#x3002;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;&#x4EA7;&#x751F;&#x7684;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x77E9;&#x9635;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x63A7;&#x5236;RNN&#x4E2D;&#x7684;&#x8F93;&#x5165;&#x548C;&#x9690;&#x85CF;&#x5927;&#x5C0F;&#x8D85;&#x53C2;&#x6570;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x6279;&#x5904;&#x7406;&#x7EF4;&#x5EA6;&#x662F;&#x5426;&#x4F4D;&#x4E8E;&#x7B2C;0&#x7EF4;&#x5EA6;&#x3002;&#x8FD9;&#x4E2A;&#x6807;&#x5FD7;&#x4E5F;&#x51FA;&#x73B0;&#x5728;&#x6240;&#x6709;PyTorch RNNs&#x5B9E;&#x73B0;&#x4E2D;&#x3002;&#x5F53;&#x8BBE;&#x4E3A;&#x771F;&#x65F6;&#xFF0C;RNN&#x4EA4;&#x6362;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#x7684;&#x7B2C;0&#x7EF4;&#x548C;&#x7B2C;1&#x7EF4;&#x3002;</p>
+<p>&#x5728;ElmanRNN&#x4E2D;&#xFF0C;forward()&#x65B9;&#x6CD5;&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x8F93;&#x5165;&#x5F20;&#x91CF;&#xFF0C;&#x4EE5;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x957F;&#x7684;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x6240;&#x6709;0&#x7684;&#x9ED8;&#x8BA4;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x3002;&#x5F53;ElmanRNN&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x8F93;&#x5165;&#x5411;&#x91CF;&#x7684;&#x957F;&#x5EA6;&#x65F6;&#xFF0C;&#x5B83;&#x8BA1;&#x7B97;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x3002;&#x8FD9;&#x4E9B;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x88AB;&#x805A;&#x5408;&#x5E76;&#x6700;&#x7EC8;&#x5806;&#x79EF;&#x8D77;&#x6765;&#x3002;&#x5728;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#xFF0C;&#x5C06;&#x518D;&#x6B21;&#x68C0;&#x67E5;batch_first&#x6807;&#x5FD7;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x771F;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x8FDB;&#x884C;&#x6392;&#x5217;&#xFF0C;&#x4EE5;&#x4FBF;&#x6279;&#x5904;&#x7406;&#x518D;&#x6B21;&#x4F4D;&#x4E8E;&#x7B2C;0&#x7EF4;&#x4E0A;&#x3002;</p>
+<p>ElmanRNN&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x4E09;&#x7EF4;&#x5F20;&#x91CF;&#x2014;&#x2014;&#x5BF9;&#x4E8E;&#x6279;&#x5904;&#x7406;&#x7EF4;&#x5EA6;&#x4E0A;&#x7684;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x548C;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x957F;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5411;&#x91CF;&#x3002;&#x6839;&#x636E;&#x624B;&#x5934;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x4EE5;&#x51E0;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x9690;&#x85CF;&#x5411;&#x91CF;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x5C06;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x9AA4;&#x5206;&#x7C7B;&#x4E3A;&#x4E00;&#x4E9B;&#x79BB;&#x6563;&#x7684;&#x9009;&#x9879;&#x96C6;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x8C03;&#x6574;RNN&#x6743;&#x503C;&#x6765;&#x8DDF;&#x8E2A;&#x6BCF;&#x4E00;&#x6B65;&#x9884;&#x6D4B;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x6765;&#x5BF9;&#x6574;&#x4E2A;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;RNN&#x6743;&#x91CD;&#x5C06;&#x88AB;&#x8C03;&#x6574;&#x4EE5;&#x8DDF;&#x8E2A;&#x5BF9;&#x6700;&#x7EC8;&#x5206;&#x7C7B;&#x91CD;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x770B;&#x5230;&#x5206;&#x7C7B;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F46;&#x5728;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E24;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x66F4;&#x6DF1;&#x5165;&#x5730;&#x8BA8;&#x8BBA;&#x9010;&#x6B65;&#x9884;&#x6D4B;&#x3002;</p>
+<p>Example 6-1. An implementation of the Elman RNN using PyTorch&#x2019;s RNNCell</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ElmanRNN</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; an Elman RNN built using the RNNCell &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, input_size, hidden_size, batch_first=False)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            input_size (int): size of the input vectors
+            hidden_size (int): size of the hidden state vectors
+            bathc_first (bool): whether the 0th dimension is batch
+        &quot;&quot;&quot;</span>
+        super(ElmanRNN, self).__init__()
+
+        self.rnn_cell = nn.RNNCell(input_size, hidden_size)
+
+        self.batch_first = batch_first
+        self.hidden_size = hidden_size
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_initialize_hidden</span><span class="hljs-params">(self, batch_size)</span>:</span>
+        <span class="hljs-keyword">return</span> torch.zeros((batch_size, self.hidden_size))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x_in, initial_hidden=None)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;The forward pass of the ElmanRNN
+
+        Args:
+            x_in (torch.Tensor): an input data tensor.
+                If self.batch_first: x_in.shape = (batch_size, seq_size, feat_size)
+                Else: x_in.shape = (seq_size, batch_size, feat_size)
+            initial_hidden (torch.Tensor): the initial hidden state for the RNN
+        Returns:
+            hiddens (torch.Tensor): The outputs of the RNN at each time step.
+                If self.batch_first:
+                   hiddens.shape = (batch_size, seq_size, hidden_size)
+                Else: hiddens.shape = (seq_size, batch_size, hidden_size)
+        &quot;&quot;&quot;</span>
+        <span class="hljs-keyword">if</span> self.batch_first:
+            batch_size, seq_size, feat_size = x_in.size()
+            x_in = x_in.permute(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>)
+        <span class="hljs-keyword">else</span>:
+            seq_size, batch_size, feat_size = x_in.size()
+
+        hiddens = []
+
+        <span class="hljs-keyword">if</span> initial_hidden <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            initial_hidden = self._initialize_hidden(batch_size)
+            initial_hidden = initial_hidden.to(x_in.device)
+
+        hidden_t = initial_hidden
+
+        <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(seq_size):
+            hidden_t = self.rnn_cell(x_in[t], hidden_t)
+            hiddens.append(hidden_t)
+
+        hiddens = torch.stack(hiddens)
+
+        <span class="hljs-keyword">if</span> self.batch_first:
+            hiddens = hiddens.permute(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>)
+
+        <span class="hljs-keyword">return</span> hiddens
+</code></pre>
+<h2 id="example-classifying-surname-nationality-using-a-character-rnn">Example: Classifying Surname Nationality using a Character RNN</h2>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x6982;&#x8FF0;&#x4E86;RNNs&#x7684;&#x57FA;&#x672C;&#x5C5E;&#x6027;&#xFF0C;&#x5E76;&#x9010;&#x6B65;&#x5B9E;&#x73B0;&#x4E86;ElmanRNN&#xFF0C;&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x5E94;&#x7528;&#x5230;&#x4EFB;&#x52A1;&#x4E2D;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x8003;&#x8651;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x7B2C;4&#x7AE0;&#x4E2D;&#x7684;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#xFF0C;&#x5728;&#x8BE5;&#x4EFB;&#x52A1;&#x4E2D;&#xFF0C;&#x5B57;&#x7B26;&#x5E8F;&#x5217;(&#x59D3;&#x6C0F;)&#x88AB;&#x5206;&#x7C7B;&#x5230;&#x8D77;&#x6E90;&#x7684;&#x56FD;&#x7C4D;&#x3002;</p>
+<h3 id="the-surnames-dataset">The Surnames Dataset</h3>
+<p>&#x672C;&#x4F8B;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x96C6;&#x662F;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x524D;&#x9762;&#x5728;&#x7B2C;4&#x7AE0;&#x4E2D;&#x4ECB;&#x7ECD;&#x8FC7;&#x3002;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x7531;&#x59D3;&#x6C0F;&#x548C;&#x76F8;&#x5E94;&#x7684;&#x56FD;&#x7C4D;&#x8868;&#x793A;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x907F;&#x514D;&#x91CD;&#x590D;&#x6570;&#x636E;&#x96C6;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x4F46;&#x662F;&#x60A8;&#x5E94;&#x8BE5;&#x53C2;&#x8003;&#x201C;&#x59D3;&#x6C0F;&#x6570;&#x636E;&#x96C6;&#x201D;&#x6765;&#x5237;&#x65B0;&#x5173;&#x4E8E;&#x6570;&#x636E;&#x96C6;&#x7684;&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x70B9;&#x3002;</p>
+<p>&#x5728;&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;&#x5C31;&#x50CF;&#x201C;&#x4F7F;&#x7528;CNN&#x5BF9;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x201D;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6BCF;&#x4E2A;&#x59D3;&#x6C0F;&#x89C6;&#x4E3A;&#x5B57;&#x7B26;&#x5E8F;&#x5217;&#x3002;&#x4E0E;&#x5F80;&#x5E38;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x7C7B;&#xFF0C;&#x5982;&#x793A;&#x4F8B;6-2&#x6240;&#x793A;&#xFF0C;&#x5B83;&#x8FD4;&#x56DE;&#x5411;&#x91CF;&#x5316;&#x7684;&#x59D3;&#x6C0F;&#x548C;&#x8868;&#x793A;&#x5176;&#x56FD;&#x7C4D;&#x7684;&#x6574;&#x6570;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x5B83;&#x7528;&#x4E8E;&#x4E0B;&#x6E38;&#x8BA1;&#x7B97;&#xFF0C;&#x4EE5;&#x77E5;&#x9053;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x6700;&#x7EC8;&#x5411;&#x91CF;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x719F;&#x6089;&#x7684;&#x6B65;&#x9AA4;&#x5E8F;&#x5217;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x2014;&#x2014;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x96C6;&#x3001;&#x5411;&#x91CF;&#x5316;&#x5668;&#x548C;&#x8BCD;&#x6C47;&#x8868;&#x2014;&#x2014;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x8BAD;&#x7EC3;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x3002;</p>
+<p>Example 6-2. Implementing the Dataset for the Surname data</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameDataset</span><span class="hljs-params">(Dataset)</span>:</span>        
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load_dataset_and_make_vectorizer</span><span class="hljs-params">(cls, surname_csv)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Load dataset and make a new vectorizer from scratch
+
+        Args:
+            surname_csv (str): location of the dataset
+        Returns:
+            an instance of SurnameDataset
+        &quot;&quot;&quot;</span>
+        surname_df = pd.read_csv(surname_csv)
+        train_surname_df = surname_df[surname_df.split==<span class="hljs-string">&apos;train&apos;</span>]
+        <span class="hljs-keyword">return</span> cls(surname_df, SurnameVectorizer.from_dataframe(train_surname_df))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__getitem__</span><span class="hljs-params">(self, index)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;the primary entry point method for PyTorch datasets
+
+        Args:
+            index (int): the index to the data point
+        Returns:
+            a dictionary holding the data point&apos;s:
+                features (x_data)
+                label (y_target)
+                feature length (x_length)
+        &quot;&quot;&quot;</span>
+        row = self._target_df.iloc[index]
+
+        surname_vector, vec_length = \
+            self._vectorizer.vectorize(row.surname, self._max_seq_length)
+
+        nationality_index = \
+            self._vectorizer.nationality_vocab.lookup_token(row.nationality)
+
+        <span class="hljs-keyword">return</span> {<span class="hljs-string">&apos;x_data&apos;</span>: surname_vector,
+                <span class="hljs-string">&apos;y_target&apos;</span>: nationality_index,
+                <span class="hljs-string">&apos;x_length&apos;</span>: vec_length}
+</code></pre>
+<h3 id="the-vectorization-data-structures">The Vectorization Data Structures</h3>
+<p>&#x5411;&#x91CF;&#x5316;&#x7BA1;&#x9053;&#x7684;&#x7B2C;&#x4E00;&#x9636;&#x6BB5;&#x662F;&#x5C06;&#x59D3;&#x6C0F;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x6807;&#x8BB0;&#x6620;&#x5C04;&#x5230;&#x552F;&#x4E00;&#x7684;&#x6574;&#x6570;&#x3002;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;SequenceVocabulary&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x4F7F;&#x7528;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x8FDB;&#x884C;&#x6587;&#x6863;&#x5206;&#x7C7B;&#x7684;&#x4F20;&#x8F93;&#x5B66;&#x4E60;&#x201D;&#x4E2D;&#x9996;&#x6B21;&#x4ECB;&#x7ECD;&#x548C;&#x63CF;&#x8FF0;&#x7684;&#x3002;&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E0D;&#x4EC5;&#x5C06;tweet&#x4E2D;&#x7684;&#x5355;&#x8BCD;&#x6620;&#x5C04;&#x5230;&#x6574;&#x6570;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x4F7F;&#x7528;&#x4E86;&#x56DB;&#x4E2A;&#x7279;&#x6B8A;&#x7528;&#x9014;&#x7684;&#x4EE4;&#x724C;:UNK&#x4EE4;&#x724C;&#x3001;MASK&#x4EE4;&#x724C;&#x3001;BEGIN-SEQUENCE&#x4EE4;&#x724C;&#x548C;END-SEQUENCE&#x4EE4;&#x724C;&#x3002;&#x524D;&#x4E24;&#x4E2A;&#x4EE4;&#x724C;&#x5BF9;&#x8BED;&#x8A00;&#x6570;&#x636E;&#x81F3;&#x5173;&#x91CD;&#x8981;:UNK&#x4EE4;&#x724C;&#x7528;&#x4E8E;&#x8F93;&#x5165;&#x4E2D;&#x770B;&#x4E0D;&#x5230;&#x7684;&#x8BCD;&#x6C47;&#x8868;&#x5916;&#x4EE4;&#x724C;&#xFF0C;&#x800C;MASK&#x4EE4;&#x724C;&#x5141;&#x8BB8;&#x5904;&#x7406;&#x53EF;&#x53D8;&#x957F;&#x5EA6;&#x7684;&#x8F93;&#x5165;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x6807;&#x8BB0;&#x4E3A;&#x6A21;&#x578B;&#x63D0;&#x4F9B;&#x4E86;&#x53E5;&#x5B50;&#x8FB9;&#x754C;&#x7279;&#x5F81;&#xFF0C;&#x5E76;&#x5206;&#x522B;&#x4F5C;&#x4E3A;&#x524D;&#x7F00;&#x548C;&#x8FFD;&#x52A0;&#x5230;&#x5E8F;&#x5217;&#x4E2D;&#x3002;&#x6211;&#x4EEC;&#x8BF7;&#x60A8;&#x53C2;&#x9605;&#x201C;&#x793A;&#x4F8B;:&#x4F7F;&#x7528;&#x9884;&#x5148;&#x8BAD;&#x7EC3;&#x7684;&#x5D4C;&#x5165;&#x6765;&#x8FDB;&#x884C;&#x6587;&#x6863;&#x5206;&#x7C7B;&#x7684;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x201D;&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x5173;&#x4E8E;&#x5E8F;&#x5217;&#x8868;&#x7684;&#x66F4;&#x957F;&#x7684;&#x63CF;&#x8FF0;&#x3002;</p>
+<p>&#x6574;&#x4E2A;&#x5411;&#x91CF;&#x5316;&#x8FC7;&#x7A0B;&#x7531;SurnameVectorizer&#x7BA1;&#x7406;&#xFF0C;&#x5B83;&#x4F7F;&#x7528;&#x5E8F;&#x5217;evocabulary&#x6765;&#x7BA1;&#x7406;&#x59D3;&#x6C0F;&#x5B57;&#x7B26;&#x548C;&#x6574;&#x6570;&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x3002;&#x793A;&#x4F8B;6-3&#x5C55;&#x793A;&#x4E86;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x5E94;&#x8BE5;&#x975E;&#x5E38;&#x719F;&#x6089;&#x3002;&#x5728;&#x201C;&#x793A;&#x4F8B;:&#x4F7F;&#x7528;&#x9884;&#x8BAD;&#x7EC3;&#x5D4C;&#x5165;&#x8FDB;&#x884C;&#x6587;&#x6863;&#x5206;&#x7C7B;&#x7684;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x201D;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x7814;&#x7A76;&#x4E86;&#x5982;&#x4F55;&#x5C06;&#x65B0;&#x95FB;&#x6587;&#x7AE0;&#x7684;&#x6807;&#x9898;&#x5206;&#x7C7B;&#x5230;&#x7279;&#x5B9A;&#x7684;&#x7C7B;&#x522B;&#x4E2D;&#xFF0C;&#x800C;&#x5411;&#x91CF;&#x5316;&#x7BA1;&#x9053;&#x51E0;&#x4E4E;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
+<p>Example 6-3. A vectorizer for surnames</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameVectorizer</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; The Vectorizer which coordinates the Vocabularies and puts them to use&quot;&quot;&quot;</span>   
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">vectorize</span><span class="hljs-params">(self, surname, vector_length=<span class="hljs-number">-1</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            title (str): the string of characters
+            vector_length (int): an argument for forcing the length of index vector
+        &quot;&quot;&quot;</span>
+        indices = [self.char_vocab.begin_seq_index]
+        indices.extend(self.char_vocab.lookup_token(token)
+                       <span class="hljs-keyword">for</span> token <span class="hljs-keyword">in</span> surname)
+        indices.append(self.char_vocab.end_seq_index)
+
+        <span class="hljs-keyword">if</span> vector_length &lt; <span class="hljs-number">0</span>:
+            vector_length = len(indices)
+
+        out_vector = np.zeros(vector_length, dtype=np.int64)
+        out_vector[:len(indices)] = indices
+        out_vector[len(indices):] = self.char_vocab.mask_index
+
+        <span class="hljs-keyword">return</span> out_vector, len(indices)
+
+<span class="hljs-meta">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">from_dataframe</span><span class="hljs-params">(cls, surname_df)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Instantiate the vectorizer from the dataset dataframe
+
+        Args:
+            surname_df (pandas.DataFrame): the surnames dataset
+        Returns:
+            an instance of the SurnameVectorizer
+        &quot;&quot;&quot;</span>
+        char_vocab = SequenceVocabulary()
+        nationality_vocab = Vocabulary()
+
+        <span class="hljs-keyword">for</span> index, row <span class="hljs-keyword">in</span> surname_df.iterrows():
+            <span class="hljs-keyword">for</span> char <span class="hljs-keyword">in</span> row.surname:
+                char_vocab.add_token(char)
+            nationality_vocab.add_token(row.nationality)
+
+        <span class="hljs-keyword">return</span> cls(char_vocab, nationality_vocab)
+</code></pre>
+<h3 id="the-surnameclassifier-model">The SurnameClassifier Model</h3>
+<p>SurnameClassifier&#x6A21;&#x578B;&#x7531;&#x5D4C;&#x5165;&#x5C42;&#x3001;ElmanRNN&#x548C;&#x7EBF;&#x6027;&#x5C42;&#x7EC4;&#x6210;&#x3002;&#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x6A21;&#x578B;&#x7684;&#x8F93;&#x5165;&#x662F;&#x5728;&#x5B83;&#x4EEC;&#x88AB;SequenceVocabulary&#x6620;&#x5C04;&#x5230;&#x6574;&#x6570;&#x4E4B;&#x540E;&#x4F5C;&#x4E3A;&#x4E00;&#x7EC4;&#x6574;&#x6570;&#x8868;&#x793A;&#x7684;&#x4EE4;&#x724C;&#x3002;&#x6A21;&#x578B;&#x9996;&#x5148;&#x4F7F;&#x7528;&#x5D4C;&#x5165;&#x5C42;&#x5D4C;&#x5165;&#x6574;&#x6570;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5229;&#x7528;RNN&#x8BA1;&#x7B97;&#x5E8F;&#x5217;&#x8868;&#x793A;&#x5411;&#x91CF;&#x3002;&#x8FD9;&#x4E9B;&#x5411;&#x91CF;&#x8868;&#x793A;&#x59D3;&#x6C0F;&#x4E2D;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x3002;&#x7531;&#x4E8E;&#x76EE;&#x6807;&#x662F;&#x5BF9;&#x6BCF;&#x4E2A;&#x59D3;&#x6C0F;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#xFF0C;&#x56E0;&#x6B64;&#x63D0;&#x53D6;&#x6BCF;&#x4E2A;&#x59D3;&#x6C0F;&#x4E2D;&#x6700;&#x7EC8;&#x5B57;&#x7B26;&#x4F4D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x5411;&#x91CF;&#x3002;&#x8003;&#x8651;&#x8FD9;&#x4E2A;&#x5411;&#x91CF;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x5411;&#x91CF;&#x662F;&#x4F20;&#x9012;&#x6574;&#x4E2A;&#x5E8F;&#x5217;&#x8F93;&#x5165;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x6B64;&#x662F;&#x59D3;&#x6C0F;&#x7684;&#x6C47;&#x603B;&#x5411;&#x91CF;&#x3002;&#x8FD9;&#x4E9B;&#x6C47;&#x603B;&#x5411;&#x91CF;&#x901A;&#x8FC7;&#x7EBF;&#x6027;&#x5C42;&#x6765;&#x8BA1;&#x7B97;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x3002;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x7528;&#x4E8E;&#x8BAD;&#x7EC3;&#x635F;&#x5931;&#xFF0C;&#x6216;&#x8005;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5E94;&#x7528;softmax&#x51FD;&#x6570;&#x6765;&#x521B;&#x5EFA;&#x59D3;&#x6C0F;&#x7684;&#x6982;&#x7387;&#x5206;&#x5E03;</p>
+<p>&#x6A21;&#x578B;&#x7684;&#x53C2;&#x6570;&#x662F;:&#x5D4C;&#x5165;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5D4C;&#x5165;&#x7684;&#x6570;&#x91CF;(&#x5373;&#x7C7B;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x4EE5;&#x53CA;RNN&#x7684;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x5927;&#x5C0F;&#x3002;&#x5176;&#x4E2D;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x2014;&#x2014;&#x5D4C;&#x5165;&#x7684;&#x6570;&#x91CF;&#x548C;&#x7C7B;&#x7684;&#x6570;&#x91CF;&#x2014;&#x2014;&#x7531;&#x6570;&#x636E;&#x51B3;&#x5B9A;&#x3002;&#x5176;&#x4F59;&#x7684;&#x8D85;&#x53C2;&#x6570;&#x662F;&#x5D4C;&#x5165;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5C3D;&#x7BA1;&#x8FD9;&#x4E9B;&#x6A21;&#x578B;&#x53EF;&#x4EE5;&#x5177;&#x6709;&#x4EFB;&#x4F55;&#x4EF7;&#x503C;&#xFF0C;&#x4F46;&#x901A;&#x5E38;&#x6700;&#x597D;&#x4ECE;&#x4E00;&#x4E9B;&#x5C0F;&#x7684;&#x3001;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x8BAD;&#x7EC3;&#x4EE5;&#x9A8C;&#x8BC1;&#x6A21;&#x578B;&#x662F;&#x5426;&#x6709;&#x6548;&#x7684;&#x4E1C;&#x897F;&#x5F00;&#x59CB;&#x3002;</p>
+<p>Example 6-4. Implementing the Surname Classifier Model</p>
+<pre><code class="lang-py"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SurnameClassifier</span><span class="hljs-params">(nn.Module)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; An RNN to extract features &amp; a MLP to classify &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, embedding_size, num_embeddings, num_classes,
+                 rnn_hidden_size, batch_first=True, padding_idx=<span class="hljs-number">0</span>)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Args:
+            embedding_size (int): The size of the character embeddings
+            num_embeddings (int): The number of characters to embed
+            num_classes (int): The size of the prediction vector
+                Note: the number of nationalities
+            rnn_hidden_size (int): The size of the RNN&apos;s hidden state
+            batch_first (bool): Informs whether the input tensors will
+                have batch or the sequence on the 0th dimension
+            padding_idx (int): The index for the tensor padding;
+                see torch.nn.Embedding
+        &quot;&quot;&quot;</span>
+        super(SurnameClassifier, self).__init__()
+
+        self.emb = nn.Embedding(num_embeddings=num_embeddings,
+                                embedding_dim=embedding_size,
+                                padding_idx=padding_idx)
+        self.rnn = ElmanRNN(input_size=embedding_size,
+                             hidden_size=rnn_hidden_size,
+                             batch_first=batch_first)
+        self.fc1 = nn.Linear(in_features=rnn_hidden_size,
+                            out_features=rnn_hidden_size)
+        self.fc2 = nn.Linear(in_features=rnn_hidden_size,
+                            out_features=num_classes)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x_in, x_lengths=None, apply_softmax=False)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;The forward pass of the classifier
+
+        Args:
+            x_in (torch.Tensor): an input data tensor.
+                x_in.shape should be (batch, input_dim)
+            x_lengths (torch.Tensor): the lengths of each sequence in the batch.
+                They are used to find the final vector of each sequence
+            apply_softmax (bool): a flag for the softmax activation
+                should be false if used with the Cross Entropy losses
+        Returns:
+           out (torch.Tensor); `out.shape = (batch, num_classes)`
+        &quot;&quot;&quot;</span>
+        x_embedded = self.emb(x_in)
+        y_out = self.rnn(x_embedded)
+
+        <span class="hljs-keyword">if</span> x_lengths <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>:
+            y_out = column_gather(y_out, x_lengths)
+        <span class="hljs-keyword">else</span>:
+            y_out = y_out[:, <span class="hljs-number">-1</span>, :]
+
+        y_out = F.dropout(y_out, <span class="hljs-number">0.5</span>)
+        y_out = F.relu(self.fc1(y_out))
+        y_out = F.dropout(y_out, <span class="hljs-number">0.5</span>)
+        y_out = self.fc2(y_out)
+
+        <span class="hljs-keyword">if</span> apply_softmax:
+            y_out = F.softmax(y_out, dim=<span class="hljs-number">1</span>)
+
+        <span class="hljs-keyword">return</span> y_out
+</code></pre>
+<p>&#x60A8;&#x5C06;&#x6CE8;&#x610F;&#x5230;&#xFF0C;&#x6B63;&#x5411;&#x51FD;&#x6570;&#x9700;&#x8981;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x957F;&#x5EA6;&#x7528;&#x4E8E;&#x68C0;&#x7D22;&#x4ECE;RNN&#x8FD4;&#x56DE;&#x7684;&#x5E26;&#x6709;&#x540D;&#x4E3A;column_gather&#x51FD;&#x6570;&#x7684;&#x5F20;&#x91CF;&#x4E2D;&#x6BCF;&#x4E2A;&#x5E8F;&#x5217;&#x7684;&#x6700;&#x7EC8;&#x5411;&#x91CF;&#xFF0C;&#x5982;&#x793A;&#x4F8B;6-5&#x6240;&#x793A;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x8FED;&#x4EE3;&#x6279;&#x5904;&#x7406;&#x884C;&#x7D22;&#x5F15;&#xFF0C;&#x5E76;&#x68C0;&#x7D22;&#x4F4D;&#x4E8E;&#x5E8F;&#x5217;&#x76F8;&#x5E94;&#x957F;&#x5EA6;&#x6240;&#x6307;&#x793A;&#x4F4D;&#x7F6E;&#x7684;&#x5411;&#x91CF;&#x3002; Example 6-5. Retrieving the final vector in each sequence using column_gather</p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">column_gather</span><span class="hljs-params">(y_out, x_lengths)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;Get a specific vector from each batch datapoint in `y_out`.
+
+    Args:
+        y_out (torch.FloatTensor, torch.cuda.FloatTensor)
+            shape: (batch, sequence, feature)
+        x_lengths (torch.LongTensor, torch.cuda.LongTensor)
+            shape: (batch,)
+
+    Returns:
+        y_out (torch.FloatTensor, torch.cuda.FloatTensor)
+            shape: (batch, feature)
+    &apos;&apos;&apos;</span>
+    x_lengths = x_lengths.long().detach().cpu().numpy() - <span class="hljs-number">1</span>
+
+    out = []
+    <span class="hljs-keyword">for</span> batch_index, column_index <span class="hljs-keyword">in</span> enumerate(x_lengths):
+        out.append(y_out[batch_index, column_index])
+
+    <span class="hljs-keyword">return</span> torch.stack(out)
+</code></pre>
+<h3 id="the-training-routine-and-results">The Training Routine and Results</h3>
+<p>&#x8BAD;&#x7EC3;&#x7A0B;&#x5E8F;&#x9075;&#x5FAA;&#x6807;&#x51C6;&#x516C;&#x5F0F;&#x3002;&#x5BF9;&#x4E8E;&#x5355;&#x4E2A;&#x6279;&#x6570;&#x636E;&#xFF0C;&#x5E94;&#x7528;&#x6A21;&#x578B;&#x5E76;&#x8BA1;&#x7B97;&#x9884;&#x6D4B;&#x5411;&#x91CF;&#x3002;&#x5229;&#x7528;&#x6A2A;&#x71B5;&#x635F;&#x5931;&#x548C;&#x5730;&#x9762;&#x771F;&#x503C;&#x6765;&#x8BA1;&#x7B97;&#x635F;&#x5931;&#x503C;&#x3002;&#x4F7F;&#x7528;&#x635F;&#x5931;&#x503C;&#x548C;&#x4F18;&#x5316;&#x5668;&#xFF0C;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x5E76;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x68AF;&#x5EA6;&#x66F4;&#x65B0;&#x6A21;&#x578B;&#x7684;&#x6743;&#x91CD;&#x3002;&#x5BF9;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x6BCF;&#x6279;&#x91CD;&#x590D;&#x6B64;&#x64CD;&#x4F5C;&#x3002;&#x5BF9;&#x9A8C;&#x8BC1;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7C7B;&#x4F3C;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4F46;&#x662F;&#x5C06;&#x6A21;&#x578B;&#x8BBE;&#x7F6E;&#x4E3A;eval()&#x6A21;&#x5F0F;&#xFF0C;&#x4EE5;&#x9632;&#x6B62;&#x5728;&#x9A8C;&#x8BC1;&#x6570;&#x636E;&#x4E0A;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x9A8C;&#x8BC1;&#x6570;&#x636E;&#x4EC5;&#x7528;&#x4E8E;&#x5BF9;&#x6A21;&#x578B;&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x7ED9;&#x51FA;&#x4E0D;&#x90A3;&#x4E48;&#x504F;&#x9887;&#x7684;&#x611F;&#x89C9;&#x3002;&#x8FD9;&#x4E2A;&#x4F8B;&#x7A0B;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x671F;&#x91CD;&#x590D;&#x6267;&#x884C;&#x3002;&#x4EE3;&#x7801;&#x89C1;&#x8865;&#x5145;&#x8D44;&#x6599;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x4F7F;&#x7528;&#x8D85;&#x53C2;&#x6570;&#x6765;&#x4E86;&#x89E3;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#x7684;&#x56E0;&#x7D20;&#x4EE5;&#x53CA;&#x5F71;&#x54CD;&#x7A0B;&#x5EA6;&#xFF0C;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x5236;&#x6210;&#x8868;&#x683C;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x5C06;&#x4E3A;&#x8BE5;&#x4EFB;&#x52A1;&#x7F16;&#x5199;&#x5408;&#x9002;&#x7684;&#x57FA;&#x7EBF;&#x6A21;&#x578B;&#x4F5C;&#x4E3A;&#x7EC3;&#x4E60;&#xFF0C;&#x8BA9;&#x60A8;&#x5B8C;&#x6210;&#x3002;&#x5728;&#x201C;SurnameClassifier&#x6A21;&#x578B;&#x201D;&#x4E2D;&#x5B9E;&#x73B0;&#x7684;&#x6A21;&#x578B;&#x662F;&#x901A;&#x7528;&#x7684;&#xFF0C;&#x5E76;&#x4E0D;&#x5C40;&#x9650;&#x4E8E;&#x5B57;&#x7B26;&#x3002;&#x6A21;&#x578B;&#x4E2D;&#x7684;&#x5D4C;&#x5165;&#x5C42;&#x53EF;&#x4EE5;&#x6620;&#x5C04;&#x51FA;&#x79BB;&#x6563;&#x9879;&#x5E8F;&#x5217;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x79BB;&#x6563;&#x9879;;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x53E5;&#x5B50;&#x662F;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x5355;&#x8BCD;&#x3002;&#x6211;&#x4EEC;&#x9F13;&#x52B1;&#x60A8;&#x5728;&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;(&#x5982;&#x53E5;&#x5B50;&#x5206;&#x7C7B;)&#x4E2D;&#x4F7F;&#x7528;&#x793A;&#x4F8B;6-6&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x3002; Example 6-6. Arguments to the RNN-based Surname Classifier</p>
+<pre><code class="lang-py">args = Namespace(
+    <span class="hljs-comment"># Data and path information</span>
+    surname_csv=<span class="hljs-string">&quot;data/surnames/surnames_with_splits.csv&quot;</span>,
+    vectorizer_file=<span class="hljs-string">&quot;vectorizer.json&quot;</span>,
+    model_state_file=<span class="hljs-string">&quot;model.pth&quot;</span>,
+    save_dir=<span class="hljs-string">&quot;model_storage/ch6/surname_classification&quot;</span>,
+    <span class="hljs-comment"># Model hyper parameter</span>
+    char_embedding_size=<span class="hljs-number">100</span>,
+    rnn_hidden_size=<span class="hljs-number">64</span>,
+    <span class="hljs-comment"># Training hyper parameter</span>
+    num_epochs=<span class="hljs-number">100</span>,
+    learning_rate=<span class="hljs-number">1e-3</span>,
+    batch_size=<span class="hljs-number">64</span>,
+    seed=<span class="hljs-number">1337</span>,
+    early_stopping_criteria=<span class="hljs-number">5</span>,
+    <span class="hljs-comment"># ... Runtime options not shown for space</span>
+)
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x60A8;&#x5B66;&#x4E60;&#x4E86;&#x7528;&#x4E8E;&#x5BF9;&#x5E8F;&#x5217;&#x6570;&#x636E;&#x5EFA;&#x6A21;&#x7684;&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x4EE5;&#x53CA;&#x6700;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x79CD;&#x9012;&#x5F52;&#x7F51;&#x7EDC;&#xFF0C;&#x5373;Elman RNNs&#x3002;&#x6211;&#x4EEC;&#x786E;&#x5B9A;&#x5E8F;&#x5217;&#x5EFA;&#x6A21;&#x7684;&#x76EE;&#x6807;&#x662F;&#x5B66;&#x4E60;&#x5E8F;&#x5217;&#x7684;&#x8868;&#x793A;(&#x5373;&#x5411;&#x91CF;)&#x3002;&#x6839;&#x636E;&#x4EFB;&#x52A1;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x53EF;&#x4EE5;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x5B66;&#x4E60;&#x8FC7;&#x7684;&#x8868;&#x793A;&#x3002;&#x6211;&#x4EEC;&#x8003;&#x8651;&#x4E86;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x4EFB;&#x52A1;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x5C06;&#x8FD9;&#x79CD;&#x9690;&#x85CF;&#x72B6;&#x6001;&#x8868;&#x793A;&#x5206;&#x7C7B;&#x5230;&#x8BB8;&#x591A;&#x7C7B;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x3002;&#x59D3;&#x6C0F;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#x5C55;&#x793A;&#x4E86;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;RNNs&#x5728;&#x5B50;&#x8BCD;&#x7EA7;&#x522B;&#x6355;&#x83B7;&#x4FE1;&#x606F;&#x7684;&#x793A;&#x4F8B;&#x3002;</p>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/nlp-pytorch-zh/" target="_blank">apachecn/nlp-pytorch-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="../shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '1eba1fde838d39ce2ba9',
+        clientSecret: '0bdf321e160ca29b2d54e8722700dd5accb084e0',
+        repo: 'nlp-pytorch-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2019-07-29 11:38:33
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5.html" class="navigation navigation-prev " aria-label="Previous page: Chapter 5.Embedding Words and Types">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="7.html" class="navigation navigation-next " aria-label="Next page: Chapter 7.自然语言处理的中间 Sequence Modeling">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 6.自然语言处理 Sequence Modeling","level":"1.7","depth":1,"next":{"title":"Chapter 7.自然语言处理的中间 Sequence Modeling","level":"1.8","depth":1,"path":"docs/7.md","ref":"docs/7.md","articles":[]},"previous":{"title":"Chapter 5.Embedding Words and Types","level":"1.6","depth":1,"path":"docs/5.md","ref":"docs/5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","mathjax","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/nlp-pytorch-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://nlp-pt.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/nlp-pytorch-zh/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"https://nlp-pt.apachecn.org/cover.jpg"},"expandable-chapters":{}},"theme":"default","author":"ApacheCN","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NLP with PyTorch 中文文档","language":"zh-hans","gitbook":"*","description":"NLP with PyTorch 中文文档"},"file":{"path":"docs/6.md","mtime":"2019-07-29T03:38:33.968Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-09T15:06:48.544Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

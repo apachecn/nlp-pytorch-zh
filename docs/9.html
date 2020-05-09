@@ -1,0 +1,654 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Chapter 9.经典, 前沿和后续步骤 · NLP with PyTorch 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ApacheCN">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="8.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    入门须知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    Chapter 1.基础介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    Chapter 2.传统NLP快速回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    Chapter 3.神经网络基础组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    Chapter 4.自然语言处理 Feed-Forward Networks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    Chapter 5.Embedding Words and Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    Chapter 6.自然语言处理 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    Chapter 7.自然语言处理的中间 Sequence Modeling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    Chapter 8.用于自然语言处理的高级 Sequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    Chapter 9.经典, 前沿和后续步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Chapter 9.经典, 前沿和后续步骤</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="chapter-9&#x7ECF;&#x5178;-&#x524D;&#x6CBF;&#x548C;&#x540E;&#x7EED;&#x6B65;&#x9AA4;">Chapter 9.&#x7ECF;&#x5178;, &#x524D;&#x6CBF;&#x548C;&#x540E;&#x7EED;&#x6B65;&#x9AA4;</h1>
+<blockquote>
+<p>&#x672C;&#x6587;&#x6807;&#x9898;:<a href="https://yifdu.github.io/2018/12/28/Natural-Language-Processing-with-PyTorch%EF%BC%88%E4%B9%9D%EF%BC%89/" target="_blank">Natural-Language-Processing-with-PyTorch&#xFF08;&#x4E5D;&#xFF09;</a></p>
+<p>&#x6587;&#x7AE0;&#x4F5C;&#x8005;:<a href="https://yifdu.github.io/" title="&#x8BBF;&#x95EE; Yif Du &#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;" target="_blank">Yif Du</a></p>
+<p>&#x53D1;&#x5E03;&#x65F6;&#x95F4;:2018&#x5E74;12&#x6708;28&#x65E5; - 11:12</p>
+<p>&#x6700;&#x540E;&#x66F4;&#x65B0;:2018&#x5E74;12&#x6708;28&#x65E5; - 11:12</p>
+<p>&#x539F;&#x59CB;&#x94FE;&#x63A5;:<a href="https://yifdu.github.io/2018/12/28/Natural-Language-Processing-with-PyTorch%EF%BC%88%E4%B9%9D%EF%BC%89/" target="_blank">http://yifdu.github.io/2018/12/28/Natural-Language-Processing-with-PyTorch&#xFF08;&#x4E5D;&#xFF09;/</a></p>
+<p>&#x8BB8;&#x53EF;&#x534F;&#x8BAE;:  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">&#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528;-&#x7981;&#x6B62;&#x6F14;&#x7ECE; 4.0 &#x56FD;&#x9645;</a>  &#x8F6C;&#x8F7D;&#x8BF7;&#x4FDD;&#x7559;&#x539F;&#x6587;&#x94FE;&#x63A5;&#x53CA;&#x4F5C;&#x8005;&#x3002;</p>
+</blockquote>
+<p>&#x5728;&#x672C;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x6574;&#x672C;&#x4E66;&#x7684;&#x89D2;&#x5EA6;&#x56DE;&#x987E;&#x524D;&#x9762;&#x7684;&#x7AE0;&#x8282;&#xFF0C;&#x5E76;&#x4E86;&#x89E3;&#x672C;&#x4E66;&#x4E2D;&#x8BA8;&#x8BBA;&#x7684;&#x770B;&#x4F3C;&#x72EC;&#x7ACB;&#x7684;&#x4E3B;&#x9898;&#x662F;&#x5982;&#x4F55;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x7684;&#xFF0C;&#x4EE5;&#x53CA;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x5982;&#x4F55;&#x5C06;&#x8FD9;&#x4E9B;&#x60F3;&#x6CD5;&#x6DF7;&#x5408;&#x548C;&#x5339;&#x914D;&#x4EE5;&#x89E3;&#x51B3;&#x624B;&#x5934;&#x7684;&#x95EE;&#x9898;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x603B;&#x7ED3;&#x4E86;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#xFF08;NLP&#xFF09;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x7ECF;&#x5178;&#x4E3B;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x5728;&#x8FD9;&#x4E9B;&#x5C01;&#x9762;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x6DF1;&#x5165;&#x8BA8;&#x8BBA;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6307;&#x51FA;&#x4E86;&#x8BE5;&#x9886;&#x57DF;&#x7684;&#x524D;&#x6CBF;&#xFF0C;&#x622A;&#x81F3;2018&#x5E74;&#x3002;&#x5728;&#x7ECF;&#x9A8C;&#x4E30;&#x5BCC;&#x7684;NLP&#x548C;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7B49;&#x5FEB;&#x901F;&#x53D1;&#x5C55;&#x7684;&#x9886;&#x57DF;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5B66;&#x4E60;&#x65B0;&#x7684;&#x60F3;&#x6CD5;&#x5E76;&#x4F7F;&#x81EA;&#x5DF1;&#x4FDD;&#x6301;&#x6700;&#x65B0;&#x72B6;&#x6001;&#x3002;&#x6211;&#x4EEC;&#x81F4;&#x529B;&#x4E8E;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x5728;NLP&#x4E2D;&#x5B66;&#x4E60;&#x65B0;&#x4E3B;&#x9898;&#x3002;</p>
+<h2 id="what-have-we-learned-so-far">What Have We Learned so Far?</h2>
+<p>&#x6211;&#x4EEC;&#x4ECE;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x8303;&#x5F0F;&#x5F00;&#x59CB;&#xFF0C;&#x4EE5;&#x53CA;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x56FE;&#x5F62;&#x62BD;&#x8C61;&#x5C06;&#x590D;&#x6742;&#x7684;&#x60F3;&#x6CD5;&#x7F16;&#x7801;&#x4E3A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x7684;&#x6A21;&#x578B;&#x3002; PyTorch&#x662F;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x7684;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#x3002;&#x7F16;&#x5199;NLP&#x4E66;&#x7C4D;&#x5B58;&#x5728;&#x98CE;&#x9669;&#xFF0C;&#x8BE5;&#x4E66;&#x4F7F;&#x7528;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x5C06;&#x6587;&#x672C;&#x8F93;&#x5165;&#x89C6;&#x4E3A;&#x8981;&#x8F93;&#x5165;&#x9ED1;&#x76D2;&#x5B50;&#x7684;&#x201C;&#x6570;&#x636E;&#x201D;&#x3002;&#x5728;&#x7B2C;2&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;NLP&#x548C;&#x8BED;&#x8A00;&#x5B66;&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF0C;&#x4E3A;&#x672C;&#x4E66;&#x7684;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5960;&#x5B9A;&#x4E86;&#x57FA;&#x7840;&#x3002;&#x6FC0;&#x6D3B;&#x51FD;&#x6570;&#xFF0C;&#x635F;&#x5931;&#x51FD;&#x6570;&#x548C;&#x57FA;&#x4E8E;&#x68AF;&#x5EA6;&#x7684;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x4F18;&#x5316;&#x4EE5;&#x53CA;&#x201C;&#x8BAD;&#x7EC3; - &#x8BC4;&#x4F30;&#x5FAA;&#x73AF;&#x201D;&#x7B49;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x5728;&#x672C;&#x7AE0;&#x7684;&#x5176;&#x4ED6;&#x7AE0;&#x8282;&#x4E2D;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x3002;&#x6211;&#x4EEC;&#x7814;&#x7A76;&#x4E86;&#x524D;&#x9988;&#x7F51;&#x7EDC;&#x7684;&#x4E24;&#x4E2A;&#x4F8B;&#x5B50; - &#x591A;&#x5C42;&#x611F;&#x77E5;&#x5668;&#xFF08;MLP&#xFF09;&#x548C;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x3002;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;L1&#xFF0C;L2&#x89C4;&#x8303;&#x548C;&#x4E22;&#x5305;&#x7B49;&#x6B63;&#x89C4;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x4F7F;&#x7F51;&#x7EDC;&#x66F4;&#x52A0;&#x5065;&#x58EE;&#x3002; MLP&#x80FD;&#x591F;&#x5728;&#x5176;&#x9690;&#x85CF;&#x5C42;&#x4E2D;&#x6355;&#x83B7;&#x7C7B;&#x4F3C;ngram&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x4EEC;&#x6548;&#x7387;&#x4F4E;&#x4E0B;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x4F7F;&#x7528;&#x79F0;&#x4E3A;&#x201C;&#x53C2;&#x6570;&#x7ED1;&#x5B9A;&#x201D;&#x6216;&#x201C;&#x53C2;&#x6570;&#x5171;&#x4EAB;&#x201D;&#x7684;&#x601D;&#x60F3;&#x4EE5;&#x8BA1;&#x7B97;&#x6709;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x5B66;&#x4E60;&#x8FD9;&#x4E2A;&#x5B50;&#x7ED3;&#x6784;&#x3002;&#x5728;&#x7B2C;6&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;&#x5FAA;&#x73AF;&#x7F51;&#x7EDC;&#x5982;&#x4F55;&#x80FD;&#x591F;&#x6355;&#x83B7;&#x8FDC;&#x7A0B;&#x4F9D;&#x8D56;&#x6027;&#x8DE8;&#x8D8A;&#x65F6;&#x95F4;&#x4E5F;&#x53EA;&#x6709;&#x5F88;&#x5C11;&#x7684;&#x53C2;&#x6570;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x8BF4;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#x6B63;&#x5728;&#x8DE8;&#x8D8A;&#x7A7A;&#x95F4;&#x7ED1;&#x5B9A;&#x53C2;&#x6570;&#xFF0C;&#x800C;&#x5FAA;&#x73AF;&#x7F51;&#x7EDC;&#x6B63;&#x5728;&#x8DE8;&#x65F6;&#x95F4;&#x7ED1;&#x5B9A;&#x53C2;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x4E86;&#x4E09;&#x79CD;&#x590D;&#x53D1;&#x7F51;&#x7EDC;&#x7684;&#x53D8;&#x4F53;&#xFF0C;&#x4ECE;Elman Recurrent Neural&#x7F51;&#x7EDC;&#xFF08;RNN&#xFF09;&#x548C;&#x95E8;&#x63A7;&#x53D8;&#x4F53;&#x5982;&#x957F;&#x77ED;&#x671F;&#x8BB0;&#x5FC6;&#xFF08;LSTM&#xFF09;&#x548C;&#x95E8;&#x63A7;&#x590D;&#x53D1;&#x5355;&#x4F4D;&#xFF08;GRU&#xFF09;&#x5F00;&#x59CB;&#x3002;&#x6211;&#x4EEC;&#x8FD8;&#x4E86;&#x89E3;&#x4E86;&#x5982;&#x4F55;&#x5728;&#x9884;&#x6D4B;&#x6216;&#x5E8F;&#x5217;&#x6807;&#x8BB0;&#x8BBE;&#x7F6E;&#x4E2D;&#x4F7F;&#x7528;&#x5FAA;&#x73AF;&#x7F51;&#x7EDC;&#xFF0C;&#x5176;&#x4E2D;&#x5728;&#x8F93;&#x5165;&#x7684;&#x6BCF;&#x4E2A;&#x65F6;&#x95F4;&#x6B65;&#x9AA4;&#x9884;&#x6D4B;&#x8F93;&#x51FA;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E86;&#x4E00;&#x7C7B;&#x79F0;&#x4E3A;&#x7F16;&#x7801;&#x5668; - &#x89E3;&#x7801;&#x5668;&#x6A21;&#x578B;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x5E76;&#x7814;&#x7A76;&#x4E86;&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x6A21;&#x578B;&#x4F5C;&#x4E3A;&#x89E3;&#x51B3;&#x6761;&#x4EF6;&#x751F;&#x6210;&#x95EE;&#x9898;&#xFF08;&#x5982;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#xFF09;&#x7684;&#x793A;&#x4F8B;&#x3002;&#x6211;&#x4EEC;&#x5728;PyTorch&#x4E2D;&#x5B8C;&#x6210;&#x4E86;&#x8BB8;&#x591A;&#x8FD9;&#x4E9B;&#x4E3B;&#x9898;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x793A;&#x4F8B;&#x3002;</p>
+<h2 id="timeless-topics-in-nlp">Timeless Topics in NLP</h2>
+<p>NLP&#x6BD4;&#x5355;&#x672C;&#x4E66;&#x8303;&#x56F4;&#x5185;&#x7684;&#x5185;&#x5BB9;&#x8FD8;&#x591A;&#xFF0C;&#x672C;&#x4E66;&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;&#x3002;&#x5728;&#x7B2C;2&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x786E;&#x5B9A;&#x4E86;NLP&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x6838;&#x5FC3;&#x672F;&#x8BED;&#x548C;&#x4EFB;&#x52A1;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x5176;&#x4F59;&#x7AE0;&#x8282;&#x4E2D;&#x4ECB;&#x7ECD;&#x4E86;&#x8BB8;&#x591A;NLP&#x4EFB;&#x52A1;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7B80;&#x8981;&#x63D0;&#x5230;&#x4E00;&#x4E9B;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x90E8;&#x5206;&#x6216;&#x5168;&#x90E8;&#x6DB5;&#x76D6;&#x7684;&#x91CD;&#x8981;&#x4E3B;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x7684;&#x8303;&#x56F4;&#x4EC5;&#x9650;&#x4E8E;&#x521D;&#x59CB;&#x8BF4;&#x660E;&#x4E66;&#x3002;</p>
+<h3 id="dialogue-and-interactive-systems">Dialogue and Interactive Systems</h3>
+<p>&#x8BA1;&#x7B97;&#x673A;&#x548C;&#x4EBA;&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x65E0;&#x7F1D;&#x5BF9;&#x8BDD;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x8BA1;&#x7B97;&#x7684;&#x5723;&#x676F;&#xFF0C;&#x5E76;&#x6FC0;&#x53D1;&#x4E86;&#x56FE;&#x7075;&#x6D4B;&#x9A8C;&#x548C;&#x52D2;&#x4F2F;&#x7EB3;&#x5956;&#x3002;&#x81EA;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#xFF08;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#xFF09;&#x65E9;&#x671F;&#x4EE5;&#x6765;&#xFF0C;NLP&#x4E00;&#x76F4;&#x4E0E;&#x5BF9;&#x8BDD;&#x7CFB;&#x7EDF;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x865A;&#x6784;&#x7CFB;&#x7EDF;&#x5728;&#x6D41;&#x884C;&#x6587;&#x5316;&#x4E2D;&#x666E;&#x53CA;&#xFF0C;&#x5982;&#x661F;&#x9645;&#x8FF7;&#x822A;&#x4E2D;&#x7684;USS Enterprise&#x4E0A;&#x7684;&#x4E3B;&#x8BA1;&#x7B97;&#x673A;&#x548C;&#x7535;&#x5F71;2001&#xFF1A;A Space Odyssey&#x4E2D;&#x7684;HAL 9000&#x3002; 1&#x5BF9;&#x8BDD;&#x548C;&#x66F4;&#x5E7F;&#x6CDB;&#x7684;&#x4EA4;&#x4E92;&#x7CFB;&#x7EDF;&#x8BBE;&#x8BA1;&#x9886;&#x57DF;&#x662F;&#x4E00;&#x4E2A;&#x80A5;&#x6C83;&#x7684;&#x7814;&#x7A76;&#x9886;&#x57DF;&#xFF0C;&#x4E9A;&#x9A6C;&#x900A;&#x7684;Alexa&#xFF0C;Apple&#x7684;Siri&#x548C;Google&#x7684;&#x52A9;&#x624B;&#x7B49;&#x8FD1;&#x671F;&#x4EA7;&#x54C1;&#x53D6;&#x5F97;&#x4E86;&#x6210;&#x529F;&#x3002;&#x5BF9;&#x8BDD;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x662F;&#x5F00;&#x653E;&#x57DF;&#xFF08;&#x95EE;&#x6211;&#x4EC0;&#x4E48;&#xFF09;&#x6216;&#x5C01;&#x95ED;&#x57DF;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x822A;&#x73ED;&#x9884;&#x8BA2;&#xFF0C;&#x6C7D;&#x8F66;&#x5BFC;&#x822A;&#xFF09;&#x3002;&#x8BE5;&#x9886;&#x57DF;&#x7684;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x7814;&#x7A76;&#x8BFE;&#x9898;&#x5305;&#x62EC;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5BF9;&#x5BF9;&#x8BDD;&#x884C;&#x4E3A;&#x8FDB;&#x884C;&#x5EFA;&#x6A21;&#xFF0C;&#x5BF9;&#x8BDD;&#x80CC;&#x666F;&#xFF08;&#x89C1;&#x56FE;9-1&#xFF09;&#x548C;&#x5BF9;&#x8BDD;&#x72B6;&#x6001;&#xFF1F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5EFA;&#x7ACB;&#x591A;&#x6A21;&#x5F0F;&#x5BF9;&#x8BDD;&#x7CFB;&#x7EDF;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x8BED;&#x97F3;&#x548C;&#x89C6;&#x89C9;&#x6216;&#x6587;&#x672C;&#x548C;&#x89C6;&#x89C9;&#x8F93;&#x5165;&#xFF09;&#xFF1F;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x8BC6;&#x522B;&#x7528;&#x6237;&#x610F;&#x56FE;&#xFF1F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4E3A;&#x7528;&#x6237;&#x7684;&#x504F;&#x597D;&#x5EFA;&#x6A21;&#x5E76;&#x751F;&#x6210;&#x9488;&#x5BF9;&#x7528;&#x6237;&#x91CF;&#x8EAB;&#x5B9A;&#x5236;&#x7684;&#x54CD;&#x5E94;&#xFF1F;&#x5982;&#x4F55;&#x56DE;&#x5E94;&#x66F4;&#x4EBA;&#x6027;&#x5316;&#x7684;&#x58F0;&#x97F3;&#xFF1F;&#x4F8B;&#x5982;&#xFF0C;&#x6700;&#x8FD1;&#x7684;&#x751F;&#x4EA7;&#x5BF9;&#x8BDD;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x5C06;&#x8BF8;&#x5982;&#x201C;&#x55EF;&#x201D;&#x548C;&#x201C;&#x5443;&#x201D;&#x4E4B;&#x7C7B;&#x7684;&#x4E0D;&#x6D41;&#x7545;&#x7ED3;&#x5408;&#x5230;&#x54CD;&#x5E94;&#x4E2D;&#xFF0C;&#x4EE5;&#x4F7F;&#x7CFB;&#x7EDF;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x90A3;&#x4E48;&#x673A;&#x5668;&#x4EBA;&#x3002;</p>
+<p><img src="img/6978bd3cac4da121ee87ba11b5afff3d.jpg" alt="pic1" title="&#x56FE;9-1&#x3002;&#x5B9E;&#x65BD;&#x5BF9;&#x8BDD;&#x7CFB;&#x7EDF;&#xFF08;&#x4F7F;&#x7528;Apple&#x7684;Siri&#xFF09;&#x3002;&#x6CE8;&#x610F;&#x5BF9;&#x8BDD;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x7EF4;&#x62A4;&#x4E0A;&#x4E0B;&#x6587;&#x4EE5;&#x56DE;&#x7B54;&#x540E;&#x7EED;&#x95EE;&#x9898;;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5B83;&#x77E5;&#x9053;&#x5C06;&#x201C;&#x4ED6;&#x4EEC;&#x201D;&#x6620;&#x5C04;&#x5230;&#x5DF4;&#x62C9;&#x514B;&#x5965;&#x5DF4;&#x9A6C;&#x7684;&#x5973;&#x513F;&#x8EAB;&#x4E0A;&#x3002;"></p>
+<h3 id="discourse">Discourse</h3>
+<p>&#x8BDD;&#x8BED;&#x6D89;&#x53CA;&#x7406;&#x89E3;&#x6587;&#x672C;&#x6587;&#x6863;&#x7684;&#x90E8;&#x5206;&#x6574;&#x4F53;&#x6027;&#x8D28;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8BDD;&#x8BED;&#x89E3;&#x6790;&#x7684;&#x4EFB;&#x52A1;&#x6D89;&#x53CA;&#x7406;&#x89E3;&#x4E24;&#x4E2A;&#x53E5;&#x5B50;&#x5728;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x5982;&#x4F55;&#x5F7C;&#x6B64;&#x76F8;&#x5173;&#x3002;&#x8868;9-1&#x7ED9;&#x51FA;&#x4E86;Penn Discourse Treebank&#xFF08;PDTB&#xFF09;&#x7684;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;&#x8FD9;&#x9879;&#x4EFB;&#x52A1;&#x3002;</p>
+<p>Table 9-1. Examples from the CoNLL 2015 Shallow Discourse Processing task <img src="img/b9468b8fa88bae589f119466a2354398.jpg" alt="pic2"> &#x7406;&#x89E3;&#x8BDD;&#x8BED;&#x8FD8;&#x6D89;&#x53CA;&#x89E3;&#x51B3;&#x5176;&#x4ED6;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x56DE;&#x6307;&#x89E3;&#x6790;&#x548C;&#x8F6C;&#x55BB;&#x68C0;&#x6D4B;&#x3002;&#x5728;Anaphora Resolution&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5C06;&#x4EE3;&#x8BCD;&#x7684;&#x51FA;&#x73B0;&#x89E3;&#x6790;&#x4E3A;&#x5B83;&#x4EEC;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5B9E;&#x4F53;&#x3002;&#x5982;&#x56FE;9-2&#x6240;&#x793A;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x95EE;&#x9898;&#x3002; <img src="img/2aaf2adfdd3fa9a320c69390bb6cc52e.jpg" alt="pic3" title="&#x56FE;9-2&#x3002;&#x56DE;&#x6307;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x7684;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x3002;&#x5728;&#x4F8B;&#x5B50;&#xFF08;a&#xFF09;&#x4E2D;&#xFF0C;&#x201C;&#x5B83;&#x201D;&#x662F;&#x6307;&#x72D7;&#x8FD8;&#x662F;&#x9AA8;&#x5934;&#xFF1F;&#x5728;&#x793A;&#x4F8B;&#xFF08;b&#xFF09;&#x4E2D;&#xFF0C;&#x201C;&#x5B83;&#x201D;&#x65E2;&#x4E0D;&#x662F;&#x6307;&#x5B83;&#x4EEC;&#x4E5F;&#x4E0D;&#x662F;&#x6307;&#x5B83;&#x4EEC;&#x3002;&#x5728;&#x5B9E;&#x65BD;&#x4F8B;&#xFF08;c&#xFF09;&#x548C;&#xFF08;d&#xFF09;&#x4E2D;&#xFF0C;&#x201C;It&#x201D;&#x5206;&#x522B;&#x6307;&#x73BB;&#x7483;&#x548C;&#x5564;&#x9152;&#x3002;&#x4E86;&#x89E3;&#x5564;&#x9152;&#x66F4;&#x6709;&#x53EF;&#x80FD;&#x8D77;&#x6CE1;&#x4F5C;&#x7528;&#xFF0C;&#x5BF9;&#x4E8E;&#x89E3;&#x51B3;&#x6B64;&#x7C7B;&#x6307;&#x79F0;&#xFF08;&#x9009;&#x62E9;&#x504F;&#x597D;&#xFF09;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x3002;"> &#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x662F;&#x8F6C;&#x55BB;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#x6240;&#x793A;&#xFF1A; &#x201C;Beijing imposed trade tariffs in response to tariffs on Chinese goods.&#x201D;</p>
+<p>&#x5317;&#x4EAC;&#x5728;&#x8FD9;&#x91CC;&#x6307;&#x7684;&#x4E0D;&#x662F;&#x4E2D;&#x56FD;&#x653F;&#x5E9C;&#x7684;&#x6240;&#x5728;&#x5730;&#x3002;&#x6709;&#x65F6;&#xFF0C;&#x6210;&#x529F;&#x89E3;&#x51B3;&#x6240;&#x6307;&#x5BF9;&#x8C61;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x77E5;&#x8BC6;&#x5E93;&#x3002;</p>
+<h3 id="information-extraction-and-text-mining">Information Extraction and Text Mining</h3>
+<p>&#x8BE5;&#x884C;&#x4E1A;&#x4E2D;&#x9047;&#x5230;&#x7684;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x7C7B;&#x522B;&#x4E4B;&#x4E00;&#x6D89;&#x53CA;&#x4FE1;&#x606F;&#x63D0;&#x53D6;&#x3002;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4ECE;&#x6587;&#x672C;&#x4E2D;&#x63D0;&#x53D6;&#x5B9E;&#x4F53;&#xFF08;&#x4EBA;&#x540D;&#xFF0C;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&#x7B49;&#xFF09;&#xFF0C;&#x4E8B;&#x4EF6;&#x548C;&#x5173;&#x7CFB;&#xFF1F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x5C06;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x5B9E;&#x4F53;&#x63D0;&#x53CA;&#x6620;&#x5C04;&#x5230;&#x77E5;&#x8BC6;&#x5E93;&#x4E2D;&#x7684;&#x6761;&#x76EE;&#xFF08;&#x53C8;&#x79F0;&#x5B9E;&#x4F53;&#x53D1;&#x73B0;&#xFF0C;&#x5B9E;&#x4F53;&#x94FE;&#x63A5;&#xFF0C;&#x63D2;&#x69FD;&#x586B;&#x5145;&#xFF09;&#xFF1F;3&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x9996;&#x5148;&#x6784;&#x5EFA;&#x548C;&#x7EF4;&#x62A4;&#x8BE5;&#x77E5;&#x8BC6;&#x5E93;&#xFF08;&#x77E5;&#x8BC6;&#x5E93;&#x7FA4;&#x4F53;&#xFF09;&#xFF1F;&#x8FD9;&#x4E9B;&#x662F;&#x5728;&#x4E0D;&#x540C;&#x80CC;&#x666F;&#x4E0B;&#x7684;&#x4FE1;&#x606F;&#x63D0;&#x53D6;&#x7814;&#x7A76;&#x4E2D;&#x7ECF;&#x5E38;&#x56DE;&#x7B54;&#x7684;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="document-analysis-and-retrieval">Document Analysis and Retrieval</h3>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x884C;&#x4E1A;NLP&#x95EE;&#x9898;&#x5305;&#x62EC;&#x7406;&#x89E3;&#x5927;&#x91CF;&#x6587;&#x6863;&#x3002;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4ECE;&#x6587;&#x6863;&#x4E2D;&#x63D0;&#x53D6;&#x4E3B;&#x9898;&#xFF08;&#x4E3B;&#x9898;&#x5EFA;&#x6A21;&#xFF09;&#xFF1F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x66F4;&#x667A;&#x80FD;&#x5730;&#x7D22;&#x5F15;&#x548C;&#x641C;&#x7D22;&#x6587;&#x6863;&#xFF1F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x7406;&#x89E3;&#x641C;&#x7D22;&#x67E5;&#x8BE2;&#xFF08;&#x67E5;&#x8BE2;&#x89E3;&#x6790;&#xFF09;&#xFF1F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x4E3A;&#x5927;&#x578B;&#x96C6;&#x5408;&#x751F;&#x6210;&#x6458;&#x8981;&#xFF1F;</p>
+<p>NLP&#x6280;&#x672F;&#x7684;&#x8303;&#x56F4;&#x548C;&#x9002;&#x7528;&#x6027;&#x5F88;&#x5E7F;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;NLP&#x6280;&#x672F;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x4E8E;&#x5B58;&#x5728;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6216;&#x534A;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x7684;&#x4EFB;&#x4F55;&#x5730;&#x65B9;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x60A8;&#x4ECB;&#x7ECD;&#x7ED9;Dill&#x7B49;&#x4EBA;&#x3002; &#xFF08;2007&#xFF09;&#xFF0C;&#x4ED6;&#x4EEC;&#x5E94;&#x7528;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x89E3;&#x6790;&#x6280;&#x672F;&#x6765;&#x89E3;&#x91CA;&#x86CB;&#x767D;&#x8D28;&#x6298;&#x53E0;&#x3002;</p>
+<h2 id="frontiers-in-nlp">Frontiers in NLP</h2>
+<p>&#x5F53;&#x8BE5;&#x9886;&#x57DF;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x521B;&#x65B0;&#x65F6;&#xFF0C;&#x5199;&#x4E00;&#x7BC7;&#x9898;&#x4E3A;&#x201C;NLP&#x524D;&#x6CBF;&#x201D;&#x7684;&#x90E8;&#x5206;&#x4F3C;&#x4E4E;&#x662F;&#x4E00;&#x4EF6;&#x611A;&#x8822;&#x7684;&#x4E8B;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x60F3;&#x8BA9;&#x60A8;&#x4E00;&#x77A5;2018&#x5E74;&#x79CB;&#x5B63;&#x7684;&#x6700;&#x65B0;&#x8D8B;&#x52BF;&#xFF1A;</p>
+<ol>
+<li>&#x5C06;&#x7ECF;&#x5178;NLP&#x6587;&#x732E;&#x5F15;&#x5165;&#x53EF;&#x5FAE;&#x5B66;&#x4E60;&#x8303;&#x5F0F; NLP&#x9886;&#x57DF;&#x5DF2;&#x6709;&#x51E0;&#x5341;&#x5E74;&#x7684;&#x5386;&#x53F2;&#xFF0C;&#x5C3D;&#x7BA1;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x53EA;&#x6709;&#x51E0;&#x5E74;&#x7684;&#x5386;&#x53F2;&#x3002;&#x8BB8;&#x591A;&#x521B;&#x65B0;&#x4F3C;&#x4E4E;&#x90FD;&#x5728;&#x7814;&#x7A76;&#x65B0;&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#xFF08;&#x53EF;&#x5FAE;&#x5B66;&#x4E60;&#xFF09;&#x8303;&#x5F0F;&#x4E0B;&#x7684;&#x4F20;&#x7EDF;&#x65B9;&#x6CD5;&#x548C;&#x4EFB;&#x52A1;&#x3002;&#x9605;&#x8BFB;&#x7ECF;&#x5178;NLP&#x8BBA;&#x6587;&#xFF08;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x9605;&#x8BFB;&#x5B83;&#x4EEC;&#xFF01;&#xFF09;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x95EE;&#x9898;&#x662F;&#x4F5C;&#x8005;&#x8BD5;&#x56FE;&#x5B66;&#x4E60;&#x4EC0;&#x4E48;&#xFF1F;&#x4EC0;&#x4E48;&#x662F;&#x8F93;&#x5165;/&#x8F93;&#x51FA;&#x8868;&#x793A;&#xFF1F;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x524D;&#x9762;&#x7AE0;&#x8282;&#x4E2D;&#x5B66;&#x5230;&#x7684;&#x6280;&#x672F;&#x7B80;&#x5316;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#xFF1F;</li>
+<li>&#x6A21;&#x578B;&#x7684;&#x7EC4;&#x5408;&#x6027;&#x539F;&#x5219; &#x5728;&#x672C;&#x4E66;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8BA8;&#x8BBA;&#x4E86;NLP,MLP&#xFF0C;CNN&#xFF0C;&#x5E8F;&#x5217;&#x6A21;&#x578B;&#xFF0C;&#x5E8F;&#x5217;&#x5230;&#x5E8F;&#x5217;&#x6A21;&#x578B;&#x548C;&#x57FA;&#x4E8E;&#x6CE8;&#x610F;&#x529B;&#x7684;&#x6A21;&#x578B;&#x7684;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x67B6;&#x6784;&#x3002;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5C3D;&#x7BA1;&#x6211;&#x4EEC;&#x5355;&#x72EC;&#x8BA8;&#x8BBA;&#x4E86;&#x8FD9;&#x4E9B;&#x6A21;&#x578B;&#xFF0C;&#x4F46;&#x7EAF;&#x7CB9;&#x662F;&#x51FA;&#x4E8E;&#x6559;&#x5B66;&#x539F;&#x56E0;&#x3002;&#x5728;&#x6587;&#x732E;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x4E00;&#x4E2A;&#x8D8B;&#x52BF;&#x662F;&#x7EC4;&#x5408;&#x4E0D;&#x540C;&#x7684;&#x67B6;&#x6784;&#x6765;&#x5B8C;&#x6210;&#x5DE5;&#x4F5C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5355;&#x8BCD;&#x7684;&#x5B57;&#x7B26;&#x4E0A;&#x7F16;&#x5199;&#x5377;&#x79EF;&#x7F51;&#x7EDC;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8BE5;&#x8868;&#x793A;&#x4E0A;&#x5199;&#x5165;LSTM&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;MLP&#x5B8C;&#x6210;LSTM&#x7F16;&#x7801;&#x7684;&#x6700;&#x7EC8;&#x5206;&#x7C7B;&#x3002;&#x80FD;&#x591F;&#x6839;&#x636E;&#x4EFB;&#x52A1;&#x9700;&#x6C42;&#x7EC4;&#x5408;&#x5730;&#x7EC4;&#x5408;&#x4E0D;&#x540C;&#x7684;&#x67B6;&#x6784;&#x662F;&#x4F7F;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6210;&#x529F;&#x7684;&#x6700;&#x6709;&#x529B;&#x7684;&#x60F3;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;</li>
+<li>&#x5E8F;&#x5217;&#x7684;&#x5377;&#x79EF; &#x6211;&#x4EEC;&#x5728;&#x5E8F;&#x5217;&#x5EFA;&#x6A21;&#x4E2D;&#x770B;&#x5230;&#x7684;&#x6700;&#x8FD1;&#x8D8B;&#x52BF;&#x662F;&#x4F7F;&#x7528;&#x5377;&#x79EF;&#x8FD0;&#x7B97;&#x5B8C;&#x5168;&#x6A21;&#x62DF;&#x5E8F;&#x5217;&#x3002;&#x4F5C;&#x4E3A;&#x5B8C;&#x5168;&#x5377;&#x79EF;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x6A21;&#x578B;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x53C2;&#x89C1;Gehring&#x7B49;&#x4EBA;&#x3002; &#xFF08;2018&#xFF09;&#x3002;&#x89E3;&#x7801;&#x6B65;&#x9AA4;&#x4F7F;&#x7528;&#x53BB;&#x5377;&#x79EF;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x662F;&#x6709;&#x5229;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5168;&#x5377;&#x79EF;&#x6A21;&#x578B;&#x663E;&#x7740;&#x52A0;&#x901F;&#x8BAD;&#x7EC3;&#x3002;</li>
+<li>Attention is all you need &#x6700;&#x8FD1;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x8D8B;&#x52BF;&#x662F;&#x7528;&#x6CE8;&#x610F;&#x673A;&#x5236;&#x53D6;&#x4EE3;&#x5377;&#x79EF;&#xFF08;Vaswani&#x7B49;&#xFF0C;2017&#xFF09;&#x3002;&#x4F7F;&#x7528;&#x6CE8;&#x610F;&#x673A;&#x5236;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x79F0;&#x4E3A;&#x81EA;&#x6211;&#x5173;&#x6CE8;&#x548C;&#x591A;&#x5934;&#x6CE8;&#x610F;&#x7684;&#x53D8;&#x4F53;&#xFF0C;&#x60A8;&#x57FA;&#x672C;&#x4E0A;&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x901A;&#x5E38;&#x4F7F;&#x7528;RNN&#x548C;CNN&#x5EFA;&#x6A21;&#x7684;&#x8FDC;&#x7A0B;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;</li>
+<li>Transfer learning &#x8FC1;&#x79FB;&#x5B66;&#x4E60;&#x662F;&#x5B66;&#x4E60;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#x7684;&#x8868;&#x793A;&#x548C;&#x4F7F;&#x7528;&#x8868;&#x793A;&#x6765;&#x6539;&#x8FDB;&#x53E6;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#x7684;&#x5B66;&#x4E60;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x5728;&#x6700;&#x8FD1;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x590D;&#x5174;&#x548C;NLP&#x4E2D;&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x9884;&#x8BAD;&#x7EC3;&#x7684;&#x5355;&#x8BCD;&#x5411;&#x91CF;&#x7684;&#x8F6C;&#x79FB;&#x5B66;&#x4E60;&#x6280;&#x672F;&#x5DF2;&#x7ECF;&#x53D8;&#x5F97;&#x65E0;&#x5904;&#x4E0D;&#x5728;&#x3002;&#x6700;&#x8FD1;&#x7684;&#x5DE5;&#x4F5C;&#xFF08;Radford&#x7B49;&#xFF0C;2018; Peters&#x7B49;&#xFF0C;2018&#xFF09;&#x8BC1;&#x660E;&#x4E86;&#x8BED;&#x8A00;&#x5EFA;&#x6A21;&#x4EFB;&#x52A1;&#x7684;&#x65E0;&#x76D1;&#x7763;&#x8868;&#x793A;&#x5982;&#x4F55;&#x6709;&#x52A9;&#x4E8E;&#x5404;&#x79CD;NLP&#x4EFB;&#x52A1;&#xFF0C;&#x5982;&#x95EE;&#x7B54;&#xFF0C;&#x5206;&#x7C7B;&#xFF0C;&#x53E5;&#x5B50;&#x76F8;&#x4F3C;&#x6027;&#x548C;&#x81EA;&#x7136; - &#x8BED;&#x8A00;&#x63A8;&#x65AD;&#x3002;</li>
+</ol>
+<p>&#x6B64;&#x5916;&#xFF0C;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x6700;&#x8FD1;&#x5728;&#x5BF9;&#x8BDD;&#x76F8;&#x5173;&#x4EFB;&#x52A1;&#x65B9;&#x9762;&#x53D6;&#x5F97;&#x4E86;&#x4E00;&#x4E9B;&#x6210;&#x529F;&#xFF0C;&#x800C;&#x590D;&#x6742;&#x7684;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x63A8;&#x7406;&#x4EFB;&#x52A1;&#x7684;&#x8BB0;&#x5FC6;&#x548C;&#x77E5;&#x8BC6;&#x57FA;&#x7840;&#x7684;&#x5EFA;&#x6A21;&#x4F3C;&#x4E4E;&#x5F15;&#x8D77;&#x4E86;&#x5DE5;&#x4E1A;&#x754C;&#x548C;&#x5B66;&#x672F;&#x754C;&#x7684;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x7684;&#x9AD8;&#x5EA6;&#x5173;&#x6CE8;&#x3002;&#x5728;&#x4E0B;&#x4E00;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x7ECF;&#x5178;&#x548C;&#x524D;&#x6CBF;&#x8F6C;&#x5411;&#x66F4;&#x76F4;&#x63A5;&#x7684;&#x4E8B;&#x7269; - &#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x601D;&#x8003;&#x8BBE;&#x8BA1;&#x751F;&#x4EA7;NLP&#x7CFB;&#x7EDF;&#x3002;</p>
+<h2 id="design-patterns-for-production-nlp-systems">Design Patterns for Production NLP Systems</h2>
+<p>&#x751F;&#x4EA7;NLP&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x5F88;&#x590D;&#x6742;&#x3002;&#x5728;&#x6784;&#x5EFA;NLP&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x662F;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;&#x60A8;&#x6B63;&#x5728;&#x6784;&#x5EFA;&#x7684;&#x7CFB;&#x7EDF;&#x6B63;&#x5728;&#x89E3;&#x51B3;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x662F;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x76EE;&#x6807;&#x7684;&#x624B;&#x6BB5;&#x3002;&#x5728;&#x7CFB;&#x7EDF;&#x6784;&#x5EFA;&#x671F;&#x95F4;&#xFF0C;&#x5DE5;&#x7A0B;&#x5E08;&#xFF0C;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#xFF0C;&#x8BBE;&#x8BA1;&#x4EBA;&#x5458;&#x548C;&#x4EA7;&#x54C1;&#x7ECF;&#x7406;&#x53EF;&#x4EE5;&#x505A;&#x51FA;&#x591A;&#x79CD;&#x9009;&#x62E9;&#x3002;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x7684;&#x4E66;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x6280;&#x672F;&#x6216;&#x57FA;&#x7840;&#x6784;&#x5EFA;&#x5757;&#xFF0C;&#x4F46;&#x5C06;&#x8FD9;&#x4E9B;&#x6784;&#x5EFA;&#x5757;&#x653E;&#x5728;&#x4E00;&#x8D77;&#x4EE5;&#x63D0;&#x51FA;&#x6EE1;&#x8DB3;&#x60A8;&#x9700;&#x6C42;&#x7684;&#x590D;&#x6742;&#x7ED3;&#x6784;&#x5C06;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x6A21;&#x5F0F;&#x601D;&#x8003;&#x3002;&#x6A21;&#x5F0F;&#x601D;&#x7EF4;&#x548C;&#x63CF;&#x8FF0;&#x6A21;&#x5F0F;&#x7684;&#x8BED;&#x8A00;&#x662F;&#x201C;&#x5728;&#x4E13;&#x4E1A;&#x9886;&#x57DF;&#x5185;&#x63CF;&#x8FF0;&#x826F;&#x597D;&#x8BBE;&#x8BA1;&#x5B9E;&#x8DF5;&#x6216;&#x6709;&#x7528;&#x7EC4;&#x7EC7;&#x6A21;&#x5F0F;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x201D;&#x8FD9;&#x5728;&#x8BB8;&#x591A;&#x5B66;&#x79D1;&#xFF08;Alexander&#xFF0C;1979&#xFF09;&#x4E2D;&#x5F88;&#x6D41;&#x884C;&#xFF0C;&#x5305;&#x62EC;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x3002;&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;&#x751F;&#x4EA7;NLP&#x7CFB;&#x7EDF;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x8BBE;&#x8BA1;&#x548C;&#x90E8;&#x7F72;&#x6A21;&#x5F0F;&#x3002;&#x8FD9;&#x4E9B;&#x662F;&#x56E2;&#x961F;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x505A;&#x51FA;&#x7684;&#x9009;&#x62E9;&#x6216;&#x6743;&#x8861;&#xFF0C;&#x4EE5;&#x4F7F;&#x4EA7;&#x54C1;&#x5F00;&#x53D1;&#x4E0E;&#x6280;&#x672F;&#xFF0C;&#x4E1A;&#x52A1;&#xFF0C;&#x6218;&#x7565;&#x548C;&#x8FD0;&#x8425;&#x76EE;&#x6807;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x516D;&#x4E2A;&#x8F74;&#x4E0B;&#x68C0;&#x67E5;&#x8FD9;&#x4E9B;&#x8BBE;&#x8BA1;&#x9009;&#x62E9;&#xFF1A;</p>
+<ol>
+<li>Online versus offline systems &#x5728;&#x7EBF;&#x7CFB;&#x7EDF;&#x662F;&#x9700;&#x8981;&#x5B9E;&#x65F6;&#x6216;&#x63A5;&#x8FD1;&#x5B9E;&#x65F6;&#x5730;&#x8FDB;&#x884C;&#x6A21;&#x578B;&#x9884;&#x6D4B;&#x7684;&#x7CFB;&#x7EDF;&#x3002;&#x8BF8;&#x5982;&#x6253;&#x51FB;&#x5783;&#x573E;&#x90AE;&#x4EF6;&#x548C;&#x5185;&#x5BB9;&#x5BA1;&#x6838;&#x7B49;&#x4E00;&#x4E9B;&#x4EFB;&#x52A1;&#x672C;&#x8D28;&#x4E0A;&#x9700;&#x8981;&#x5728;&#x7EBF;&#x7CFB;&#x7EDF;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x79BB;&#x7EBF;&#x7CFB;&#x7EDF;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x65F6;&#x8FD0;&#x884C;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x6784;&#x5EFA;&#x4E3A;&#x5728;&#x4E00;&#x6279;&#x8F93;&#x5165;&#x4E0A;&#x6709;&#x6548;&#x8FD0;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8F6C;&#x6362;&#x5B66;&#x4E60;&#x7B49;&#x65B9;&#x6CD5;&#x3002;&#x4E00;&#x4E9B;&#x5728;&#x7EBF;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x662F;&#x88AB;&#x52A8;&#x7684;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x4EE5;&#x5728;&#x7EBF;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x5B66;&#x4E60;&#xFF08;&#x4E5F;&#x79F0;&#x4E3A;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x8BB8;&#x591A;&#x5728;&#x7EBF;&#x7CFB;&#x7EDF;&#x662F;&#x901A;&#x8FC7;&#x5B9A;&#x671F;&#x79BB;&#x7EBF;&#x6A21;&#x578B;&#x6784;&#x5EFA;&#x6765;&#x6784;&#x5EFA;&#x548C;&#x90E8;&#x7F72;&#x7684;&#xFF0C;&#x8BE5;&#x6784;&#x5EFA;&#x88AB;&#x63A8;&#x5411;&#x751F;&#x4EA7;&#x3002;&#x4F7F;&#x7528;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x6784;&#x5EFA;&#x7684;&#x7CFB;&#x7EDF;&#x5E94;&#x8BE5;&#x5BF9;&#x5BF9;&#x6297;&#x6027;&#x73AF;&#x5883;&#x7279;&#x522B;&#x654F;&#x611F;&#x3002;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x662F;&#x7740;&#x540D;&#x7684;Twitter&#x804A;&#x5929;&#x673A;&#x5668;&#x4EBA;Tay&#xFF0C;&#x5B83;&#x8BEF;&#x5165;&#x6B67;&#x9014;&#x5E76;&#x5F00;&#x59CB;&#x4ECE;&#x5728;&#x7EBF;&#x5DE8;&#x9B54;&#x5B66;&#x4E60;&#x3002;&#x6B63;&#x5982;&#x540E;&#x89C1;&#x4E4B;&#x660E;&#x6240;&#x9884;&#x89C1;&#x7684;&#x90A3;&#x6837;&#xFF0C;Tay&#x5F88;&#x5FEB;&#x5C31;&#x5F00;&#x59CB;&#x56DE;&#x5E94;&#x4EE4;&#x4EBA;&#x53CD;&#x611F;&#x7684;&#x63A8;&#x6587;&#xFF0C;&#x5176;&#x6BCD;&#x516C;&#x53F8;&#x5FAE;&#x8F6F;&#x4E0D;&#x5F97;&#x4E0D;&#x5728;&#x63A8;&#x51FA;&#x540E;&#x4E0D;&#x5230;&#x4E00;&#x5929;&#x5C31;&#x5173;&#x95ED;&#x4E86;&#x8FD9;&#x9879;&#x670D;&#x52A1;&#x3002;&#x7CFB;&#x7EDF;&#x6784;&#x5EFA;&#x4E2D;&#x7684;&#x5178;&#x578B;&#x8F68;&#x8FF9;&#x662F;&#x9996;&#x5148;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x79BB;&#x7EBF;&#x7CFB;&#x7EDF;&#xFF0C;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x201C;&#x5728;&#x7EBF;&#x201D;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x5927;&#x91CF;&#x5DE5;&#x7A0B;&#x5DE5;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x53CD;&#x9988;&#x5FAA;&#x73AF;&#x5E76;&#x53EF;&#x80FD;&#x6539;&#x53D8;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x4F7F;&#x5176;&#x6210;&#x4E3A;&#x201C;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x201D;&#x7CFB;&#x7EDF;&#x3002;&#x867D;&#x7136;&#x8FD9;&#x79CD;&#x8DEF;&#x5F84;&#x5728;&#x4EE3;&#x7801;&#x5E93;&#x4E2D;&#x589E;&#x52A0;&#x7684;&#x590D;&#x6742;&#x6027;&#x65B9;&#x9762;&#x662F;&#x6709;&#x673A;&#x7684;&#xFF0C;&#x4F46;&#x5B83;&#x53EF;&#x80FD;&#x4F1A;&#x5F15;&#x5165;&#x8BF8;&#x5982;&#x5904;&#x7406;&#x653B;&#x51FB;&#x8005;&#x4E4B;&#x7C7B;&#x7684;&#x76F2;&#x70B9;&#x7B49;&#x7B49;&#x3002;&#x56FE;9-3&#x663E;&#x793A;&#x4E86;&#x201C;Facebook&#x514D;&#x75AB;&#x7CFB;&#x7EDF;&#x201D;&#x4F5C;&#x4E3A;&#x68C0;&#x6D4B;&#x5783;&#x573E;&#x90AE;&#x4EF6;&#x7684;&#x5728;&#x7EBF;&#x7CFB;&#x7EDF;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF08;&#x8B66;&#x544A;&#xFF1A;&#x5927;&#x7EA6;2012&#x5E74;&#x3002;&#x4E0D;&#x662F;&#x5F53;&#x524D;Facebook&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x7684;&#x53CD;&#x6620;&#xFF09;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#x5728;&#x7EBF;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x6BD4;&#x7C7B;&#x4F3C;&#x7684;&#x79BB;&#x7EBF;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x5DE5;&#x7A0B;&#x8BBE;&#x8BA1;&#x3002; <img src="img/0425cc70e45b99ad32c4df9ecd82680b.jpg" alt="pic4" title="Facebook&#x514D;&#x75AB;&#x7CFB;&#x7EDF;&#xFF1A;&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x7CFB;&#x7EDF;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x7528;&#x4E8E;&#x5BF9;&#x6297;&#x5783;&#x573E;&#x90AE;&#x4EF6;&#x548C;&#x6EE5;&#x7528;&#xFF08;Stein&#x7B49;&#xFF0C;2012&#xFF09;&#x3002;"></li>
+<li>Interactive versus non-interactive systems &#x5927;&#x591A;&#x6570;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x7CFB;&#x7EDF;&#x5728;&#x9884;&#x6D4B;&#x4EC5;&#x6765;&#x81EA;&#x6A21;&#x578B;&#x7684;&#x610F;&#x4E49;&#x4E0A;&#x662F;&#x975E;&#x4EA4;&#x4E92;&#x5F0F;&#x7684;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8BB8;&#x591A;&#x751F;&#x4EA7;NLP&#x6A21;&#x578B;&#x6DF1;&#x6DF1;&#x5D4C;&#x5165;&#x5230;&#x6570;&#x636E;&#x5904;&#x7406;&#x7684;&#x63D0;&#x53D6;&#xFF0C;&#x8F6C;&#x6362;&#x548C;&#x52A0;&#x8F7D;&#xFF08;ETL&#xFF09;&#x7BA1;&#x9053;&#x7684;&#x8F6C;&#x6362;&#x6B65;&#x9AA4;&#x4E2D;&#x3002;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4EBA;&#x7C7B;&#x53C2;&#x4E0E;&#x9884;&#x6D4B;&#x5FAA;&#x73AF;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;&#x56FE;9-4&#x663E;&#x793A;&#x4E86;Lilt Inc.&#x7684;&#x4EA4;&#x4E92;&#x5F0F;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x754C;&#x9762;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5176;&#x4E2D;&#x6A21;&#x578B;&#x548C;&#x4EBA;&#x7C7B;&#x5171;&#x540C;&#x53C2;&#x4E0E;&#x6240;&#x8C13;&#x7684;&#x201C;&#x6DF7;&#x5408;&#x4E3B;&#x52A8;&#x6A21;&#x578B;&#x201D;&#xFF08;Green-Initiative Models&#xFF09;&#x4E2D;&#x7684;&#x9884;&#x6D4B;&#xFF08;Green 2014&#xFF09;&#x3002;&#x4EA4;&#x4E92;&#x5F0F;&#x7CFB;&#x7EDF;&#x96BE;&#x4EE5;&#x8BBE;&#x8BA1;&#xFF0C;&#x4F46;&#x901A;&#x8FC7;&#x5C06;&#x4EBA;&#x7C7B;&#x5E26;&#x5165;&#x5FAA;&#x73AF;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x9AD8;&#x7684;&#x7CBE;&#x5EA6;&#x3002;</li>
+</ol>
+<p><img src="img/a8a3d29c19e970bdd9965e839f4d4ee4.jpg" alt="pic5"> &#x56FE;9-4&#x3002;&#x4E00;&#x79CD;&#x4EBA;-&#x73AF;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x6A21;&#x578B;&#xFF0C;&#x5141;&#x8BB8;&#x4EBA;&#x4EEC;&#x4FEE;&#x6B63;&#x6216;&#x6539;&#x5199;&#x6765;&#x81EA;MT&#x7CFB;&#x7EDF;&#x7684;&#x5EFA;&#x8BAE;&#xFF0C;&#x4EE5;&#x4EA7;&#x751F;&#x975E;&#x5E38;&#x9AD8;&#x8D28;&#x91CF;&#x7684;&#x7FFB;&#x8BD1;&#x3002; &#xFF08;&#x56FE;&#x7247;&#x7531;Lilt Inc.&#x63D0;&#x4F9B;&#xFF09;</p>
+<ol>
+<li>Unimodal versus multimodal systems</li>
+</ol>
+<p>&#x5728;&#x8BB8;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x5B66;&#x4E60;&#x548C;&#x9884;&#x6D4B;&#x8FC7;&#x7A0B;&#x4E2D;&#x7EB3;&#x5165;&#x591A;&#x79CD;&#x6A21;&#x6001;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x6240;&#x5E2E;&#x52A9;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x65B0;&#x95FB;&#x8F6C;&#x5F55;&#x7CFB;&#x7EDF;&#x4E0D;&#x4EC5;&#x4F7F;&#x7528;&#x97F3;&#x9891;&#x6D41;&#x800C;&#x4E14;&#x8FD8;&#x4F7F;&#x7528;&#x89C6;&#x9891;&#x5E27;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x662F;&#x6709;&#x5E2E;&#x52A9;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;Google&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x9879;&#x540D;&#x4E3A;&#x201C;Look to Listen&#x201D;&#xFF08;Ephrat et al&#x3002;&#xFF0C;2018&#xFF09;&#x7684;&#x4F5C;&#x54C1;&#x4F7F;&#x7528;&#x591A;&#x6A21;&#x5F0F;&#x8F93;&#x5165;&#x6765;&#x89E3;&#x51B3;&#x626C;&#x58F0;&#x5668;&#x6E90;&#x5206;&#x79BB;&#x7684;&#x56F0;&#x96BE;&#x95EE;&#x9898;&#xFF08;&#x53C8;&#x540D;&#x9E21;&#x5C3E;&#x9152;&#x4F1A;&#x95EE;&#x9898;&#xFF09;&#x3002;&#x591A;&#x6A21;&#x5F0F;&#x7CFB;&#x7EDF;&#x7684;&#x6784;&#x5EFA;&#x548C;&#x90E8;&#x7F72;&#x6210;&#x672C;&#x5F88;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x56F0;&#x96BE;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x7EC4;&#x5408;&#x6765;&#x81EA;&#x591A;&#x4E2A;&#x6A21;&#x6001;&#x7684;&#x8F93;&#x5165;&#x63D0;&#x4F9B;&#x4E86;&#x5355;&#x72EC;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x5355;&#x4E00;&#x6A21;&#x6001;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x7684;&#x4FE1;&#x53F7;&#x3002;&#x6211;&#x4EEC;&#x4E5F;&#x5728;NLP&#x4E2D;&#x770B;&#x5230;&#x4E86;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x591A;&#x6A21;&#x6001;&#x7FFB;&#x8BD1;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x53EF;&#x7528;&#x65F6;&#x5408;&#x5E76;&#x6765;&#x81EA;&#x591A;&#x79CD;&#x6E90;&#x8BED;&#x8A00;&#x7684;&#x8F93;&#x5165;&#x6765;&#x63D0;&#x9AD8;&#x7FFB;&#x8BD1;&#x8D28;&#x91CF;&#x3002;&#x751F;&#x6210;&#x7F51;&#x9875;&#x4E3B;&#x9898;&#xFF08;&#x4E3B;&#x9898;&#x5EFA;&#x6A21;&#xFF09;&#x65F6;&#xFF0C;&#x9664;&#x4E86;&#x7F51;&#x9875;&#x4E0A;&#x7684;&#x6587;&#x672C;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5408;&#x5E76;&#x4ECE;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x56FE;&#x50CF;&#x4E2D;&#x63D0;&#x53D6;&#x7684;&#x7279;&#x5F81;&#xFF0C;&#x5982;&#x56FE;9-5&#x6240;&#x793A;&#x3002;</p>
+<p><img src="img/521d3645c0c41862d747ff49f59b225f.jpg" alt="pic6" title="&#x56FE;9-5&#x3002;&#x4E00;&#x79CD;&#x591A;&#x6A21;&#x5F0F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B83;&#x5171;&#x540C;&#x5229;&#x7528;&#x97F3;&#x9891;&#x548C;&#x89C6;&#x9891;&#x529F;&#x80FD;&#x6765;&#x89E3;&#x51B3;&#x50CF;&#x9E21;&#x5C3E;&#x9152;&#x4F1A;&#x95EE;&#x9898;&#x8FD9;&#x6837;&#x7684;&#x96BE;&#x9898;&#x3002; &#xFF08;&#x56FE;&#x7247;&#x7531;Erphat&#x7B49;&#x4EBA;&#x63D0;&#x4F9B;&#xFF0C;2018&#x5E74;&#xFF09;"></p>
+<ol>
+<li>End-to-end systems versus piecewise systems &#x81EA;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x95EE;&#x4E16;&#x4EE5;&#x6765;&#xFF0C;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x548C;&#x5DE5;&#x7A0B;&#x5E08;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x9009;&#x62E9;&#x70B9;&#x662F;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684;NLP&#x7CFB;&#x7EDF;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E0D;&#x540C;&#x5355;&#x5143;&#x7684;&#x7BA1;&#x9053;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5355;&#x7247;&#x7AEF;&#x5230;&#x7AEF;&#x7CFB;&#x7EDF;&#x3002;&#x7AEF;&#x5230;&#x7AEF;&#x8BBE;&#x8BA1;&#x5728;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#xFF0C;&#x6458;&#x8981;&#x548C;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x7B49;&#x8BB8;&#x591A;&#x9886;&#x57DF;&#x90FD;&#x5177;&#x6709;&#x5438;&#x5F15;&#x529B;&#xFF0C;&#x7CBE;&#x5FC3;&#x8BBE;&#x8BA1;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x663E;&#x7740;&#x964D;&#x4F4E;&#x5B9E;&#x65BD;&#x548C;&#x90E8;&#x7F72;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x80AF;&#x5B9A;&#x4F1A;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x884C;&#x6570;&#x3002;&#x5206;&#x6BB5;&#x7CFB;&#x7EDF;&#xFF08;&#x56FE;9-6&#xFF09;&#x5C06;&#x590D;&#x6742;&#x7684;NLP&#x4EFB;&#x52A1;&#x5206;&#x89E3;&#x4E3A;&#x5B50;&#x4EFB;&#x52A1;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x4EFB;&#x52A1;&#x5355;&#x72EC;&#x4F18;&#x5316;&#xFF0C;&#x72EC;&#x7ACB;&#x4E8E;&#x6700;&#x7EC8;&#x4EFB;&#x52A1;&#x76EE;&#x6807;&#x3002;&#x5206;&#x6BB5;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5B50;&#x4EFB;&#x52A1;&#x4F7F;&#x5176;&#x975E;&#x5E38;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x6613;&#x4E8E;&#x201C;&#x4FEE;&#x8865;&#x201D;&#x751F;&#x4EA7;&#x4E2D;&#x7684;&#x7279;&#x5B9A;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x901A;&#x5E38;&#x4F1A;&#x5E26;&#x6765;&#x4E00;&#x4E9B;&#x6280;&#x672F;&#x503A;&#x52A1;&#x3002;</li>
+</ol>
+<p><img src="img/072f1ab8693f1fb574adfb4599ccf28f.jpg" alt="pic7" title="&#x56FE;9-6&#x3002;&#x5206;&#x6BB5;&#x7CFB;&#x7EDF;&#xFF1A;&#x8BAD;&#x7EC3;&#x4E00;&#x4E9B;&#x4F20;&#x7EDF;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x7CFB;&#x7EDF;&#x7684;&#x7BA1;&#x9053;&#xFF0C;&#x8FD9;&#x4E9B;&#x7CFB;&#x7EDF;&#x5C06;MT&#x7684;&#x4EFB;&#x52A1;&#x89C6;&#x4E3A;&#x4E00;&#x7CFB;&#x5217;&#x5B50;&#x4EFB;&#x52A1;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B50;&#x4EFB;&#x52A1;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x6A21;&#x578B;&#x3002;&#x5C06;&#x5176;&#x4E0E;&#x201C;&#x793A;&#x4F8B;&#xFF1A;&#x795E;&#x7ECF;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x201D;&#x4E2D;&#x8BA8;&#x8BBA;&#x7684;&#x795E;&#x7ECF;MT&#x6A21;&#x578B;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002; &#xFF08;&#x56FE;&#x7531;Hoang&#x7B49;&#x4EBA;&#x63D0;&#x4F9B;&#xFF0C;2009&#xFF09;"></p>
+<ol>
+<li>Closed-domain versus open-domain systems &#x5C01;&#x95ED;&#x57DF;&#x7CFB;&#x7EDF;&#x660E;&#x786E;&#x5730;&#x9488;&#x5BF9;&#x5355;&#x4E00;&#x76EE;&#x7684;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#xFF1A;&#x5728;&#x8BE5;&#x57DF;&#x4E2D;&#x8868;&#x73B0;&#x826F;&#x597D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x673A;&#x5668;&#x7FFB;&#x8BD1;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x660E;&#x786E;&#x4F18;&#x5316;&#x4EE5;&#x4E0E;&#x751F;&#x7269;&#x533B;&#x5B66;&#x671F;&#x520A;&#x4E00;&#x8D77;&#x4F7F;&#x7528; - &#x8FD9;&#x4E0D;&#x4EC5;&#x4EC5;&#x6D89;&#x53CA;&#x751F;&#x7269;&#x533B;&#x5B66;&#x5E73;&#x884C;&#x8BED;&#x6599;&#x5E93;&#x7684;&#x57F9;&#x8BAD;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x5F00;&#x653E;&#x57DF;&#x7CFB;&#x7EDF;&#x65E8;&#x5728;&#x7528;&#x4E8E;&#x901A;&#x7528;&#x76EE;&#x7684;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;Google Translate&#xFF09;&#x3002;&#x518D;&#x4E3E;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x8003;&#x8651;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6807;&#x7B7E;&#x7CFB;&#x7EDF;&#x3002;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x53EA;&#x9884;&#x6D4B;&#x4E86;&#x8BB8;&#x591A;&#x9884;&#x5B9A;&#x4E49;&#x7C7B;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF08;&#x5178;&#x578B;&#x60C5;&#x51B5;&#xFF09;&#xFF0C;&#x5219;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5C01;&#x95ED;&#x57DF;&#x7CFB;&#x7EDF;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x88AB;&#x8BBE;&#x8BA1;&#x4E3A;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x53D1;&#x73B0;&#x65B0;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x653E;&#x57DF;&#x7CFB;&#x7EDF;&#x3002;&#x5728;&#x7FFB;&#x8BD1;&#x548C;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x7CFB;&#x7EDF;&#x7684;&#x80CC;&#x666F;&#x4E0B;&#xFF0C;&#x5C01;&#x95ED;&#x57DF;&#x7CFB;&#x7EDF;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x201C;&#x6709;&#x9650;&#x8BCD;&#x6C47;&#x201D;&#x7CFB;&#x7EDF;&#x3002;</li>
+<li>Monolingual versus multilingual systems</li>
+</ol>
+<p>&#x4E3A;&#x5355;&#x4E00;&#x8BED;&#x8A00;&#x5DE5;&#x4F5C;&#x800C;&#x6784;&#x5EFA;&#x7684;NLP&#x7CFB;&#x7EDF;&#x79F0;&#x4E3A;&#x5355;&#x8BED;&#x7CFB;&#x7EDF;&#x3002;&#x5F88;&#x5BB9;&#x6613;&#x6784;&#x5EFA;&#x548C;&#x4F18;&#x5316;&#x5355;&#x8BED;&#x7CFB;&#x7EDF;&#x3002;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#xFF0C;&#x591A;&#x8BED;&#x8A00;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x591A;&#x79CD;&#x8BED;&#x8A00;&#x3002;&#x5728;&#x5BF9;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x7684;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;&#x57F9;&#x8BAD;&#x65F6;&#xFF0C;&#x9884;&#x8BA1;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x3002;&#x867D;&#x7136;&#x6784;&#x5EFA;&#x591A;&#x8BED;&#x8A00;&#x7CFB;&#x7EDF;&#x5F88;&#x6709;&#x5438;&#x5F15;&#x529B;&#xFF0C;&#x4F46;&#x4E13;&#x6CE8;&#x4E8E;&#x5355;&#x8BED;&#x7248;&#x672C;&#x6709;&#x5176;&#x4F18;&#x70B9;&#x3002;&#x7814;&#x7A76;&#x4EBA;&#x5458;&#x548C;&#x5DE5;&#x7A0B;&#x5E08;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8BE5;&#x8BED;&#x8A00;&#x4E2D;&#x5E7F;&#x6CDB;&#x53EF;&#x7528;&#x7684;&#x8D44;&#x6E90;&#x548C;&#x9886;&#x57DF;&#x4E13;&#x4E1A;&#x77E5;&#x8BC6;&#x6765;&#x751F;&#x6210;&#x9AD8;&#x8D28;&#x91CF;&#x7684;&#x7CFB;&#x7EDF;&#xFF0C;&#x5426;&#x5219;&#x4E00;&#x822C;&#x7684;&#x591A;&#x8BED;&#x8A00;&#x7CFB;&#x7EDF;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x3002;&#x51FA;&#x4E8E;&#x8FD9;&#x4E2A;&#x539F;&#x56E0;&#xFF0C;&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x53D1;&#x73B0;&#x8BB8;&#x591A;&#x591A;&#x8BED;&#x8A00;&#x4EA7;&#x54C1;&#x88AB;&#x5B9E;&#x73B0;&#x4E3A;&#x5355;&#x72EC;&#x4F18;&#x5316;&#x7684;&#x5355;&#x8BED;&#x7CFB;&#x7EDF;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5176;&#x4E2D;&#x8BED;&#x8A00;&#x8BC6;&#x522B;&#x7EC4;&#x4EF6;&#x5C06;&#x8F93;&#x5165;&#x5206;&#x6D3E;&#x7ED9;&#x5B83;&#x4EEC;&#x3002;</p>
+<h2 id="where-next">Where Next?</h2>
+<p>&#x4F7F;&#x7528;&#x50CF;PyTorch&#x8FD9;&#x6837;&#x7684;&#x5373;&#x5C06;&#x5230;&#x6765;&#x7684;&#x6846;&#x67B6;&#x548C;&#x50CF;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x8FD9;&#x6837;&#x5FEB;&#x901F;&#x53D8;&#x5316;&#x7684;&#x9886;&#x57DF;&#xFF0C;&#x611F;&#x89C9;&#x5C31;&#x50CF;&#x5728;&#x79FB;&#x52A8;&#x5730;&#x9762;&#x4E0A;&#x5EFA;&#x9020;&#x4E00;&#x5EA7;&#x8C6A;&#x5B85;&#x3002;&#x5728;&#x672C;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6307;&#x51FA;&#x4E86;&#x4E00;&#x4E9B;&#x4E0E;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#xFF0C;PyTorch&#x548C;NLP&#x76F8;&#x5173;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x7684;&#x8BFB;&#x8005;&#x7EE7;&#x7EED;&#x52A0;&#x5F3A;&#x6211;&#x4EEC;&#x5728;&#x672C;&#x4E66;&#x4E2D;&#x6784;&#x5EFA;&#x7684;&#x57FA;&#x7840;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x6DB5;&#x76D6;PyTorch&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x3002;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x9075;&#x5FAA;&#x4F18;&#x79C0;&#x7684;PyTorch&#x6587;&#x6863;&#x5E76;&#x53C2;&#x4E0E;PyTorch&#x8BBA;&#x575B;&#x4EE5;&#x7EE7;&#x7EED;&#x60A8;&#x7684;PyTorch&#x5B9E;&#x8DF5;&#xFF1A;</p>
+<ul>
+<li><p>PyTorch Documentation: <a href="https://pytorch.org/docs" target="_blank">https://pytorch.org/docs</a></p>
+</li>
+<li><p>PyTorch Forums: <a href="https://discuss.pytorch.org/" target="_blank">https://discuss.pytorch.org/</a> &#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x9886;&#x57DF;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x6765;&#x81EA;&#x5DE5;&#x4E1A;&#x754C;&#x548C;&#x5B66;&#x672F;&#x754C;&#x7684;&#x5927;&#x91CF;&#x6D3B;&#x52A8;&#x3002;&#x5927;&#x591A;&#x6570;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4F5C;&#x54C1;&#x51FA;&#x73B0;&#x5728;arXiv&#x7684;&#x4E0D;&#x540C;&#x7C7B;&#x522B;&#x4E0B;&#xFF1A;</p>
+</li>
+<li><p>&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF1A;https&#xFF1A;//arxiv.org/list/cs.LG/recent</p>
+</li>
+<li><p>&#x8BED;&#x8A00;&#x548C;&#x8BA1;&#x7B97;&#xFF1A;https&#xFF1A;//arxiv.org/list/cs.CL/recent</p>
+</li>
+<li><p>&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#xFF1A;https&#xFF1A;//arxiv.org/list/cs.AI/recent</p>
+</li>
+</ul>
+<p>&#x4E86;&#x89E3;NLP&#x65B0;&#x4F5C;&#x54C1;&#x7684;&#x6700;&#x4F73;&#x65B9;&#x6CD5;&#x662F;&#x9075;&#x5FAA;&#x4EE5;&#x4E0B;&#x5B66;&#x672F;&#x4F1A;&#x8BAE;&#xFF1A;</p>
+<ul>
+<li><p>&#x8BA1;&#x7B97;&#x8BED;&#x8A00;&#x5B66;&#x534F;&#x4F1A;&#xFF08;ACL&#xFF09;</p>
+</li>
+<li><p>&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#x4E2D;&#x7684;&#x7ECF;&#x9A8C;&#x65B9;&#x6CD5;&#xFF08;EMNLP&#xFF09;</p>
+</li>
+<li><p>&#x5317;&#x7F8E;&#x8BA1;&#x7B97;&#x8BED;&#x8A00;&#x5B66;&#x534F;&#x4F1A;&#xFF08;NAACL&#xFF09;</p>
+</li>
+<li><p>ACL&#x7684;&#x6B27;&#x6D32;&#x7AE0;&#x8282;&#xFF08;EACL&#xFF09;</p>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5B66;&#x4E60;&#x4F1A;&#x8BAE;&#xFF08;CoNLL&#xFF09;</p>
+</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;aclweb.org&#x8DDF;&#x8E2A;&#x8FD9;&#x4E9B;&#x4F1A;&#x8BAE;&#x548C;&#x5176;&#x4ED6;&#x4F1A;&#x8BAE;&#xFF0C;&#x7814;&#x8BA8;&#x4F1A;&#x548C;&#x5176;&#x4ED6;&#x91CD;&#x8981;&#x7684;NLP&#x65B0;&#x95FB;&#x7684;&#x4F1A;&#x8BAE;&#x8BB0;&#x5F55;&#x3002;</p>
+<p>&#x5F53;&#x60A8;&#x51C6;&#x5907;&#x8D85;&#x8D8A;&#x57FA;&#x7840;&#x65F6;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x73B0;&#x81EA;&#x5DF1;&#x5FC5;&#x987B;&#x9605;&#x8BFB;&#x7814;&#x7A76;&#x8BBA;&#x6587;&#x3002;&#x9605;&#x8BFB;&#x8BBA;&#x6587;&#x662F;&#x4E00;&#x95E8;&#x83B7;&#x5F97;&#x7684;&#x827A;&#x672F;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5728;<a href="https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html&#x627E;&#x5230;&#x4E00;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x9605;&#x8BFB;NLP&#x8BBA;&#x6587;&#x7684;&#x63D0;&#x793A;&#x3002;" target="_blank">https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html&#x627E;&#x5230;&#x4E00;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x9605;&#x8BFB;NLP&#x8BBA;&#x6587;&#x7684;&#x63D0;&#x793A;&#x3002;</a></p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7EE7;&#x7EED;&#x63D0;&#x4F9B;&#x66F4;&#x591A;&#x6559;&#x80B2;&#x6750;&#x6599;&#xFF0C;&#x4EE5;&#x8865;&#x5145;&#x672C;&#x4E66;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x7F51;&#x5740;&#x4E3A;<a href="https://nlproc.info/pytorch&#x3002;" target="_blank">https://nlproc.info/pytorch&#x3002;</a></p>
+<h2 id="references">References</h2>
+<ol>
+<li><p>Christopher Alexander. The Timeless Way of Building. Oxford University Press, 1979.</p>
+</li>
+<li><p>Ken A. Dill, Adam Lucas, Julia Hockenmaier, Liang Huang, David Chiang, Aravind K. Joshi. &#x201C;Computational linguistics: A new tool for exploring biopolymer structures and statistical mechanics.&#x201D; In Polymer, 2007.</p>
+</li>
+<li><p>Hieu Hoang, Philipp Koehn, and Adam Lopez. &#x201C;A Unified Framework for Phrase-Based, Hierarchical, and Syntax-Based Statistical Machine Translation.&#x201D; In Proceedings of IWSLT, 2009.</p>
+</li>
+<li><p>Tao Stein, Erdong Chen, Karan Mangla. &#x201C;Facebook Immune System.&#x201D; SNS, 2011</p>
+</li>
+<li><p>Spence Green, &#x201C;Mixed-Initiative Language Translation.&#x201D; PhD Thesis, Stanford University, 2014.</p>
+</li>
+<li><p>Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin, &#x201C;Attention Is All You Need.&#x201D; on arXiv, 2017.</p>
+</li>
+<li><p>Ariel Ephrat, Inbar Mosseri, Oran Lang, Tali Dekel, Kevin Wilson, Avinatan Hassidim, William T. Freeman, Michael Rubinstein. &#x201C;Looking to Listen: A Speaker-Independent Audio-Visual Model for Speech Separation.&#x201D; SIGGRAPH, 2018.</p>
+</li>
+<li><p>Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, Luke Zettlemoyer. &#x201C;Deep contextualized word representations.&#x201D; ACL 2018.</p>
+</li>
+</ol>
+<p><hr></p>
+<div align="center">
+    <p><a href="http://www.apachecn.org" target="_blank"><font face="KaiTi" size="6" color="red">&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x52AA;&#x529B;</font></a></p>
+    <p><a href="https://github.com/apachecn/nlp-pytorch-zh/" target="_blank">apachecn/nlp-pytorch-zh</a></p>
+    <p><iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=watch&amp;count=true&amp;v=2" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <iframe align="middle" src="https://ghbtns.com/github-btn.html?user=apachecn&amp;repo=nlp-pytorch-zh&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="100px" height="25px"></iframe>
+    <a target="_blank" href="../shang.qq.com/wpa/qunwpa"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ML | ApacheCN" title="ML | ApacheCN"></a></p>
+</div>
+ <div style="text-align:center;margin:0 0 10.5px;">
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3565452474788507" data-ad-slot="2543897000">
+     </ins>
+     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?38525fdac4b5d4403900b943d4e7dd91";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+
+</div>
+
+<p><meta name="google-site-verification" content="pyo9N70ZWyh8JB43bIu633mhxesJ1IcwWCZlM3jUfFo"></p>
+<p><iframe src="https://www.bilibili.com/read/cv2710377" style="display:none"></iframe>
+<img src="http://t.cn/AiCoDHwb" hidden="hidden"></p>
+<div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+        clientID: '1eba1fde838d39ce2ba9',
+        clientSecret: '0bdf321e160ca29b2d54e8722700dd5accb084e0',
+        repo: 'nlp-pytorch-zh',
+        owner: 'apachecn',
+        admin: ['jiangzhonglian', 'wizardforcel'],
+        id: md5(location.pathname),
+        distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ibooker.org.cn 2019 all right reserved&#xFF0C;&#x7531; ApacheCN &#x56E2;&#x961F;&#x63D0;&#x4F9B;&#x652F;&#x6301;</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 
+2019-07-29 11:38:33
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="8.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Chapter 8.用于自然语言处理的高级 Sequence">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Chapter 9.经典, 前沿和后续步骤","level":"1.10","depth":1,"previous":{"title":"Chapter 8.用于自然语言处理的高级 Sequence","level":"1.9","depth":1,"path":"docs/8.md","ref":"docs/8.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","github-buttons","-sharing","insert-logo","sharing-plus","back-to-top-button","code","copy-code-button","mathjax","pageview-count","edit-link","emphasize","alerts","auto-scroll-table","popup","hide-element","page-toc-button","tbfed-pagefooter","sitemap","advanced-emoji","expandable-chapters","splitter","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ibooker.org.cn 2019","modify_label":"该文件修订时间： ","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/apachecn/nlp-pytorch-zh"},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://nlp-pt.apachecn.org"},"page-toc-button":{"maxTocDepth":4,"minTocSize":4},"back-to-top-button":{},"pageview-count":{},"alerts":{},"github-buttons":{"buttons":[{"user":"apachecn","repo":"nlp-pytorch-zh","type":"star","count":true,"size":"small"}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":false,"all":["qq","douban","facebook","google","linkedin","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"whatsapp":false,"twitter":false,"line":false,"google":false,"qzone":true},"edit-link":{"label":"编辑本页","base":"https://github.com/apachecn/nlp-pytorch-zh/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 150px; min-height: 150px","url":"https://nlp-pt.apachecn.org/cover.jpg"},"expandable-chapters":{}},"theme":"default","author":"ApacheCN","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NLP with PyTorch 中文文档","language":"zh-hans","gitbook":"*","description":"NLP with PyTorch 中文文档"},"file":{"path":"docs/9.md","mtime":"2019-07-29T03:38:33.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-09T15:06:48.544Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
