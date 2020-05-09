@@ -12,7 +12,7 @@
 
 * [在线阅读](https://nlp-pt.apachecn.org)
 * [代码地址](https://github.com/joosthub/PyTorchNLPBook)
-* [ApacheCN 机器学习交流群 915394271](http://shang.qq.com/wpa/qunwpa?idkey=1577295fb6928b869facd55df9be529464a048389cbe1cea3a133b7708d5ded4)
+* **ApacheCN - 面试求职群【724187166】<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9bcf2fb3985835c9c2f15783ec9c85822e23be1191a6581eaf22f574b5192b19"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ApacheCN - 面试求职群[724187166]" title="ApacheCN - 面试求职群[724187166]"></a>**
 * [ApacheCN 学习资源](http://www.apachecn.org/)
 * 电子书下载地址：[epub](https://github.com/apachecn/pytorch-doc-zh/tree/gh-pages/books/nlp-pytorch-zh.epub), [mobi](https://github.com/apachecn/pytorch-doc-zh/tree/gh-pages/books/nlp-pytorch-zh.mobi)
     * 我这边编译失败，请各位小哥哥自行手动编译
