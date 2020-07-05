@@ -15,10 +15,6 @@
 * **ApacheCN - 面试求职群【724187166】<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9bcf2fb3985835c9c2f15783ec9c85822e23be1191a6581eaf22f574b5192b19"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ApacheCN - 面试求职群[724187166]" title="ApacheCN - 面试求职群[724187166]"></a>**
 * [ApacheCN 学习资源](http://www.apachecn.org/)
 * 电子书下载地址：[epub](https://github.com/apachecn/pytorch-doc-zh/tree/gh-pages/books/nlp-pytorch-zh.epub), [mobi](https://github.com/apachecn/pytorch-doc-zh/tree/gh-pages/books/nlp-pytorch-zh.mobi)
-    * 我这边编译失败，请各位小哥哥自行手动编译
-    * mkdir books
-    * gitbook epub . books/nlp-pytorch-zh.epub
-    * gitbook mobi . books/nlp-pytorch-zh.mobi
 
 ## 目录
 
@@ -31,6 +27,15 @@
 * [Chapter 7.自然语言处理的中间 Sequence Modeling](docs/7.md)
 * [Chapter 8.用于自然语言处理的高级 Sequence](docs/8.md)
 * [Chapter 9.经典, 前沿和后续步骤](docs/9.md)
+
+## 编译
+
+```
+npm install -g gitbook-cli          # 安装 gitbook
+gitbook fetch 3.2.3                 # 安装 gitbook 子版本
+gitbook install                     # 安装必要的插件
+gitbook <build|pdf|epub|mobi>       # 编译 HTML/PDF/EPUB/MOBI
+```
 
 ## 精品推荐
 
