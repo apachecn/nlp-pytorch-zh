@@ -17,6 +17,7 @@
 
 > 第三方站长[网站]
 
++ 顺川页 Page(国内): https://book.ztjs.top/nlp_pytorch
 + 地址A: xxx (欢迎留言，我们完善补充)
 
 > 其他补充
@@ -25,6 +26,9 @@
 + **ApacheCN - 面试求职群【724187166】<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9bcf2fb3985835c9c2f15783ec9c85822e23be1191a6581eaf22f574b5192b19"><img border="0" src="http://data.apachecn.org/img/logo/ApacheCN-group.png" alt="ApacheCN - 面试求职群[724187166]" title="ApacheCN - 面试求职群[724187166]"></a>**
 + [ApacheCN 学习资源](http://www.apachecn.org/)
 + 电子书下载地址：[epub](https://github.com/apachecn/pytorch-doc-zh/tree/gh-pages/books/nlp-pytorch-zh.epub), [mobi](https://github.com/apachecn/pytorch-doc-zh/tree/gh-pages/books/nlp-pytorch-zh.mobi)
++ pdf下载：https://book.ztjs.top/nlp_pytorch/nlp-pytorch-zh.pdf
++ epub下载：https://book.ztjs.top/nlp_pytorch/nlp-pytorch-zh.epub
++ mobi下载：https://book.ztjs.top/nlp_pytorch/nlp-pytorch-zh.mobi
 
 ## 目录
 
