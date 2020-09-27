@@ -80,3 +80,14 @@ gitbook <build|pdf|epub|mobi>       # 编译 HTML/PDF/EPUB/MOBI
 ## 关于转载
 
 * 禁止商业化，符合协议规范，备注地址来源，不需要发邮件给我们申请【如果觉得有帮助，欢迎各位踊跃收藏和转载】
+
+
+## 下载
+
+### NPM
+
+```
+npm install -g nlp-pytorch-zh
+nlp-pytorch-zh <port>
+# 访问 http://localhost:{port} 查看文档
+```
