@@ -84,6 +84,14 @@ gitbook <build|pdf|epub|mobi>       # 编译 HTML/PDF/EPUB/MOBI
 
 ## 下载
 
+### PYPI
+
+```
+pip install nlp-pytorch-zh
+nlp-pytorch-zh <port>
+# 访问 http://localhost:{port} 查看文档
+```
+
 ### NPM
 
 ```
