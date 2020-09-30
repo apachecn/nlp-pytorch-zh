@@ -84,6 +84,14 @@ gitbook <build|pdf|epub|mobi>       # 编译 HTML/PDF/EPUB/MOBI
 
 ## 下载
 
+### Docker
+
+```
+docker pull apachecn0/nlp-pytorch-zh
+docker run -tid -p <port>:80 apachecn0/nlp-pytorch-zh
+# 访问 http://localhost:{port} 查看文档
+```
+
 ### PYPI
 
 ```
