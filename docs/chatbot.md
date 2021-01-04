@@ -119,7 +119,7 @@ u0 +++$+++ u2 +++$+++ m0 +++$+++ ['L207', 'L208']
 
 1. 加速训练，利用 GPU 并行计算能力，则需要使用小批量 `mini-batches`
 2. 为了保证数据长短一致，设置 `(max_length，batch_size)`, 短于 max_length 的句子在 EOS_token 之后进行零填充 `(zero padded)`
-3. 矩阵转置（以便跨第一维的索引返回批处理中所有句子的时间步长）
+3. 矩阵转置（以便跨第一维的索引返回批量中所有句子的时间步长）
 
 ![](https://pytorch.apachecn.org/docs/1.0/img/b2f1969c698070d055c23fc81ab07b1b.jpg)
 
