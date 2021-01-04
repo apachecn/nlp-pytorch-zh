@@ -2,7 +2,7 @@
 
 * [入门须知](README.md)
 * [Chapter 1.基础介绍](docs/1.md)
-* [Chapter 2.传统NLP快速回顾](docs/2.md)
+* [Chapter 2.传统 NLP 快速回顾](docs/2.md)
 * [Chapter 3.神经网络基础组件](docs/3.md)
 * [Chapter 4.自然语言处理 Feed-Forward Networks](docs/4.md)
 * [Chapter 5.Embedding Words and Types](docs/5.md)
