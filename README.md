@@ -1,6 +1,6 @@
 # PyTorch 自然语言处理
 
-![](https://nlp-pt.apachecn.org/cover.jpg)
+![](cover.jpg)
 
 > 译者：[Yif Du](https://yifdu.github.io/)
 > 
